@@ -30,7 +30,7 @@ const Intro = () => {
             <div className="textContentLeft noScroll">
               <span className="texTitle">{t("intro.textHey")}!</span>
 
-              <img src={WavingHand} alt="" className="wavingHand" />
+              <img src={WavingHand} alt="WavingHand" className="wavingHand" />
               <span className="texTitle"> {t("intro.texMyNameIs")}</span>
             </div>
 
@@ -56,12 +56,16 @@ const Intro = () => {
                 </a>
               </div>
               <div className="i-backgroupdS">
-                <a href="" target="" className="i-link">
+                <a
+                  href="https://www.behance.net/anhlamot55"
+                  target="__blank"
+                  className="i-link"
+                >
                   <img src={iconGmail} alt="Gmail" className="i__icon-img" />
                 </a>
               </div>
               <div className="i-backgroupdS">
-                <a href="" className="i-link">
+                <a href="https://www.behance.net/anhlamot55" className="i-link">
                   <img
                     src={iconLinkedin}
                     alt="Linkedin"
@@ -70,7 +74,7 @@ const Intro = () => {
                 </a>
               </div>
               <div className="i-backgroupdS">
-                <a href="" className="i-link">
+                <a href="https://www.behance.net/anhlamot55" className="i-link">
                   <img src={iconGithub} alt="Github" className="i__icon-img" />
                 </a>
               </div>
@@ -85,7 +89,11 @@ const Intro = () => {
           </div>
         </div>
         <div className="i-right">
-          <img src={Avatar} alt="" className="imgAvatar" />
+          <img
+            src={Avatar}
+            alt="https://www.behance.net/anhlamot55"
+            className="imgAvatar"
+          />
         </div>
       </div>
     </div>

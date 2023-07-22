@@ -2,7 +2,7 @@ import React from "react";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { useTranslation } from "react-i18next";
 const Language = () => {
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
   const dropdownStyles = {
     position: "static",
   };

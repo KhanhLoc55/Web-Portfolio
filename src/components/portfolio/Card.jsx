@@ -27,7 +27,8 @@ const Card = (props) => {
         <div className="modal-category">
           <span onClick={toggleModal}>{props.category}</span>
           <label>
-            <img className="icon-heart" src={heart} /> {props.totalLike}
+            <img className="icon-heart" alt="icon-heart" src={heart} />{" "}
+            {props.totalLike}
           </label>
         </div>
         <div className="modal-title">
@@ -35,7 +36,7 @@ const Card = (props) => {
             {props.title}
           </h2>
           <a href="#popup" className="modal-arrow" onClick={toggleModal}>
-            <img src={arrowRight} alt="" className="" />
+            <img src={arrowRight} alt="arrowRight" className="" />
           </a>
         </div>
       </div>
@@ -64,7 +65,7 @@ const Card = (props) => {
                       <a href="https://github.com/KhanhLoc55" target="__blank">
                         Source code
                       </a>
-                      <img src={Sourcecode} alt="" />
+                      <img src={Sourcecode} alt="Sourcecode" />
                     </div>
                   </button>
                   <button className="modal__button-content">
@@ -75,12 +76,16 @@ const Card = (props) => {
                       >
                         View project
                       </a>
-                      <img src={Sourcecode} alt="" />
+                      <img src={Sourcecode} alt="Sourcecode" />
                     </div>
                   </button>
                 </div>
                 <button className="modalClone" onClick={toggleModal}>
-                  <img src={modalClose} alt="" className="modalClose-icon" />
+                  <img
+                    src={modalClose}
+                    alt="modalClose"
+                    className="modalClose-icon"
+                  />
                 </button>
               </div>
             </div>
