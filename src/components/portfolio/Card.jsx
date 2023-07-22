@@ -22,7 +22,7 @@ const Card = (props) => {
     <>
       <div className="modal-box">
         <div className="modal-img">
-          <img src={props.img} alt="" onClick={toggleModal} />
+          <img src={props.img} alt={props.title} onClick={toggleModal} />
         </div>
         <div className="modal-category">
           <span onClick={toggleModal}>{props.category}</span>
@@ -47,7 +47,7 @@ const Card = (props) => {
           <div className="modal-content">
             <div className="modal-content-box">
               <div className="modal-img">
-                <img src={props.img} alt="" />
+                <img src={props.img} alt={props.title} />
               </div>
               <div className="modal-text">
                 <span>Featured - Design</span>

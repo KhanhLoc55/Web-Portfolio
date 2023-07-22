@@ -21,17 +21,21 @@ const Footer = () => {
             </a>
           </div>
           <div className="i-backgroupdS">
-            <a href="" target="" className="i-link">
+            <a
+              href="https://www.example.com"
+              target="__blank"
+              className="i-link"
+            >
               <img src={iconGmail} alt="Gmail" className="i__icon-img" />
             </a>
           </div>
           <div className="i-backgroupdS">
-            <a href="" className="i-link">
+            <a href="https://www.example.com" className="i-link">
               <img src={iconLinkedin} alt="Linkedin" className="i__icon-img" />
             </a>
           </div>
           <div className="i-backgroupdS">
-            <a href="" className="i-link">
+            <a href="https://www.example.com" className="i-link">
               <img src={iconGithub} alt="Github" className="i__icon-img" />
             </a>
           </div>
