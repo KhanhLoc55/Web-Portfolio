@@ -1,0 +1,132 @@
+@import "../../app.scss";
+
+#intro {
+  padding: 0 80px;
+  .container {
+    margin-top: 80px;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 100%;
+    padding: 0;
+  }
+  .i-left {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    .textContentLeft {
+      .texTitle {
+        font-size: 20px;
+        font-weight: 300;
+      }
+      .wavingHand {
+        padding: 0 4px;
+        height: 30px;
+      }
+    }
+
+    .i-heading1 {
+      font-size: 60px;
+      margin: 8px 0;
+      font-weight: 700;
+      color: $color;
+    }
+
+    .i-heading3 {
+      font-size: 30px;
+
+      .i-text-smail {
+        font-size: inherit;
+        color: #dc143c;
+      }
+      .ityped-cursor {
+        animation: blink 1s infinite;
+      }
+
+      @keyframes blink {
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    }
+    .i-sci {
+      display: flex;
+      margin-top: 12px;
+      min-height: 60px;
+      .i-backgroupdS {
+        margin-right: 12px;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center; /* Canh giữa theo chiều ngang */
+        align-items: center; /* Canh giữa theo chiều dọc */
+        &:hover {
+          background-color: $color;
+        }
+        .i__icon-img {
+          /* Căn giữa theo chiều ngang và dọc */
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+    .cv {
+      min-height: 50px;
+      margin-top: 12px;
+      .button-40 {
+        background-color: #111827;
+        border: 1px solid transparent;
+        border-radius: 16px;
+        box-sizing: border-box;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 1.125rem;
+        font-weight: 600;
+        line-height: 1.5rem;
+        padding: 0.75rem 1.2rem;
+        text-align: center;
+        text-decoration: none #6b7280 solid;
+        text-decoration-thickness: auto;
+        transition-duration: 0.2s;
+        transition-property: background-color, border-color, color, fill, stroke;
+        transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        // width: auto;
+      }
+
+      .button-40:hover {
+        background-color: #374151;
+      }
+
+      .button-40:focus {
+        box-shadow: none;
+        outline: 2px solid transparent;
+        outline-offset: 2px;
+      }
+
+      @media (min-width: 768px) {
+        .button-40 {
+          padding: 0.75rem 1.5rem;
+        }
+      }
+    }
+  }
+
+  .i-right {
+    flex: 1;
+    padding-left: 20px;
+    .imgAvatar {
+      max-width: 80%;
+    }
+  }
+}

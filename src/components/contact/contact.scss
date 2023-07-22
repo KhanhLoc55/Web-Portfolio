@@ -1,0 +1,128 @@
+.contact {
+  padding: 0 80px;
+  .container {
+    max-width: 100%;
+    padding: 0;
+    height: 80vh;
+
+    .container-title {
+      margin-bottom: 40px;
+      margin-top: 20px;
+
+      .container-heading {
+        font-size: 48px;
+        font-weight: bold;
+        text-align: center;
+
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          min-width: 170px;
+          height: 3px;
+          background: #0073aa;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .contact-center {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    align-items: center;
+
+    .contact-info {
+      .contact-info-list {
+        margin: 0;
+        font-size: 16px;
+        list-style: none;
+        padding-left: 0;
+        padding-top: 20px;
+
+        .contact-info-item {
+          padding: 8px 0;
+          cursor: pointer;
+          a {
+            color: rebeccapurple;
+            text-decoration: none;
+
+            &:hover {
+              color: red;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-form {
+      max-width: 80%;
+
+      .contact-box {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+
+      .input-container {
+        position: relative;
+        margin: 8px 0;
+
+        .form-input {
+          width: 100%;
+          background: transparent;
+          caret-color: red;
+          border: 1px solid red;
+          color: red;
+          transition: border 500ms;
+          padding: 1.5rem 1rem 0.5rem;
+        }
+
+        textarea {
+          height: 250px;
+          resize: none;
+          font: inherit;
+        }
+
+        label {
+          display: block;
+          position: absolute;
+          width: 100%;
+          font-size: 1rem;
+          top: 15px;
+          padding: 0.25rem 1rem;
+          color: red;
+          transform-origin: left;
+          user-select: none;
+          transition: all 500ms;
+          margin-bottom: 1rem;
+        }
+
+        .form-input:hover,
+        .form-input:focus,
+        &.focused .form-input {
+          outline: none;
+          border-color: red;
+        }
+
+        .form-input:focus + label,
+        &.focused label {
+          top: 0rem;
+          font-size: 0.75rem;
+          background-color: red;
+          color: var(--clr-grey-10);
+          user-select: auto;
+          font-weight: 700;
+        }
+      }
+      .contact-btn {
+        float: right;
+        .button {
+          background-color: red;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "header": {
+    "headerSkills": "Kỹ năng",
+    "headerExperience": "Kinh nghiệm",
+    "headerProjects": "Dự án",
+    "headerContact": "Liên Hệ"
+  },
+  "intro": {
+    "textHey": "Xin Chào",
+    "texMyNameIs": "tôi tên là",
+    "textImAWeb": "Tôi là một người "
+  }
+}

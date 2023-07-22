@@ -1,0 +1,51 @@
+#skills {
+  padding: 0 80px;
+  .container {
+    max-width: 100%;
+    padding: 0;
+    height: 100vh;
+    .skills-title {
+      .skills-heading {
+        text-align: center;
+
+        font-size: 48px;
+        font-weight: bold;
+        &::after {
+          content: "";
+          position: absolute;
+          display: block;
+          min-width: 120px;
+          height: 3px;
+          background: #0073aa;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+
+    .progress {
+      height: 50px;
+      display: block;
+      background: none;
+      .skill {
+        padding: 8px 0;
+        display: block;
+        font-weight: 300;
+        font-size: 14px;
+        font-family: "Poppins", sans-serif;
+        .val {
+          float: right;
+          font-style: normal;
+        }
+      }
+      .progress-bar-wrap {
+        background: #dce8f8;
+        .progress-bar {
+          height: 30px;
+          transition: 0.9s;
+          background-color: #0073aa;
+        }
+      }
+    }
+  }
+}

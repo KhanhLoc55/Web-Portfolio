@@ -1,0 +1,135 @@
+export const featuredPortfolio = [
+  {
+    id: 1,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "The services provide for design ",
+    img: "./imge/backgroundAvatar.png",
+    desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit.Cupiditate distinct  assumenda explicabo veniam temporibus eligendi.",
+  },
+  {
+    id: 2,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Rampa UI Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 3,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "E-commerce Web Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 4,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Relax Mobile App",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 5,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Hero Web Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 6,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Banking App",
+    img: "./imge/backgroundLight.png",
+  },
+];
+
+export const webPortfolio = [
+  {
+    id: 1,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web Social Media App",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 2,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web Rampa UI Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 3,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web E-commerce Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 4,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web Relax App",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 5,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 6,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Web Banking App",
+    img: "./imge/backgroundLight.png",
+  },
+];
+
+export const mobilePortfolio = [
+  {
+    id: 1,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile Social Media App",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 2,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile Rampa UI Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 3,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile E-commerce Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 4,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile Relax App",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 5,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile Hero Design",
+    img: "./imge/backgroundLight.png",
+  },
+  {
+    id: 6,
+    category: "DEVELOPMENT",
+    totalLike: "600",
+    title: "Mobile Banking App",
+    img: "./imge/backgroundLight.png",
+  },
+];

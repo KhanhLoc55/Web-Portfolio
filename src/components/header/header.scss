@@ -1,0 +1,79 @@
+#header {
+  // Phần container của header
+  .container {
+    padding: 0 80px;
+    height: 160px;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    left: 0;
+    max-width: 100%;
+  }
+
+  // Ảnh logo trong header
+  .header__logo-img {
+    margin-top: 10px;
+    height: 80px;
+    max-width: 200px;
+  }
+
+  // Phần wrapper bên trong header chứa phần left và right
+  .header__wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    // Phần bên trái của header
+    .header-left {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      font-weight: 400;
+
+      // Danh sách các mục menu trong header
+      .header-list {
+        flex: 1;
+
+        // Kiểu danh sách các mục
+        .header-item {
+          display: flex;
+          gap: 2rem;
+          padding-left: 0;
+          margin-bottom: 0;
+
+          // Phần văn bản trong mục menu
+          .header-text {
+            list-style-type: none;
+
+            // Hiển thị màu đỏ và thay đổi con trỏ khi hover
+            &:hover {
+              color: red;
+              cursor: pointer;
+            }
+          }
+        }
+      }
+    }
+
+    // Phần bên phải của header
+    .header-right {
+      flex: 1;
+      align-items: center;
+      justify-content: flex-end;
+      display: flex;
+      gap: 2rem;
+
+      // Phần chọn ngôn ngữ
+      .language {
+        // Loại bỏ biểu tượng mũi tên trong dropdown
+        .dropdown-toggle::after {
+          display: none !important;
+        }
+
+        // Điều chỉnh vị trí của dropdown menu
+        .dropdown-menu {
+          transform: translate3d(-80px, 140px, 0) !important;
+        }
+      }
+    }
+  }
+}

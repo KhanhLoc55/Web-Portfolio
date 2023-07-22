@@ -1,0 +1,45 @@
+@import "../../app.scss";
+
+#footer {
+  background-color: $dark-color;
+  .container {
+    text-align: center;
+    .footer__text-gmail {
+      padding-top: 40px;
+      font-size: 24px;
+      color: $dark-icon-color;
+    }
+    .i-sci {
+      align-items: center;
+      justify-content: center;
+      display: flex;
+      margin: 20px 0;
+      min-height: 60px;
+      .i-backgroupdS {
+        margin-right: 12px;
+        border-radius: 12px;
+        background: #fff;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+        width: 48px;
+        height: 48px;
+        display: flex;
+        justify-content: center; /* Canh giữa theo chiều ngang */
+        align-items: center; /* Canh giữa theo chiều dọc */
+        &:hover {
+          background-color: $color;
+        }
+        .i__icon-img {
+          /* Căn giữa theo chiều ngang và dọc */
+          display: block;
+          margin: auto;
+        }
+      }
+    }
+    .footer__text {
+      padding-bottom: 40px;
+      font-size: 24px;
+      color: $dark-icon-color;
+      margin-bottom: 0;
+    }
+  }
+}

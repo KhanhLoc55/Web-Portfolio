@@ -1,0 +1,13 @@
+{
+  "header": {
+    "headerSkills": "Skills",
+    "headerExperience": "Experience",
+    "headerProjects": "Projects",
+    "headerContact": "Contact"
+  },
+  "intro": {
+    "textHey": "Hey",
+    "texMyNameIs": "my name is",
+    "textImAWeb": "I’m a web "
+  }
+}
