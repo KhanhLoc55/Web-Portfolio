@@ -23,8 +23,8 @@ const App = () => {
       <div
         className="App"
         style={{
-          backgroundColor: darkMode ? "#222" : "white",
-          color: darkMode && "white",
+          backgroundColor: darkMode ? "#11151c" : "white",
+          color: darkMode ? "#e8e8e8" : "#545454",
         }}
       >
         <Header />

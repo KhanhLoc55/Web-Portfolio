@@ -1,48 +1,54 @@
 import { useEffect, useState } from "react";
 import PortfolioList from "../portfolioList/PortfolioList";
 import "./portfolio.scss";
-import { featuredPortfolio, webPortfolio, mobilePortfolio } from "./data.js";
+
+import {
+  allPortfolio,
+  frontEndPortfolio,
+  graphicDesignerPortfolio,
+  uiDesignerPortfolio,
+} from "./data.js";
 import Card from "./Card";
 
 export default function Portfolio() {
+  // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
   const [selected, setSelected] = useState("featured");
   const [data, setData] = useState([]);
   const list = [
     {
-      id: "featured",
-      title: "Featured",
+      id: "All",
+      title: "All",
     },
     {
-      id: "web",
-      title: "Web App",
+      id: "Front-End",
+      title: "Front-End",
     },
     {
-      id: "mobile",
-      title: "Mobile App",
+      id: "Ui Designer",
+      title: "Ui Designer",
     },
     {
-      id: "design",
-      title: "Design",
-    },
-    {
-      id: "content",
-      title: "Content",
+      id: "Graphic Designer",
+      title: "Graphic Designer",
     },
   ];
 
   useEffect(() => {
     switch (selected) {
-      case "featured":
-        setData(featuredPortfolio);
+      case "All":
+        setData(allPortfolio);
         break;
-      case "web":
-        setData(webPortfolio);
+      case "Front-End":
+        setData(frontEndPortfolio);
         break;
-      case "mobile":
-        setData(mobilePortfolio);
+      case "Ui Designer":
+        setData(uiDesignerPortfolio);
+        break;
+      case "Graphic Designer":
+        setData(graphicDesignerPortfolio);
         break;
       default:
-        setData(featuredPortfolio);
+        setData(allPortfolio);
     }
   }, [selected]);
 
@@ -73,7 +79,13 @@ export default function Portfolio() {
                 category={value.category}
                 totalLike={value.totalLike}
                 title={value.title}
-                desc={value.desc}
+                i18n={{
+                  desc1: value.i18n.desc1,
+                  desc2: value.i18n.desc2,
+                  desc3: value.i18n.desc3,
+                }}
+                link={value.link}
+                source={value.source}
               />
             );
           })}

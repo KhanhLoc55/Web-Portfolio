@@ -1,10 +1,18 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import heart from "../../assets/system-uicons_heart.svg";
 import arrowRight from "../../assets/arrowRightUp.svg";
 import modalClose from "../../assets/modal-close.svg";
 import Sourcecode from "../../assets/Source-code.svg";
+import { ThemeContext } from "../../utils/context";
+import { useTranslation } from "react-i18next";
 
 const Card = (props) => {
+  // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
+  const { t } = useTranslation();
+  // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
+
   const [modal, setModal] = useState(false);
 
   const toggleModal = () => {
@@ -26,13 +34,27 @@ const Card = (props) => {
         </div>
         <div className="modal-category">
           <span onClick={toggleModal}>{props.category}</span>
-          <label>
+          <div
+            className="totalLike"
+            style={{
+              // Chọn màu nền và màu chữ dựa vào chủ đề}
+              color: darkMode ? "#105083" : "#545454",
+              fontFamily: "Poppins",
+            }}
+          >
             <img className="icon-heart" alt="icon-heart" src={heart} />{" "}
             {props.totalLike}
-          </label>
+          </div>
         </div>
         <div className="modal-title">
-          <h2 className="modal-heading2" onClick={toggleModal}>
+          <h2
+            className="modal-heading2"
+            onClick={toggleModal}
+            style={{
+              // Chọn màu nền và màu chữ dựa vào chủ đề}
+              color: darkMode ? "#105083" : "#545454",
+            }}
+          >
             {props.title}
           </h2>
           <a href="#popup" className="modal-arrow" onClick={toggleModal}>
@@ -51,18 +73,43 @@ const Card = (props) => {
                 <img src={props.img} alt={props.title} />
               </div>
               <div className="modal-text">
-                <span>Featured - Design</span>
-                <h1>{props.title}</h1>
-                <p>{props.desc}</p>
-                <p>
-                  Consectetur adipisicing elit. Cupiditate distinctio assumenda.
-                  dolorum alias suscipit rerum maiores aliquam earum odit, nihil
-                  culpa quas iusto hic minus!
+                <span>{props.category}</span>
+                <h1
+                  style={{
+                    // Chọn màu nền và màu chữ dựa vào chủ đề}
+                    color: darkMode ? "#105083" : "#545454",
+                  }}
+                >
+                  {props.title}
+                </h1>
+                <p
+                  style={{
+                    // Chọn màu nền và màu chữ dựa vào chủ đề}
+                    color: "#545454",
+                  }}
+                >
+                  {t(props.i18n.desc1)}
+                </p>
+                <p
+                  style={{
+                    // Chọn màu nền và màu chữ dựa vào chủ đề}
+                    color: "#545454",
+                  }}
+                >
+                  {t(props.i18n.desc2)}
+                </p>
+                <p
+                  style={{
+                    // Chọn màu nền và màu chữ dựa vào chủ đề}
+                    color: "#545454",
+                  }}
+                >
+                  {t(props.i18n.desc3)}
                 </p>
                 <div className="modal__button">
                   <button className="modal__button-content">
                     <div className="modal__button-link">
-                      <a href="https://github.com/KhanhLoc55" target="__blank">
+                      <a href={props.source} target="__blank">
                         Source code
                       </a>
                       <img src={Sourcecode} alt="Sourcecode" />
@@ -70,17 +117,14 @@ const Card = (props) => {
                   </button>
                   <button className="modal__button-content">
                     <div className="modal__button-link">
-                      <a
-                        href="https://www.behance.net/anhlamot55"
-                        target="__blank"
-                      >
+                      <a href={props.link} target="__blank">
                         View project
                       </a>
                       <img src={Sourcecode} alt="Sourcecode" />
                     </div>
                   </button>
                 </div>
-                <button className="modalClone" onClick={toggleModal}>
+                <button className="btn" onClick={toggleModal}>
                   <img
                     src={modalClose}
                     alt="modalClose"

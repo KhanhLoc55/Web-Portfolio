@@ -1,8 +1,16 @@
 import "./skill.scss";
-
 import React, { useEffect } from "react";
+
+// Ngôn ngữ
+import { useTranslation } from "react-i18next";
+
 const Skill = () => {
+  // Sử dụng react-i18next để dễ dàng dịch nội dung
+  const { t } = useTranslation();
+
+  // Sử dụng useEffect để cập nhật thanh tiến độ khi cuộn trang
   useEffect(() => {
+    // Hàm cập nhật chiều rộng của các thanh tiến độ
     const updateProgressBars = () => {
       const progressBars = document.querySelectorAll(".progress .progress-bar");
       progressBars.forEach((progressBar) => {
@@ -10,17 +18,14 @@ const Skill = () => {
           progressBar.getAttribute("aria-valuenow") + "%";
       });
     };
-
-    // Call the updateProgressBars function on initial render
+    // Cập nhật ban đầu các thanh tiến độ
     updateProgressBars();
-
-    // Add a scroll event listener to call updateProgressBars when scrolling
+    // Thêm lắng nghe sự kiện để cập nhật thanh tiến độ khi cuộn trang
     const handleScroll = () => {
       updateProgressBars();
     };
     window.addEventListener("scroll", handleScroll);
-
-    // Clean up the scroll event listener when component unmounts
+    // Dọn dẹp lắng nghe sự kiện khi component bị gỡ bỏ
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -32,8 +37,8 @@ const Skill = () => {
         <div className="skills-title">
           <h2 className="skills-heading">Skills</h2>
         </div>
-        <h4 style={{ marginTop: "40px" }}>
-          <i>Tool</i>
+        <h4 className="skills-text">
+          <i>{t("skill.textTool")}</i>
         </h4>
         <div className="row skills-content">
           <div className="col-lg-6" data-aos="fade-up">
@@ -158,8 +163,8 @@ const Skill = () => {
           </div>
         </div>
 
-        <h4 style={{ marginTop: "40px" }}>
-          <i>Skill</i>
+        <h4 className="skills-text">
+          <i>{t("skill.textSkill")}</i>
         </h4>
 
         <div className="row skills-content">

@@ -1,13 +1,64 @@
 {
   "header": {
-    "headerSkills": "Skills",
-    "headerExperience": "Experience",
-    "headerProjects": "Projects",
+    "headerSkill": "Skill",
+    "headerResume": "Resume",
+    "headerProject": "Project",
     "headerContact": "Contact"
   },
   "intro": {
     "textHey": "Hey",
     "texMyNameIs": "my name is",
     "textImAWeb": "I’m a web "
+  },
+  "skill": {
+    "textTool": "Tool",
+    "textSkill": "Skill"
+  },
+  "resume": {
+    "textSumary": "Summary",
+    "textAboutMe": "About me",
+    "textSmallOne": "My name is Nguyen Khanh Loc. In August 2021, I started learning and dedicated a significant amount of time daily to interface design. I researched on the renowned website Coursera and completed two important courses: 'UX Design by Google' and 'Front-End Meta' Course.",
+    "textSmallTwo": "In 2022, I continued to explore coding to bring my design ideas to life. Every day, I am passionately learning and practicing web design skills.",
+    "textSmallThere": "My goal is to pursue a career in web design. I want to create visually appealing and interactive websites that provide an excellent user experience. I will continue to enhance my knowledge and skills to become an expert web developer.",
+    "textIphone": "Iphone",
+    "textWebDesign": "Website design",
+    "textWebFrontEnd": "Code front-end",
+    "textCertifications": "Certifications",
+    "textCertificationFromCoursera": "Certification from Coursera",
+    "textExperience": "Experience",
+    "textTime": "10/2022 - present",
+    "textTimeOne": "- I receive projects and work directly with clients.",
+    "textTimeTwo": "- I practice skills, self-study to improve my proficiency, and work on personal projects.",
+    "textTime1": "- Working directly with the boss to create visual views for clients to see.",
+    "textTime2": "- Measuring the dimensions of shelves, billboards, etc. to create the products.",
+    "textTime3": "- Responsible for processing orders, quotations, and inspection records.",
+    "textTime4": "- Performing file creation, exporting files, and inspecting the quality of print design files.",
+    "textTime5": "- Executing the company's procedures.",
+    "textTime6": "- Successfully completing assigned tasks.",
+    "textEducation": "Education",
+    "textEducation1": "Electronics Technical College",
+    "textEducation2": "- Graduated in Electronics and Mechanical Technology.",
+    "textEducation3": "- Attained computer and English certifications."
+  },
+  "contact": {
+    "textContact": "Contact",
+    "text1": "Do you have an idea?",
+    "text2": "Let's make it true!",
+    "text3": "Address: Gò Vấp District, Ho Chi Minh City, Vietnam.",
+    "textIphone": "Iphone",
+    "textMessage": " Send Message"
+  },
+  "card": {
+    "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",
+    "desc2": "- For the Frontend, I used Visual Studio Code and the React library. I integrated i18next for multi-language support, React Router for page navigation, and createContext for light and dark mode switching. I designed the toggle button and used the useTypewriter hook for a typewriter effect. Additionally, I added vibrant gradient color effects.",
+    "desc3": "- I am proud of this creative blend of design and professional programming, with unique features and effects. I hope it will attract attention and impress users.",
+    "desc4": "- This is a project about a convenient bread ordering app. Using Figma, I gathered user information and identified the difficulties and inconvenience people face when they have to go out to buy bread. The AppShopBread application was born to address this need.",
+    "desc5": "- In the design part, I created a logo, drew wireframes, established a design system, customized buttons, icons, colors, and grid layouts. All of these efforts aim to provide the best user experience for ordering bread. AppShopBread offers a simple and convenient solution for everyone's bread cravings.",
+    "desc6": "- This is the logo I personally designed for myself using Illustrator. My main goal in creating this logo is to attach it to the products I create, giving them a personal touch. Additionally, I aim to use this logo for freelancing purposes. I have also designed a name card that includes my contact information.",
+    "desc7": "- This logo represents my identity and brand as a creator, and it serves as a symbol of the quality and uniqueness of my work. Whether it's on my products or my freelancing projects, this logo embodies my passion for design and dedication to delivering exceptional results. With this logo and name card, I am ready to make a strong and memorable impression in the creative industry.",
+    "desc8": "- During the outbreak of COVID-19, I conceptualized and designed a comic app - Comic App using Figma, Photoshop, and Illustrator. This app enables people to easily and efficiently search for their favorite comics. It also updates with captivating comic series from abroad, catering to readers' preferences.",
+    "desc9": "- Comic App also addresses the issue for comic enthusiasts who cannot visit libraries during the pandemic. It provides an excellent solution, allowing people to indulge in their passion for comics without leaving their homes. With Comic App, the world of comics becomes more accessible and enjoyable than ever before!",
+    "desc10": "- I take pride in the exterior design products that I have created and earned the trust of my clients. My main focus is on designing impressive banners, banners, canopies, and signage.",
+    "desc11": "- I am always dedicated to meeting the requirements and ideas of my clients, providing professional and high-quality design solutions. The diversity of design types allows me to have a flexible and creative mindset, catering to the needs of my clients."
   }
 }

@@ -13,8 +13,9 @@ import iconLinkedin from "../../assets/iconLinkedin.svg";
 import cv from "../../assets/cvđanglàm.pdf";
 
 const Intro = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
 
+  // Sử dụng hook useTypewriter để tạo hiệu ứng chữ viết máy
   const [text] = useTypewriter({
     words: ["Graphic Designer.", "Front End Developer.", "UI Designer."],
     loop: true,
@@ -25,6 +26,7 @@ const Intro = () => {
   return (
     <div className="intro" id="intro">
       <div className="container">
+        {/* Phần tử bên trái của "container" có className "i-left" */}
         <div className="i-left">
           <div className="wrapperLeft">
             <div className="textContentLeft noScroll">
@@ -39,12 +41,6 @@ const Intro = () => {
               {t("intro.textImAWeb")}
               <span className="i-text-smail">{text}</span>
             </h3>
-            <span>
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Provident quod ut sapiente voluptatum qui laborum deleniti aperiam
-              nam totam quia eaque unde dolores eligendi dicta, pariatur vitae
-              dolorum. Fugiat, velit.
-            </span>
             <div className="i-sci">
               <div className="i-backgroupdS">
                 <a
@@ -57,7 +53,7 @@ const Intro = () => {
               </div>
               <div className="i-backgroupdS">
                 <a
-                  href="https://www.behance.net/anhlamot55"
+                  href="https://www.google.com/intl/vi/gmail/about/"
                   target="__blank"
                   className="i-link"
                 >
@@ -65,7 +61,11 @@ const Intro = () => {
                 </a>
               </div>
               <div className="i-backgroupdS">
-                <a href="https://www.behance.net/anhlamot55" className="i-link">
+                <a
+                  href="https://www.linkedin.com/in/loc-nguyenkhanh-927b0822a/"
+                  target="__blank"
+                  className="i-link"
+                >
                   <img
                     src={iconLinkedin}
                     alt="Linkedin"
@@ -74,26 +74,27 @@ const Intro = () => {
                 </a>
               </div>
               <div className="i-backgroupdS">
-                <a href="https://www.behance.net/anhlamot55" className="i-link">
+                <a
+                  href="https://github.com/KhanhLoc55"
+                  className="i-link"
+                  target="__blank"
+                >
                   <img src={iconGithub} alt="Github" className="i__icon-img" />
                 </a>
               </div>
             </div>
             <div className="cv">
-              <button className="button-40 button--flex">
-                <a download="cvđanglàm.pdf" href={cv}>
+              <button className="btn">
+                <a download="cvđanglàm.pdf" href={cv} className="btn-text">
                   Download cv
                 </a>
               </button>
             </div>
           </div>
         </div>
+        {/* Phần tử bên trái của "container" có className "i-right" */}
         <div className="i-right">
-          <img
-            src={Avatar}
-            alt="https://www.behance.net/anhlamot55"
-            className="imgAvatar"
-          />
+          <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
         </div>
       </div>
     </div>

@@ -51,8 +51,8 @@ const Header = () => {
         className="container"
         style={{
           // Chọn màu nền và màu chữ dựa vào chủ đề
-          backgroundColor: darkMode ? "#222" : "white",
-          color: darkMode && "white",
+          backgroundColor: darkMode ? "#11151c" : "white",
+          color: darkMode ? "#e8e8e8" : "#545454",
 
           // Hiển thị hoặc ẩn box shadow dựa vào trạng thái showBoxShadow
           boxShadow: showBoxShadow ? "0 5px 15px rgba(0,0,0,.1)" : "none",
@@ -65,9 +65,9 @@ const Header = () => {
             <div className="header-list">
               <ul className="header-item">
                 {/* Sử dụng react-i18next để dễ dàng dịch các mục */}
-                <li className="header-text">{t("header.headerSkills")}</li>
-                <li className="header-text">{t("header.headerExperience")}</li>
-                <li className="header-text">{t("header.headerProjects")}</li>
+                <li className="header-text">{t("header.headerSkill")}</li>
+                <li className="header-text">{t("header.headerResume")}</li>
+                <li className="header-text">{t("header.headerProject")}</li>
                 <li className="header-text">{t("header.headerContact")}</li>
               </ul>
             </div>

@@ -1,13 +1,64 @@
 {
   "header": {
-    "headerSkills": "Kỹ năng",
-    "headerExperience": "Kinh nghiệm",
-    "headerProjects": "Dự án",
+    "headerSkill": "Kỹ năng",
+    "headerResume": "Cv",
+    "headerProject": "Dự án",
     "headerContact": "Liên Hệ"
   },
   "intro": {
     "textHey": "Xin Chào",
     "texMyNameIs": "tôi tên là",
     "textImAWeb": "Tôi là một người "
+  },
+  "skill": {
+    "textTool": "Công cụ",
+    "textSkill": "Kỹ năng"
+  },
+  "resume": {
+    "textSumary": "Tóm tắt",
+    "textAboutMe": "Về tôi",
+    "textSmallOne": "Tôi tên là Nguyễn Khánh Lộc. Vào tháng 8 năm 2021, tôi bắt đầu học và dành phần lớn thời gian hàng ngày để thiết kế giao diện. Tôi đã tìm hiểu trên trang web nổi tiếng Coursera và hoàn thành hai khóa học quan trọng là 'UX Design by Google' và 'Front-End Meta Course'.",
+    "textSmallTwo": "Mục tiêu của tôi là theo đuổi sự nghiệp trong lĩnh vực thiết kế web. Tôi muốn tạo ra những trang web đẹp mắt, tương tác và mang lại trải nghiệm tuyệt vời cho người dùng. Tôi sẽ tiếp tục nâng cao kiến thức và kỹ năng của mình để trở thành một chuyên gia phát triển web.",
+    "textSmallThere": "My goal is to pursue a career in web design. I want to create visually appealing and interactive websites that provide an excellent user experience. I will continue to enhance my knowledge and skills to become an expert web developer.",
+    "textIphone": "Điện Thoại",
+    "textWebDesign": "Thiết kế website",
+    "textWebFrontEnd": "Lập Trình front-end",
+    "textCertifications": "Chứng chỉ",
+    "textCertificationFromCoursera": "Được chứng nhận bởi coursera.",
+    "textExperience": "Kinh nghiệm",
+    "textTime": "10/2022 - hiện nay",
+    "textTimeOne": "- nhận các dự án và làm việc trực tiếp từ khách hàng.",
+    "textTimeTwo": "- luyện kỹ năng, tự học nâng cao trình độ và làm các dự án cá nhân.",
+    "textTime1": "- Làm việc trực tiếp với sếp để lên hình ảnh view cho khách hàng xem.",
+    "textTime2": "- Đo kích thước kệ, bảng hiệu,... để làm ra sản phẩm.",
+    "textTime3": "- Phụ trách làm các đơn đặt hàng, báogiá, biên bản nghiệm thu.",
+    "textTime4": "- Tiến hành làm file, xuất file, kiểm tra chất lượng file in ấn thiết kế.",
+    "textTime5": "- Thực hiện các quy trình của công ty.",
+    "textTime6": "- Hoành thành tốt công việc được giao.",
+    "textEducation": "Học vấn",
+    "textEducation1": "Cao đẳng Cơ điện tử",
+    "textEducation2": "- Tốt nghiệp chuyên ngành cơ điện tử.",
+    "textEducation3": "- Đạt được chứng chỉ tin học + tiếng anh."
+  },
+  "contact": {
+    "textContact": "Liên hệ",
+    "text1": "Bạn đã có ý tưởng?",
+    "text2": "Hãy biến nó thành sự thật!",
+    "text3": "Địa chỉ: Quận Gò Vấp, Hồ Chí Minh, Việt Nam.",
+    "textIphone": "Điện Thoại",
+    "textMessage": " Gửi tin nhắn"
+  },
+  "card": {
+    "desc1": "- Tôi đã hoàn thành dự án portfolio website với sự kết hợp giữa lập trình và thiết kế. Trong phần UI Designer, tôi sử dụng Figma, Photoshop và Illustrator để thiết kế 2 màn hình cho desktop và mobile, bao gồm cả Dark Mode. Tôi đã tạo ý tưởng cho icon, màu sắc, font chữ, Grid System, Button, Fields, Typography và toggle.",
+    "desc2": "- Về phần lập trình giao diện , tôi sử dụng Visual Studio Code và dùng thư viện React. Tích hợp i18next hỗ trợ nhiều ngôn ngữ, React Router điều hướng trang, createContext chuyển đổi màu sáng tối. Tự tạo nút toggle và hiệu ứng viết chữ máy useTypewriter. Cũng thêm hiệu ứng màu gradient tươi sáng.",
+    "desc3": "- Dự án của tôi tự hào mang đến sự kết hợp giữa thiết kế sáng tạo và lập trình chuyên nghiệp, với các tính năng và hiệu ứng độc đáo. Tôi hy vọng nó sẽ thu hút được sự quan tâm và ấn tượng từ người dùng.",
+    "desc4": "- Đây là một dự án về ứng dụng đặt mua bánh mì tiện lợi. Sử dụng công cụ Figma, tôi đã thu thập thông tin người dùng và nhận thấy rằng việc tự đi mua bánh mì có thể gặp khó khăn và không tiện lợi. Ứng dụng AppShopBread được ra đời để giải quyết vấn đề này.",
+    "desc5": "- Trong phần thiết kế, tôi đã tạo logo, vẽ wireframe, xây dựng design system, tùy chỉnh nút bấm, biểu tượng, màu sắc và hệ thống lưới. Tất cả nhằm tạo ra trải nghiệm người dùng tốt nhất trong việc đặt mua bánh mì. AppShopBread mang đến giải pháp đơn giản và tiện lợi cho nhu cầu ăn bánh mì của mọi người.",
+    "desc6": "- Đây là logo mà tôi đã tự thiết kế cho bản thân bằng Illustrator. Mục tiêu chính của tôi trong việc tạo logo này là để đính kèm vào các sản phẩm do chính tôi tạo ra, tạo nên phong cách cá nhân riêng. Ngoài ra, mục tiêu thứ hai là sử dụng logo này khi làm việc làm freelancer. Tôi cũng đã thiết kế thêm name card với thông tin liên lạc của mình.",
+    "desc7": "- Logo này thể hiện danh tính và thương hiệu của tôi là một người sáng tạo, và nó là biểu tượng cho chất lượng và sự độc đáo của công việc của tôi. Dù là trên sản phẩm của tôi hay các dự án freelance, logo này thể hiện đam mê thiết kế và cam kết mang đến kết quả xuất sắc. Với logo và name card này, tôi sẵn sàng để tạo ấn tượng mạnh mẽ và khó quên trong ngành sáng tạo.",
+    "desc8": "- Trong thời điểm dịch COVID-19 bùng phát, tôi đã lên ý tưởng và sử dụng Figma, Photoshop và Illustrator để thiết kế ứng dụng truyện tranh - Comic App. Ứng dụng này giúp mọi người dễ dàng tìm kiếm những cuốn truyện một cách nhanh chóng và hiệu quả. Nó cũng cập nhật các bộ truyện hấp dẫn từ nước ngoài, đáp ứng sở thích của độc giả.",
+    "desc9": "- Comic App đồng thời giải quyết vấn đề cho những ai đam mê truyện tranh mà không thể đến thư viện trong thời kỳ dịch. Đây là một giải pháp tuyệt vời, giúp mọi người vượt qua khó khăn và tận hưởng niềm đam mê truyện tranh mà không cần rời khỏi nhà. Với Comic App, thế giới truyện tranh sẽ trở nên gần gũi và thú vị hơn bao giờ hết!",
+    "desc10": "- Tôi tự hào về những sản phẩm thiết kế bên ngoài mà tôi đã tạo ra và được khách hàng tin tưởng thuê. Tôi tập trung vào thiết kế các banner, băng rôn, mái che và các bảng hiệu ấn tượng.",
+    "desc11": "- Tôi luôn tận tâm đáp ứng yêu cầu và ý tưởng của khách hàng, mang đến những giải pháp thiết kế chuyên nghiệp và chất lượng cao. Sự đa dạng trong loại hình thiết kế giúp tôi có được tư duy linh hoạt và sáng tạo, đáp ứng nhu cầu của khách hàng."
   }
 }

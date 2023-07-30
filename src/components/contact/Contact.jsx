@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import "./contact.scss";
 
 const Contact = () => {
@@ -8,6 +9,7 @@ const Contact = () => {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [charCount, setCharCount] = useState(1000);
+  const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
 
   function encode(data) {
     return Object.keys(data)
@@ -54,19 +56,19 @@ const Contact = () => {
     <section className="contact" id="contact">
       <div className="container">
         <div className="container-title">
-          <h2 className="container-heading">Contact</h2>
+          <h2 className="container-heading">{t("contact.textContact")}</h2>
         </div>
         <div className="contact-center">
           <div className="contact-info">
-            <h3>Have an idea ?</h3>
-            <p> Let's make it true!</p>
+            <h3> {t("contact.text1")}</h3>
+            <p> {t("contact.text2")}</p>
             <ul className="contact-info-list">
               <li className="contact-info-item">
-                <span>Address: Ho Chi Minh City, Vietnam</span>
+                <span>{t("contact.text3")}</span>
               </li>
               <li className="contact-info-item">
-                Phone:
-                <a href="tel:+839851729"> 0839851729</a>
+                {t("contact.textIphone")}{" "}
+                <a href="tel:+839851729"> 0839 851 729</a>
               </li>
               <li className="contact-info-item">
                 Email:
@@ -148,8 +150,8 @@ const Contact = () => {
                 </small>
               </div>
               <div className="contact-btn">
-                <button type="submit" className="button">
-                  Send Message
+                <button type="submit" className="btn">
+                  {t("contact.textMessage")}
                 </button>
               </div>
             </form>

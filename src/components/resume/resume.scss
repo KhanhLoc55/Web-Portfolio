@@ -1,65 +1,101 @@
 .resume {
   padding: 0 80px;
+  margin-bottom: 120px;
   .container {
     max-width: 100%;
     padding: 0;
-    height: 150vh;
-    .resume-title {
-      margin-bottom: 40px;
-      margin-top: 20px;
+    .resume-heading {
+      background-image: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
+      background-clip: text;
+      -webkit-background-clip: text; /* For Safari */
+      color: transparent;
 
-      .resume-heading {
-        font-size: 48px;
-        font-weight: bold;
-        text-align: center;
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          min-width: 170px;
-          height: 3px;
-          background: #0073aa;
-          left: 50%;
-          transform: translateX(-50%);
-        }
+      text-align: center;
+      font-family: var(--poppins);
+      font-size: 49px;
+      font-style: normal;
+      line-height: 120%; /* 58.8px */
+      font-weight: bold;
+      margin-bottom: 24px;
+
+      &::after {
+        content: "";
+        position: absolute;
+        display: block;
+        min-width: 210px;
+        height: 3px;
+        background: var(--primary-500);
+        left: 50%;
+        transform: translateX(-50%);
       }
+    }
+    .resume-title {
+      font-family: var(--poppins);
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%; /* 33.6px */
+      margin-top: 20px;
+      margin-bottom: 40px;
     }
 
     .resume-item {
       padding: 0 0 20px 20px;
       margin-top: -2px;
-      border-left: 2px solid #1f5297;
+      border-left: 2px solid var(--second-700);
       position: relative;
 
-      h4 {
-        line-height: 18px;
-        font-size: 18px;
+      .text-title {
+        font-family: var(--poppins);
+        font-size: 20px;
+        font-style: normal;
         font-weight: 600;
+        line-height: 90%; /* 24px */
         text-transform: uppercase;
-        font-family: "Poppins", sans-serif;
-        color: #050d18;
-        margin-bottom: 10px;
+        margin-bottom: 16px;
       }
 
-      h5 {
-        font-size: 16px;
-        background: #e4edf9;
-        padding: 5px 15px;
+      .text-time {
+        font-size: 14px;
+        background: var(--second-600);
+        padding: 8px 12px;
         display: inline-block;
-        font-weight: 600;
-        margin-bottom: 10px;
+        font-weight: 500;
+        margin-bottom: 14px;
+        border-radius: 4px;
+        color: var(--white-600);
       }
-
+      .text-content {
+        .text-small {
+          font-size: 16px;
+          font-style: normal;
+          font-weight: 300;
+          line-height: 160%; /* 25.6px */
+        }
+      }
       ul {
         padding-left: 20px;
 
         .resume__aboutMe-item {
-          padding-bottom: 10px;
-          .resume__aboutMe-text {
-            color: red;
+          padding-bottom: 12px;
+          font-style: italic;
+          line-height: 160%;
+          .em {
+            color: var(--primary-600);
+            font-weight: 500;
           }
           a {
-            color: #9176ff;
+            color: var(--primary-600);
+            font-weight: 500;
+          }
+        }
+      }
+      ul {
+        li {
+          a {
+            color: var(--primary-600);
+            font-weight: 500;
+            font-style: italic;
           }
         }
       }
@@ -76,8 +112,47 @@
         border-radius: 50px;
         left: -9px;
         top: 0;
-        background: #fff;
-        border: 2px solid #1f5297;
+        background: var(--white-200);
+        border: 2px solid var(--second-700);
+      }
+    }
+  }
+}
+
+//tablet
+@media screen and (max-width: 768px) {
+  .resume {
+    margin-bottom: 72px;
+    padding: 0 60px;
+  }
+}
+//mobile
+
+@media screen and (max-width: 480px) {
+  .resume {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 415px) {
+  .resume {
+    padding: 0 10px;
+    .container {
+      .resume-heading {
+        font-size: 40px;
+        &::after {
+          min-width: 170px;
+        }
+      }
+    }
+    .row {
+      .resume-title {
+        font-size: 22px;
+      }
+      .resume-item {
+        .text-title {
+          font-size: 18px;
+        }
       }
     }
   }

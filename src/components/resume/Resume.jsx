@@ -1,57 +1,70 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./resume.scss";
+import { ThemeContext } from "../../utils/context";
+import { useTranslation } from "react-i18next";
 
+//img
 import GoogleUxDesign from "../../assets/resume/GoogleUxDesign.pdf";
 import MetaFrontEnd from "../../assets/resume/MetaFrontEnd.pdf";
 
 const Resume = () => {
-  // You can use useState or useEffect hooks if you need state or side effects
+  // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
+  const theme = useContext(ThemeContext);
+  const darkMode = theme.state.darkMode;
 
+  const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
   return (
     <section id="resume" className="resume">
       <div className="container">
-        <div className="resume-title">
-          <h2 className="resume-heading">Resume</h2>
-        </div>
+        <h2 className="resume-heading">Resume</h2>
 
         <div className="row">
           <div className="col-lg-6" data-aos="fade-up">
-            <h3 className="resume-title">Summary</h3>
-            <div className="resume-item pb-0">
-              <h4>about me</h4>
-              <div>
-                <p>
-                  Tôi tên là Nguyễn Khánh Lộc. Vào tháng 8 năm 2021, tôi bắt đầu
-                  học và dành phần lớn thời gian hàng ngày để thiết kế giao
-                  diện. Tôi đã tìm hiểu trên trang web nổi tiếng Coursera và
-                  hoàn thành hai khóa học quan trọng là "UX Design by Google" và
-                  "Front-End Meta Course".
-                </p>
-                <p>
-                  Năm 2022, tôi tiếp tục tìm hiểu về việc viết mã để thực hiện
-                  các ý tưởng thiết kế của mình. Mỗi ngày, tôi say mê học hỏi và
-                  thực hành kỹ năng thiết kế web.
-                </p>
-                <p>
-                  Mục tiêu của tôi là theo đuổi sự nghiệp trong lĩnh vực thiết
-                  kế web. Tôi muốn tạo ra những trang web đẹp mắt, tương tác và
-                  mang lại trải nghiệm tuyệt vời cho người dùng. Tôi sẽ tiếp tục
-                  nâng cao kiến thức và kỹ năng của mình để trở thành một chuyên
-                  gia phát triển web.
-                </p>
+            <h3
+              className="resume-title"
+              style={{
+                // Chọn màu nền và màu chữ dựa vào chủ đề}
+                backgroundColor: darkMode
+                  ? "rgba(17, 21, 28, 0.50)"
+                  : "#ffffff",
+                color: darkMode ? "#36a4d3" : "#545454",
+              }}
+            >
+              {t("resume.textSumary")}
+            </h3>
+
+            <div className="resume-item">
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                {t("resume.textAboutMe")}
+              </h4>
+              <div className="text-content">
+                <p className="text-small">{t("resume.textSmallOne")}</p>
+                <p className="text-small">{t("resume.textSmallTwo")}</p>
+                <p className="text-small">{t("resume.textSmallThere")}</p>
               </div>
               <ul>
                 <li className="resume__aboutMe-item">
-                  <span className="resume__aboutMe-text">Điện Thoại:</span>{" "}
-                  <em>0839 851 729</em>
+                  <span className="resume__aboutMe-text">
+                    {t("resume.textIphone")}:
+                  </span>{" "}
+                  <em className="em">0839 851 729</em>
                 </li>
                 <li className="resume__aboutMe-item">
                   <span className="resume__aboutMe-text">Gmail:</span>{" "}
-                  <em>anhlamot55@gmail.com</em>
+                  <em className="em">anhlamot55@gmail.com</em>
                 </li>
                 <li className="resume__aboutMe-item">
                   <span className="resume__aboutMe-text">
-                    Trang thiết kế websie:
+                    {t("resume.textWebDesign")}
                   </span>{" "}
                   <em>
                     <a
@@ -64,7 +77,7 @@ const Resume = () => {
                 </li>
                 <li className="resume__aboutMe-item">
                   <span className="resume__aboutMe-text">
-                    Trang front-end websie:
+                    {t("resume.textWebFrontEnd")}
                   </span>{" "}
                   <em>
                     <a href="https://github.com/KhanhLoc55" target="__blank">
@@ -75,16 +88,38 @@ const Resume = () => {
               </ul>
             </div>
 
-            <h3 className="resume-title">Certifications</h3>
+            <h3
+              className="resume-title"
+              style={{
+                // Chọn màu nền và màu chữ dựa vào chủ đề}
+                backgroundColor: darkMode
+                  ? "rgba(17, 21, 28, 0.50)"
+                  : "#ffffff",
+                color: darkMode ? "#36a4d3" : "#545454",
+              }}
+            >
+              {t("resume.textCertifications")}
+            </h3>
             <div className="resume-item">
-              <h4>Google UX Design</h4>
-              <h5>8/2021 - 2/2022</h5>
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                Google UX Design
+              </h4>
+              <h5 className="text-time">8/2021 - 2/2022</h5>
               <p>
-                <em>Được chứng nhận bởi coursera</em>
+                <em>{t("resume.textCertificationFromCoursera")}</em>
               </p>
               <ul>
                 <li>
-                  Certifications:{" "}
+                  {t("resume.textCertifications")}:{" "}
                   <a download="GoogleUxDesign.pdf" href={GoogleUxDesign}>
                     Google Ux Design
                   </a>
@@ -92,14 +127,25 @@ const Resume = () => {
               </ul>
             </div>
             <div className="resume-item">
-              <h4>Meta Front-End Developer</h4>
-              <h5>7/2022 - 1/2023</h5>
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                Meta Front-End Developer
+              </h4>
+              <h5 className="text-time">7/2022 - 1/2023</h5>
               <p>
-                <em>Được chứng nhận bởi coursera</em>
+                <em> {t("resume.textCertificationFromCoursera")}</em>
               </p>
               <ul>
                 <li>
-                  Certifications:{" "}
+                  {t("resume.textCertifications")}:{" "}
                   <a download="GoogleUxDesign.pdf" href={MetaFrontEnd}>
                     Meta Front-End Developer
                   </a>
@@ -109,61 +155,104 @@ const Resume = () => {
           </div>
 
           <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-            <h3 className="resume-title">Experience</h3>
+            <h3
+              className="resume-title"
+              style={{
+                // Chọn màu nền và màu chữ dựa vào chủ đề}
+                backgroundColor: darkMode
+                  ? "rgba(17, 21, 28, 0.50)"
+                  : "#ffffff",
+                color: darkMode ? "#36a4d3" : "#545454",
+              }}
+            >
+              {t("resume.textExperience")}
+            </h3>
             <div className="resume-item">
-              <h4>Freelancer</h4>
-              <h5>10/2022 - hiện nay</h5>
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                Freelancer
+              </h4>
+              <h5 className="text-time"> {t("resume.textTime")}</h5>
               <p>
-                <em>- nhận các dự án và làm việc trực tiếp từ khách hàng.</em>
+                <em>{t("resume.textTimeOne")}</em>
               </p>
               <p>
-                <em>
-                  - luyện kỹ năng, tự học nâng cao trình độ và làm các dự án cá
-                  nhân.
-                </em>
+                <em>{t("resume.textTimeTwo")}</em>
               </p>
             </div>
             <div className="resume-item">
-              <h4>Công Ty Tnhh Tmdv Quảng Cáo Lá Đỏ</h4>
-              <h5>10/2019 - 9/2022</h5>
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                Công Ty Tnhh Tmdv Quảng Cáo Lá Đỏ
+              </h4>
+              <h5 className="text-time">10/2019 - 9/2022</h5>
               <p>
-                <em>
-                  - Làm việc trực tiếp với sếp để lên hình ảnh view cho khách
-                  hàng xem.
-                </em>
+                <em>{t("resume.textTime1")}</em>
               </p>
               <p>
-                <em>- Đo kích thước kệ, bảng hiệu,... để làm ra sản phẩm.</em>
+                <em>{t("resume.textTime2")}</em>
               </p>
               <p>
-                <em>
-                  - Phụ trách làm các đơn đặt hàng, báo giá, biên bản nghiệm
-                  thu.
-                </em>
+                <em> {t("resume.textTime3")}</em>
               </p>
               <p>
-                <em>
-                  - Tiến hành làm file, xuất file, kiểm tra chất lượng file in
-                  ấn thiết kế.
-                </em>
+                <em> {t("resume.textTime4")}</em>
               </p>
               <p>
-                <em>- Thực hiện các quy trình của công ty.</em>
+                <em> {t("resume.textTime5")}</em>
               </p>
               <p>
-                <em>- Hoành thành tốt công việc được giao.</em>
+                <em> {t("resume.textTime6")}</em>
               </p>
             </div>
 
-            <h3 className="resume-title">Education</h3>
+            <h3
+              className="resume-title"
+              style={{
+                // Chọn màu nền và màu chữ dựa vào chủ đề}
+                backgroundColor: darkMode
+                  ? "rgba(17, 21, 28, 0.50)"
+                  : "#ffffff",
+                color: darkMode ? "#36a4d3" : "#545454",
+              }}
+            >
+              {t("resume.textEducation")}
+            </h3>
             <div className="resume-item">
-              <h4>Cao đẳng Công nghệ Kỹ thuật Cơ điện tử</h4>
-              <h5>2016 - 2019</h5>
+              <h4
+                className="text-title"
+                style={{
+                  // Chọn màu nền và màu chữ dựa vào chủ đề}
+                  backgroundColor: darkMode
+                    ? "rgba(17, 21, 28, 0.50)"
+                    : "#ffffff",
+                  color: darkMode ? "#e8e8e8" : "#1567a8",
+                }}
+              >
+                {t("resume.textEducation1")}
+              </h4>
+              <h5 className="text-time">2016 - 2019</h5>
               <p>
-                <em>Tốt nghiệp chuyên ngành cơ điện tử.</em>
+                <em>{t("resume.textEducation2")}</em>
               </p>
               <p>
-                <em>Đạt được Chứng chỉ tin học + Tiếng anh.</em>
+                <em>{t("resume.textEducation3")}</em>
               </p>
             </div>
           </div>
