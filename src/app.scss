@@ -1,15 +1,15 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,500&display=swap');
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-  font-family: var(--inter);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: var(--inter);
 }
 
 body {
-  font-weight: 400;
-  background-color: var(--white-200);
+    font-weight: 400;
+    background-color: var(--white-200);
 }
 h1,
 h2,
@@ -17,74 +17,74 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 0;
-  padding: 0;
-  line-height: normal;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
 }
 p,
 a,
 li,
 button,
 ul {
-  margin: 0;
-  padding: 0;
-  line-height: normal;
-  text-decoration: none;
+    margin: 0;
+    padding: 0;
+    line-height: normal;
+    text-decoration: none;
 }
 
 a:hover {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 button {
-  border: 0;
-  background-color: transparent;
+    border: 0;
+    background-color: transparent;
 }
 
 /* ------------ VARIABLES ------------ */
 //color
 :root {
-  //primary
-  --primary-100: #c2e8f8;
-  --primary-300: #7ccdf0;
-  --primary-500: #3bb4e8;
-  --primary-600: #45adff;
-  //second
-  --second-50: #e8f1f8;
-  --second-300: #64a0d0;
-  --second-600: #1567a8;
-  --second-700: #105083;
-  //Black-theme
-  --black-50: #6c5a5a;
-  --black-100: #b0b0b0;
-  --black-300: #545454;
-  --black-500: #000000;
-  //White-theme
-  --white-200: #ffffff;
-  --white-600: #e8e8e8;
-  --white-700: #b5b5b5;
-  --white-900: #6b6b6b;
-  //font
-  --inter: "Inter", sans-serif;
-  --poppins: "Poppins", sans-serif;
-  //animation
-  --transition: all 0.3s linear;
+    //primary
+    --primary-100: #c2e8f8;
+    --primary-300: #7ccdf0;
+    --primary-500: #3bb4e8;
+    --primary-600: #45adff;
+    //second
+    --second-50: #e8f1f8;
+    --second-300: #64a0d0;
+    --second-600: #1567a8;
+    --second-700: #105083;
+    //Black-theme
+    --black-50: #6c5a5a;
+    --black-100: #b0b0b0;
+    --black-300: #545454;
+    --black-500: #000000;
+    //White-theme
+    --white-200: #ffffff;
+    --white-600: #e8e8e8;
+    --white-700: #b5b5b5;
+    --white-900: #6b6b6b;
+    //font
+    --inter: 'Inter', sans-serif;
+    --poppins: 'Poppins', sans-serif;
+    //animation
+    --transition: all 0.3s linear;
 }
 
 //btn
 .btn {
-  text-transform: uppercase;
-  color: #545454;
-  padding: 0.375rem 0.75rem;
-  display: inline-block;
-  font-weight: 500;
-  transition: var(--transition);
-  font-size: 16px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  border-radius: 8px;
-  &:hover {
-    transform: scale(1.05);
-  }
+    text-transform: uppercase;
+    color: #545454;
+    padding: 0.375rem 0.75rem;
+    display: inline-block;
+    font-weight: 500;
+    transition: var(--transition);
+    font-size: 16px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    border-radius: 8px;
+    &:hover {
+        transform: scale(1.05);
+    }
 }

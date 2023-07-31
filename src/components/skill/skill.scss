@@ -1,100 +1,100 @@
 .skills {
-  padding: 0 80px;
-  margin-bottom: 120px;
-  .container {
-    max-width: 100%;
-    padding: 0;
-    .skills-title {
-      .skills-heading {
-        background-image: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
-        background-clip: text;
-        -webkit-background-clip: text; /* For Safari */
-        color: transparent;
-        text-align: center;
-        font-family: var(--poppins);
-        font-size: 49px;
-        font-style: normal;
-        line-height: 120%; /* 58.8px */
-        font-weight: bold;
-        &::after {
-          content: "";
-          position: absolute;
-          display: block;
-          min-width: 120px;
-          height: 3px;
-          background: var(--primary-500);
-          left: 50%;
-          transform: translateX(-50%);
+    padding: 0 80px;
+    margin-bottom: 120px;
+    .container {
+        max-width: 100%;
+        padding: 0;
+        .skills-title {
+            .skills-heading {
+                background-image: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
+                background-clip: text;
+                -webkit-background-clip: text; /* For Safari */
+                color: transparent;
+                text-align: center;
+                font-family: var(--poppins);
+                font-size: 49px;
+                font-style: normal;
+                line-height: 120%; /* 58.8px */
+                font-weight: bold;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    min-width: 120px;
+                    height: 3px;
+                    background: var(--primary-500);
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+            }
         }
-      }
-    }
-    .skills-text {
-      margin-top: 40px;
-      font-family: var(--poppins);
-      font-size: 28px;
-      font-style: italic;
-      font-weight: bold;
-      line-height: 120%; /* 33.6px */
-    }
+        .skills-text {
+            margin-top: 40px;
+            font-family: var(--poppins);
+            font-size: 28px;
+            font-style: italic;
+            font-weight: bold;
+            line-height: 120%; /* 33.6px */
+        }
 
-    .progress {
-      height: 50px;
-      display: block;
-      background: none;
-      .skill {
-        padding: 8px 0;
-        display: block;
-        font-weight: 300;
-        font-size: 14px;
-        font-family: var(--poppins);
-        .val {
-          float: right;
-          font-style: normal;
+        .progress {
+            height: 50px;
+            display: block;
+            background: none;
+            .skill {
+                padding: 8px 0;
+                display: block;
+                font-weight: 300;
+                font-size: 14px;
+                font-family: var(--poppins);
+                .val {
+                    float: right;
+                    font-style: normal;
+                }
+            }
+            .progress-bar-wrap {
+                background: var(--white-700);
+                .progress-bar {
+                    height: 30px;
+                    transition: 0.9s;
+                    background-color: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
+                }
+            }
         }
-      }
-      .progress-bar-wrap {
-        background: var(--white-700);
-        .progress-bar {
-          height: 30px;
-          transition: 0.9s;
-          background-color: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
-        }
-      }
     }
-  }
 }
 
 //tablet
 
 @media screen and (max-width: 768px) {
-  .skills {
-    margin-bottom: 72px;
-    padding: 0 60px;
-  }
+    .skills {
+        margin-bottom: 72px;
+        padding: 0 60px;
+    }
 }
 
 //mobile
 @media screen and (max-width: 480px) {
-  .skills {
-    padding: 0 20px;
-  }
+    .skills {
+        padding: 0 20px;
+    }
 }
 
 @media screen and (max-width: 415px) {
-  .skills {
-    padding: 0 10px;
-    .container {
-      .skills-title {
-        .skills-heading {
-          font-size: 40px;
-          &::after {
-            min-width: 100px;
-          }
+    .skills {
+        padding: 0 10px;
+        .container {
+            .skills-title {
+                .skills-heading {
+                    font-size: 40px;
+                    &::after {
+                        min-width: 100px;
+                    }
+                }
+            }
+            .skills-text {
+                font-size: 22px;
+            }
         }
-      }
-      .skills-text {
-        font-size: 22px;
-      }
     }
-  }
 }

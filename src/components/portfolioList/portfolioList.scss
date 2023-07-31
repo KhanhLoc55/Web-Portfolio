@@ -1,13 +1,13 @@
 .portfolioList {
-  padding: 10px 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  font-family: var(--poppins);
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: 120%; /* 33.6px */
-  &.active {
-    background-color: var(--primary-600);
-  }
+    padding: 10px 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--poppins);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 33.6px */
+    &.active {
+        border: 2px solid var(--primary-600);
+    }
 }

@@ -1,218 +1,221 @@
 .header {
-  // Phần container của header
-  .container {
-    padding: 0 80px;
-    min-height: 160px;
-    position: fixed;
-    z-index: 4;
-    top: 0;
-    left: 0;
-    max-width: 100%;
-  }
-
-  // Ảnh logo trong header
-  .header__logo-img {
-    margin-top: 8px;
-    height: 80px;
-    max-width: 200px;
-  }
-
-  // Phần wrapper bên trong header chứa phần left và right
-  .header__wrapper {
-    display: flex;
-    justify-content: space-between;
-
-    // Phần bên trái của header
-    .header-left {
-      display: flex;
-      align-items: center;
-      justify-content: flex-start;
-      font-weight: 400;
-
-      // Danh sách các mục menu trong header
-      .header-list {
-        flex: 1;
-
-        // Kiểu danh sách các mục
-        .header-item {
-          display: flex;
-          gap: 32px;
-          padding-left: 0;
-          margin-bottom: 0;
-
-          // Phần văn bản trong mục menu
-          .header-text {
-            list-style-type: none;
-            font-size: 20px;
-            font-style: normal;
-            font-weight: 400;
-            line-height: 120%; /* 24px */
-
-            // Hiển thị màu đỏ và thay đổi con trỏ khi hover
-            &:hover {
-              color: var(--primary-500);
-              cursor: pointer;
-            }
-          }
-        }
-      }
+    // Phần container của header
+    .container {
+        padding: 0 80px;
+        min-height: 160px;
+        position: fixed;
+        z-index: 4;
+        top: 0;
+        left: 0;
+        max-width: 100%;
     }
 
-    // Phần bên phải của header
-    .header-right {
-      flex: 1;
-      align-items: center;
-      justify-content: flex-end;
-      display: flex;
-      gap: 8px;
-
-      // Phần chọn ngôn ngữ
-      .language {
-        font-family: var(--poppins);
-        text-transform: uppercase;
-        padding: 8px 16px;
-        display: inline-block;
-        font-weight: 500;
-        transition: var(--transition);
-        font-size: 18px;
-        border: 1px solid var(--primary-300);
+    // Ảnh logo trong header
+    .header__logo-img {
         cursor: pointer;
-        border-radius: 8px; // Loại bỏ biểu tượng mũi tên trong dropdown
-
-        .dropdown-toggle::after {
-          display: none !important;
-        }
-
-        // Điều chỉnh vị trí của dropdown menu
-        .dropdown-menu {
-          background-color: transparent;
-          border: 1px solid var(--primary-300);
-          transform: translate3d(-80px, 140px, 0) !important;
-          .dropdown-item {
-            &:hover {
-              background-color: transparent;
-            }
-            .btn {
-              font-family: var(--poppins);
-              min-width: 100%;
-              font-size: 16px;
-              font-weight: 500;
-            }
-          }
-        }
-      }
+        margin-top: 8px;
+        height: 80px;
+        max-width: 200px;
     }
-  }
+
+    // Phần wrapper bên trong header chứa phần left và right
+    .header__wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        // Phần bên trái của header
+        .header-left {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            font-weight: 400;
+
+            // Danh sách các mục menu trong header
+            .header-list {
+                flex: 1;
+
+                // Kiểu danh sách các mục
+                .header-item {
+                    display: flex;
+                    gap: 32px;
+                    padding-left: 0;
+                    margin-bottom: 0;
+
+                    // Phần văn bản trong mục menu
+                    .header-text {
+                        list-style-type: none;
+                        font-size: 20px;
+                        font-style: normal;
+                        font-weight: 400;
+                        line-height: 120%; /* 24px */
+
+                        // Hiển thị màu đỏ và thay đổi con trỏ khi hover
+                        &:hover {
+                            color: var(--primary-500);
+                            cursor: pointer;
+                        }
+                    }
+                }
+            }
+        }
+
+        // Phần bên phải của header
+        .header-right {
+            flex: 1;
+            align-items: center;
+            justify-content: flex-end;
+            display: flex;
+            gap: 8px;
+
+            // Phần chọn ngôn ngữ
+            .language {
+                font-family: var(--poppins);
+                text-transform: uppercase;
+                padding: 8px 16px;
+                display: inline-block;
+                font-weight: 500;
+                transition: var(--transition);
+                font-size: 18px;
+                border: 1px solid var(--primary-300);
+                cursor: pointer;
+                border-radius: 8px; // Loại bỏ biểu tượng mũi tên trong dropdown
+
+                .dropdown-toggle::after {
+                    display: none !important;
+                }
+
+                // Điều chỉnh vị trí của dropdown menu
+                .dropdown-menu {
+                    background-color: transparent;
+                    border: 1px solid var(--primary-300);
+                    transform: translate3d(-80px, 140px, 0) !important;
+                    .dropdown-item {
+                        &:hover {
+                            background-color: transparent;
+                        }
+                        .btn {
+                            font-family: var(--poppins);
+                            min-width: 100%;
+                            font-size: 16px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 //tablet
 @media screen and (max-width: 768px) {
-  .header {
-    .container {
-      padding: 0 60px;
-      .header__wrapper {
-        .header-left {
-          .header-list {
-            .header-item {
-              gap: 24px;
-              .header-text {
-                font-size: 18px;
-              }
+    .header {
+        .container {
+            padding: 0 60px;
+            .header__wrapper {
+                .header-left {
+                    .header-list {
+                        .header-item {
+                            gap: 24px;
+                            .header-text {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+                .header-right {
+                    .language {
+                        .dropdown-menu {
+                            transform: translate3d(-60px, 140px, 0) !important;
+                        }
+                    }
+                }
             }
-          }
         }
-        .header-right {
-          .language {
-            .dropdown-menu {
-              transform: translate3d(-60px, 140px, 0) !important;
-            }
-          }
-        }
-      }
     }
-  }
 }
 
 //mobile
 @media screen and (max-width: 480px) {
-  .header {
-    .container {
-      padding: 0 20px;
-      .header__wrapper {
-        .header-left {
-          .header-list {
-            .header-item {
-              gap: 8px;
-              .header-text {
-                font-size: 16px;
-              }
+    .header {
+        .container {
+            padding: 0 20px;
+            .header__wrapper {
+                .header-left {
+                    .header-list {
+                        .header-item {
+                            gap: 8px;
+                            .header-text {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+                }
+                .header-right {
+                    .language {
+                        .dropdown-menu {
+                            transform: translate3d(-10px, 140px, 0) !important;
+                        }
+                    }
+                }
             }
-          }
         }
-        .header-right {
-          .language {
-            .dropdown-menu {
-              transform: translate3d(-10px, 140px, 0) !important;
-            }
-          }
-        }
-      }
     }
-  }
 }
 
 @media screen and (max-width: 415px) {
-  .header {
-    .container {
-      padding: 0 10px;
-      .header__wrapper {
-        .header-left {
-          .header-list {
-            .header-item {
-              .header-text {
-                font-size: 15px;
-              }
+    .header {
+        .container {
+            padding: 0 10px;
+            .header__wrapper {
+                .header-left {
+                    .header-list {
+                        .header-item {
+                            gap: 10px;
+                            .header-text {
+                                font-size: 15px;
+                            }
+                        }
+                    }
+                }
+                .header-right {
+                    .language {
+                        .dropdown-menu {
+                        }
+                    }
+                }
             }
-          }
         }
-        .header-right {
-          .language {
-            .dropdown-menu {
-            }
-          }
-        }
-      }
     }
-  }
 }
 
-@media screen and (max-width: 399.98px) {
-  .header {
-    .container {
-      .header__wrapper {
-        .header-left {
-          .header-list {
-            .header-item {
-              .header-text {
-                font-size: 13px;
-              }
+@media screen and (max-width: 376px) {
+    .header {
+        .container {
+            min-height: 140px;
+            .header__wrapper {
+                .header-left {
+                    .header-list {
+                        .header-item {
+                            .header-text {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
             }
-          }
-        }
-      }
-      .header-right {
-        .language {
-          font-size: 13px;
-          padding: 4px 8px;
-          .dropdown-menu {
-            .dropdown-item {
-              .btn {
-                font-size: 13px;
-              }
+            .header-right {
+                .language {
+                    font-size: 13px;
+                    padding: 4px 8px;
+                    .dropdown-menu {
+                        .dropdown-item {
+                            .btn {
+                                font-size: 13px;
+                            }
+                        }
+                    }
+                }
             }
-          }
         }
-      }
     }
-  }
 }
