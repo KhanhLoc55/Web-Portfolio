@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react';
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
 import Skill from './components/skill/Skill';
@@ -8,8 +7,7 @@ import Portfolio from './components/portfolio/Portfolio';
 import Footer from './components/footer/Footer';
 
 import { ThemeContext } from './utils/context';
-import { useContext } from 'react';
-import { Suspense } from 'react';
+import { Suspense, useContext } from 'react';
 import './app.scss';
 import Contact from './components/contact/Contact';
 const App = () => {
