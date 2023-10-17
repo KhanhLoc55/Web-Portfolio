@@ -118,7 +118,7 @@ body.active-modal {
             bottom: 0;
             position: fixed;
             z-index: 9999;
-            background-color: var(--white-600);
+            background-color: #333333;
         }
         .modal-content {
             margin: auto;
@@ -127,7 +127,7 @@ body.active-modal {
             z-index: 9999;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #ffffff;
+            box-shadow: 4px 4px 8px #cbcbcb, -4px -4px 8px #333333;
             background: linear-gradient(-45deg, #e2e8ec, #ffffff);
             background-size: 400% 400%;
             animation: gradient 15s ease infinite;
