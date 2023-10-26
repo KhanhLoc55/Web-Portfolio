@@ -4,7 +4,7 @@ import { useTypewriter } from 'react-simple-typewriter';
 import { useTranslation } from 'react-i18next';
 
 //img
-import Avatar from '../../assets/avatar.png';
+import Avatar from '../../assets/avatarB.png';
 import WavingHand from '../../assets/wavingHand.svg';
 import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
