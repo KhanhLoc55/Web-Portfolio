@@ -103,7 +103,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Sass / Bootstrap / Tailwindcss<i className="val">50%</i>
+                                Sass / Bootstrap <i className="val">50%</i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -130,7 +130,7 @@ const Skill = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                    {/* <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
                                 React<i className="val">50%</i>
@@ -159,7 +159,7 @@ const Skill = () => {
                                 ></div>
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
                 <h4 className="skills-text">
