@@ -43,67 +43,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up">
                         <div className="progress">
                             <span className="skill">
-                                Html / Css <i className="val">60%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="60"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Photoshop / Illustrator<i className="val">70%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="70"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Javascript<i className="val">40%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="40"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>{' '}
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Figma<i className="val">70%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="70"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Sass / Bootstrap <i className="val">50%</i>
+                                Html / Css <i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -118,7 +58,67 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Word / Excel / Powerpoint <i className="val">50%</i>
+                                Photoshop / Illustrator<i className="val"></i>
+                            </span>
+                            <div className="progress-bar-wrap">
+                                <div
+                                    className="progress-bar"
+                                    aria-valuenow="50"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div className="progress">
+                            <span className="skill">
+                                Javascript<i className="val"></i>
+                            </span>
+                            <div className="progress-bar-wrap">
+                                <div
+                                    className="progress-bar"
+                                    aria-valuenow="50"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>{' '}
+                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div className="progress">
+                            <span className="skill">
+                                Figma<i className="val"></i>
+                            </span>
+                            <div className="progress-bar-wrap">
+                                <div
+                                    className="progress-bar"
+                                    aria-valuenow="50"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div className="progress">
+                            <span className="skill">
+                                Sass / Bootstrap <i className="val"></i>
+                            </span>
+                            <div className="progress-bar-wrap">
+                                <div
+                                    className="progress-bar"
+                                    aria-valuenow="50"
+                                    aria-valuemin="0"
+                                    aria-valuemax="100"
+                                ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
+                        <div className="progress">
+                            <span className="skill">
+                                Word / Excel / Powerpoint <i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -170,7 +170,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Prototyping <i className="val">50%</i>
+                                Prototyping <i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -185,7 +185,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Wireframing<i className="val">50%</i>
+                                Wireframing<i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -200,7 +200,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Web design<i className="val">50%</i>
+                                Web design<i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div
@@ -215,7 +215,7 @@ const Skill = () => {
                     <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
                         <div className="progress">
                             <span className="skill">
-                                Mobile design<i className="val">50%</i>
+                                Mobile design<i className="val"></i>
                             </span>
                             <div className="progress-bar-wrap">
                                 <div

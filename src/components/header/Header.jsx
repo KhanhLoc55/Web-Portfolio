@@ -69,6 +69,18 @@ const Header = () => {
                                 {/* Sử dụng react-i18next để dễ dàng dịch các mục */}
                                 <li className="header-text">
                                     <Link
+                                        to="portfolio"
+                                        activeClass="active"
+                                        spy={true}
+                                        smooth={true}
+                                        offset={50}
+                                        duration={500}
+                                    >
+                                        {t('header.headerProject')}
+                                    </Link>
+                                </li>
+                                <li className="header-text">
+                                    <Link
                                         to="skill"
                                         activeClass="active"
                                         spy={true}
@@ -91,18 +103,7 @@ const Header = () => {
                                         {t('header.headerResume')}
                                     </Link>
                                 </li>
-                                <li className="header-text">
-                                    <Link
-                                        to="portfolio"
-                                        activeClass="active"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={50}
-                                        duration={500}
-                                    >
-                                        {t('header.headerProject')}
-                                    </Link>
-                                </li>
+
                                 <li className="header-text">
                                     <Link
                                         to="contact"

@@ -17,7 +17,7 @@ const Intro = () => {
 
     // Sử dụng hook useTypewriter để tạo hiệu ứng chữ viết máy
     const [text] = useTypewriter({
-        words: ['Graphic Designer.', 'Front End Developer.', 'UI Designer.'],
+        words: ['Graphic Designer.', 'Web Designer.', 'UI Designer.'],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,
