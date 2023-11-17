@@ -10,7 +10,7 @@ import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
 import iconGmail from '../../assets/iconGmail.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
-import cv from '../../assets/cvđanglàm.pdf';
+import cv from '../../assets/Resume-KHANH LOC(en).pdf';
 
 const Intro = () => {
     const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
@@ -73,7 +73,7 @@ const Intro = () => {
                         </div>
                         <div className="cv">
                             <button className="btn">
-                                <a download="cvđanglàm.pdf" href={cv} className="btn-text">
+                                <a download="Resume-KHANH LOC(en).pdf" href={cv} className="btn-text">
                                     Download cv
                                 </a>
                             </button>

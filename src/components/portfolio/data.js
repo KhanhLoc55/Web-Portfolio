@@ -151,6 +151,18 @@ export const uiDesignerPortfolio = [
         link: 'https://www.behance.net/gallery/177094973/admin-Dashboard',
         source: 'https://www.behance.net/anhlamot55',
     },
+    {
+        id: 3,
+        category: 'Ui Designer',
+        totalLike: '500',
+        title: 'Interior Design Landing Page',
+        img: './imge/interiorLandingPage.png',
+        i18n: {
+            desc1: 'card.desc16',
+        },
+        link: 'https://www.behance.net/gallery/184494263/Interior-Design-Landing-Page',
+        source: 'https://www.behance.net/anhlamot55',
+    },
 ];
 
 export const graphicDesignerPortfolio = [
