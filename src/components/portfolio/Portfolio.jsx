@@ -15,12 +15,12 @@ export default function Portfolio() {
             title: 'All',
         },
         {
-            id: 'Front-End',
-            title: 'Front-End',
+            id: 'Web App',
+            title: 'Web App',
         },
         {
-            id: 'Ui Designer',
-            title: 'Ui Designer',
+            id: 'Mobile App',
+            title: 'Mobile App',
         },
         {
             id: 'Graphic Designer',
@@ -33,10 +33,10 @@ export default function Portfolio() {
             case 'All':
                 setData(allPortfolio);
                 break;
-            case 'Front-End':
+            case 'Web App':
                 setData(frontEndPortfolio);
                 break;
-            case 'Ui Designer':
+            case 'Mobile App':
                 setData(uiDesignerPortfolio);
                 break;
             case 'Graphic Designer':

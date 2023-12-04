@@ -1,7 +1,7 @@
 export const allPortfolio = [
     {
         id: 1,
-        category: 'Front End',
+        category: 'Web App',
         totalLike: '600',
         title: 'Portfolio Website Design',
         img: './imge/portfolio.jpg',
@@ -15,7 +15,7 @@ export const allPortfolio = [
     },
     {
         id: 2,
-        category: 'Ui Designer',
+        category: 'Mobile App',
         totalLike: '650',
         title: 'Application LearnLink',
         img: './imge/ApplicationLearnLink.png',
@@ -28,7 +28,7 @@ export const allPortfolio = [
     },
     {
         id: 3,
-        category: 'Ui Designer',
+        category: 'Web App',
         totalLike: '500',
         title: 'Website Travel landingpage',
         img: './imge/travel.png',
@@ -58,23 +58,22 @@ export const allPortfolio = [
         category: 'Graphic Designer',
         totalLike: '450',
         title: 'Freelancer',
-        img: './imge/freelancer.jpg',
+        img: './imge/portfolio111.jpg',
         i18n: {
             desc1: 'card.desc10',
             desc2: 'card.desc11',
         },
-        link: 'https://www.behance.net/gallery/110399397/some-Image-about-teambuilding',
+        link: 'https://www.behance.net/gallery/110399397/All-Project-Design',
         source: 'https://www.behance.net/anhlamot55',
     },
     {
         id: 6,
-        category: 'Ui Designer',
+        category: 'Mobile App',
         totalLike: '500',
-        title: 'App ShopBreAd',
-        img: './imge/appshopBreAd.jpg',
+        title: 'Food application',
+        img: './imge/appFood.png',
         i18n: {
             desc1: 'card.desc4',
-            desc2: 'card.desc5',
         },
         link: 'https://www.behance.net/gallery/140292191/app-shopBreAd-project',
         source: 'https://www.behance.net/anhlamot55',
@@ -84,7 +83,7 @@ export const allPortfolio = [
 export const frontEndPortfolio = [
     {
         id: 1,
-        category: 'Front End',
+        category: 'Web App',
         totalLike: '600',
         title: 'Portfolio Website Design',
         img: './imge/portfolio.jpg',
@@ -97,8 +96,8 @@ export const frontEndPortfolio = [
         link: 'https://klweb-portfolio.netlify.app/',
     },
     {
-        id: 3,
-        category: 'Ui Designer',
+        id: 2,
+        category: 'Web App',
         totalLike: '500',
         title: 'Website Travel landingpage',
         img: './imge/travel.png',
@@ -109,12 +108,37 @@ export const frontEndPortfolio = [
         link: 'https://kltravel.netlify.app/',
         source: 'https://github.com/KhanhLoc55/KLTravel',
     },
+    {
+        id: 3,
+        category: 'Web App',
+        totalLike: '500',
+        title: 'Interior Design Landing Page',
+        img: './imge/interiorLandingPage.png',
+        i18n: {
+            desc1: 'card.desc16',
+        },
+        link: 'https://www.behance.net/gallery/184494263/Interior-Design-Landing-Page',
+        source: 'https://www.behance.net/anhlamot55',
+    },
+    {
+        id: 4,
+        category: 'Web App',
+        totalLike: '500',
+        title: 'Dashboard',
+        img: './imge/dashboard.png',
+        i18n: {
+            desc1: 'card.desc14',
+            desc2: 'card.desc15',
+        },
+        link: 'https://www.behance.net/gallery/177094973/admin-Dashboard',
+        source: 'https://www.behance.net/anhlamot55',
+    },
 ];
 
 export const uiDesignerPortfolio = [
     {
         id: 2,
-        category: 'Ui Designer',
+        category: 'Mobile App',
         totalLike: '650',
         title: 'App Comic',
         img: './imge/ApplicationLearnLink.png',
@@ -127,40 +151,14 @@ export const uiDesignerPortfolio = [
     },
     {
         id: 4,
-        category: 'Ui Designer',
+        category: 'Mobile App',
         totalLike: '500',
-        title: 'App ShopBreAd',
-        img: './imge/appshopBreAd.jpg',
+        title: 'Food application',
+        img: './imge/appFood.png',
         i18n: {
             desc1: 'card.desc4',
-            desc2: 'card.desc5',
         },
         link: 'https://www.behance.net/gallery/140292191/app-shopBreAd-project',
-        source: 'https://www.behance.net/anhlamot55',
-    },
-    {
-        id: 3,
-        category: 'Ui Designer',
-        totalLike: '500',
-        title: 'Dashboard',
-        img: './imge/dashboard.png',
-        i18n: {
-            desc1: 'card.desc14',
-            desc2: 'card.desc15',
-        },
-        link: 'https://www.behance.net/gallery/177094973/admin-Dashboard',
-        source: 'https://www.behance.net/anhlamot55',
-    },
-    {
-        id: 3,
-        category: 'Ui Designer',
-        totalLike: '500',
-        title: 'Interior Design Landing Page',
-        img: './imge/interiorLandingPage.png',
-        i18n: {
-            desc1: 'card.desc16',
-        },
-        link: 'https://www.behance.net/gallery/184494263/Interior-Design-Landing-Page',
         source: 'https://www.behance.net/anhlamot55',
     },
 ];
@@ -184,12 +182,12 @@ export const graphicDesignerPortfolio = [
         category: 'Graphic Designer',
         totalLike: '450',
         title: 'Freelancer',
-        img: './imge/freelancer.jpg',
+        img: './imge/portfolio111.jpg',
         i18n: {
             desc1: 'card.desc10',
             desc2: 'card.desc11',
         },
-        link: 'https://www.behance.net/gallery/110399397/some-Image-about-teambuilding',
+        link: 'https://www.behance.net/gallery/110399397/All-Project-Design',
         source: 'https://www.behance.net/anhlamot55',
     },
 ];
