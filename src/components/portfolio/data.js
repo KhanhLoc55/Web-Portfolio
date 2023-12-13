@@ -34,7 +34,7 @@ export const allPortfolio = [
         img: './imge/travel.png',
         i18n: {
             desc1: 'card.desc12',
-            desc2: 'card.desc5',
+            desc2: 'card.desc13',
         },
         link: 'https://kltravel.netlify.app/',
         source: 'https://github.com/KhanhLoc55/KLTravel',
