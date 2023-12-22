@@ -2,7 +2,7 @@ import React from 'react';
 import './footer.scss';
 import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
-import iconGmail from '../../assets/iconGmail.svg';
+import iconDribble from '../../assets/dribble.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
 
 const Footer = () => {
@@ -17,8 +17,8 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="i-backgroupdS">
-                        <a href="https://www.google.com/intl/vi/gmail/about/" target="__blank" className="i-link">
-                            <img src={iconGmail} alt="Gmail" className="i__icon-img" />
+                        <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
+                            <img src={iconDribble} alt="Gmail" className="i__icon-img" />
                         </a>
                     </div>
                     <div className="i-backgroupdS">

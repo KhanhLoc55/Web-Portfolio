@@ -41,7 +41,7 @@ export const allPortfolio = [
     },
     {
         id: 4,
-        category: 'Graphic Designer',
+        category: 'Brand Designer',
         totalLike: '550',
         title: 'Logo WebDesign',
         img: './imge/logoGp.jpg',
@@ -55,7 +55,7 @@ export const allPortfolio = [
 
     {
         id: 5,
-        category: 'Graphic Designer',
+        category: 'Brand Designer',
         totalLike: '450',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',
@@ -163,10 +163,10 @@ export const uiDesignerPortfolio = [
     },
 ];
 
-export const graphicDesignerPortfolio = [
+export const brandDesignerPortfolio = [
     {
         id: 3,
-        category: 'Graphic Designer',
+        category: 'Brand Designer',
         totalLike: '550',
         title: 'Logo WebDesign',
         img: './imge/logoGp.jpg',
@@ -179,7 +179,7 @@ export const graphicDesignerPortfolio = [
     },
     {
         id: 5,
-        category: 'Graphic Designer',
+        category: 'Brand Designer',
         totalLike: '450',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',

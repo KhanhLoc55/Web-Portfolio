@@ -176,7 +176,7 @@ const Resume = () => {
                             >
                                 Công Ty Tnhh Tmdv Quảng Cáo Lá Đỏ
                             </h4>
-                            <h5 className="text-time">10/2019 - 9/2022</h5>
+                            <h5 className="text-time">10/2019 - 12/2021</h5>
                             <p>
                                 <em>{t('resume.textTime1')}</em>
                             </p>

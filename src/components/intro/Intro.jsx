@@ -8,16 +8,16 @@ import Avatar from '../../assets/avatarB.png';
 import WavingHand from '../../assets/wavingHand.svg';
 import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
-import iconGmail from '../../assets/iconGmail.svg';
+import iconDribble from '../../assets/dribble.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
-import cv from '../../assets/Resume-KHANH LOC(en).pdf';
+import cv from '../../assets/Resume - KHANH LOC(en).pdf';
 
 const Intro = () => {
     const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
 
     // Sử dụng hook useTypewriter để tạo hiệu ứng chữ viết máy
     const [text] = useTypewriter({
-        words: ['Graphic Designer.', 'Web Designer.', 'UI Designer.'],
+        words: ['Brand Designer.', 'Web Designer.', 'UI Designer.'],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,
@@ -48,12 +48,8 @@ const Intro = () => {
                                 </a>
                             </div>
                             <div className="i-backgroupdS">
-                                <a
-                                    href="https://www.google.com/intl/vi/gmail/about/"
-                                    target="__blank"
-                                    className="i-link"
-                                >
-                                    <img src={iconGmail} alt="Gmail" className="i__icon-img" />
+                                <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
+                                    <img src={iconDribble} alt="Dribble" className="i__icon-img" />
                                 </a>
                             </div>
                             <div className="i-backgroupdS">

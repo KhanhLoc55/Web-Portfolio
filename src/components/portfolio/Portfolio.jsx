@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import PortfolioList from '../portfolioList/PortfolioList';
 import './portfolio.scss';
 
-import { allPortfolio, frontEndPortfolio, graphicDesignerPortfolio, uiDesignerPortfolio } from './data.js';
+import { allPortfolio, frontEndPortfolio, brandDesignerPortfolio, uiDesignerPortfolio } from './data.js';
 import Card from './Card';
 
 export default function Portfolio() {
@@ -23,8 +23,8 @@ export default function Portfolio() {
             title: 'Mobile App',
         },
         {
-            id: 'Graphic Designer',
-            title: 'Graphic Designer',
+            id: 'Brand Designer',
+            title: 'Brand Designer',
         },
     ];
 
@@ -39,8 +39,8 @@ export default function Portfolio() {
             case 'Mobile App':
                 setData(uiDesignerPortfolio);
                 break;
-            case 'Graphic Designer':
-                setData(graphicDesignerPortfolio);
+            case 'Brand Designer':
+                setData(brandDesignerPortfolio);
                 break;
             default:
                 setData(allPortfolio);
