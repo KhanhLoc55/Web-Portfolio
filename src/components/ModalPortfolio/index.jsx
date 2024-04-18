@@ -1,78 +1,87 @@
 import React from 'react';
 import { createPortal } from 'react-dom';
 import './index.scss';
+import modalClose from '../../assets/modal-close.svg';
+import sourceCode from '../../assets/Source-code.svg';
+
 export default function ModalPortfolio(props) {
-    const { toggleModal, closeBtn, img, title, category, darkMode, desc1, desc2, desc3, sourceCode, link, source } =
-        props;
+    const { toggleModal, img, title, category, darkMode, desc1, desc2, desc3, link, source } = props;
     return createPortal(
-        <div className="active-modal">
-            <div className="modal-container">
-                <div onClick={toggleModal} className="modal-overlay"></div>
-                <div className="modal-content">
-                    <div className="modal-content-box">
-                        <div className="modal-img">
-                            <img src={img} alt={title} />
-                        </div>
-                        <div className="modal-text">
-                            <span>{category}</span>
-                            <h1
-                                style={{
-                                    // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                    color: darkMode ? '#105083' : '#545454',
-                                }}
-                            >
-                                {props.title}
-                            </h1>
-                            <p
-                                style={{
-                                    // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                    color: '#545454',
-                                }}
-                            >
-                                {desc1}
-                            </p>
-                            <p
-                                style={{
-                                    // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                    color: '#545454',
-                                }}
-                            >
-                                {desc2}
-                            </p>
-                            <p
-                                style={{
-                                    // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                    color: '#545454',
-                                }}
-                            >
-                                {desc3}
-                            </p>
-                            <div className="modal__button">
-                                <button className="modal__button-content">
-                                    <div className="modal__button-link">
-                                        <a href={source} target="__blank">
-                                            Source code
-                                        </a>
-                                        <img src={sourceCode} alt="Sourcecode" />
-                                    </div>
-                                </button>
-                                <button className="modal__button-content">
-                                    <div className="modal__button-link">
-                                        <a href={link} target="__blank">
-                                            View project
-                                        </a>
-                                        <img src={sourceCode} alt="Sourcecode" />
-                                    </div>
-                                </button>
+        <React.Fragment>
+            <div className="modal-portfolio">
+                <div className="modal-container">
+                    <div className="modal-content">
+                        <div className="modal-content-box">
+                            <div className="modal-img">
+                                <img src={img} alt={title} />
                             </div>
-                            <button className="btn" onClick={toggleModal}>
-                                <img src={closeBtn} alt="modalClose" className="modalClose-icon" />
-                            </button>
+                            <div className="modal-text">
+                                <div className="modal-header">
+                                    <span>{category}</span>
+                                    <button className="btn" onClick={toggleModal}>
+                                        <img src={modalClose} alt="modalClose" className="modalClose-icon" />
+                                    </button>
+                                </div>
+                                <h1
+                                    style={{
+                                        // Chọn màu nền và màu chữ dựa vào chủ đề}
+                                        color: darkMode ? '#105083' : '#545454',
+                                    }}
+                                >
+                                    {title}
+                                </h1>
+                                <div className="modal-desc">
+                                    <p
+                                        style={{
+                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
+                                            color: '#545454',
+                                        }}
+                                    >
+                                        {desc1}
+                                    </p>
+                                    <p
+                                        style={{
+                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
+                                            color: '#545454',
+                                        }}
+                                    >
+                                        {desc2}
+                                    </p>
+                                    <p
+                                        style={{
+                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
+                                            color: '#545454',
+                                        }}
+                                    >
+                                        {desc3}
+                                    </p>
+                                </div>
+                                <div className="modal__button">
+                                    <button className="modal__button-content">
+                                        <div className="modal__button-link">
+                                            <a href={source} target="__blank">
+                                                Source code
+                                            </a>
+                                            <img src={sourceCode} alt="Source code" />
+                                        </div>
+                                    </button>
+                                    <button className="modal__button-content">
+                                        <div className="modal__button-link">
+                                            <a href={link} target="__blank">
+                                                View project
+                                            </a>
+                                            <img src={sourceCode} alt="Source code" />
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>,
-        document.getElementById('modal'), // this will let react-dom know that we want to render this modal outside the current React tree
+            <div onClick={toggleModal} className="modal-overlay"></div>
+        </React.Fragment>,
+        document.getElementById('modal-portfolio'),
+        // this will let react-dom know that we want to render this modal outside the current React tree
     );
 }

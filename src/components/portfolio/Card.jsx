@@ -4,19 +4,24 @@ import arrowRight from '../../assets/arrowRightUp.svg';
 import { ThemeContext } from '../../utils/context';
 
 const Card = (props) => {
-    const { toggleModal } = props;
+    const { toggleModal, category, title, img, totalLike, id, selectedPortfolio } = props;
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
+    const handleSelectedPortfolio = () => {
+        selectedPortfolio(id);
+        toggleModal();
+    };
+
     return (
         <React.Fragment>
-            <div className="modal-box">
+            <div className="modal-box" onClick={handleSelectedPortfolio}>
                 <div className="modal-img">
-                    <img src={props.img} alt={props.title} onClick={toggleModal} />
+                    <img src={img} alt={title} />
                 </div>
                 <div className="modal-category">
-                    <span onClick={toggleModal}>{props.category}</span>
+                    <span>{category}</span>
                     <div
                         className="totalLike"
                         style={{
@@ -25,19 +30,18 @@ const Card = (props) => {
                             fontFamily: 'Poppins',
                         }}
                     >
-                        <img className="icon-heart" alt="icon-heart" src={heart} /> {props.totalLike}
+                        <img className="icon-heart" alt="icon-heart" src={heart} /> {totalLike}
                     </div>
                 </div>
                 <div className="modal-title">
                     <h2
                         className="modal-heading2"
-                        onClick={toggleModal}
                         style={{
                             // Chọn màu nền và màu chữ dựa vào chủ đề}
                             color: darkMode ? '#105083' : '#545454',
                         }}
                     >
-                        {props.title}
+                        {title}
                     </h2>
                     <a href="#popup" className="modal-arrow" onClick={toggleModal}>
                         <img src={arrowRight} alt="arrowRight" className="" />

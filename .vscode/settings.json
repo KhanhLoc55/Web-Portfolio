@@ -5,6 +5,6 @@
         "editor.defaultFormatter": "vscode.html-language-features"
     },
     "[scss]": {
-        "editor.defaultFormatter": "MikeBovenlander.formate"
+        "editor.defaultFormatter": "vscode.css-language-features"
     }
 }
