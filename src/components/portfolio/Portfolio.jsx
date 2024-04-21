@@ -1,14 +1,23 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import PortfolioList from '../portfolioList/PortfolioList';
 import './portfolio.scss';
 
 import { allPortfolio, frontEndPortfolio, brandDesignerPortfolio, uiDesignerPortfolio } from './data.js';
 import Card from './Card';
+import ModalPortfolio from '../ModalPortfolio/index.jsx';
+import { ModalContext } from '../../context/modalCtx/index.jsx';
+import { useTranslation } from 'react-i18next';
 
 export default function Portfolio() {
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const [selected, setSelected] = useState('featured');
-    const [data, setData] = useState([]);
+    const [dataPortfolio, setDataPortfolio] = useState([]);
+    const [isSelectPortfolio, setIsSelectedPortfolio] = useState({});
+    const modalCtx = useContext(ModalContext);
+    // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
+    const { t } = useTranslation();
+
+    // filter portfolio list
     const list = [
         {
             id: 'All',
@@ -31,21 +40,32 @@ export default function Portfolio() {
     useEffect(() => {
         switch (selected) {
             case 'All':
-                setData(allPortfolio);
+                setDataPortfolio(allPortfolio);
                 break;
             case 'Web App':
-                setData(frontEndPortfolio);
+                setDataPortfolio(frontEndPortfolio);
                 break;
             case 'Mobile App':
-                setData(uiDesignerPortfolio);
+                setDataPortfolio(uiDesignerPortfolio);
                 break;
             case 'Brand Designer':
-                setData(brandDesignerPortfolio);
+                setDataPortfolio(brandDesignerPortfolio);
                 break;
             default:
-                setData(allPortfolio);
+                setDataPortfolio(allPortfolio);
         }
     }, [selected]);
+
+    // open modal
+    const toggleModal = () => {
+        modalCtx.toggleModal();
+    };
+
+    // selected portfolio
+    const selectedPortfolio = (id) => {
+        const selectedPortfolio = dataPortfolio.find((item) => item.id === id);
+        setIsSelectedPortfolio(selectedPortfolio);
+    };
 
     return (
         <section className="portfolio" id="portfolio">
@@ -66,10 +86,11 @@ export default function Portfolio() {
                 </ul>
 
                 <div className="portfolio-box">
-                    {data.map((value, index) => {
+                    {dataPortfolio.map((value) => {
                         return (
                             <Card
-                                key={index}
+                                key={value.id}
+                                id={value.id}
                                 img={value.img}
                                 category={value.category}
                                 totalLike={value.totalLike}
@@ -81,11 +102,28 @@ export default function Portfolio() {
                                 }}
                                 link={value.link}
                                 source={value.source}
+                                toggleModal={toggleModal}
+                                selectedPortfolio={() => selectedPortfolio(value.id)}
                             />
                         );
                     })}
                 </div>
             </div>
+            {/* Popup*/}
+            {modalCtx.isToggleModal && (
+                <ModalPortfolio
+                    toggleModal={toggleModal}
+                    img={isSelectPortfolio.img}
+                    title={isSelectPortfolio.title}
+                    category={isSelectPortfolio.category}
+                    darkMode={modalCtx.darkMode}
+                    desc1={t(isSelectPortfolio.i18n.desc1)}
+                    desc2={t(isSelectPortfolio.i18n.desc2)}
+                    desc3={t(isSelectPortfolio.i18n.desc3)}
+                    link={isSelectPortfolio.link}
+                    source={isSelectPortfolio.source}
+                />
+            )}
         </section>
     );
 }

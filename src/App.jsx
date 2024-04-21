@@ -9,6 +9,7 @@ import Footer from './components/footer/Footer';
 import { ThemeContext } from './utils/context';
 import { Suspense, useContext } from 'react';
 import './app.scss';
+import './components/portfolio/portfolio.scss'
 import Contact from './components/contact/Contact';
 const App = () => {
     //dark mode
