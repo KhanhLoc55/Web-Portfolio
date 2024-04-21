@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import './intro.scss';
 import { useTypewriter } from 'react-simple-typewriter';
 import { useTranslation } from 'react-i18next';
@@ -10,10 +10,13 @@ import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
 import iconDribble from '../../assets/dribble.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
-import cv from '../../assets/Resume - KHANH LOC(en).pdf';
+import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
+import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
+
 
 const Intro = () => {
-    const { t } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
+    const [cv, setCv] = useState(null);
+    const { t, i18n } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
 
     // Sử dụng hook useTypewriter để tạo hiệu ứng chữ viết máy
     const [text] = useTypewriter({
@@ -23,6 +26,20 @@ const Intro = () => {
         deleteSpeed: 10,
         delaySpeed: 2000,
     });
+    
+    const handleChangeCvLanguage = useCallback(()=> {
+        if (i18n.resolvedLanguage === 'en') {
+            setCv(cvEn)
+        }
+        if(i18n.resolvedLanguage === 'vi') {
+            setCv(cvVi)
+        }
+    },[i18n.resolvedLanguage])
+
+    useEffect(() => {
+        handleChangeCvLanguage();
+    },[handleChangeCvLanguage, i18n.resolvedLanguage])
+
     return (
         <div className="intro" id="intro">
             <div className="container">
@@ -69,7 +86,7 @@ const Intro = () => {
                         </div>
                         <div className="cv">
                             <button className="btn">
-                                <a download="Resume-KHANH LOC(en).pdf" href={cv} className="btn-text">
+                                <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
                                     Download cv
                                 </a>
                             </button>
