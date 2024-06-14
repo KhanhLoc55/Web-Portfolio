@@ -204,11 +204,14 @@
             grid-template-columns: 1fr;
 
             .i-left {
+<<<<<<< HEAD
                 .textContentLeft {
                     margin-top: 48px;
                 }
 
 
+=======
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                 text-align: center;
 
                 .i-heading1 {
@@ -246,8 +249,11 @@
         .container {
             .i-left {
                 .textContentLeft {
+<<<<<<< HEAD
                     margin-top: 16px;
 
+=======
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                     .texTitle {
                         font-size: 12px;
                         font-weight: 300;
@@ -303,12 +309,17 @@
     }
 }
 
+<<<<<<< HEAD
 @media screen and (max-width: 426px) {
+=======
+@media screen and (max-width: 415px) {
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
     .intro {
         padding: 0 10px;
 
         .container {
             .i-left {
+<<<<<<< HEAD
 
                 .textContentLeft {
                     margin-top: 40px;
@@ -356,6 +367,9 @@
                 .textContentLeft {
                     margin-top: 0;
 
+=======
+                .textContentLeft {
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                     .texTitle {}
 
                     .wavingHand {}
@@ -393,9 +407,13 @@
     .intro {
         .container {
             .i-left {
+<<<<<<< HEAD
 
                 .textContentLeft {
                     margin-top: 20px;
+=======
+                .textContentLeft {
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                     .texTitle {}
 
                     .wavingHand {}

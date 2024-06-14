@@ -4,7 +4,10 @@ import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
 import iconDribble from '../../assets/dribble.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
+<<<<<<< HEAD
 import iconFacebook from '../../assets/Facebook.svg'
+=======
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
 
 const Footer = () => {
     return (
@@ -32,11 +35,14 @@ const Footer = () => {
                         </a>
                     </div>
                     <div className="i-backgroupdS">
+<<<<<<< HEAD
                         <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
                             <img src={iconFacebook} alt="facebook" className="i__icon-img" />
                         </a>
                     </div>
                     <div className="i-backgroupdS">
+=======
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                         <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
                             <img src={iconGithub} alt="Github" className="i__icon-img" />
                         </a>

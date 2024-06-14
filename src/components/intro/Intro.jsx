@@ -10,10 +10,17 @@ import iconBe from '../../assets/iconBe.svg';
 import iconGithub from '../../assets/iconGithub.svg';
 import iconDribble from '../../assets/dribble.svg';
 import iconLinkedin from '../../assets/iconLinkedin.svg';
+<<<<<<< HEAD
 import iconFacebook from '../../assets/Facebook.svg'
 import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
 import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
+=======
+import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
+import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
+
+
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
 const Intro = () => {
     const [cv, setCv] = useState(null);
     const { t, i18n } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
@@ -26,6 +33,7 @@ const Intro = () => {
         deleteSpeed: 10,
         delaySpeed: 2000,
     });
+<<<<<<< HEAD
 
     const handleChangeCvLanguage = useCallback(() => {
         if (i18n.resolvedLanguage === 'en') {
@@ -39,6 +47,21 @@ const Intro = () => {
     useEffect(() => {
         handleChangeCvLanguage();
     }, [handleChangeCvLanguage, i18n.resolvedLanguage]);
+=======
+    
+    const handleChangeCvLanguage = useCallback(()=> {
+        if (i18n.resolvedLanguage === 'en') {
+            setCv(cvEn)
+        }
+        if(i18n.resolvedLanguage === 'vi') {
+            setCv(cvVi)
+        }
+    },[i18n.resolvedLanguage])
+
+    useEffect(() => {
+        handleChangeCvLanguage();
+    },[handleChangeCvLanguage, i18n.resolvedLanguage])
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
 
     return (
         <div className="intro" id="intro">
@@ -79,6 +102,7 @@ const Intro = () => {
                                 </a>
                             </div>
                             <div className="i-backgroupdS">
+<<<<<<< HEAD
                                 <a
                                     href="https://www.facebook.com/NhiLove.kha.14473"
                                     target="__blank"
@@ -88,6 +112,8 @@ const Intro = () => {
                                 </a>
                             </div>
                             <div className="i-backgroupdS">
+=======
+>>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
                                 <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
                                     <img src={iconGithub} alt="Github" className="i__icon-img" />
                                 </a>
