@@ -1,0 +1,68 @@
+{
+    "header": {
+        "headerSkill": "Skill",
+        "headerResume": "Resume",
+        "headerProject": "Project",
+        "headerContact": "Contact"
+    },
+    "intro": {
+        "textHey": "Hey",
+        "texMyNameIs": "my name is",
+        "textImAWeb": "I’m a "
+    },
+    "skill": {
+        "textTool": "Tool",
+        "textSkill": "Skill"
+    },
+    "resume": {
+        "textSumary": "Summary",
+        "textAboutMe": "About me",
+        "textSmallOne": "My name is Nguyen Khanh Loc. In August 2021, I started learning and dedicated a significant amount of time daily to interface design. I researched on the renowned website Coursera and completed two important courses: 'UX Design by Google' and 'Front-End Meta' Course.",
+        "textSmallTwo": "In 2022, I continued to explore programming to bring my design ideas to life. Every day, I am passionately learning and practicing web design skills to enhance the quality of my user interface (UI Design).",
+        "textSmallThere": "My goal is to pursue a career in web and app design. I aspire to create websites and applications that blend exceptional visual appeal with interactivity, providing outstanding user experiences. I will continuously improve my knowledge and skills to become an expert in the field of web and app design.",
+        "textIphone": "Iphone",
+        "textWebDesign": "Website design",
+        "textWebFrontEnd": "Code front-end",
+        "textCertifications": "Certifications",
+        "textCertificationFromCoursera": "Certification from Coursera",
+        "textExperience": "Experience",
+        "textTime": "3/2022 - present",
+        "textTimeOne": "- Accepting projects from Facebook groups and working online with clients.",
+        "textTimeTwo": "- I practice skills, self-study to improve my proficiency, and work on personal projects.",
+        "textTime1": "- Working directly with management to create designs that meet customer requirements.",
+        "textTime2": "- Measuring the size of shelves, advertisements, etc. to create the final product.",
+        "textTime3": "- Managing the order processing, quotation, and documentation process.",
+        "textTime4": "- Creating and exporting design files while ensuring print quality.",
+        "textTime5": "- Performing company procedures.",
+        "textTime6": "- Completing assigned tasks.",
+        "textEducation": "Education",
+        "textEducation1": "Electronics Technical College",
+        "textEducation2": "- Graduated in Electronics and Mechanical Technology.",
+        "textEducation3": "- Attained computer and English certifications."
+    },
+    "contact": {
+        "textContact": "Contact",
+        "text1": "Do you have an idea?",
+        "text2": "Let's make it true!",
+        "text3": "Address: Gò Vấp District, Ho Chi Minh City, Vietnam.",
+        "textIphone": "Iphone:",
+        "textMessage": " Send Message"
+    },
+    "card": {
+        "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",
+        "desc2": "- For the Frontend, I used Visual Studio Code and the React library. I integrated i18next for multi-language support, React Router for page navigation, and createContext for light and dark mode switching. I designed the toggle button and used the useTypewriter hook for a typewriter effect. Additionally, I added vibrant gradient color effects.",
+        "desc3": "- I am proud of this creative blend of design and professional programming, with unique features and effects. I hope it will attract attention and impress users.",
+        "desc4": "- Our Food app facilitates users in effortlessly exploring culinary destinations across various platforms. Searching for restaurants and placing food orders has never been more convenient, providing users with the best possible experience. The product is beautifully designed and diverse, enhancing the way users discover and engage with the culinary world.",
+        "desc6": "- This is the logo I personally designed for myself using Illustrator. My main goal in creating this logo is to attach it to the products I create, giving them a personal touch. Additionally, I aim to use this logo for freelancing purposes. I have also designed a name card that includes my contact information.",
+        "desc7": "- This logo represents my identity and brand as a creator, and it serves as a symbol of the quality and uniqueness of my work. Whether it's on my products or my freelancing projects, this logo embodies my passion for design and dedication to delivering exceptional results. With this logo and name card, I am ready to make a strong and memorable impression in the creative industry.",
+        "desc8": "- LearnLink is not merely an application; it is, in fact, a hub for learning and sharing knowledge. LearnLink's mission is to connect and provide an environment for passionate individuals, especially in fields such as UI/UX Design, Front-End Development, Graphic Design, and various other creative domains. It serves as a platform to facilitate the exchange of knowledge and foster a community of learners and creators.",
+        "desc9": "- I used the Figma tool to bring this idea to life. LearnLink is not just a simple application; it is an exquisite blend of design and functionality. It offers a unique space where passionate individuals can freely exchange knowledge, learn from one another, and grow together.",
+        "desc10": "- I take pride in the exterior design products that I have created and earned the trust of my clients. My main focus is on designing impressive banners, banners, canopies, and signage.",
+        "desc11": "- I am always dedicated to meeting the requirements and ideas of my clients, providing professional and high-quality design solutions. The diversity of design types allows me to have a flexible and creative mindset, catering to the needs of my clients.",
+        "desc12": "- Welcome a unique product, from design concept to code. It's an unlimited travel product in Vietnam.",
+        "desc13": "- This product not only helps you book flight tickets faster but also serves as a guide to explore hidden corners and interesting places you might not have known about. Get ready for a memorable journey and discover the secrets waiting for you in every nook and cranny of Vietnam.",
+        "desc14": "- Welcome to my Admin Dashboard! I have developed this powerful tool to streamline and simplify the management and administration of your system or application. With a user-friendly interface and comprehensive features, my Admin Dashboard empowers administrators like you to efficiently control and monitor various aspects within your system.",
+        "desc15": "- This product has been designed based on the Figma platform, a high-quality user interface design tool. Through creativity and meticulous work using Figma, we have created a beautiful and user-friendly user interface. The integration of Figma has enabled us to easily create graphic elements and layouts while providing interactive capabilities and intuitive previews.",
+        "desc16": "- My Interior Design Landing Page project is a harmonious blend of artistry and professionalism. It features a responsive design for both desktop and mobile, crafted using Fig­ma and Photoshop. I opted for the fonts Libre Baskerville and Monstercat, complemented by a sophisticated color palette including #00FEDF, #3C2A21, #FFFFFF, and a background of #1A120B. The header includes a logo and main sections such as Home, Introduction, Services, Products, and Contact, providing users with a premium browsing experience."
+    }
+}

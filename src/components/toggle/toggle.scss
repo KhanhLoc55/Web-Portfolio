@@ -1,0 +1,92 @@
+/* -------------- BUTTON -------------- */
+.toggle {
+    .btn {
+        background: url('../../assets/backgroundLight.png') no-repeat;
+        background-size: cover;
+        min-width: 80px;
+        height: 40px;
+        border-radius: 24px;
+        border: 2px solid var(--primary-300);
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: none;
+
+        /* Hiệu ứng dark mode */
+        &.darkmode {
+            background: url('../../assets/backgroundDark.png') no-repeat;
+            background-size: cover;
+            /* Hiệu ứng di chuyển vòng tròn */
+            .toggle-circle {
+                transform: translateX(27px);
+                background-color: var(--black-500);
+                box-shadow: 2px 2px 3px 0px rgba(255, 255, 255, 0.5) inset;
+            }
+            /* Đổi màu icon khi ở chế độ dark mode */
+            .toggle-icon {
+                color: var(--white-600);
+            }
+        }
+    }
+    /* Vòng tròn di chuyển thể hiện trạng thái bật/tắt */
+    .toggle-circle {
+        background-color: #fff;
+        min-width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        box-shadow: -2px -2px 3px 0px rgba(0, 0, 0, 0.5) inset;
+        transform: translateX(-13px);
+
+        transition: transform 0.3s ease;
+    }
+    /* Căn chỉnh icon */
+    .toggle__btn-icon {
+        min-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    /* Màu sắc của icon */
+
+    .toggle-icon {
+        color: rgb(255, 68, 0);
+    }
+}
+
+//mobie
+@media screen and (max-width: 480.98px) {
+    .toggle {
+        .btn {
+            min-width: 30px;
+            &.darkmode {
+                .toggle-circle {
+                    transform: translateX(15px);
+                }
+            }
+        }
+        .toggle-icon {
+            width: 16px;
+            height: 16px;
+        }
+    }
+}
+@media screen and (max-width: 399.98px) {
+    .toggle {
+        .btn {
+            height: 20px;
+            .toggle-circle {
+                min-width: 20px;
+                height: 20px;
+            }
+            &.darkmode {
+                .toggle-circle {
+                    transform: translateX(15px);
+                }
+            }
+        }
+        .toggle-icon {
+            width: 10px;
+            height: 10px;
+        }
+    }
+}
