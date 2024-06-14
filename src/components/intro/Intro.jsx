@@ -40,19 +40,6 @@ const Intro = () => {
         handleChangeCvLanguage();
     }, [handleChangeCvLanguage, i18n.resolvedLanguage]);
 
-    const handleChangeCvLanguage = useCallback(() => {
-        if (i18n.resolvedLanguage === 'en') {
-            setCv(cvEn);
-        }
-        if (i18n.resolvedLanguage === 'vi') {
-            setCv(cvVi);
-        }
-    }, [i18n.resolvedLanguage]);
-
-    useEffect(() => {
-        handleChangeCvLanguage();
-    }, [handleChangeCvLanguage, i18n.resolvedLanguage]);
-
     return (
         <div className="intro" id="intro">
             <div className="container">

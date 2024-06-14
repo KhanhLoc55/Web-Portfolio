@@ -3,14 +3,14 @@
     border-radius: 4px;
     cursor: pointer;
     font-family: var(--poppins);
-<<<<<<< HEAD
+
     font-size: 16px;
-=======
     font-size: 20px;
->>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
     font-style: normal;
     font-weight: 400;
-    line-height: 120%; /* 33.6px */
+    line-height: 120%;
+
+    /* 33.6px */
     &.active {
         border: 2px solid var(--primary-600);
     }

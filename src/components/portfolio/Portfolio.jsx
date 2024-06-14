@@ -4,11 +4,7 @@ import './portfolio.scss';
 
 import { allPortfolio, frontEndPortfolio, brandDesignerPortfolio, uiDesignerPortfolio } from './data.js';
 import Card from './Card';
-<<<<<<< HEAD
 import ModalPortfolio from '../modalPortfolio/ModalPortfolio.jsx';
-=======
-import ModalPortfolio from '../ModalPortfolio/index.jsx';
->>>>>>> 83d3b9e65d9cd89307dd13ce55a22c2203143dcb
 import { ModalContext } from '../../context/modalCtx/index.jsx';
 import { useTranslation } from 'react-i18next';
 
