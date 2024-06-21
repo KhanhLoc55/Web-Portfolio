@@ -1,16 +1,48 @@
-import React from 'react';
+import React, { useCallback, useContext, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import './modalPortfolio.scss';
-import modalClose from '../../assets/modal-close.svg';
-import sourceCode from '../../assets/Source-code.svg';
 import { useMediaQuery } from '@uidotdev/usehooks';
+import { ThemeContext } from '../../utils/context';
+
+//icon
+import { CloseCircleOutlined, LinkOutlined } from '@ant-design/icons';
 
 export default function ModalPortfolio(props) {
-    const { toggleModal, img, title, category, darkMode, desc1, desc2, desc3, link, source } = props;
-    const isMobileDevice = useMediaQuery("(max-width : 426px)");
+    const { toggleModal, img, title, category, desc1, desc2, desc3, link, source } = props;
+    const isMobileDevice = useMediaQuery('(max-width : 426px)');
+
+    // đổi màu darkMode
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
+    const darkModeSrollBar = useCallback(() => {
+        console.log('darkmode', darkMode);
+        if (darkMode) {
+            document.querySelector('body').classList.add('dark');
+        } else {
+            document.querySelector('body').classList.remove('dark');
+        }
+    }, [darkMode]);
+
+    useEffect(() => {
+        darkModeSrollBar();
+    }, [darkModeSrollBar]);
+
+    // Truy cập vào root đổi màu color
+    const root = getComputedStyle(document.documentElement);
+    const backgroundColor = darkMode
+        ? root.getPropertyValue('--backgroundDark')
+        : root.getPropertyValue('--backgroundLight');
+    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+
     return createPortal(
         <React.Fragment>
-            <div className="modal-portfolio">
+            <div
+                className="modal-portfolio"
+                style={{
+                    background: backgroundColor.trim(),
+                }}
+            >
                 <div className="modal-container">
                     <div className="modal-content">
                         <div className="modal-content-box">
@@ -20,66 +52,98 @@ export default function ModalPortfolio(props) {
                                 </div>
                             )}
                             <div className="modal-text">
-                                <div className="modal-header">
-                                    <span>{category}</span>
-                                    <button className="btn" onClick={toggleModal}>
-                                        <img src={modalClose} alt="modalClose" className="modalClose-icon" />
-                                    </button>
+                                <div className="modalCloseOutlined">
+                                    <CloseCircleOutlined
+                                        onClick={toggleModal}
+                                        alt="modalClose"
+                                        className="modalClose-icon"
+                                        style={{
+                                            fontSize: '24px',
+                                            color: darkMode ? '#24B6F2' : '#0E70BA',
+                                        }}
+                                    />
                                 </div>
-                                {isMobileDevice && (
-                                    <div className="modal-img">
-                                        <img src={img} alt={title} />
-                                    </div>
-                                )}
-                                <h1 className='modal-heading-title'
-                                    style={{
-                                        // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                        color: darkMode ? '#105083' : '#545454',
-                                    }}
-                                >
-                                    {title}
-                                </h1>
+
+                                <div className="modal-heading">
+                                    <span
+                                        style={{
+                                            color: darkMode ? '#24B6F2' : '#0E70BA',
+                                        }}
+                                    >
+                                        {category}
+                                    </span>
+                                    <h1
+                                        className="modal-heading-title textSubHeading"
+                                        style={{
+                                            color: color.trim(),
+                                        }}
+                                    >
+                                        {title}
+                                    </h1>
+                                </div>
+
                                 <div className="modal-desc">
                                     <p
                                         style={{
-                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                            color: '#545454',
+                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                                         }}
                                     >
                                         {desc1}
                                     </p>
                                     <p
                                         style={{
-                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                            color: '#545454',
+                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                                         }}
                                     >
                                         {desc2}
                                     </p>
                                     <p
                                         style={{
-                                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                                            color: '#545454',
+                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                                         }}
                                     >
                                         {desc3}
                                     </p>
                                 </div>
-                                <div className="modal__button">
-                                    <button className="modal__button-content">
+                                <div className="modal__button ">
+                                    <button className="modal__button-content btn">
                                         <div className="modal__button-link">
-                                            <a href={source} target="__blank">
+                                            <a
+                                                href={source}
+                                                target="__blank"
+                                                style={{
+                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                }}
+                                            >
                                                 Source code
                                             </a>
-                                            <img src={sourceCode} alt="Source code" />
+                                            <LinkOutlined
+                                                alt="Source code"
+                                                style={{
+                                                    fontSize: '16px',
+                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                }}
+                                            />
                                         </div>
                                     </button>
-                                    <button className="modal__button-content">
+                                    <button className="modal__button-content btn">
                                         <div className="modal__button-link">
-                                            <a href={link} target="__blank">
+                                            <a
+                                                href={link}
+                                                target="__blank"
+                                                style={{
+                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                }}
+                                            >
                                                 View project
                                             </a>
-                                            <img src={sourceCode} alt="Source code" />
+                                            <LinkOutlined
+                                                alt="Source code"
+                                                style={{
+                                                    fontSize: '16px',
+                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                }}
+                                            />
                                         </div>
                                     </button>
                                 </div>

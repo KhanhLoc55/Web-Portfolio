@@ -1,8 +1,8 @@
 .header {
-    // Phần container của header
+    height: 140px;
+
     .container {
-        padding: 0 80px;
-        min-height: 160px;
+        padding: 20px 80px 30px 80px;
         position: fixed;
         z-index: 4;
         top: 0;
@@ -11,51 +11,39 @@
     }
 
     // Ảnh logo trong header
+
     .header__logo-img {
         cursor: pointer;
-        margin-top: 8px;
-        height: 80px;
-        max-width: 200px;
+        width: 160px;
     }
 
     // Phần wrapper bên trong header chứa phần left và right
     .header__wrapper {
         display: flex;
-        justify-content: space-between;
+        align-items: center;
 
         // Phần bên trái của header
         .header-left {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-            font-weight: 400;
 
-            // Danh sách các mục menu trong header
-            .header-list {
-                flex: 1;
+            // Kiểu danh sách các mục
+            .header-item {
+                display: flex;
+                gap: 28px;
+                padding-left: 0;
+                margin-bottom: 0;
 
-                // Kiểu danh sách các mục
-                .header-item {
-                    display: flex;
-                    gap: 32px;
-                    padding-left: 0;
-                    margin-bottom: 0;
+                // Phần văn bản trong mục menu
+                .header-text {
+                    list-style-type: none;
+                    font-style: normal;
 
-                    // Phần văn bản trong mục menu
-                    .header-text {
-                        list-style-type: none;
-                        font-size: 20px;
-                        font-style: normal;
-                        font-weight: 400;
-                        line-height: 120%; /* 24px */
-
-                        // Hiển thị màu đỏ và thay đổi con trỏ khi hover
-                        &:hover {
-                            color: var(--primary-500);
-                            cursor: pointer;
-                        }
+                    // Hiển thị màu đỏ và thay đổi con trỏ khi hover
+                    &:hover {
+                        color: var(--primary-500);
+                        cursor: pointer;
                     }
                 }
+
             }
         }
 
@@ -65,20 +53,19 @@
             align-items: center;
             justify-content: flex-end;
             display: flex;
-            gap: 8px;
+            gap: 12px;
 
             // Phần chọn ngôn ngữ
             .language {
-                font-family: var(--poppins);
                 text-transform: uppercase;
                 padding: 8px 16px;
                 display: inline-block;
-                font-weight: 500;
+                font-weight: var(--fontWeightMedium);
                 transition: var(--transition);
-                font-size: 18px;
-                border: 1px solid var(--primary-300);
+                font-size: var(--fontSize18);
+                border: 1px solid var(--primary-500);
                 cursor: pointer;
-                border-radius: 8px; // Loại bỏ biểu tượng mũi tên trong dropdown
+                border-radius: 4px;
 
                 .dropdown-toggle::after {
                     display: none !important;
@@ -87,17 +74,23 @@
                 // Điều chỉnh vị trí của dropdown menu
                 .dropdown-menu {
                     background-color: transparent;
-                    border: 1px solid var(--primary-300);
+                    border: 1px solid var(--primary-500);
                     transform: translate3d(-80px, 140px, 0) !important;
+
+
                     .dropdown-item {
+                        text-align: center;
+
+
                         &:hover {
                             background-color: transparent;
                         }
+
+
+
                         .btn {
-                            font-family: var(--poppins);
-                            min-width: 100%;
-                            font-size: 16px;
-                            font-weight: 500;
+                            font-weight: var(--fontWeightMedium);
+
                         }
                     }
                 }
@@ -107,25 +100,32 @@
 }
 
 //tablet
+@media screen and (max-width: 1024px) {
+    .header {
+        .container {
+            padding: 20px 60px 30px 60px;
+
+            .header__wrapper {
+                .header-right {
+                    .language {
+                        .dropdown-menu {
+                            transform: translate3d(-60px, 130px, 0) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     .header {
         .container {
-            padding: 0 60px;
             .header__wrapper {
                 .header-left {
                     .header-list {
                         .header-item {
-                            gap: 24px;
-                            .header-text {
-                                font-size: 18px;
-                            }
-                        }
-                    }
-                }
-                .header-right {
-                    .language {
-                        .dropdown-menu {
-                            transform: translate3d(-60px, 140px, 0) !important;
+                            gap: 20px;
                         }
                     }
                 }
@@ -135,51 +135,33 @@
 }
 
 //mobile
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 431px) {
     .header {
         .container {
-            padding: 0 20px;
-            .header__wrapper {
-                .header-left {
-                    .header-list {
-                        .header-item {
-                            gap: 8px;
-                            .header-text {
-                                font-size: 16px;
-                            }
-                        }
-                    }
-                }
-                .header-right {
-                    .language {
-                        .dropdown-menu {
-                            transform: translate3d(-10px, 140px, 0) !important;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
+            padding: 12px 8px 24px 8px;
 
-@media screen and (max-width: 415px) {
-    .header {
-        .container {
-            padding: 0 10px;
             .header__wrapper {
                 .header-left {
                     .header-list {
                         .header-item {
-                            gap: 10px;
+                            gap: 16px;
+
                             .header-text {
-                                font-size: 15px;
+                                font-size: var(--fontSize16);
                             }
                         }
                     }
                 }
+
                 .header-right {
+                    gap: 4px;
+
                     .language {
+                        padding: 6px 12px;
+                        font-size: var(--fontSize16);
+
                         .dropdown-menu {
+                            transform: translate3d(-10px, 120px, 0) !important;
                         }
                     }
                 }
@@ -191,28 +173,75 @@
 @media screen and (max-width: 376px) {
     .header {
         .container {
-            min-height: 140px;
             .header__wrapper {
                 .header-left {
                     .header-list {
                         .header-item {
+                            gap: 12px;
+                        }
+                    }
+                }
+
+                .header-right {
+                    gap: 4px;
+
+                    .dropdown-menu {
+                        min-width: 0;
+
+                        .dropdown-item {
+                            .btn {
+                                font-size: var(--fontSize13);
+                                line-height: 1;
+                            }
+                        }
+                    }
+
+                    .language {
+                        font-size: var(--fontSize13);
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width: 321px) {
+    .header {
+        .container {
+            .header__wrapper {
+                .header-left {
+                    .header-list {
+                        .header-item {
+                            gap: 12px;
+
                             .header-text {
-                                font-size: 13px;
+                                font-size: var(--fontSize13);
+                                line-height: var(--lineHeight22);
                             }
                         }
                     }
                 }
-            }
-            .header-right {
-                .language {
-                    font-size: 13px;
-                    padding: 4px 8px;
+
+                .header-right {
+                    gap: 4px;
+
                     .dropdown-menu {
+                        min-width: 0;
+
                         .dropdown-item {
                             .btn {
-                                font-size: 13px;
+                                font-size: var(--fontSize13);
+                                line-height: 1;
                             }
                         }
+                    }
+
+                    .language {
+                        font-size: var(--fontSize13);
+                        padding: 6px 6px;
                     }
                 }
             }

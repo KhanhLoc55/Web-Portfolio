@@ -15,6 +15,14 @@ const Language = () => {
     const handleChangeLanguage = (language) => {
         i18n.changeLanguage(language);
     };
+
+    const root = getComputedStyle(document.documentElement);
+
+    const backgroundColor = darkMode
+        ? root.getPropertyValue('--backgroundDark')
+        : root.getPropertyValue('--backgroundLight');
+    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+
     return (
         <>
             <NavDropdown
@@ -27,9 +35,8 @@ const Language = () => {
                     <div
                         className="btn"
                         style={{
-                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                            backgroundColor: darkMode ? 'rgba(17, 21, 28, 0.50)' : '#ffffff',
-                            color: darkMode ? '#e8e8e8' : '#545454',
+                            backgroundColor: backgroundColor.trim(),
+                            color: color.trim(),
                         }}
                     >
                         English
@@ -39,9 +46,8 @@ const Language = () => {
                     <div
                         className="btn"
                         style={{
-                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                            backgroundColor: darkMode ? 'rgba(17, 21, 28, 0.50)' : '#ffffff',
-                            color: darkMode ? '#e8e8e8' : '#545454',
+                            backgroundColor: backgroundColor.trim(),
+                            color: color.trim(),
                         }}
                     >
                         Việt nam

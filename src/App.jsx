@@ -12,6 +12,7 @@ import './app.scss';
 import './components/portfolio/portfolio.scss';
 import Contact from './components/contact/Contact';
 import AnimatedCursor from 'react-animated-cursor';
+
 const App = () => {
     //dark mode
     const theme = useContext(ThemeContext);
@@ -30,13 +31,20 @@ const App = () => {
         darkModeSrollBar();
     }, [darkModeSrollBar]);
 
+    // Truy cập vào root đổi màu color
+    const root = getComputedStyle(document.documentElement);
+    const backgroundColor = darkMode
+        ? root.getPropertyValue('--backgroundDark')
+        : root.getPropertyValue('--backgroundLight');
+    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+
     return (
         <Suspense fallback="...is loading">
             <div
                 className="App"
                 style={{
-                    backgroundColor: darkMode ? '#11151c' : 'white',
-                    color: darkMode ? '#e8e8e8' : '#545454',
+                    backgroundColor: backgroundColor.trim(),
+                    color: color.trim(),
                 }}
             >
                 <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />

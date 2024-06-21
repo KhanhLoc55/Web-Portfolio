@@ -1,17 +1,46 @@
 .portfolioList {
-    padding: 10px 14px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-family: var(--poppins);
+    padding: 8px 12px;
+    font-size: var(--fontSize18);
+    line-height: var(--lineHeight26);
+    font-weight: var(--fontWeightMedium);
+    border-radius: 6px;
 
-    font-size: 16px;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 120%;
-
-    /* 33.6px */
     &.active {
-        border: 2px solid var(--primary-600);
+        border: 1px solid var(--primary-500);
+    }
+}
+
+//mobile 
+@media screen and (max-width: 431px) {
+    .portfolioList {
+        padding: 8px 6px;
+        font-size: var(--fontSize16);
+        line-height: var(--lineHeight24);
+        font-weight: var(--fontWeightMedium);
+        border-radius: 4px;
+
+        &.active {
+            border: 1px solid var(--primary-500);
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .portfolioList {
+        padding: 8px 6px;
+        font-size: var(--fontSize13);
+        line-height: var(--lineHeight22);
+        font-weight: var(--fontWeightMedium);
+        border-radius: 4px;
+
+        &.active {
+            border: 1px solid var(--primary-500);
+        }
+    }
+}
+
+@media screen and (max-width: 321px) {
+    .portfolioList {
+        padding: 4px 4px;
     }
 }

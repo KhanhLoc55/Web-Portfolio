@@ -3,7 +3,7 @@
         "headerSkill": "Kỹ năng",
         "headerResume": "Cv",
         "headerProject": "Dự án",
-        "headerContact": "Liên Hệ"
+        "headerContact": "Liên hệ"
     },
     "intro": {
         "textHey": "Xin Chào",
@@ -41,12 +41,12 @@
         "textEducation3": "- Đạt được chứng chỉ tin học + tiếng anh."
     },
     "contact": {
-        "textContact": "Liên hệ",
         "text1": "Bạn đã có ý tưởng?",
-        "text2": "Hãy biến nó thành sự thật!",
-        "text3": "Địa chỉ: Quận Gò Vấp, Hồ Chí Minh, Việt Nam.",
+        "text2": " Đừng để nó chỉ tồn tại trong suy nghĩ! Hãy bắt tay vào hành động ngay bây giờ để biến ý tưởng đó thành hiện thực. Thành công đang chờ đợi bạn!",
+        "text3": "Quận Gò Vấp, Hồ Chí Minh, Việt Nam.",
         "textIphone": "Điện Thoại:",
-        "textMessage": " Gửi tin nhắn"
+        "textMessage": "Gửi tin nhắn",
+        "textAddress": "Địa chỉ"
     },
     "card": {
         "desc1": "- Tôi đã hoàn thành dự án portfolio website với sự kết hợp giữa lập trình và thiết kế. Trong phần UI Designer, tôi sử dụng Figma, Photoshop và Illustrator để thiết kế 2 màn hình cho desktop và mobile, bao gồm cả Dark Mode. Tôi đã tạo ý tưởng cho icon, màu sắc, font chữ, Grid System, Button, Fields, Typography và toggle.",

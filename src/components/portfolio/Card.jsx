@@ -1,14 +1,20 @@
 import React, { useContext } from 'react';
-import heart from '../../assets/system-uicons_heart.svg';
-import arrowRight from '../../assets/arrowRightUp.svg';
 import { ThemeContext } from '../../utils/context';
 
+//icon
+import { PlusCircleOutlined } from '@ant-design/icons';
+
 const Card = (props) => {
-    const { toggleModal, category, title, img, totalLike, id, selectedPortfolio } = props;
+    const { toggleModal, category, title, img, id, selectedPortfolio } = props;
+
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
+    // Truy cập vào root đổi màu color
+    const root = getComputedStyle(document.documentElement);
+    const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
+    
     const handleSelectedPortfolio = () => {
         selectedPortfolio(id);
         toggleModal();
@@ -21,32 +27,24 @@ const Card = (props) => {
                     <img src={img} alt={title} />
                 </div>
                 <div className="modal-category">
-                    <span>{category}</span>
-                    <div
-                        className="totalLike"
+                    <span
+                        className="modal-titleText"
                         style={{
-                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                            color: darkMode ? '#105083' : '#545454',
-                            fontFamily: 'Poppins',
+                            color: color.trim(),
                         }}
                     >
-                        <img className="icon-heart" alt="icon-heart" src={heart} /> {totalLike}
-                    </div>
-                </div>
-                <div className="modal-title">
-                    <h2
-                        className="modal-heading2"
-                        style={{
-                            // Chọn màu nền và màu chữ dựa vào chủ đề}
-                            color: darkMode ? '#105083' : '#545454',
-                        }}
-                    >
-                        {title}
-                    </h2>
+                        {category}
+                    </span>
                     <a href="#popup" className="modal-arrow" onClick={toggleModal}>
-                        <img src={arrowRight} alt="arrowRight" className="" />
+                        <PlusCircleOutlined
+                            style={{
+                                fontSize: '20px',
+                                color: color.trim(),
+                            }}
+                        />{' '}
                     </a>
                 </div>
+                <div className="modal-heading2 textSubTitle">{title}</div>
             </div>
         </React.Fragment>
     );

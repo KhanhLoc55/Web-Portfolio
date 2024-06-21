@@ -5,7 +5,8 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from '../../utils/context';
 
 const DarkModeButton = () => {
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    // Đặt giá trị mặc định của isDarkMode là true
+    const [isDarkMode, setIsDarkMode] = useState(true);
     const theme = useContext(ThemeContext);
 
     useEffect(() => {

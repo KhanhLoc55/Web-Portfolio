@@ -1,159 +1,365 @@
 .resume {
-    padding: 0 80px;
-    margin-bottom: 120px;
     .container {
+        padding: 30px 80px;
         max-width: 100%;
-        padding: 0;
-        .resume-heading {
-            background-image: linear-gradient(90deg, #0e70ba 0%, #24b6f2 100%);
-            background-clip: text;
-            -webkit-background-clip: text; /* For Safari */
-            color: transparent;
 
+        .resume-heading {
+            background-image: var(--gradient);
+            background-clip: text;
+            -webkit-background-clip: text;
+            margin-bottom: 36px;
+            color: transparent;
             text-align: center;
-            font-family: var(--poppins);
-            font-size: 49px;
             font-style: normal;
-            line-height: 120%; /* 58.8px */
-            font-weight: bold;
-            margin-bottom: 24px;
 
             &::after {
                 content: '';
                 position: absolute;
                 display: block;
-                min-width: 210px;
+                min-width: 150px;
                 height: 3px;
-                background: var(--primary-500);
+                background: var(--gradient);
                 left: 50%;
                 transform: translateX(-50%);
             }
         }
-        .resume-title {
-            font-family: var(--poppins);
-            font-size: 28px;
-            font-style: normal;
-            font-weight: 600;
-            line-height: 120%; /* 33.6px */
-            margin-top: 20px;
-            margin-bottom: 40px;
-        }
 
-        .resume-item {
-            padding: 0 0 20px 20px;
-            margin-top: -2px;
-            border-left: 2px solid var(--second-700);
-            position: relative;
+        .resume-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            justify-content: space-between;
+            gap: 40px;
 
-            .text-title {
-                font-family: var(--poppins);
-                font-size: 20px;
-                font-style: normal;
-                font-weight: 600;
-                line-height: 90%; /* 24px */
-                text-transform: uppercase;
-                margin-bottom: 16px;
-            }
-
-            .text-time {
-                font-size: 14px;
-                background: var(--second-600);
-                padding: 8px 12px;
-                display: inline-block;
-                font-weight: 500;
-                margin-bottom: 14px;
-                border-radius: 4px;
-                color: var(--white-600);
-            }
-            .text-content {
-                .text-small {
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 300;
-                    line-height: 160%; /* 25.6px */
+            .resume-left {
+                .resume-hedding {
+                    font-weight: var(--fontWeightExBold);
+                    margin-bottom: 24px;
                 }
-            }
-            ul {
-                padding-left: 20px;
 
-                .resume__aboutMe-item {
-                    padding-bottom: 12px;
-                    font-style: italic;
-                    line-height: 160%;
-                    .em {
-                        color: var(--primary-600);
-                        font-weight: 500;
+                .resume-circle {
+                    padding-left: 20px;
+                    border-left: 2px solid var(--primary-500);
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50px;
+                        left: -9px;
+                        top: 0;
+                        background: var(--primary-500);
+                        border: 2px solid var(--primary-500);
                     }
-                    a {
-                        color: var(--primary-600);
-                        font-weight: 500;
+
+                    .text-title {
+                        font-weight: var(--fontWeightExBold);
+                        line-height: 90%;
+                        text-transform: uppercase;
+                        margin-bottom: 16px;
+                    }
+
+                    .resume-desc {
+                        margin-bottom: 24px;
+
+                        .text-subtitle {
+                            line-height: var(--lineHeight26);
+                        }
+                    }
+
+                    .resume-info {
+                        margin: 0;
+                        padding-bottom: 16px;
+
+                        .resume-info-text {
+                            padding-left: 8px;
+
+                            a {
+                                color: inherit;
+                            }
+                        }
+                    }
+
+                    .text-time {
+                        margin-bottom: 16px;
+                        border: none;
+                        color: white;
+                        font-size: var(--fontSize13);
+                        padding: 8px 12px;
+                        font-weight: var(--fontWeightMedium);
+                        line-height: var(--lineHeight22);
+
+                        &:hover {
+                            transform: none;
+                        }
+
                     }
                 }
+
+                .resume-circle2 {
+                    padding: 0 0 20px 20px;
+                    border-left: 2px solid var(--primary-500);
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50px;
+                        left: -9px;
+                        top: 0;
+                        background: var(--primary-500);
+                        border: 2px solid var(--primary-500);
+                    }
+
+                    .text-title {
+                        font-weight: var(--fontWeightExBold);
+                        line-height: 90%;
+                        text-transform: uppercase;
+                        margin-bottom: 16px;
+                    }
+
+                    .resume-desc {
+                        margin-bottom: 24px;
+
+                        .text-subtitle {
+                            line-height: var(--lineHeight26);
+                        }
+                    }
+
+                    .resume-info {
+                        margin: 0;
+                        padding-bottom: 16px;
+
+                        .resume-info-text {
+                            padding-left: 8px;
+
+                            a {
+                                color: inherit;
+                            }
+                        }
+                    }
+
+                    .text-time {
+                        margin-bottom: 16px;
+                        border: none;
+                        color: white;
+                        font-size: var(--fontSize13);
+                        padding: 8px 12px;
+                        font-weight: var(--fontWeightMedium);
+                        line-height: var(--lineHeight22);
+
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+
+
+                }
+
             }
-            ul {
-                li {
-                    a {
-                        color: var(--primary-600);
-                        font-weight: 500;
-                        font-style: italic;
+
+            .resume-right {
+                .resume-hedding {
+                    font-weight: var(--fontWeightExBold);
+                    margin-bottom: 24px;
+                }
+
+                .resume-circle {
+                    padding-left: 20px;
+                    border-left: 2px solid var(--primary-500);
+                    position: relative;
+                    margin-bottom: 20px;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50px;
+                        left: -9px;
+                        top: 0;
+                        background: var(--primary-500);
+                        border: 2px solid var(--primary-500);
+                    }
+
+                    .text-title {
+                        font-weight: var(--fontWeightExBold);
+                        line-height: 90%;
+                        text-transform: uppercase;
+                        margin-bottom: 16px;
+                    }
+
+                    .resume-desc {
+                        margin-bottom: 24px;
+
+                        .text-subtitle {
+                            line-height: var(--lineHeight26);
+                        }
+                    }
+
+                    .resume-info {
+                        margin: 0;
+                        padding-bottom: 16px;
+
+                        .resume-info-text {
+                            padding-left: 8px;
+
+                            a {
+                                color: inherit;
+                            }
+                        }
+                    }
+
+                    .text-time {
+                        margin-bottom: 16px;
+                        border: none;
+                        color: white;
+                        font-size: var(--fontSize13);
+                        padding: 8px 12px;
+                        font-weight: var(--fontWeightMedium);
+                        line-height: var(--lineHeight22);
+
+                        &:hover {
+                            transform: none;
+                        }
                     }
                 }
+
+                .resume-circle2 {
+                    padding: 0 0 20px 20px;
+                    border-left: 2px solid var(--primary-500);
+                    position: relative;
+
+                    &::before {
+                        content: '';
+                        position: absolute;
+                        width: 16px;
+                        height: 16px;
+                        border-radius: 50px;
+                        left: -9px;
+                        top: 0;
+                        background: var(--primary-500);
+                        border: 2px solid var(--primary-500);
+                    }
+
+                    .text-title {
+                        font-weight: var(--fontWeightExBold);
+                        line-height: 90%;
+                        text-transform: uppercase;
+                        margin-bottom: 16px;
+                    }
+
+                    .resume-desc {
+                        margin-bottom: 24px;
+
+                        .text-subtitle {
+                            line-height: var(--lineHeight26);
+                        }
+                    }
+
+                    .resume-info {
+                        margin: 0;
+                        padding-bottom: 16px;
+
+                        .resume-info-text {
+                            padding-left: 8px;
+
+                            a {
+                                color: inherit;
+                            }
+
+                        }
+                    }
+
+                    .text-time {
+                        margin-bottom: 16px;
+                        border: none;
+                        color: white;
+                        font-size: var(--fontSize13);
+                        padding: 8px 12px;
+                        font-weight: var(--fontWeightMedium);
+                        line-height: var(--lineHeight22);
+
+                        &:hover {
+                            transform: none;
+                        }
+                    }
+
+
+                }
+
             }
 
-            &:last-child {
-                padding-bottom: 0;
-            }
 
-            &::before {
-                content: '';
-                position: absolute;
-                width: 16px;
-                height: 16px;
-                border-radius: 50px;
-                left: -9px;
-                top: 0;
-                background: var(--white-200);
-                border: 2px solid var(--second-700);
-            }
         }
     }
 }
 
 //tablet
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
     .resume {
-        margin-bottom: 72px;
-        padding: 0 60px;
-    }
-}
-//mobile
 
-@media screen and (max-width: 480px) {
-    .resume {
-        padding: 0 20px;
-    }
-}
-
-@media screen and (max-width: 415px) {
-    .resume {
-        padding: 0 10px;
         .container {
-            .resume-heading {
-                font-size: 40px;
-                &::after {
-                    min-width: 170px;
-                }
+            padding: 24px 60px;
+
+            .text-title {
+                font-size: var(--fontSize18);
+                font-weight: var(--lineHeight26);
             }
         }
-        .row {
-            .resume-title {
-                font-size: 22px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .resume {
+        .container {
+            .resume-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
-            .resume-item {
-                .text-title {
-                    font-size: 18px;
-                    line-height: 1.2;
+
+            .text-title {
+                font-size: var(--fontSize20);
+                font-weight: var(--lineHeight28);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 431px) {
+    .resume {
+        .container {
+            padding: 24px 8px;
+
+            .resume-heading {
+                margin-bottom: 20px;
+                font-size: var(--fontSize32);
+                line-height: var(--lineHeight40);
+
+                &::after {
+                    min-width: 130px;
+
                 }
+            }
+
+            .text-title {
+                font-size: var(--fontSize18);
+                font-weight: var(--lineHeight26);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 376px) {
+    .resume {
+        .container {
+            .text-title {
+                font-size: var(--fontSize16);
+                font-weight: var(--lineHeight24);
             }
         }
     }

@@ -2,7 +2,6 @@ export const allPortfolio = [
     {
         id: 1,
         category: 'Web App',
-        totalLike: '600',
         title: 'Portfolio Website Design',
         img: './imge/portfolio.jpg',
         i18n: {
@@ -16,7 +15,6 @@ export const allPortfolio = [
     {
         id: 2,
         category: 'Mobile App',
-        totalLike: '650',
         title: 'Application LearnLink',
         img: './imge/ApplicationLearnLink.png',
         i18n: {
@@ -29,7 +27,6 @@ export const allPortfolio = [
     {
         id: 3,
         category: 'Web App',
-        totalLike: '500',
         title: 'Website Travel landingpage',
         img: './imge/travel.png',
         i18n: {
@@ -42,7 +39,6 @@ export const allPortfolio = [
     {
         id: 4,
         category: 'Brand Designer',
-        totalLike: '550',
         title: 'Logo WebDesign',
         img: './imge/logoGp.jpg',
         i18n: {
@@ -56,7 +52,6 @@ export const allPortfolio = [
     {
         id: 5,
         category: 'Brand Designer',
-        totalLike: '450',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',
         i18n: {
@@ -69,7 +64,6 @@ export const allPortfolio = [
     {
         id: 6,
         category: 'Mobile App',
-        totalLike: '500',
         title: 'Food application',
         img: './imge/appFood.png',
         i18n: {
@@ -84,7 +78,6 @@ export const frontEndPortfolio = [
     {
         id: 1,
         category: 'Web App',
-        totalLike: '600',
         title: 'Portfolio Website Design',
         img: './imge/portfolio.jpg',
         i18n: {
@@ -98,7 +91,6 @@ export const frontEndPortfolio = [
     {
         id: 2,
         category: 'Web App',
-        totalLike: '500',
         title: 'Website Travel landingpage',
         img: './imge/travel.png',
         i18n: {
@@ -111,7 +103,6 @@ export const frontEndPortfolio = [
     {
         id: 3,
         category: 'Web App',
-        totalLike: '500',
         title: 'Interior Design Landing Page',
         img: './imge/interiorLandingPage.png',
         i18n: {
@@ -123,7 +114,6 @@ export const frontEndPortfolio = [
     {
         id: 4,
         category: 'Web App',
-        totalLike: '500',
         title: 'Dashboard',
         img: './imge/dashboard.png',
         i18n: {
@@ -139,7 +129,6 @@ export const uiDesignerPortfolio = [
     {
         id: 2,
         category: 'Mobile App',
-        totalLike: '650',
         title: 'App Comic',
         img: './imge/ApplicationLearnLink.png',
         i18n: {
@@ -152,7 +141,6 @@ export const uiDesignerPortfolio = [
     {
         id: 4,
         category: 'Mobile App',
-        totalLike: '500',
         title: 'Food application',
         img: './imge/appFood.png',
         i18n: {
@@ -167,7 +155,6 @@ export const brandDesignerPortfolio = [
     {
         id: 3,
         category: 'Brand Designer',
-        totalLike: '550',
         title: 'Logo WebDesign',
         img: './imge/logoGp.jpg',
         i18n: {
@@ -180,7 +167,6 @@ export const brandDesignerPortfolio = [
     {
         id: 5,
         category: 'Brand Designer',
-        totalLike: '450',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',
         i18n: {

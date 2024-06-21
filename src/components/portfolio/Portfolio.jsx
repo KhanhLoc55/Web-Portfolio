@@ -70,9 +70,8 @@ export default function Portfolio() {
     return (
         <section className="portfolio" id="portfolio">
             <div className="container">
-                <div className="portfolio-title">
-                    <h2 className="portfolio-heading">Portfolio</h2>
-                </div>
+                <h2 className="portfolio-heading textHeading">Portfolio</h2>
+
                 <ul className="portfolio-list">
                     {list.map((item) => (
                         <PortfolioList

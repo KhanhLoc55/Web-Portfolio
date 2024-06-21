@@ -41,19 +41,25 @@ const Header = () => {
 
     // Cập nhật ảnh logo khi chủ đề thay đổi
     useEffect(() => {
-        // Nếu darkMode được bật, sử dụng LogoImg2, ngược lại sử dụng LogoImg
         setCurrentLogo(darkMode ? LogoImgWhite : LogoImg);
     }, [darkMode]);
+
+    // Lấy các thuộc tính CSS đã tính toán của phần tử root (thường là thẻ <html>)
+    const root = getComputedStyle(document.documentElement);
+    // Lấy màu nền dựa trên chế độ darkMode
+    const backgroundColor = darkMode
+        ? root.getPropertyValue('--backgroundDark')
+        : root.getPropertyValue('--backgroundLight');
+    // Lấy màu chữ dựa trên chế độ darkMode
+    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
     return (
         <header className="header" id="header">
             <div
                 className="container"
                 style={{
-                    // Chọn màu nền và màu chữ dựa vào chủ đề
-                    backgroundColor: darkMode ? '#11151c' : 'white',
-                    color: darkMode ? '#e8e8e8' : '#545454',
-
+                    backgroundColor: backgroundColor.trim(),
+                    color: color.trim(),
                     // Hiển thị hoặc ẩn box shadow dựa vào trạng thái showBoxShadow
                     boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
                 }}
@@ -61,13 +67,14 @@ const Header = () => {
                 <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>
                     <img className="header__logo-img" alt="logo" src={currentLogo} />
                 </Link>
+
                 <div className="header__wrapper">
                     {/* Phần bên trái của header */}
                     <div className="header-left">
                         <div className="header-list">
                             <ul className="header-item">
                                 {/* Sử dụng react-i18next để dễ dàng dịch các mục */}
-                                <li className="header-text">
+                                <li className="header-text textSubTitle">
                                     <Link
                                         to="portfolio"
                                         activeClass="active"
@@ -79,7 +86,7 @@ const Header = () => {
                                         {t('header.headerProject')}
                                     </Link>
                                 </li>
-                                <li className="header-text">
+                                <li className="header-text textSubTitle">
                                     <Link
                                         to="skill"
                                         activeClass="active"
@@ -91,7 +98,7 @@ const Header = () => {
                                         {t('header.headerSkill')}
                                     </Link>
                                 </li>
-                                <li className="header-text">
+                                <li className="header-text textSubTitle">
                                     <Link
                                         to="resume"
                                         activeClass="active"
@@ -104,7 +111,7 @@ const Header = () => {
                                     </Link>
                                 </li>
 
-                                <li className="header-text">
+                                <li className="header-text textSubTitle">
                                     <Link
                                         to="contact"
                                         activeClass="active"
@@ -122,10 +129,8 @@ const Header = () => {
 
                     {/* Phần bên phải của header */}
                     <div className="header-right">
-                        {/* Toggle cho chủ đề tối / sáng */}
                         <Toggle />
 
-                        {/* Chọn ngôn ngữ */}
                         <Language />
                     </div>
                 </div>

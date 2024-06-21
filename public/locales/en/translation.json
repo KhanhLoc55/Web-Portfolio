@@ -41,12 +41,12 @@
         "textEducation3": "- Attained computer and English certifications."
     },
     "contact": {
-        "textContact": "Contact",
         "text1": "Do you have an idea?",
-        "text2": "Let's make it true!",
-        "text3": "Address: Gò Vấp District, Ho Chi Minh City, Vietnam.",
+        "text2": "Don't let it just exist in your thoughts! Take action now to turn that idea into reality. Success is waiting for you!",
+        "text3": "Gò Vấp District, Ho Chi Minh City, Vietnam.",
         "textIphone": "Iphone:",
-        "textMessage": " Send Message"
+        "textMessage": "Send Message",
+        "textAddress": "Address"
     },
     "card": {
         "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",

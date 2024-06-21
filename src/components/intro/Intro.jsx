@@ -1,22 +1,25 @@
-import React, { useCallback, useEffect, useState } from 'react';
 import './intro.scss';
+import React, { useCallback, useEffect, useState, useContext } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import { useTranslation } from 'react-i18next';
+import { motion } from 'framer-motion';
+import { ThemeContext } from '../../utils/context';
 
 //img
 import Avatar from '../../assets/avatarB.png';
 import WavingHand from '../../assets/wavingHand.svg';
-import iconBe from '../../assets/iconBe.svg';
-import iconGithub from '../../assets/iconGithub.svg';
-import iconDribble from '../../assets/dribble.svg';
-import iconLinkedin from '../../assets/iconLinkedin.svg';
-import iconFacebook from '../../assets/Facebook.svg';
 import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
 import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
+//icon
+import { DownloadOutlined } from '@ant-design/icons';
+
 const Intro = () => {
-    const [cv, setCv] = useState(null);
     const { t, i18n } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
+
+    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
 
     // Sử dụng hook useTypewriter để tạo hiệu ứng chữ viết máy
     const [text] = useTypewriter({
@@ -27,6 +30,8 @@ const Intro = () => {
         delaySpeed: 2000,
     });
 
+    // đăt lại cv khi chuyển ngôn ngữ
+    const [cv, setCv] = useState(null);
     const handleChangeCvLanguage = useCallback(() => {
         if (i18n.resolvedLanguage === 'en') {
             setCv(cvEn);
@@ -45,66 +50,68 @@ const Intro = () => {
             <div className="container">
                 {/* Phần tử bên trái của "container" có className "i-left" */}
                 <div className="i-left">
-                    <div className="wrapperLeft">
-                        <div className="textContentLeft noScroll">
-                            <span className="texTitle">{t('intro.textHey')}!</span>
+                    <div className="textContentLeft noScroll">
+                        <span className="texTitle">{t('intro.textHey')}!</span>
 
-                            <img src={WavingHand} alt="WavingHand" className="wavingHand" />
-                            <span className="texTitle"> {t('intro.texMyNameIs')}</span>
-                        </div>
-
-                        <h1 className="i-heading1">NGUYỄN KHÁNH LỘC</h1>
-                        <h3 className="i-heading3">
-                            {t('intro.textImAWeb')}
-                            <span className="i-text-smail">{text}</span>
-                        </h3>
-                        <div className="i-sci">
-                            <div className="i-backgroupdS">
-                                <a href="https://www.behance.net/anhlamot55" target="__blank" className="i-link">
-                                    <img src={iconBe} alt="Behance" className="i__icon-img" />
-                                </a>
-                            </div>
-                            <div className="i-backgroupdS">
-                                <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
-                                    <img src={iconDribble} alt="Dribble" className="i__icon-img" />
-                                </a>
-                            </div>
-                            <div className="i-backgroupdS">
-                                <a
-                                    href="https://www.linkedin.com/in/loc-nguyenkhanh-927b0822a/"
-                                    target="__blank"
-                                    className="i-link"
-                                >
-                                    <img src={iconLinkedin} alt="Linkedin" className="i__icon-img" />
-                                </a>
-                            </div>
-                            <div className="i-backgroupdS">
-                                <a
-                                    href="https://www.facebook.com/NhiLove.kha.14473"
-                                    target="__blank"
-                                    className="i-link"
-                                >
-                                    <img src={iconFacebook} alt="facebook" className="i__icon-img" />
-                                </a>
-                            </div>
-                            <div className="i-backgroupdS">
-                                <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
-                                    <img src={iconGithub} alt="Github" className="i__icon-img" />
-                                </a>
-                            </div>
-                        </div>
-                        <div className="cv">
-                            <button className="btn">
-                                <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
-                                    Download cv
-                                </a>
-                            </button>
-                        </div>
+                        <img src={WavingHand} alt="WavingHand" className="wavingHand" />
+                        <span className="texTitle"> {t('intro.texMyNameIs')}</span>
+                    </div>
+                    <h1 className="i-heading1 textHeading">NGUYỄN KHÁNH LỘC</h1>
+                    <h3 className="i-heading3 textSubHeading">
+                        {t('intro.textImAWeb')}
+                        <span className="i-text-smail textSubHeading">{text}</span>
+                    </h3>
+                    <p
+                        className="i-heading4"
+                        style={{
+                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                        }}
+                    >
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam corrupti eligendi esse iure
+                        saepe temporibus, impedit quo, vitae tempora commodi animi quasi incidunt voluptatibus. Quas
+                        excepturi repudiandae officiis dicta quia!
+                    </p>
+                    <div className="cv ">
+                        <button className="btn">
+                            <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
+                                Download cv
+                            </a>
+                            <DownloadOutlined
+                                style={{
+                                    fontSize: '18px',
+                                    color: 'var(--textColorDark)',
+                                    marginLeft: '8px',
+                                }}
+                            />
+                        </button>
                     </div>
                 </div>
                 {/* Phần tử bên trái của "container" có className "i-right" */}
+
                 <div className="i-right">
                     <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
+                    <svg fill="transparent" viewBox="0 0 506 506" width="60%" height="60%" className="circleImage">
+                        {' '}
+                        <motion.circle
+                            cx="253"
+                            cy="253"
+                            r="250"
+                            stroke="#24B6F2"
+                            strokeWidth="4"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            initial={{ strokeDasharray: '24 10 0 0 ' }}
+                            animate={{
+                                strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
+                                rotate: 360,
+                            }}
+                            transition={{
+                                duration: 10,
+                                repeat: Infinity,
+                                repeatType: 'reverse',
+                            }}
+                        />
+                    </svg>
                 </div>
             </div>
         </div>

@@ -1,12 +1,29 @@
 import './skill.scss';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 
-// Ngôn ngữ
+//icon
+import {
+    BehanceOutlined,
+    FacebookOutlined,
+    LinkedinOutlined,
+    DribbbleOutlined,
+    GithubOutlined,
+} from '@ant-design/icons';
+
 import { useTranslation } from 'react-i18next';
+import { ThemeContext } from '../../utils/context';
 
 const Skill = () => {
     // Sử dụng react-i18next để dễ dàng dịch nội dung
     const { t } = useTranslation();
+
+    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
+    const theme = useContext(ThemeContext);
+    const darkMode = theme.state.darkMode;
+
+    // Truy cập vào root đổi màu color
+    const root = getComputedStyle(document.documentElement);
+    const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
 
     // Sử dụng useEffect để cập nhật thanh tiến độ khi cuộn trang
     useEffect(() => {
@@ -33,197 +50,261 @@ const Skill = () => {
     return (
         <section id="skill" className="skills section-bg">
             <div className="container">
-                <div className="skills-title">
-                    <h2 className="skills-heading">Skills</h2>
-                </div>
-                <h4 className="skills-text">
-                    <i>{t('skill.textTool')}</i>
-                </h4>
-                <div className="row skills-content">
-                    <div className="col-lg-6" data-aos="fade-up">
-                        <div className="progress">
-                            <span className="skill">
-                                Html / Css <i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
+                <h2 className="skills-heading textHeading">Skills</h2>
+                <div className="skills-content">
+                    <div className="skills-left">
+                        <h2 className="textHeading">Kỹ năng của tôi</h2>
+                        <p
+                            className="textSubTitle"
+                            style={{
+                                color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                            }}
+                        >
+                            xem đầy đủ những kỹ năng tôi có và thực hiện, để phát triển dự án cho bạn
+                        </p>
+                        <div className="skills-icon">
+                            <a href="https://www.behance.net/anhlamot55" target="_blank" rel="noopener noreferrer">
+                                <BehanceOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </a>
+                            <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
+                                <LinkedinOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/in/loc-nguyenkhanh-927b0822a/"
+                                target="__blank"
+                                className="i-link"
+                            >
+                                <DribbbleOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </a>
+                            <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
+                                <FacebookOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </a>
+                            <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
+                                <GithubOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </a>
                         </div>
                     </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Photoshop / Illustrator<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
+                    <div className="skills-right">
+                        <div className="skills-category">
+                            <h3 className="textSubHeading">{t('skill.textSkill')}</h3>
+                            <div className="skills-list">
+                                {' '}
+                                <ul className="skills-items">
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            1.
+                                        </span>{' '}
+                                        Ux Research
+                                    </li>
+                                    <li>
+                                        {' '}
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            2.
+                                        </span>{' '}
+                                        Wireframe
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            3.
+                                        </span>{' '}
+                                        Prototype
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            4.
+                                        </span>{' '}
+                                        User Interface
+                                    </li>
+                                </ul>
+                                <ul className="skills-items">
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            5.
+                                        </span>{' '}
+                                        Landing page
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            6.
+                                        </span>{' '}
+                                        Branding
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            7.
+                                        </span>{' '}
+                                        Web design
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            8.
+                                        </span>{' '}
+                                        Mobile design
+                                    </li>
+                                </ul>
                             </div>
                         </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Javascript<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>{' '}
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Figma<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Sass / Bootstrap <i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Word / Excel / Powerpoint <i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    {/* <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                React<i className="val">50%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Adobe Xd<i className="val">50%</i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div> */}
-                </div>
-
-                <h4 className="skills-text">
-                    <i>{t('skill.textSkill')}</i>
-                </h4>
-
-                <div className="row skills-content">
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Prototyping <i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Wireframing<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Web design<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="col-lg-6" data-aos="fade-up" data-aos-delay="100">
-                        <div className="progress">
-                            <span className="skill">
-                                Mobile design<i className="val"></i>
-                            </span>
-                            <div className="progress-bar-wrap">
-                                <div
-                                    className="progress-bar"
-                                    aria-valuenow="50"
-                                    aria-valuemin="0"
-                                    aria-valuemax="100"
-                                ></div>
+                        <div className="skills-category">
+                            <h3 className="textSubHeading">{t('skill.textTool')}</h3>
+                            <div className="skills-list">
+                                <ul className="skills-items">
+                                    <li>
+                                        {' '}
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            1.
+                                        </span>{' '}
+                                        Html & Css
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            2.
+                                        </span>{' '}
+                                        Basic Javascript
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            3.
+                                        </span>{' '}
+                                        Figma
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            4.
+                                        </span>{' '}
+                                        Photoshop
+                                    </li>
+                                </ul>
+                                <ul className="skills-items">
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            5.
+                                        </span>{' '}
+                                        Photoshop
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            6.
+                                        </span>{' '}
+                                        Illustrator
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            7.
+                                        </span>{' '}
+                                        Chat gpt
+                                    </li>
+                                    <li>
+                                        <span
+                                            style={{
+                                                color: color.trim(),
+                                                fontWeight: 'var(--fontWeightBold)',
+                                            }}
+                                        >
+                                            8.
+                                        </span>{' '}
+                                        Adobe xd
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>

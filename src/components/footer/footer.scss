@@ -1,77 +1,111 @@
 @import '../../app.scss';
 
 .footer {
-    background-color: #222;
     .container {
-        margin-top: 100px;
-        text-align: center;
-        .footer__text-gmail {
-            padding-top: 24px;
-            font-size: 24px;
-            font-family: var(--poppins);
-            color: var(--primary-600);
-        }
-        .i-sci {
-            align-items: center;
-            justify-content: center;
-            display: flex;
-            margin: 20px 0;
-            min-height: 40px;
-            .i-backgroupdS {
-                margin-right: 8px;
-                border-radius: 8px;
-                background: #fff;
-                box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                width: 40px;
-                height: 40px;
-                display: flex;
-                justify-content: center; /* Canh giữa theo chiều ngang */
-                align-items: center; /* Canh giữa theo chiều dọc */
-                &:hover {
-                    background-color: var(--primary-100);
-                }
-                .i__icon-img {
-                    /* Căn giữa theo chiều ngang và dọc */
-                    display: block;
-                    margin: auto;
-                }
+        padding: 56px 80px 36px 80px;
+        max-width: 100%;
+
+        .footer-line {
+            margin-bottom: 36px;
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: #ccc;
             }
         }
-        .footer__text {
-            padding-bottom: 24px;
-            font-size: 20px;
-            margin-bottom: 0;
-            font-family: var(--poppins);
+
+        .footer-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+
+
+            .footer-logo {
+                cursor: pointer;
+                width: 160px;
+            }
+
+            .footer-align {
+                text-align: center;
+
+                .footer-icon {
+                    display: flex;
+                    gap: 12px;
+                    margin-bottom: 12px;
+
+                    .icon-btn {
+                        font-size: var(--fontSize24);
+                        padding: 8px 8px;
+                        border: 1px solid var(--primary-500);
+                        border-radius: 4px;
+                    }
+                }
+
+                .footer__text {
+                    margin: 0;
+                }
+            }
+
+        }
+    }
+}
+
+//tablet
+
+@media screen and (max-width: 1024px) {
+    .footer {
+        .container {
+            padding: 24px 60px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .footer {
+        .container {
+            .footer-line {
+                margin-bottom: 24px;
+
+            }
+
+            .footer-content {
+                display: grid;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+
+                .footer-logo {
+                    display: none;
+                }
+
+                .footer-align {
+                    .footer__text {
+                        font-size: var(--fontSize16);
+                    }
+                }
+
+                .footer-textGmail {
+                    display: none;
+                }
+
+            }
         }
     }
 }
 
 //mobile
-
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 431px) {
     .footer {
-        padding: 0 20px;
         .container {
-            .footer__text-gmail {
-                padding-top: 20px;
-                font-size: 16px;
-                .i-sci {
-                    margin: 10px 0;
-                    min-height: 30px;
-                    .i-backgroupdS {
-                        margin-right: 6px;
-                        border-radius: 6px;
-                        background: #fff;
-                        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-                        width: 30px;
-                        height: 30px;
-                    }
-                }
-            }
-            .footer__text {
-                padding-bottom: 20px;
-                font-size: 16px;
-            }
+            padding: 24px 8px;
+
         }
     }
 }
