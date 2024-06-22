@@ -14,7 +14,7 @@ import './components/portfolio/portfolio.scss';
 import Contact from './components/contact/Contact';
 import AnimatedCursor from 'react-animated-cursor';
 import 'locomotive-scroll/dist/locomotive-scroll.css'; // Đảm bảo bạn đã thêm style này
-import ScrollReveal from 'scrollreveal';
+// import ScrollReveal from 'scrollreveal';
 
 const App = () => {
     //dark mode
