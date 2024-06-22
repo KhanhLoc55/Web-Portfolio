@@ -1,4 +1,4 @@
-import { Suspense, useCallback, useContext, useEffect } from 'react';
+import { useCallback, useContext, useEffect } from 'react';
 
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
