@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from '../../utils/context';
 
 //icon
@@ -14,7 +14,7 @@ const Card = (props) => {
     // Truy cập vào root đổi màu color
     const root = getComputedStyle(document.documentElement);
     const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
-    
+
     const handleSelectedPortfolio = () => {
         selectedPortfolio(id);
         toggleModal();

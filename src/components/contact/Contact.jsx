@@ -4,6 +4,7 @@ import './contact.scss';
 import { ThemeContext } from '../../utils/context';
 import emailjs from '@emailjs/browser';
 
+
 import { PhoneOutlined, MessageOutlined, EnvironmentOutlined } from '@ant-design/icons';
 const Contact = () => {
     const messageMaxLength = 1000;
@@ -81,7 +82,7 @@ const Contact = () => {
             <div className="container">
                 <h2 className="contact-heading textHeading">Contact</h2>
                 <div className="contact-content">
-                    <div className="contact-left">
+                    <div className="contact-left ScrollReveal-left">
                         <h3 className="textHeading"> {t('contact.text1')}</h3>
                         <p
                             style={{
@@ -148,7 +149,7 @@ const Contact = () => {
                     </div>
 
                     <div
-                        className="contact-right"
+                        className="contact-right ScrollReveal-right"
                         style={{
                             background: darkMode
                                 ? 'linear-gradient(180deg, var(--colorStart) 0%, var(--colorEnd) 100%)'

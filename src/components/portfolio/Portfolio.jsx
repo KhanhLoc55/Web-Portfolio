@@ -8,6 +8,7 @@ import ModalPortfolio from '../modalPortfolio/ModalPortfolio.jsx';
 import { ModalContext } from '../../context/modalCtx/index.jsx';
 import { useTranslation } from 'react-i18next';
 
+
 export default function Portfolio() {
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const [selected, setSelected] = useState('featured');
@@ -72,7 +73,7 @@ export default function Portfolio() {
             <div className="container">
                 <h2 className="portfolio-heading textHeading">Portfolio</h2>
 
-                <ul className="portfolio-list">
+                <ul className="portfolio-list ">
                     {list.map((item) => (
                         <PortfolioList
                             key={item.id}

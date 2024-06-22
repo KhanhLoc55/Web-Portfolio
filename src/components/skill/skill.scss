@@ -242,6 +242,22 @@
     }
 }
 
+@media screen and (max-width: 361px) {
+    .skills {
+        .container {
+            .skills-content {
+                .skills-right {
+                    .skills-category {
+                        .skills-list {
+                            gap: 60px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 321px) {
     .skills {
         .container {

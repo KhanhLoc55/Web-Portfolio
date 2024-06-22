@@ -11,6 +11,7 @@ import WavingHand from '../../assets/wavingHand.svg';
 import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
 import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
+
 //icon
 import { DownloadOutlined } from '@ant-design/icons';
 
@@ -45,24 +46,26 @@ const Intro = () => {
         handleChangeCvLanguage();
     }, [handleChangeCvLanguage, i18n.resolvedLanguage]);
 
+
+
     return (
         <div className="intro" id="intro">
             <div className="container">
                 {/* Phần tử bên trái của "container" có className "i-left" */}
                 <div className="i-left">
                     <div className="textContentLeft noScroll">
-                        <span className="texTitle">{t('intro.textHey')}!</span>
-
-                        <img src={WavingHand} alt="WavingHand" className="wavingHand" />
-                        <span className="texTitle"> {t('intro.texMyNameIs')}</span>
+                        <span className="texTitle ScrollReveal-left">{t('intro.textHey')}!</span>
+                        <img src={WavingHand} alt="WavingHand" className="wavingHand ScrollReveal-left" />
+                        <span className="texTitle ScrollReveal-left"> {t('intro.texMyNameIs')}</span>
                     </div>
-                    <h1 className="i-heading1 textHeading">NGUYỄN KHÁNH LỘC</h1>
-                    <h3 className="i-heading3 textSubHeading">
+                    <h1 className="i-heading1 textHeading ScrollReveal-left">NGUYỄN KHÁNH LỘC</h1>
+                    <h3 className="i-heading3 textSubHeading ScrollReveal-left">
                         {t('intro.textImAWeb')}
                         <span className="i-text-smail textSubHeading">{text}</span>
                     </h3>
+
                     <p
-                        className="i-heading4"
+                        className="i-heading4 "
                         style={{
                             color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                         }}
@@ -71,7 +74,7 @@ const Intro = () => {
                         saepe temporibus, impedit quo, vitae tempora commodi animi quasi incidunt voluptatibus. Quas
                         excepturi repudiandae officiis dicta quia!
                     </p>
-                    <div className="cv ">
+                    <div className="cv ScrollReveal-left">
                         <button className="btn">
                             <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
                                 Download cv
@@ -88,7 +91,7 @@ const Intro = () => {
                 </div>
                 {/* Phần tử bên trái của "container" có className "i-right" */}
 
-                <div className="i-right">
+                <div className="i-right ScrollReveal-right">
                     <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
                     <svg fill="transparent" viewBox="0 0 506 506" width="60%" height="60%" className="circleImage">
                         {' '}

@@ -50,12 +50,12 @@ const Skill = () => {
     return (
         <section id="skill" className="skills section-bg">
             <div className="container">
-                <h2 className="skills-heading textHeading">Skills</h2>
+                <h2 className="skills-heading textHeading ">Skills</h2>
                 <div className="skills-content">
-                    <div className="skills-left">
-                        <h2 className="textHeading">Kỹ năng của tôi</h2>
+                    <div className="skills-left ScrollReveal-left">
+                        <h2 className="textHeading ">Kỹ năng của tôi</h2>
                         <p
-                            className="textSubTitle"
+                            className="textSubTitle top-header"
                             style={{
                                 color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                             }}
@@ -109,7 +109,7 @@ const Skill = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="skills-right">
+                    <div className="skills-right ScrollReveal-right">
                         <div className="skills-category">
                             <h3 className="textSubHeading">{t('skill.textSkill')}</h3>
                             <div className="skills-list">

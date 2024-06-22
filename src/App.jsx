@@ -1,3 +1,5 @@
+import { Suspense, useCallback, useContext, useEffect } from 'react';
+
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
 import Skill from './components/skill/Skill';
@@ -7,11 +9,12 @@ import Portfolio from './components/portfolio/Portfolio';
 import Footer from './components/footer/Footer';
 
 import { ThemeContext } from './utils/context';
-import { Suspense, useCallback, useContext, useEffect } from 'react';
 import './app.scss';
 import './components/portfolio/portfolio.scss';
 import Contact from './components/contact/Contact';
 import AnimatedCursor from 'react-animated-cursor';
+import 'locomotive-scroll/dist/locomotive-scroll.css'; // Đảm bảo bạn đã thêm style này
+import ScrollReveal from 'scrollreveal';
 
 const App = () => {
     //dark mode
@@ -38,25 +41,50 @@ const App = () => {
         : root.getPropertyValue('--backgroundLight');
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
+    useEffect(() => {
+        const srLeft = ScrollReveal({
+            origin: 'left',
+            // duration: 2000,
+            easing: 'ease-in-out',
+            // distance: '80px',
+
+            reset: true,
+        });
+
+        srLeft.reveal('.ScrollReveal-left', { delay: 100 });
+    }, []);
+
+    useEffect(() => {
+        const srRight = ScrollReveal({
+            origin: 'right',
+            // duration: 2000,
+            easing: 'ease-in-out',
+            // distance: '80px',
+
+            reset: true,
+        });
+
+        srRight.reveal('.ScrollReveal-right', { delay: 100 });
+    }, []);
+
     return (
-        <Suspense fallback="...is loading">
-            <div
-                className="App"
-                style={{
-                    backgroundColor: backgroundColor.trim(),
-                    color: color.trim(),
-                }}
-            >
-                <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
-                <Header />
-                <Intro />
-                <Portfolio />
-                <Skill />
-                <Resume />
-                <Contact />
-                <Footer />
-            </div>
-        </Suspense>
+        <div
+            className="App"
+            style={{
+                backgroundColor: backgroundColor.trim(),
+                color: color.trim(),
+            }}
+            data-scroll-container
+        >
+            <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
+            <Header />
+            <Intro />
+            <Portfolio />
+            <Skill />
+            <Resume />
+            <Contact />
+            <Footer />
+        </div>
     );
 };
 
