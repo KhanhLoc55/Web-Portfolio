@@ -80,7 +80,7 @@ const Header = () => {
                                         activeClass="active"
                                         spy={true}
                                         smooth={true}
-                                        offset={-180}
+                                        offset={-135}
                                         duration={500}
                                     >
                                         {t('header.headerProject')}
@@ -92,7 +92,7 @@ const Header = () => {
                                         activeClass="active"
                                         spy={true}
                                         smooth={true}
-                                        offset={-180}
+                                        offset={-135}
                                         duration={500}
                                     >
                                         {t('header.headerSkill')}
@@ -104,7 +104,7 @@ const Header = () => {
                                         activeClass="active"
                                         spy={true}
                                         smooth={true}
-                                        offset={-180}
+                                        offset={-135}
                                         duration={500}
                                     >
                                         {t('header.headerResume')}
@@ -117,7 +117,7 @@ const Header = () => {
                                         activeClass="active"
                                         spy={true}
                                         smooth={true}
-                                        offset={-180}
+                                        offset={-135}
                                         duration={500}
                                     >
                                         {t('header.headerContact')}

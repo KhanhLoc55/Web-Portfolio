@@ -11,7 +11,6 @@ import WavingHand from '../../assets/wavingHand.svg';
 import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
 import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
-
 //icon
 import { DownloadOutlined } from '@ant-design/icons';
 
@@ -46,8 +45,6 @@ const Intro = () => {
         handleChangeCvLanguage();
     }, [handleChangeCvLanguage, i18n.resolvedLanguage]);
 
-
-
     return (
         <div className="intro" id="intro">
             <div className="container">
@@ -65,14 +62,12 @@ const Intro = () => {
                     </h3>
 
                     <p
-                        className="i-heading4 "
+                        className="i-heading4 textbody"
                         style={{
                             color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                         }}
                     >
-                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Laboriosam corrupti eligendi esse iure
-                        saepe temporibus, impedit quo, vitae tempora commodi animi quasi incidunt voluptatibus. Quas
-                        excepturi repudiandae officiis dicta quia!
+                        {t('intro.IntroTextContent')}
                     </p>
                     <div className="cv ScrollReveal-left">
                         <button className="btn">

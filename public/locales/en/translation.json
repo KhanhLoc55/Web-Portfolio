@@ -8,8 +8,10 @@
     "intro": {
         "textHey": "Hey",
         "texMyNameIs": "my name is",
-        "textImAWeb": "I’m a "
+        "textImAWeb": "I’m a ",
+        "IntroTextContent": "With 2 years of experience in graphic design for print materials, logos, banners, flyers, posters, standees, social media, and billboards, along with 6 months of UI/UX design experience for web interfaces, landing pages, icons, buttons, and mobile applications, I always prioritize quality and professionalism. I am eager to learn and take on new challenges, believing that I can deliver high-quality and valuable products for the company."
     },
+
     "skill": {
         "textTool": "Tool",
         "textSkill": "Skill"

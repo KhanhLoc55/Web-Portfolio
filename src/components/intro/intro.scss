@@ -5,7 +5,6 @@
         grid-template-columns: 1fr 1fr;
         align-items: center;
         max-width: 100%;
-        gap: 40px;
     }
 
     .i-left {
@@ -51,6 +50,7 @@
 
         .i-heading4 {
             margin-bottom: 16px;
+            line-height: var(--lineHeight26);
         }
 
         .cv {
@@ -94,6 +94,11 @@
 
             .i-left {
                 text-align: center;
+
+                .i-heading4 {
+                    margin-bottom: 16px;
+                    font-size: 14px;
+                }
             }
 
             .i-right {
@@ -164,7 +169,9 @@
                 }
 
                 .i-heading4 {
-                    line-height: var(--lineHeight26);
+                    line-height: var(--lineHeight24);
+                    font-size: var(--fontSize13);
+                    padding: 0 6px;
                 }
             }
 
@@ -191,8 +198,8 @@
             .i-left {
 
                 .i-heading4 {
-                    font-size: var(--fontSize13);
                     line-height: var(--lineHeight22);
+                    font-size: 12px;
                 }
 
                 .cv {

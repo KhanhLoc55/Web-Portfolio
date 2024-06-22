@@ -41,31 +41,31 @@ const App = () => {
         : root.getPropertyValue('--backgroundLight');
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
-    useEffect(() => {
-        const srLeft = ScrollReveal({
-            origin: 'left',
-            // duration: 2000,
-            easing: 'ease-in-out',
-            // distance: '80px',
+    // useEffect(() => {
+    //     const srLeft = ScrollReveal({
+    //         origin: 'top',
+    //         duration: 2000,
+    //         easing: 'ease-in-out',
+    //         // distance: '80px',
 
-            reset: true,
-        });
+    //         reset: true,
+    //     });
 
-        srLeft.reveal('.ScrollReveal-left', { delay: 100 });
-    }, []);
+    //     srLeft.reveal('.ScrollReveal-left', { delay: 100 });
+    // }, []);
 
-    useEffect(() => {
-        const srRight = ScrollReveal({
-            origin: 'right',
-            // duration: 2000,
-            easing: 'ease-in-out',
-            // distance: '80px',
+    // useEffect(() => {
+    //     const srRight = ScrollReveal({
+    //         origin: 'bottom',
+    //         duration: 2000,
+    //         easing: 'ease-in-out',
+    //         // distance: '80px',
 
-            reset: true,
-        });
+    //         reset: true,
+    //     });
 
-        srRight.reveal('.ScrollReveal-right', { delay: 100 });
-    }, []);
+    //     srRight.reveal('.ScrollReveal-right', { delay: 100 });
+    // }, []);
 
     return (
         <div
@@ -74,7 +74,6 @@ const App = () => {
                 backgroundColor: backgroundColor.trim(),
                 color: color.trim(),
             }}
-            data-scroll-container
         >
             <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
             <Header />
