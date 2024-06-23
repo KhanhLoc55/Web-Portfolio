@@ -60,27 +60,6 @@ const App = () => {
         : root.getPropertyValue('--backgroundLight');
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
-    // useEffect(() => {
-    //     const srLeft = ScrollReveal({
-    //         origin: 'left',
-    //         duration: 2000,
-    //         easing: 'ease-in-out',
-    //         distance: isMobileDevice ? '20px' : '80px',
-    //         reset: true,
-    //     });
-
-    //     const srRight = ScrollReveal({
-    //         origin: 'right',
-    //         duration: 2000,
-    //         easing: 'ease-in-out',
-    //         distance: isMobileDevice ? '20px' : '80px',
-    //         reset: true,
-    //     });
-
-    //     srLeft.reveal('.ScrollReveal-left', { delay: 100 });
-    //     srRight.reveal('.ScrollReveal-right', { delay: 100 });
-    // }, [isMobileDevice]);
-
     return (
         <div
             className="App"

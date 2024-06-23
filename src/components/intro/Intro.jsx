@@ -13,6 +13,7 @@ import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
 //icon
 import { DownloadOutlined } from '@ant-design/icons';
+import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Intro = () => {
     const { t, i18n } = useTranslation(); // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
@@ -50,16 +51,18 @@ const Intro = () => {
             <div className="container">
                 {/* Phần tử bên trái của "container" có className "i-left" */}
                 <div className="i-left">
-                    <div className="textContentLeft noScroll">
-                        <span className="texTitle ScrollReveal-left">{t('intro.textHey')}!</span>
-                        <img src={WavingHand} alt="WavingHand" className="wavingHand ScrollReveal-left" />
-                        <span className="texTitle ScrollReveal-left"> {t('intro.texMyNameIs')}</span>
-                    </div>
-                    <h1 className="i-heading1 textHeading ScrollReveal-left">NGUYỄN KHÁNH LỘC</h1>
-                    <h3 className="i-heading3 textSubHeading ScrollReveal-left">
-                        {t('intro.textImAWeb')}
-                        <span className="i-text-smail textSubHeading">{text}</span>
-                    </h3>
+                    <ScrollReveal position="left">
+                        <div className="textContentLeft noScroll">
+                            <span className="texTitle">{t('intro.textHey')}!</span>
+                            <img src={WavingHand} alt="WavingHand" className="wavingHand" />
+                            <span className="texTitle"> {t('intro.texMyNameIs')}</span>
+                        </div>
+                        <h1 className="i-heading1 textHeading">NGUYỄN KHÁNH LỘC</h1>
+                        <h3 className="i-heading3 textSubHeading">
+                            {t('intro.textImAWeb')}
+                            <span className="i-text-smail textSubHeading">{text}</span>
+                        </h3>
+                    </ScrollReveal>
 
                     <p
                         className="i-heading4 textbody"
@@ -69,48 +72,51 @@ const Intro = () => {
                     >
                         {t('intro.IntroTextContent')}
                     </p>
-                    <div className="cv ScrollReveal-left">
-                        <button className="btn">
-                            <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
-                                Download cv
-                            </a>
-                            <DownloadOutlined
-                                style={{
-                                    fontSize: '18px',
-                                    color: 'var(--textColorDark)',
-                                    marginLeft: '8px',
-                                }}
-                            />
-                        </button>
-                    </div>
+                    <ScrollReveal position="left">
+                        <div className="cv">
+                            <button className="btn">
+                                <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
+                                    Download cv
+                                </a>
+                                <DownloadOutlined
+                                    style={{
+                                        fontSize: '18px',
+                                        color: 'var(--textColorDark)',
+                                        marginLeft: '8px',
+                                    }}
+                                />
+                            </button>
+                        </div>
+                    </ScrollReveal>
                 </div>
                 {/* Phần tử bên trái của "container" có className "i-right" */}
-
-                <div className="i-right ScrollReveal-right">
-                    <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
-                    <svg fill="transparent" viewBox="0 0 506 506" width="60%" height="60%" className="circleImage">
-                        {' '}
-                        <motion.circle
-                            cx="253"
-                            cy="253"
-                            r="250"
-                            stroke="#24B6F2"
-                            strokeWidth="4"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            initial={{ strokeDasharray: '24 10 0 0 ' }}
-                            animate={{
-                                strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
-                                rotate: 360,
-                            }}
-                            transition={{
-                                duration: 10,
-                                repeat: Infinity,
-                                repeatType: 'reverse',
-                            }}
-                        />
-                    </svg>
-                </div>
+                <ScrollReveal position="right">
+                    <div className="i-right">
+                        <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
+                        <svg fill="transparent" viewBox="0 0 506 506" width="60%" height="60%" className="circleImage">
+                            {' '}
+                            <motion.circle
+                                cx="253"
+                                cy="253"
+                                r="250"
+                                stroke="#24B6F2"
+                                strokeWidth="4"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                initial={{ strokeDasharray: '24 10 0 0 ' }}
+                                animate={{
+                                    strokeDasharray: ['15 120 25 25', '16 25 92 72', '4 250 22 22'],
+                                    rotate: 360,
+                                }}
+                                transition={{
+                                    duration: 10,
+                                    repeat: Infinity,
+                                    repeatType: 'reverse',
+                                }}
+                            />
+                        </svg>
+                    </div>
+                </ScrollReveal>
             </div>
         </div>
     );
