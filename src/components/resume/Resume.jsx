@@ -72,7 +72,6 @@ const Resume = () => {
                                             fontSize: 'var(--fontSize16)',
                                         }}
                                     />
-                                    {t('resume.textIphone')}:{' '}
                                     <span
                                         className="resume-info-text"
                                         style={{
@@ -90,7 +89,6 @@ const Resume = () => {
                                             fontSize: 'var(--fontSize16)',
                                         }}
                                     />
-                                    Gmail:{' '}
                                     <span
                                         className="resume-info-text"
                                         style={{
@@ -108,7 +106,6 @@ const Resume = () => {
                                             fontSize: 'var(--fontSize16)',
                                         }}
                                     />
-                                    {t('resume.textWebDesign')}:{' '}
                                     <span
                                         className="resume-info-text"
                                         style={{
@@ -128,7 +125,6 @@ const Resume = () => {
                                             fontSize: 'var(--fontSize16)',
                                         }}
                                     />{' '}
-                                    {t('resume.textWebFrontEnd')}:{' '}
                                     <span
                                         className="resume-info-text"
                                         style={{
@@ -152,7 +148,6 @@ const Resume = () => {
                         >
                             {t('resume.textCertifications')}
                         </h3>
-
                         <div className="resume-circle2">
                             <h4 className="text-title  textTitle">Google UX Design</h4>
                             <h5
@@ -174,7 +169,6 @@ const Resume = () => {
                                         fontSize: 'var(--fontSize16)',
                                     }}
                                 />
-                                {t('resume.textCertifications')}:{' '}
                                 <span
                                     className="resume-info-text"
                                     style={{
@@ -209,7 +203,6 @@ const Resume = () => {
                                         fontSize: 'var(--fontSize16)',
                                     }}
                                 />
-                                {t('resume.textCertifications')}:{' '}
                                 <span
                                     className="resume-info-text"
                                     style={{

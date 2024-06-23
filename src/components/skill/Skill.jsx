@@ -53,14 +53,14 @@ const Skill = () => {
                 <h2 className="skills-heading textHeading ">Skills</h2>
                 <div className="skills-content">
                     <div className="skills-left ScrollReveal-left">
-                        <h2 className="textHeading ">Kỹ năng của tôi</h2>
+                        <h2 className="textHeading ">{t('skill.textSkillMe')}</h2>
                         <p
                             className="textSubTitle top-header"
                             style={{
                                 color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                             }}
                         >
-                            xem đầy đủ những kỹ năng tôi có và thực hiện, để phát triển dự án cho bạn
+                            {t('skill.textSkillTitle')}
                         </p>
                         <div className="skills-icon">
                             <a href="https://www.behance.net/anhlamot55" target="_blank" rel="noopener noreferrer">
@@ -68,6 +68,9 @@ const Skill = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -76,6 +79,9 @@ const Skill = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -88,6 +94,9 @@ const Skill = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -96,6 +105,9 @@ const Skill = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -104,6 +116,9 @@ const Skill = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -171,7 +186,7 @@ const Skill = () => {
                                         >
                                             5.
                                         </span>{' '}
-                                        Landing page
+                                        Landing Page
                                     </li>
                                     <li>
                                         <span
@@ -193,7 +208,7 @@ const Skill = () => {
                                         >
                                             7.
                                         </span>{' '}
-                                        Web design
+                                        Web Design
                                     </li>
                                     <li>
                                         <span
@@ -204,7 +219,7 @@ const Skill = () => {
                                         >
                                             8.
                                         </span>{' '}
-                                        Mobile design
+                                        Mobile Design
                                     </li>
                                 </ul>
                             </div>
@@ -269,7 +284,7 @@ const Skill = () => {
                                         >
                                             5.
                                         </span>{' '}
-                                        Photoshop
+                                        Canva
                                     </li>
                                     <li>
                                         <span
@@ -291,7 +306,7 @@ const Skill = () => {
                                         >
                                             7.
                                         </span>{' '}
-                                        Chat gpt
+                                        Chat Gpt
                                     </li>
                                     <li>
                                         <span
@@ -302,7 +317,7 @@ const Skill = () => {
                                         >
                                             8.
                                         </span>{' '}
-                                        Adobe xd
+                                        Adobe Xd
                                     </li>
                                 </ul>
                             </div>

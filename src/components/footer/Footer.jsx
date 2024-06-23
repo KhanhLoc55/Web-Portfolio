@@ -3,6 +3,7 @@ import { ThemeContext } from '../../utils/context';
 import LogoImg from '../../assets/KL-textLogo.svg';
 import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
 import './footer.scss';
+import { useTranslation } from 'react-i18next';
 
 import { Link } from 'react-scroll';
 
@@ -14,6 +15,9 @@ import {
     GithubOutlined,
 } from '@ant-design/icons';
 const Footer = () => {
+    // Sử dụng react-i18next để dễ dàng dịch nội dung
+    const { t } = useTranslation();
+
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
@@ -45,6 +49,9 @@ const Footer = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -53,6 +60,9 @@ const Footer = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -65,6 +75,9 @@ const Footer = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -73,6 +86,9 @@ const Footer = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -81,6 +97,9 @@ const Footer = () => {
                                     className="icon-btn"
                                     style={{
                                         color: color.trim(),
+                                        border: darkMode
+                                            ? '1px solid var(--primary-500)'
+                                            : '1px solid var(--second-600)',
                                     }}
                                 />
                             </a>
@@ -91,7 +110,7 @@ const Footer = () => {
                                 color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
                             }}
                         >
-                            @2024 All rights reserved
+                            {t('footer.footerText')}
                         </h3>
                     </div>
                     <h3

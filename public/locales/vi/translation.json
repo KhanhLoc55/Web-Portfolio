@@ -6,14 +6,16 @@
         "headerContact": "Liên hệ"
     },
     "intro": {
-        "textHey": "Xin Chào",
-        "texMyNameIs": "tôi tên là",
+        "textHey": "Xin chào",
+        "texMyNameIs": "Tôi tên là",
         "textImAWeb": "Tôi là một ",
         "IntroTextContent": "Với 2 năm kinh nghiệm thiết kế đồ họa cho ấn phẩm, logo, banner, tờ rơi, băng rôn, standee, mạng xã hội và biển quảng cáo, và 6 tháng kinh nghiệm UI/UX thiết kế giao diện web, landing page, icon, button và ứng dụng di động, tôi luôn coi trọng chất lượng và chuyên nghiệp. Sẵn sàng học hỏi và nhận thách thức mới, tôi tin rằng mình có thể mang đến sản phẩm chất lượng và giá trị cho công ty."
     },
     "skill": {
         "textTool": "Công cụ",
-        "textSkill": "Kỹ năng"
+        "textSkill": "Kỹ năng",
+        "textSkillMe": "Lĩnh vực tôi thành thạo",
+        "textSkillTitle": "Xem đầy đủ những kỹ năng tôi có và thực hiện, để phát triển dự án cho bạn!"
     },
     "resume": {
         "textSumary": "Tóm tắt",
@@ -47,7 +49,11 @@
         "text3": "Quận Gò Vấp, Hồ Chí Minh, Việt Nam.",
         "textIphone": "Điện Thoại:",
         "textMessage": "Gửi tin nhắn",
-        "textAddress": "Địa chỉ"
+        "textAddress": "Địa chỉ",
+        "contactAlert": "Tôi đã nhận được tin nhắn của bạn. Tôi sẽ phản hồi sớm nhất có thể. Chúc bạn có một ngày thật tuyệt vời!"
+    },
+    "footer": {
+        "footerText": "© 2024 - Bản quyền thuộc về KL<webdesign/>"
     },
     "card": {
         "desc1": "- Tôi đã hoàn thành dự án portfolio website với sự kết hợp giữa lập trình và thiết kế. Trong phần UI Designer, tôi sử dụng Figma, Photoshop và Illustrator để thiết kế 2 màn hình cho desktop và mobile, bao gồm cả Dark Mode. Tôi đã tạo ý tưởng cho icon, màu sắc, font chữ, Grid System, Button, Fields, Typography và toggle.",
@@ -64,6 +70,9 @@
         "desc13": "- Sản phẩm này không chỉ giúp bạn đặt vé máy bay nhanh chóng hơn, mà còn là hướng dẫn cho bạn khám phá những ngóc ngách, những nơi thú vị mà bạn có thể chưa từng biết đến. Hãy sẵn sàng cho một cuộc hành trình đáng nhớ và khám phá những bí mật đang chờ bạn ở khắp mọi ngóc ngách của Việt Nam.",
         "desc14": "- Chào mừng đến với Bảng điều khiển quản trị của tôi! Tôi đã phát triển công cụ mạnh mẽ này để tối ưu hóa và đơn giản hóa quản lý và quản trị hệ thống hoặc ứng dụng của bạn. Với giao diện thân thiện với người dùng và các tính năng toàn diện, Bảng điều khiển quản trị của tôi giúp các quản trị viên như bạn kiểm soát và theo dõi hiệu quả các khía cạnh khác nhau trong hệ thống của bạn.",
         "desc15": "- Sản phẩm này đã được thiết kế dựa trên nền tảng của Figma, một công cụ thiết kế giao diện đỉnh cao. Qua sự sáng tạo và công phu trong việc sử dụng Figma, chúng tôi đã tạo ra một giao diện người dùng đẹp mắt và thân thiện. Sự tích hợp của Figma đã giúp chúng tôi dễ dàng tạo ra các thành phần và bố cục đồ họa, đồng thời cung cấp khả năng tương tác và xem trước trực quan.",
-        "desc16": "- Dự án Interior Design Landing Page của tôi là sự hòa quyện giữa nghệ thuật và chuyên nghiệp. Thiết kế responsive cho cả desktop và mobile, sử dụng Fig­ma và Photoshop. Mình đã chọn hai font Libre Baskerville và Monstercat, kết hợp với bảng màu tinh tế #00FEDF, #3C2A21, #FFFFFF, và background #1A120B. Header gồm logo và các mục chính như Home, Introduction, Services, Products, và Contact, tạo nên một trải nghiệm đẳng cấp cho người dùng."
+        "desc16": "- Dự án Interior Design Landing Page của tôi là sự hòa quyện giữa nghệ thuật và chuyên nghiệp. Thiết kế responsive cho cả desktop và mobile, sử dụng Fig­ma và Photoshop. Mình đã chọn hai font Libre Baskerville và Monstercat, kết hợp với bảng màu tinh tế #00FEDF, #3C2A21, #FFFFFF, và background #1A120B. Header gồm logo và các mục chính như Home, Introduction, Services, Products, và Contact, tạo nên một trải nghiệm đẳng cấp cho người dùng.",
+        "desc17": "- Logo của tessel.ai kết hợp hai yếu tố chính: tessellation (tessell.ai) và Vision Tessellation thường gắn liền với sự sáng tạo và tư duy hình học, tượng trưng cho các mạng lưới và kết nối. Ngược lại, Vision được thể hiện qua chữ T với thiết kế mượt mà, sạch sẽ và đơn giản.",
+        "desc18": "- Bằng cách kết hợp cả hai yếu tố này, logo không chỉ truyền tải sự sáng tạo và khả năng kết nối mà còn thể hiện sự chính xác và hiệu quả trong thiết kế.",
+        "desc19": "- Tôi cũng làm việc chặt chẽ với khách hàng và thực hiện thiết kế trên phần mềm Illustrator, đảm bảo rằng mọi chi tiết đều được tối ưu hóa để đạt hiệu quả tốt nhất."
     }
 }

@@ -1,12 +1,18 @@
-import { createContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
+
 export const ModalContext = createContext();
 
-export const ModalCtxProvider = (props) => {
-    const { children } = props;
+export const ModalCtxProvider = ({ children }) => {
     const [isToggleModal, setIsToggleModal] = useState(false);
+
     const toggleModal = () => {
-        setIsToggleModal(!isToggleModal);
+        setIsToggleModal((prevState) => !prevState);
     };
 
-    return <ModalContext.Provider value={{ isToggleModal, toggleModal }}>{children}</ModalContext.Provider>;
+    const modalContextValue = {
+        isToggleModal,
+        toggleModal,
+    };
+
+    return <ModalContext.Provider value={modalContextValue}>{children}</ModalContext.Provider>;
 };

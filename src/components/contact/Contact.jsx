@@ -4,7 +4,6 @@ import './contact.scss';
 import { ThemeContext } from '../../utils/context';
 import emailjs from '@emailjs/browser';
 
-
 import { PhoneOutlined, MessageOutlined, EnvironmentOutlined } from '@ant-design/icons';
 const Contact = () => {
     const messageMaxLength = 1000;
@@ -63,7 +62,8 @@ const Contact = () => {
             body: encode({ 'form-name': 'contact', name, email, message, subject }),
         })
             .then(() => {
-                alert(`Thank you for your message. I'll get back to you very soon! Have a great day!`);
+                // Sử dụng template literals để nhúng kết quả của hàm t vào chuỗi
+                alert(t('contact.contactAlert'));
             })
             .catch((error) => alert(error));
     };
@@ -98,8 +98,7 @@ const Contact = () => {
                                     paddingRight: '8px',
                                     fontSize: 'var(--fontSize16)',
                                 }}
-                            />
-                            {t('resume.textIphone')}:{' '}
+                            />{' '}
                             <span
                                 className="contact-info-text"
                                 style={{
@@ -117,7 +116,6 @@ const Contact = () => {
                                     fontSize: 'var(--fontSize16)',
                                 }}
                             />
-                            Gmail:{' '}
                             <span
                                 className="contact-info-text"
                                 style={{
@@ -135,7 +133,6 @@ const Contact = () => {
                                     fontSize: 'var(--fontSize16)',
                                 }}
                             />
-                            {t('contact.textAddress')}:{' '}
                             <span
                                 className="contact-info-text"
                                 style={{

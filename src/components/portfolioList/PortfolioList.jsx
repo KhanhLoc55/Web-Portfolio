@@ -5,7 +5,7 @@ import React from 'react';
 const PortfolioList = ({ id, title, active, setSelected }) => {
     return (
         <li className={active ? 'portfolioList active' : 'portfolioList'} onClick={() => setSelected(id)}>
-            {title}
+            {title} 
         </li>
     );
 };

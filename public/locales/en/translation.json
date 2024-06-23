@@ -6,15 +6,17 @@
         "headerContact": "Contact"
     },
     "intro": {
-        "textHey": "Hey",
-        "texMyNameIs": "my name is",
+        "textHey": "Hello",
+        "texMyNameIs": "My name is",
         "textImAWeb": "I’m a ",
         "IntroTextContent": "With 2 years of experience in graphic design for print materials, logos, banners, flyers, posters, standees, social media, and billboards, along with 6 months of UI/UX design experience for web interfaces, landing pages, icons, buttons, and mobile applications, I always prioritize quality and professionalism. I am eager to learn and take on new challenges, believing that I can deliver high-quality and valuable products for the company."
     },
 
     "skill": {
         "textTool": "Tool",
-        "textSkill": "Skill"
+        "textSkill": "Skill",
+        "textSkillMe": "Areas of my expertise",
+        "textSkillTitle": "See all the skills I have and use them to develop your project!"
     },
     "resume": {
         "textSumary": "Summary",
@@ -45,10 +47,14 @@
     "contact": {
         "text1": "Do you have an idea?",
         "text2": "Don't let it just exist in your thoughts! Take action now to turn that idea into reality. Success is waiting for you!",
-        "text3": "Gò Vấp District, Ho Chi Minh City, Vietnam.",
+        "text3": "Go Vap District, Ho Chi Minh City, Vietnam.",
         "textIphone": "Iphone:",
         "textMessage": "Send Message",
-        "textAddress": "Address"
+        "textAddress": "Address",
+        "contactAlert": "I have received your message. I will respond as soon as possible. Have a wonderful day!"
+    },
+    "footer": {
+        "footerText":"© 2024 - Copyright belongs to KL<webdesign/>"
     },
     "card": {
         "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",
@@ -65,6 +71,9 @@
         "desc13": "- This product not only helps you book flight tickets faster but also serves as a guide to explore hidden corners and interesting places you might not have known about. Get ready for a memorable journey and discover the secrets waiting for you in every nook and cranny of Vietnam.",
         "desc14": "- Welcome to my Admin Dashboard! I have developed this powerful tool to streamline and simplify the management and administration of your system or application. With a user-friendly interface and comprehensive features, my Admin Dashboard empowers administrators like you to efficiently control and monitor various aspects within your system.",
         "desc15": "- This product has been designed based on the Figma platform, a high-quality user interface design tool. Through creativity and meticulous work using Figma, we have created a beautiful and user-friendly user interface. The integration of Figma has enabled us to easily create graphic elements and layouts while providing interactive capabilities and intuitive previews.",
-        "desc16": "- My Interior Design Landing Page project is a harmonious blend of artistry and professionalism. It features a responsive design for both desktop and mobile, crafted using Fig­ma and Photoshop. I opted for the fonts Libre Baskerville and Monstercat, complemented by a sophisticated color palette including #00FEDF, #3C2A21, #FFFFFF, and a background of #1A120B. The header includes a logo and main sections such as Home, Introduction, Services, Products, and Contact, providing users with a premium browsing experience."
+        "desc16": "- My Interior Design Landing Page project is a harmonious blend of artistry and professionalism. It features a responsive design for both desktop and mobile, crafted using Fig­ma and Photoshop. I opted for the fonts Libre Baskerville and Monstercat, complemented by a sophisticated color palette including #00FEDF, #3C2A21, #FFFFFF, and a background of #1A120B. The header includes a logo and main sections such as Home, Introduction, Services, Products, and Contact, providing users with a premium browsing experience.",
+        "desc17": "- The logo of tessel.ai combines two key elements: tessellation (tessell.ai) and Vision. Tessellation is often associated with creativity and geometric thinking, symbolizing networks and connections. In contrast, Vision is represented by the letter T, with a sleek, clean, and simple design.",
+        "desc18": "- By combining both factors, the logo not only communicates creativity and connectivity but also demonstrates precision and effectiveness in design.",
+        "desc19": "- I also work closely with clients and execute designs using Illustrator software, ensuring that every detail is optimized for maximum effectiveness."
     }
 }

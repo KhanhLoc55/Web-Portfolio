@@ -1,4 +1,6 @@
 .skills {
+    overflow-x: hidden;
+
     .container {
         padding: 140px 80px;
         max-width: 100%;
@@ -109,7 +111,6 @@
                         .icon-btn {
                             font-size: var(--fontSize24);
                             padding: 8px 8px;
-                            border: 1px solid var(--primary-500);
                             border-radius: 4px;
                         }
                     }

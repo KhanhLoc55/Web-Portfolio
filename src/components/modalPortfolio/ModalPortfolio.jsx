@@ -106,7 +106,14 @@ export default function ModalPortfolio(props) {
                                     </p>
                                 </div>
                                 <div className="modal__button ">
-                                    <button className="modal__button-content btn">
+                                    <button
+                                        className="modal__button-content btn"
+                                        style={{
+                                            border: darkMode
+                                                ? '1px solid var(--primary-500)'
+                                                : '1px solid var(--second-600)',
+                                        }}
+                                    >
                                         <div className="modal__button-link">
                                             <a
                                                 href={source}
@@ -126,7 +133,14 @@ export default function ModalPortfolio(props) {
                                             />
                                         </div>
                                     </button>
-                                    <button className="modal__button-content btn">
+                                    <button
+                                        className="modal__button-content btn"
+                                        style={{
+                                            border: darkMode
+                                                ? '1px solid var(--primary-500)'
+                                                : '1px solid var(--second-600)',
+                                        }}
+                                    >
                                         <div className="modal__button-link">
                                             <a
                                                 href={link}
