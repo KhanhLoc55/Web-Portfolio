@@ -15,6 +15,7 @@ import { ThemeContext } from './utils/context';
 import './app.scss';
 import './components/portfolio/portfolio.scss';
 import { useMediaQuery } from '@uidotdev/usehooks';
+import { ReactLenis } from 'lenis/react';
 
 const App = () => {
     //dark mode
@@ -61,22 +62,26 @@ const App = () => {
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
     return (
-        <div
-            className="App"
-            style={{
-                backgroundColor: backgroundColor.trim(),
-                color: color.trim(),
-            }}
-        >
-            {!isMobileDevice && <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />}
-            <Header />
-            <Intro />
-            <Portfolio />
-            <Skill />
-            <Resume />
-            <Contact />
-            <Footer />
-        </div>
+        <ReactLenis root>
+            <div
+                className="App"
+                style={{
+                    backgroundColor: backgroundColor.trim(),
+                    color: color.trim(),
+                }}
+            >
+                {!isMobileDevice && (
+                    <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
+                )}
+                <Header />
+                <Intro />
+                <Portfolio />
+                <Skill />
+                <Resume />
+                <Contact />
+                <Footer />
+            </div>
+        </ReactLenis>
     );
 };
 
