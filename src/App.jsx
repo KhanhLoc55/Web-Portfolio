@@ -81,7 +81,7 @@ const App = () => {
 
         srLeft.reveal('.ScrollReveal-left', { delay: 100 });
         srRight.reveal('.ScrollReveal-right', { delay: 100 });
-    }, []);
+    }, [isMobileDevice]);
 
     return (
         <div
