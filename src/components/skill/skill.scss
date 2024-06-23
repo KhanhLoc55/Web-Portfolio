@@ -32,11 +32,12 @@
             justify-content: space-between;
 
             .skills-left {
-                width: 40%;
 
                 p {
                     font-weight: var(--fontWeightRegular);
                     margin-bottom: 18px;
+                    width: 80%;
+
                 }
 
                 .skills-icon {
@@ -83,24 +84,22 @@
     }
 }
 
-//tablet
-@media screen and (max-width: 1024px) {
+//laptop
+@media screen and (max-width: 1440px) {
     .skills {
         .container {
-            padding: 24px 60px;
-
             .skills-content {
                 display: grid;
                 grid-template-columns: 1fr;
-                gap: 40px;
+                gap: 56px;
 
                 .skills-left {
                     width: 100%;
                     text-align: center;
 
                     p {
-                        font-weight: var(--fontWeightRegular);
-                        margin-bottom: 18px;
+                        margin-bottom: 24px;
+                        width: 100%;
                     }
 
                     .skills-icon {
@@ -108,6 +107,39 @@
                         display: flex;
                         gap: 12px;
 
+                    }
+                }
+
+                .skills-right {
+                    justify-content: center;
+                    gap: 80px;
+
+                    .skills-category {
+                        .skills-list {
+                            gap: 100px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tablet
+@media screen and (max-width: 1024px) {
+    .skills {
+        .container {
+            padding: 24px 60px;
+
+            .skills-content {
+                gap: 40px;
+
+                .skills-left {
+                    p {
+                        margin-bottom: 18px;
+                    }
+
+                    .skills-icon {
                         .icon-btn {
                             font-size: var(--fontSize24);
                             padding: 8px 8px;
@@ -121,7 +153,6 @@
 
                     .skills-category {
                         .skills-list {
-                            gap: 100px;
                         }
                     }
                 }

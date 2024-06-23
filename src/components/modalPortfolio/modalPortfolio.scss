@@ -142,10 +142,40 @@
     }
 }
 
+//laptop
+@media screen and (max-width: 1440px) {
+    .modal-portfolio {
+        width: 80%;
+
+        .modal-container {
+            .modal-content {
+                .modal-content-box {
+                    justify-content: space-between;
+                }
+
+            }
+        }
+    }
+}
+
 //tablet
 @media screen and (max-width: 1024px) {
     .modal-portfolio {
-        width: 80%;
+
+        .modal-container {
+            .modal-content {
+                .modal-content-box {
+                    .modal-text {
+                        .modal-heading {
+                            .modal-heading-title {
+                                margin-bottom: 16px;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
     }
 }
 

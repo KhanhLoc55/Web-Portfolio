@@ -4,7 +4,7 @@ import { useMediaQuery } from '@uidotdev/usehooks';
 
 const ScrollReveal = (props) => {
     const { position, children } = props;
-    const isMobileDevice = useMediaQuery('(max-width : 426px)');
+    const isMobileDevice = useMediaQuery('(max-width : 1024px)');
     const divRef = useRef(null);
     useEffect(() => {
         if (divRef.current) {
