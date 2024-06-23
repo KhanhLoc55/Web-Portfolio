@@ -14,7 +14,6 @@ import { ThemeContext } from './utils/context';
 
 import './app.scss';
 import './components/portfolio/portfolio.scss';
-import ScrollReveal from 'scrollreveal';
 import { useMediaQuery } from '@uidotdev/usehooks';
 
 const App = () => {
@@ -61,27 +60,26 @@ const App = () => {
         : root.getPropertyValue('--backgroundLight');
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
-    useEffect(() => {
-        const srLeft = ScrollReveal({
-            origin: 'left',
-            duration: 2000,
-            easing: 'ease-in-out',
-            distance: isMobileDevice ? '20px' : '80px',
+    // useEffect(() => {
+    //     const srLeft = ScrollReveal({
+    //         origin: 'left',
+    //         duration: 2000,
+    //         easing: 'ease-in-out',
+    //         distance: isMobileDevice ? '20px' : '80px',
+    //         reset: true,
+    //     });
 
-            reset: true,
-        });
+    //     const srRight = ScrollReveal({
+    //         origin: 'right',
+    //         duration: 2000,
+    //         easing: 'ease-in-out',
+    //         distance: isMobileDevice ? '20px' : '80px',
+    //         reset: true,
+    //     });
 
-        const srRight = ScrollReveal({
-            origin: 'right',
-            duration: 2000,
-            easing: 'ease-in-out',
-            distance: isMobileDevice ? '20px' : '80px',
-            reset: true,
-        });
-
-        srLeft.reveal('.ScrollReveal-left', { delay: 100 });
-        srRight.reveal('.ScrollReveal-right', { delay: 100 });
-    }, [isMobileDevice]);
+    //     srLeft.reveal('.ScrollReveal-left', { delay: 100 });
+    //     srRight.reveal('.ScrollReveal-right', { delay: 100 });
+    // }, [isMobileDevice]);
 
     return (
         <div
