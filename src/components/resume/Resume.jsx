@@ -8,7 +8,7 @@ import GoogleUxDesign from '../../assets/resume/GoogleUxDesign.pdf';
 import MetaFrontEnd from '../../assets/resume/MetaFrontEnd.pdf';
 
 //icon
-import { PhoneOutlined, MessageOutlined, BehanceOutlined, GithubOutlined, IdcardOutlined } from '@ant-design/icons';
+// import { PhoneOutlined, MessageOutlined, BehanceOutlined, GithubOutlined, IdcardOutlined } from '@ant-design/icons';
 
 const Resume = () => {
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
