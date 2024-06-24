@@ -1,10 +1,10 @@
 .intro {
-    overflow-x: hidden;
+    overflow-x: hidden; // Ẩn thanh cuộn ngang
 
     .container {
         padding: 80px 80px;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr; // Tạo lưới với 2 cột
         align-items: center;
         max-width: 100%;
     }
@@ -12,7 +12,7 @@
     .i-left {
         .textContentLeft {
             .wavingHand {
-                padding: 0 6px;
+                padding: 0 6px; // Khoảng cách giữa text và icon
             }
         }
 
@@ -70,8 +70,6 @@
         }
     }
 
-
-
     .i-right {
         display: flex;
         justify-content: flex-end;
@@ -86,13 +84,13 @@
     }
 }
 
-//tablet
+// Tablet 
 @media screen and (max-width: 1024px) {
     .intro {
         .container {
             padding: 24px 60px;
             gap: 40px;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr; // Chuyển sang một cột
 
             .i-left {
                 text-align: center;
@@ -109,20 +107,18 @@
                 .imgAvatar {
                     max-width: 45%;
                     transform: translate(-5px, 28px);
-
                 }
 
                 .circleImage {
                     max-width: 50%;
                     max-height: 50%;
                 }
-
             }
         }
     }
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width: 768px) {
     .intro {
         .container {
             .i-right {
@@ -142,10 +138,8 @@
     }
 }
 
-
-
-//mobile
-@media screen and (max-width:431px) {
+//Mobile 
+@media screen and (max-width: 431px) {
     .intro {
         .container {
             padding: 24px 8px;
@@ -192,13 +186,12 @@
     }
 }
 
-@media screen and (max-width:415px) {
+@media screen and (max-width: 415px) {
     .intro {
         .container {
             gap: 30px;
 
             .i-left {
-
                 .i-heading4 {
                     line-height: var(--lineHeight22);
                     font-size: 12px;
@@ -215,7 +208,7 @@
     }
 }
 
-@media screen and (max-width:376px) {
+@media screen and (max-width: 376px) {
     .intro {
         .container {
             padding-top: 4px;

@@ -23,20 +23,6 @@ const App = () => {
     const darkMode = theme.state.darkMode;
     const isMobileDevice = useMediaQuery('(max-width : 426px)');
 
-    //code cũ
-    // const darkModeSrollBar = useCallback(() => {
-    //     console.log('darkmode', darkMode);
-    //     if (darkMode) {
-    //         document.querySelector('body').classList.add('dark');
-    //     } else {
-    //         document.querySelector('body').classList.remove('dark');
-    //     }
-    // }, [darkMode]);
-
-    // useEffect(() => {
-    //     darkModeSrollBar();
-    // }, [darkModeSrollBar]);
-
     useEffect(() => {
         const applyDarkModeScrollBar = () => {
             if (darkMode) {

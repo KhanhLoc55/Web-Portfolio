@@ -56,7 +56,7 @@
 
                     .text-title {
                         font-weight: var(--fontWeightExBold);
-                        line-height: 90%;
+                        line-height: var(--lineHeight28);
                         text-transform: uppercase;
                         margin-bottom: 16px;
                     }
@@ -244,7 +244,7 @@
 
                     .text-title {
                         font-weight: var(--fontWeightExBold);
-                        line-height: 90%;
+                        line-height: var(--lineHeight28);
                         text-transform: uppercase;
                         margin-bottom: 16px;
                     }
@@ -303,7 +303,7 @@
 
             .text-title {
                 font-size: var(--fontSize18);
-                font-weight: var(--lineHeight26);
+                line-height: var(--lineHeight26);
             }
         }
     }
@@ -319,7 +319,7 @@
 
             .text-title {
                 font-size: var(--fontSize20);
-                font-weight: var(--lineHeight28);
+                line-height: var(--lineHeight28);
             }
         }
     }
@@ -343,7 +343,7 @@
 
             .text-title {
                 font-size: var(--fontSize18);
-                font-weight: var(--lineHeight26);
+                line-height: var(--lineHeight26);
             }
         }
     }
@@ -354,7 +354,7 @@
         .container {
             .text-title {
                 font-size: var(--fontSize16);
-                font-weight: var(--lineHeight24);
+                line-height: var(--lineHeight24);
             }
         }
     }

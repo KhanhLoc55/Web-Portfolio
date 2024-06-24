@@ -5,20 +5,19 @@ import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
 import Language from '../languages/Language';
 import Toggle from '../toggle/Toggle';
 import { Link } from 'react-scroll';
-// Ngôn ngữ
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next'; // Ngôn ngữ
 import { ThemeContext } from '../../utils/context';
 
 const Header = () => {
-    // Sử dụng react-i18next để dễ dàng dịch nội dung
+    // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
     const { t } = useTranslation();
 
-    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
+    // Lấy trạng thái chủ đề (tối hoặc sáng) từ context
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
-    // Ảnh logo hiện tại
-    const [currentLogo, setCurrentLogo] = useState(LogoImg);
+    // Ảnh logo hiện tại, phụ thuộc vào chủ đề
+    const [currentLogo, setCurrentLogo] = useState(darkMode ? LogoImgWhite : LogoImg);
 
     // Hiển thị box shadow của header khi cuộn trang
     const [showBoxShadow, setShowBoxShadow] = useState(false);
@@ -33,7 +32,7 @@ const Header = () => {
         }
     };
 
-    // Thêm listener cho sự kiện cuộn trang khi thành phần được tạo
+    // Thêm listener cho sự kiện cuộn trang khi component được mount
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -130,7 +129,6 @@ const Header = () => {
                     {/* Phần bên phải của header */}
                     <div className="header-right">
                         <Toggle />
-
                         <Language />
                     </div>
                 </div>

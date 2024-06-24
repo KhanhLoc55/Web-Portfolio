@@ -61,12 +61,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
-    margin: 0;
-    padding: 0;
-    line-height: normal;
-}
-
+h6,
 p,
 a,
 li,
@@ -94,16 +89,13 @@ a:hover {
     --second-600: #0E70BA;
 
     //Black-theme
-    --black-50: #6c5a5a;
-    --black-100: #b0b0b0;
-    --black-300: #545454;
+
     --black-500: #000000;
 
     //White-theme
     --white: #ffffff;
     --white-600: #e8e8e8;
-    --white-700: #b5b5b5;
-    --white-900: #6b6b6b;
+
 
     --backgroundDark: #11151c;
     --backgroundLight: #FFFFFF;
@@ -151,7 +143,7 @@ a:hover {
     --transition04: transform 0.4s ease;
 }
 
-//btn
+/* Button styles */
 .btn {
     padding: 8px 12px;
     // display: inline-block;
@@ -177,6 +169,7 @@ a:hover {
     }
 }
 
+/* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 12px;
     background-color: #ffffff;
@@ -185,7 +178,7 @@ a:hover {
 ::-webkit-scrollbar-thumb {
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: var(--primary-500);
+    background-color: var(--second-600);
 }
 
 body.dark::-webkit-scrollbar {
