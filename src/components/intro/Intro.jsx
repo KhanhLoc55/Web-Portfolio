@@ -170,7 +170,6 @@ const Intro = () => {
     return (
         <div className="intro" id="intro">
             <div className="container">
-
                 <div className="i-left">
                     <ScrollReveal position="left">
                         <div className="textContentLeft noScroll">
@@ -196,7 +195,12 @@ const Intro = () => {
 
                     <ScrollReveal position="left">
                         <div className="cv">
-                            <button className="btn">
+                            <button
+                                className="btn"
+                                style={{
+                                    border: darkMode ? '1px solid var(--primary-500)' : '1px solid var(--second-600)',
+                                }}
+                            >
                                 <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
                                     Download CV
                                 </a>
@@ -211,7 +215,7 @@ const Intro = () => {
                         </div>
                     </ScrollReveal>
                 </div>
-                
+
                 <ScrollReveal position="right">
                     <div className="i-right">
                         <img src={Avatar} alt="imgAvatar" className="imgAvatar" />

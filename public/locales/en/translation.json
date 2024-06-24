@@ -32,7 +32,8 @@
         "textExperience": "Experience",
         "textTime": "3/2022 - present",
         "textTimeOne": "- Accepting projects from Facebook groups and working online with clients.",
-        "textTimeTwo": "- I practice skills, self-study to improve my proficiency, and work on personal projects.",
+        "textTimeTwo": "- Practice skills, self-study to improve proficiency, and work on personal projects..",
+        "textTimeThree": "- Design social posts, standees, brochures, banners, name cards, logos, website interfaces, and landing pages.",
         "textTime1": "- Working directly with management to create designs that meet customer requirements.",
         "textTime2": "- Measuring the size of shelves, advertisements, etc. to create the final product.",
         "textTime3": "- Managing the order processing, quotation, and documentation process.",
@@ -54,7 +55,7 @@
         "contactAlert": "I have received your message. I will respond as soon as possible. Have a wonderful day!"
     },
     "footer": {
-        "footerText":"© 2024 - Copyright belongs to KL<webdesign/>"
+        "footerText": "© 2024 - Copyright belongs to KL<webdesign/>"
     },
     "card": {
         "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",

@@ -25,17 +25,17 @@ const Resume = () => {
             <div className="container">
                 <h2 className="resume-heading textHeading">Resume</h2>
                 <div className="resume-content">
-                    <div className="resume-left" data-aos="fade-up">
-                        <h3
-                            className="resume-hedding textSubHeading"
-                            style={{
-                                color: color.trim(),
-                            }}
-                        >
-                            {t('resume.textSumary')}
-                        </h3>
+                    <div className="resume-left">
+                        {/* <h3
+                                className="resume-hedding textSubHeading"
+                                style={{
+                                    color: color.trim(),
+                                }}
+                            >
+                                {t('resume.textSumary')}
+                            </h3> */}
 
-                        <div className="resume-circle">
+                        {/* <div className="resume-circle">
                             <h4 className="text-title textTitle">{t('resume.textAboutMe')}</h4>
                             <div className="resume-desc">
                                 <p
@@ -138,7 +138,7 @@ const Resume = () => {
                                     </span>
                                 </p>
                             </div>
-                        </div>
+                        </div> */}
 
                         <h3
                             className="resume-hedding textSubHeading"
@@ -216,9 +216,47 @@ const Resume = () => {
                                 </span>
                             </p>
                         </div>
+                        <h3
+                            className="resume-hedding textSubHeading"
+                            style={{
+                                color: color.trim(),
+                            }}
+                        >
+                            {t('resume.textEducation')}
+                        </h3>
+                        <div className="resume-circle">
+                            <h4 className="text-title textTitle">{t('resume.textEducation1')}</h4>
+                            <h5
+                                className="text-time btn"
+                                style={{
+                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
+                                    color: darkMode ? '#fff ' : '#000',
+                                }}
+                            >
+                                2016 - 2019
+                            </h5>
+                            <div className="resume-desc">
+                                <p
+                                    className="text-subtitle"
+                                    style={{
+                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                    }}
+                                >
+                                    {t('resume.textEducation2')}
+                                </p>
+                                <p
+                                    className="text-subtitle"
+                                    style={{
+                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                    }}
+                                >
+                                    {t('resume.textEducation3')}
+                                </p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div className="resume-right" data-aos="fade-up" data-aos-delay="100">
+                    <div className="resume-right">
                         <h3
                             className="resume-hedding textSubHeading"
                             style={{
@@ -255,6 +293,14 @@ const Resume = () => {
                                     }}
                                 >
                                     {t('resume.textTimeTwo')}
+                                </p>
+                                <p
+                                    className="text-subtitle"
+                                    style={{
+                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                    }}
+                                >
+                                    {t('resume.textTimeThree')}
                                 </p>
                             </div>
                         </div>
@@ -319,45 +365,6 @@ const Resume = () => {
                                     }}
                                 >
                                     {t('resume.textTime6')}
-                                </p>
-                            </div>
-                        </div>
-
-                        <h3
-                            className="resume-hedding textSubHeading"
-                            style={{
-                                color: color.trim(),
-                            }}
-                        >
-                            {t('resume.textEducation')}
-                        </h3>
-                        <div className="resume-circle">
-                            <h4 className="text-title textTitle">{t('resume.textEducation1')}</h4>
-                            <h5
-                                className="text-time btn"
-                                style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
-                                }}
-                            >
-                                2016 - 2019
-                            </h5>
-                            <div className="resume-desc">
-                                <p
-                                    className="text-subtitle"
-                                    style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
-                                    }}
-                                >
-                                    {t('resume.textEducation2')}
-                                </p>
-                                <p
-                                    className="text-subtitle"
-                                    style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
-                                    }}
-                                >
-                                    {t('resume.textEducation3')}
                                 </p>
                             </div>
                         </div>
