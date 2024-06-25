@@ -86,7 +86,7 @@ const Contact = () => {
                         <h3 className="textHeading"> {t('contact.text1')}</h3>
                         <p
                             style={{
-                                color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                             }}
                         >
                             {' '}
@@ -150,7 +150,7 @@ const Contact = () => {
                             background: darkMode
                                 ? 'linear-gradient(180deg, var(--colorStart) 0%, var(--colorEnd) 100%)'
                                 : 'linear-gradient(180deg, var(--colorLightStart) 0%, var(--colorLightEnd) 100%)',
-                            border: darkMode ? '2px solid rgba(255, 255, 255, 0.3)' : '2px solid rgba(0, 0, 0, 0.3)',
+                            border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                         }}
                     >
                         <form
@@ -172,11 +172,8 @@ const Contact = () => {
                                         value={name}
                                         onChange={(e) => setName(e.target.value)}
                                         style={{
-                                            background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                            border: darkMode
-                                                ? '2px solid rgba(255, 255, 255, 0.3)'
-                                                : '2px solid rgba(0, 0, 0, 0.3)',
+                                            // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
+                                            border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                         }}
                                     />
                                     <label
@@ -198,11 +195,9 @@ const Contact = () => {
                                         value={email}
                                         onChange={(e) => setEmail(e.target.value)}
                                         style={{
-                                            background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                            border: darkMode
-                                                ? '2px solid rgba(255, 255, 255, 0.3)'
-                                                : '2px solid rgba(0, 0, 0, 0.3)',
+                                            // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
+
+                                            border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                         }}
                                     />
                                     <label
@@ -225,11 +220,8 @@ const Contact = () => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     maxLength={messageMaxLength}
                                     style={{
-                                        background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-                                        color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                        border: darkMode
-                                            ? '2px solid rgba(255, 255, 255, 0.3)'
-                                            : '2px solid rgba(0, 0, 0, 0.3)',
+                                        // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
+                                        border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                     }}
                                 ></textarea>
                                 <label
@@ -257,7 +249,7 @@ const Contact = () => {
                                 type="submit"
                                 className="contact-btn btn"
                                 style={{
-                                    background: darkMode ? 'var(--textColorDark)' : 'rgba(0, 0, 0, 0.60)',
+                                    background: darkMode ? 'var(--textColorDark)' : 'var(--black-60)',
                                     color: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
                                 }}
                             >

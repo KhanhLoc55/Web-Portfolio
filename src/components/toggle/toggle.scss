@@ -32,7 +32,7 @@
                 /* Màu sắc của icon */
 
                 .toggle-icon {
-                    color: rgb(255, 68, 0);
+                    color: red;
                 }
             }
         }
@@ -46,7 +46,7 @@
             /* Hiệu ứng di chuyển vòng tròn */
             .toggle-circle {
                 transform: translateX(30px);
-                background-color: var(--black-500);
+                background-color: #000;
                 box-shadow: 2px 2px 3px 0px rgba(255, 255, 255, 0.5) inset;
                 transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 
@@ -54,7 +54,7 @@
 
                     /* Đổi màu icon khi ở chế độ dark mode */
                     .toggle-icon {
-                        color: var(--white-600);
+                        color: var(--white);
                         transition: color 0.7s ease ease-in-out;
 
                     }
@@ -133,6 +133,7 @@
                     }
                 }
             }
+
             &.darkmode {
                 .toggle-circle {
                     min-width: 28px;

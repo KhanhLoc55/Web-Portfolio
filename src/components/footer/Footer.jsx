@@ -107,7 +107,7 @@ const Footer = () => {
                         <h3
                             className="footer__text textSubTitle"
                             style={{
-                                color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                             }}
                         >
                             {t('footer.footerText')}
@@ -116,7 +116,7 @@ const Footer = () => {
                     <h3
                         className="footer-textGmail textSubTitle"
                         style={{
-                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                         }}
                     >
                         anhlamot55@gmail.com

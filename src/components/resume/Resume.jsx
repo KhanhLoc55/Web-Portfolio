@@ -41,7 +41,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textSmallOne')}
@@ -49,7 +49,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textSmallTwo')}
@@ -57,7 +57,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textSmallThere')}
@@ -153,8 +153,8 @@ const Resume = () => {
                             <h5
                                 className="text-time btn"
                                 style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
+                                    backgroundColor: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                    color: darkMode ? 'var(--black-500)' : 'var(--white)',
                                 }}
                             >
                                 8/2021 - 2/2022
@@ -187,8 +187,8 @@ const Resume = () => {
                             <h5
                                 className="text-time btn"
                                 style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
+                                    backgroundColor: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                    color: darkMode ? 'var(--black-500)' : 'var(--white)',
                                 }}
                             >
                                 7/2022 - 1/2023
@@ -229,8 +229,8 @@ const Resume = () => {
                             <h5
                                 className="text-time btn"
                                 style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
+                                    backgroundColor: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                    color: darkMode ? 'var(--black-500)' : 'var(--white)',
                                 }}
                             >
                                 2016 - 2019
@@ -239,7 +239,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textEducation2')}
@@ -247,7 +247,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textEducation3')}
@@ -270,8 +270,8 @@ const Resume = () => {
                             <h5
                                 className="text-time btn"
                                 style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
+                                    backgroundColor: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                    color: darkMode ? 'var(--black-500)' : 'var(--white)',
                                 }}
                             >
                                 {' '}
@@ -281,7 +281,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTimeOne')}
@@ -289,7 +289,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTimeTwo')}
@@ -297,7 +297,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTimeThree')}
@@ -310,8 +310,8 @@ const Resume = () => {
                             <h5
                                 className="text-time btn"
                                 style={{
-                                    backgroundColor: darkMode ? '#0E70BA' : '#24B6F2',
-                                    color: darkMode ? '#fff ' : '#000',
+                                    backgroundColor: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                    color: darkMode ? 'var(--black-500)' : 'var(--white)',
                                 }}
                             >
                                 10/2019 - 12/2021
@@ -320,7 +320,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTime1')}
@@ -328,7 +328,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTime2')}
@@ -336,7 +336,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTime3')}
@@ -344,7 +344,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {' '}
@@ -353,7 +353,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTime5')}
@@ -361,7 +361,7 @@ const Resume = () => {
                                 <p
                                     className="text-subtitle"
                                     style={{
-                                        color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                        color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                     }}
                                 >
                                     {t('resume.textTime6')}

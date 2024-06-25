@@ -86,21 +86,24 @@ a:hover {
     --primary-300: #7ccdf0;
     --primary-500: #24B6F2;
     //second
-    --second-600: #0e466d;
+    --second-600: #075791;
 
     //Black-theme
+    --black-60: rgba(0, 0, 0, 0.60);
+    --gray-60: rgba(255, 255, 255, 0.60);
 
-    --black-500: #000000;
+    --black-30: rgba(0, 0, 0, 0.3);
+    --gray-30: rgba(255, 255, 255, 0.3);
 
     //White-theme
-    --white: #F5F7F8;
-    --white-600: #e8e8e8;
+    --white: #ffffff;
+
 
 
     --backgroundDark: #11151c;
     --backgroundLight: #f9f9f9;
     --textColorDark: #FFFFFF;
-    --textColorlight: #545454;
+    --textColorlight: #000000;
 
     --colorStart: rgba(17, 21, 28, 1);
     --colorEnd: rgba(13, 50, 65, 0.3);

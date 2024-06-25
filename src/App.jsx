@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 import 'locomotive-scroll/dist/locomotive-scroll.css'; // Đảm bảo bạn đã thêm style này
 
@@ -15,13 +15,14 @@ import { ThemeContext } from './utils/context';
 import './app.scss';
 import './components/portfolio/portfolio.scss';
 import { useMediaQuery } from '@uidotdev/usehooks';
-import { ReactLenis } from 'lenis/react';
+import Lenis from '@studio-freight/lenis';
 
 const App = () => {
     //dark mode
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
     const isMobileDevice = useMediaQuery('(max-width : 426px)');
+    const lenisRef = useRef(null);
 
     useEffect(() => {
         const applyDarkModeScrollBar = () => {
@@ -34,9 +35,22 @@ const App = () => {
 
         applyDarkModeScrollBar();
 
-        // Cleanup function
+        // Initialize Lenis scroll
+        lenisRef.current = new Lenis({
+            smooth: true,
+            lerp: 0.1, // Linear interpolation, adjust for smoother scroll
+        });
+
+        const raf = (time) => {
+            lenisRef.current.raf(time);
+            requestAnimationFrame(raf);
+        };
+
+        requestAnimationFrame(raf);
+
         return () => {
-            // Clean up any event listeners or subscriptions here if necessary
+            // Clean up Lenis instance on unmount
+            lenisRef.current.destroy();
         };
     }, [darkMode]);
 
@@ -48,26 +62,22 @@ const App = () => {
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
     return (
-        <ReactLenis root>
-            <div
-                className="App"
-                style={{
-                    backgroundColor: backgroundColor.trim(),
-                    color: color.trim(),
-                }}
-            >
-                {!isMobileDevice && (
-                    <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
-                )}
-                <Header />
-                <Intro />
-                <Portfolio />
-                <Skill />
-                <Resume />
-                <Contact />
-                <Footer />
-            </div>
-        </ReactLenis>
+        <div
+            className="App"
+            style={{
+                backgroundColor: backgroundColor.trim(),
+                color: color.trim(),
+            }}
+        >
+            {!isMobileDevice && <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />}
+            <Header />
+            <Intro />
+            <Portfolio />
+            <Skill />
+            <Resume />
+            <Contact />
+            <Footer />
+        </div>
     );
 };
 

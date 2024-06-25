@@ -59,7 +59,7 @@ export default function ModalPortfolio(props) {
                                         className="modalClose-icon"
                                         style={{
                                             fontSize: '24px',
-                                            color: darkMode ? '#24B6F2' : '#0E70BA',
+                                            color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                         }}
                                     />
                                 </div>
@@ -67,7 +67,7 @@ export default function ModalPortfolio(props) {
                                 <div className="modal-heading">
                                     <span
                                         style={{
-                                            color: darkMode ? '#24B6F2' : '#0E70BA',
+                                            color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                         }}
                                     >
                                         {category}
@@ -85,21 +85,21 @@ export default function ModalPortfolio(props) {
                                 <div className="modal-desc">
                                     <p
                                         style={{
-                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                         }}
                                     >
                                         {desc1}
                                     </p>
                                     <p
                                         style={{
-                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                         }}
                                     >
                                         {desc2}
                                     </p>
                                     <p
                                         style={{
-                                            color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                                         }}
                                     >
                                         {desc3}
@@ -119,7 +119,7 @@ export default function ModalPortfolio(props) {
                                                 href={source}
                                                 target="__blank"
                                                 style={{
-                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                                 }}
                                             >
                                                 Source code
@@ -128,7 +128,7 @@ export default function ModalPortfolio(props) {
                                                 alt="Source code"
                                                 style={{
                                                     fontSize: '16px',
-                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                                 }}
                                             />
                                         </div>
@@ -146,7 +146,7 @@ export default function ModalPortfolio(props) {
                                                 href={link}
                                                 target="__blank"
                                                 style={{
-                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                                 }}
                                             >
                                                 View project
@@ -155,7 +155,7 @@ export default function ModalPortfolio(props) {
                                                 alt="Source code"
                                                 style={{
                                                     fontSize: '16px',
-                                                    color: darkMode ? '#24B6F2' : '#0E70BA',
+                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
                                                 }}
                                             />
                                         </div>

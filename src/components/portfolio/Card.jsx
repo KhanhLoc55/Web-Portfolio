@@ -22,7 +22,11 @@ const Card = (props) => {
 
     return (
         <React.Fragment>
-            <div className="modal-box" onClick={handleSelectedPortfolio}>
+            <div
+                className="modal-box"
+                onClick={handleSelectedPortfolio}
+                style={{ border: darkMode ? '1px solid var(--primary-500)' : '1px solid var(--second-600)' }}
+            >
                 <div className="modal-img">
                     <img src={img} alt={title} />
                 </div>

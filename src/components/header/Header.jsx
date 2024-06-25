@@ -61,6 +61,7 @@ const Header = () => {
                     color: color.trim(),
                     // Hiển thị hoặc ẩn box shadow dựa vào trạng thái showBoxShadow
                     boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
+                    transition: 'box-shadow 0.3s ease-in-out', // thêm transition để làm mượt việc thay đổi shadow
                 }}
             >
                 <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>

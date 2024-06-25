@@ -57,7 +57,7 @@ const Skill = () => {
                         <p
                             className="textSubTitle top-header"
                             style={{
-                                color: darkMode ? 'rgba(255, 255, 255, 0.6)' : 'rgba(0, 0, 0, 0.60)',
+                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
                             }}
                         >
                             {t('skill.textSkillTitle')}
