@@ -173,6 +173,7 @@ const Contact = () => {
                                         onChange={(e) => setName(e.target.value)}
                                         style={{
                                             // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
+                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
                                             border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                         }}
                                     />
@@ -196,7 +197,7 @@ const Contact = () => {
                                         onChange={(e) => setEmail(e.target.value)}
                                         style={{
                                             // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-
+                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
                                             border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                         }}
                                     />
@@ -221,6 +222,7 @@ const Contact = () => {
                                     maxLength={messageMaxLength}
                                     style={{
                                         // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
+                                        color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
                                         border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                     }}
                                 ></textarea>
