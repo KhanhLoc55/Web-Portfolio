@@ -306,7 +306,7 @@ const Resume = () => {
                         </div>
 
                         <div className="resume-circle">
-                            <h4 className="text-title textTitle">CTy Tnhh Tmdv Quảng Cáo Lá Đỏ</h4>
+                            <h4 className="text-title textTitle">{t('resume.textSmallOne')}</h4>
                             <h5
                                 className="text-time btn"
                                 style={{

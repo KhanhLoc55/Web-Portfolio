@@ -38,7 +38,7 @@ const App = () => {
         // Initialize Lenis scroll
         lenisRef.current = new Lenis({
             smooth: true,
-            lerp: 0.1, // Linear interpolation, adjust for smoother scroll
+            lerp: 0.08, // Adjust for smoother scroll
         });
 
         const raf = (time) => {

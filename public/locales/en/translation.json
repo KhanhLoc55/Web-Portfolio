@@ -1,7 +1,7 @@
 {
     "header": {
         "headerSkill": "Skill",
-        "headerResume": "Cv",
+        "headerResume": "CV",
         "headerProject": "Project",
         "headerContact": "Contact"
     },
@@ -21,9 +21,8 @@
     "resume": {
         "textSumary": "Summary",
         "textAboutMe": "About me",
-        "textSmallOne": "My name is Nguyen Khanh Loc. In August 2021, I started learning and dedicated a significant amount of time daily to interface design. I researched on the renowned website Coursera and completed two important courses: 'UX Design by Google' and 'Front-End Meta' Course.",
-        "textSmallTwo": "In 2022, I continued to explore programming to bring my design ideas to life. Every day, I am passionately learning and practicing web design skills to enhance the quality of my user interface (UI Design).",
-        "textSmallThere": "My goal is to pursue a career in web and app design. I aspire to create websites and applications that blend exceptional visual appeal with interactivity, providing outstanding user experiences. I will continuously improve my knowledge and skills to become an expert in the field of web and app design.",
+        "textSmallOne": "RED LEAF TRADING SERVICE ADVERTISING COMPANY LIMITED",
+        "textSmallThere": "",
         "textIphone": "Iphone",
         "textWebDesign": "Website design",
         "textWebFrontEnd": "Code front-end",

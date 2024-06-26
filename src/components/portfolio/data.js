@@ -38,7 +38,7 @@ export const allPortfolio = [
     },
     {
         id: 4,
-        category: 'Brand Designer',
+        category: 'Brand Design',
         title: 'Logo Tessel.AI',
         img: './imge/Logo-tessel.png',
         i18n: {
@@ -52,7 +52,7 @@ export const allPortfolio = [
 
     {
         id: 5,
-        category: 'Brand Designer',
+        category: 'Brand Design',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',
         i18n: {
@@ -155,7 +155,7 @@ export const uiDesignerPortfolio = [
 export const brandDesignerPortfolio = [
     {
         id: 3,
-        category: 'Brand Designer',
+        category: 'Brand Design',
         title: 'Logo WebDesign',
         img: './imge/logoGp.jpg',
         i18n: {
@@ -167,7 +167,7 @@ export const brandDesignerPortfolio = [
     },
     {
         id: 4,
-        category: 'Brand Designer',
+        category: 'Brand Design',
         title: 'Logo Tessel.AI',
         img: './imge/Logo-tessel.png',
         i18n: {
@@ -180,7 +180,7 @@ export const brandDesignerPortfolio = [
     },
     {
         id: 5,
-        category: 'Brand Designer',
+        category: 'Brand Design',
         title: 'Freelancer',
         img: './imge/portfolio111.jpg',
         i18n: {

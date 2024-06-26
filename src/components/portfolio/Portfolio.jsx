@@ -33,8 +33,8 @@ export default function Portfolio() {
             title: 'Mobile App',
         },
         {
-            id: 'Brand Designer',
-            title: 'Brand Designer',
+            id: 'Brand Design',
+            title: 'Brand Design',
         },
     ];
 
@@ -49,7 +49,7 @@ export default function Portfolio() {
             case 'Mobile App':
                 setDataPortfolio(uiDesignerPortfolio);
                 break;
-            case 'Brand Designer':
+            case 'Brand Design':
                 setDataPortfolio(brandDesignerPortfolio);
                 break;
             default:

@@ -1,7 +1,7 @@
 {
     "header": {
         "headerSkill": "Kỹ năng",
-        "headerResume": "Cv",
+        "headerResume": "CV",
         "headerProject": "Dự án",
         "headerContact": "Liên hệ"
     },
@@ -20,9 +20,9 @@
     "resume": {
         "textSumary": "Tóm tắt",
         "textAboutMe": "Về tôi",
-        "textSmallOne": "Tôi tên là Nguyễn Khánh Lộc. Vào tháng 8 năm 2021, tôi bắt đầu học và dành phần lớn thời gian hàng ngày để thiết kế giao diện và thiết kế ứng dụng. Tôi đã tìm hiểu trên trang web nổi tiếng Coursera và hoàn thành hai khóa học quan trọng là 'UX Design by Google' và 'Front-End Meta Course'.",
-        "textSmallTwo": "Trong năm 2022, tôi đã tiếp tục khám phá lĩnh vực lập trình để biến những ý tưởng thiết kế của mình thành hiện thực. Hàng ngày, tôi đam mê học hỏi và thực hành các kỹ năng thiết kế web, nhằm nâng cao chất lượng giao diện người dùng (UI Design) của tôi.",
-        "textSmallThere": "Mục tiêu của tôi là theo đuổi sự nghiệp trong lĩnh vực thiết kế web và ứng dụng. Tôi mong muốn tạo ra các trang web và ứng dụng có sự kết hợp tuyệt vời giữa mặt trực quan và tương tác, mang lại trải nghiệm xuất sắc cho người dùng. Tôi sẽ không ngừng hoàn thiện kiến thức và kỹ năng của mình, nhằm trở thành một chuyên gia trong lĩnh vực thiết kế web và ứng dụng.",
+        "textSmallOne": "CÔNG TY TNHH THƯƠNG MẠI DỊCH VỤ QUẢNG CÁO LÁ ĐỎ",
+        "textSmallTwo": "",
+        "textSmallThere": "",
         "textIphone": "Điện Thoại",
         "textWebDesign": "Thiết kế website",
         "textWebFrontEnd": "Lập Trình front-end",
