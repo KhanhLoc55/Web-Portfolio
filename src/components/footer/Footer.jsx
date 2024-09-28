@@ -23,14 +23,6 @@ const Footer = () => {
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
-    // Ảnh logo hiện tại
-    const [currentLogo, setCurrentLogo] = useState(LogoImg);
-
-    // Cập nhật ảnh logo khi chủ đề thay đổi
-    useEffect(() => {
-        setCurrentLogo(darkMode ? LogoImgWhite : LogoImg);
-    }, [darkMode]);
-
     // Truy cập vào root đổi màu color
     const root = getComputedStyle(document.documentElement);
     const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
