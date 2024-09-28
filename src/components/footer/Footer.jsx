@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import { ThemeContext } from '../../utils/context';
-import LogoImg from '../../assets/KL-textLogo.svg';
-import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
+
 import './footer.scss';
 import { useTranslation } from 'react-i18next';
 
