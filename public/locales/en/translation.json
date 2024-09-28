@@ -15,7 +15,7 @@
     "skill": {
         "textTool": "Tool",
         "textSkill": "Skill",
-        "textSkillMe": "Areas of my expertise",
+        "textSkillMe": "Design achievements",
         "textSkillTitle": "See all the skills I have and use them to develop your project!"
     },
     "resume": {
@@ -57,9 +57,9 @@
         "footerText": "© 2024 - Copyright belongs to KL<webdesign/>"
     },
     "card": {
-        "desc1": "- I have completed a portfolio website project with a combination of programming and design. In the UI Designer part, I used Figma, Photoshop, and Illustrator to design 2 screens for desktop and mobile, including Dark Mode. I came up with ideas for icons, colors, fonts, Grid System, Buttons, Fields, Typography, and toggles.",
-        "desc2": "- For the Frontend, I used Visual Studio Code and the React library. I integrated i18next for multi-language support, React Router for page navigation, and createContext for light and dark mode switching. I designed the toggle button and used the useTypewriter hook for a typewriter effect. Additionally, I added vibrant gradient color effects.",
-        "desc3": "- I am proud of this creative blend of design and professional programming, with unique features and effects. I hope it will attract attention and impress users.",
+        "desc1": "- Completed a portfolio website project, harmoniously combining design and development. The UI design utilized Figma, Photoshop, and Illustrator to create responsive interfaces for both desktop and mobile, including Dark Mode. The design meticulously features icons, colors, fonts, a grid system, buttons, fields, typography, and toggles.",
+        "desc2": "- For the frontend development, Visual Studio Code and React library were used to build the interface. Integrated i18next for multilingual support, React Router for smooth navigation, and createContext for switching between light and dark modes. Custom toggle buttons and a dynamic typewriter effect were created, along with vibrant gradient color effects to enhance the visual experience.",
+        "desc3": "- This project showcases not only creativity in design but also professional growth in development, offering unique features and effects, aimed at making a lasting impression on users.",
         "desc4": "- Our Food app facilitates users in effortlessly exploring culinary destinations across various platforms. Searching for restaurants and placing food orders has never been more convenient, providing users with the best possible experience. The product is beautifully designed and diverse, enhancing the way users discover and engage with the culinary world.",
         "desc6": "- This is the logo I personally designed for myself using Illustrator. My main goal in creating this logo is to attach it to the products I create, giving them a personal touch. Additionally, I aim to use this logo for freelancing purposes. I have also designed a name card that includes my contact information.",
         "desc7": "- This logo represents my identity and brand as a creator, and it serves as a symbol of the quality and uniqueness of my work. Whether it's on my products or my freelancing projects, this logo embodies my passion for design and dedication to delivering exceptional results. With this logo and name card, I am ready to make a strong and memorable impression in the creative industry.",
@@ -71,7 +71,9 @@
         "desc13": "- This product not only helps you book flight tickets faster but also serves as a guide to explore hidden corners and interesting places you might not have known about. Get ready for a memorable journey and discover the secrets waiting for you in every nook and cranny of Vietnam.",
         "desc14": "- Welcome to my Admin Dashboard! I have developed this powerful tool to streamline and simplify the management and administration of your system or application. With a user-friendly interface and comprehensive features, my Admin Dashboard empowers administrators like you to efficiently control and monitor various aspects within your system.",
         "desc15": "- This product has been designed based on the Figma platform, a high-quality user interface design tool. Through creativity and meticulous work using Figma, we have created a beautiful and user-friendly user interface. The integration of Figma has enabled us to easily create graphic elements and layouts while providing interactive capabilities and intuitive previews.",
-        "desc16": "- My Interior Design Landing Page project is a harmonious blend of artistry and professionalism. It features a responsive design for both desktop and mobile, crafted using Fig­ma and Photoshop. I opted for the fonts Libre Baskerville and Monstercat, complemented by a sophisticated color palette including #00FEDF, #3C2A21, #FFFFFF, and a background of #1A120B. The header includes a logo and main sections such as Home, Introduction, Services, Products, and Contact, providing users with a premium browsing experience.",
+        "desc16": "- The recruitment website project is built using Atomic Design, focusing on a modern and user-friendly interface. Components such as colors, typography, grids, and effects are thoughtfully arranged. The login and registration pages for employers are designed to be minimalistic, utilizing Toast UI to display clear status notifications, along with Progress Indicators to track progress.",
+        "desc20": "- The dashboard provides charts and UI elements that help employers manage candidates and job listings intuitively. For job seekers, the interface is simple yet effective, integrating a progress bar and Toast UI for a seamless experience. The personal page clearly displays information about qualifications, skills, and projects, allowing candidates to easily update their profiles. Overall, the design is modern and optimizes the experience for both employers and job seekers.",
+
         "desc17": "- The logo of tessel.ai combines two key elements: tessellation (tessell.ai) and Vision. Tessellation is often associated with creativity and geometric thinking, symbolizing networks and connections. In contrast, Vision is represented by the letter T, with a sleek, clean, and simple design.",
         "desc18": "- By combining both factors, the logo not only communicates creativity and connectivity but also demonstrates precision and effectiveness in design.",
         "desc19": "- I also work closely with clients and execute designs using Illustrator software, ensuring that every detail is optimized for maximum effectiveness."

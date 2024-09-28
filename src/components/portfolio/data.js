@@ -9,8 +9,8 @@ export const allPortfolio = [
             desc2: 'card.desc2',
             desc3: 'card.desc3',
         },
-        source: 'https://www.behance.net/gallery/116162821/Portfolio-landing-page',
-        link: 'https://klweb-portfolio.netlify.app/',
+        source: 'https://www.figma.com/design/rrqw6nR6677sRwPoRA6yzc/portfolio-(cn)?node-id=293-139&node-type=canvas',
+        link: 'https://www.behance.net/gallery/116162821/Portfolio-landing-page',
     },
     {
         id: 2,
@@ -27,14 +27,14 @@ export const allPortfolio = [
     {
         id: 3,
         category: 'Web App',
-        title: 'Travel Landing Page',
-        img: './imge/travel.png',
+        title: 'Recruitment website',
+        img: './imge/recruitmentWebsite.png',
         i18n: {
-            desc1: 'card.desc12',
-            desc2: 'card.desc13',
+            desc1: 'card.desc16',
+            desc2: 'card.desc20',
         },
-        link: 'https://kltravel.netlify.app/',
-        source: 'https://github.com/KhanhLoc55/KLTravel',
+        link: 'https://www.behance.net/gallery/208361237/Website-Tuyn-Dng-Thong-Minh-Tim-Vic-D-Dang',
+        source: 'https://www.figma.com/design/WjrvOGGUzhJCQ6JToXaFNu/web-tuyen-dung',
     },
     {
         id: 4,
@@ -104,13 +104,14 @@ export const frontEndPortfolio = [
     {
         id: 3,
         category: 'Web App',
-        title: 'Website sáchhay',
-        img: './imge/interiorLandingPage.png',
+        title: 'Recruitment website',
+        img: './imge/recruitmentWebsite.png',
         i18n: {
             desc1: 'card.desc16',
+            desc2: 'card.desc20',
         },
-        link: 'https://www.behance.net/gallery/184494263/Interior-Design-Landing-Page',
-        source: 'https://www.behance.net/anhlamot55',
+        link: 'https://www.behance.net/gallery/208361237/Website-Tuyn-Dng-Thong-Minh-Tim-Vic-D-Dang',
+        source: 'https://www.figma.com/design/WjrvOGGUzhJCQ6JToXaFNu/web-tuyen-dung',
     },
     {
         id: 4,

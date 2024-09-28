@@ -13,6 +13,7 @@ import {
     LinkedinOutlined,
     DribbbleOutlined,
     GithubOutlined,
+    UpCircleOutlined,
 } from '@ant-design/icons';
 const Footer = () => {
     // Sử dụng react-i18next để dễ dàng dịch nội dung
@@ -39,9 +40,14 @@ const Footer = () => {
             <div className="container">
                 <div className="footer-line"></div>
                 <div className="footer-content">
-                    <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>
-                        <img className="footer-logo" alt="logo" src={currentLogo} />
-                    </Link>
+                    <h3
+                        className="footer-textGmail textSubTitle"
+                        style={{
+                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
+                        }}
+                    >
+                        anhlamot55@gmail.com
+                    </h3>
                     <div className="footer-align">
                         <div className="footer-icon">
                             <a href="https://www.behance.net/anhlamot55" target="_blank" rel="noopener noreferrer">
@@ -113,14 +119,19 @@ const Footer = () => {
                             {t('footer.footerText')}
                         </h3>
                     </div>
-                    <h3
-                        className="footer-textGmail textSubTitle"
-                        style={{
-                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                        }}
-                    >
-                        anhlamot55@gmail.com
-                    </h3>
+
+                    <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>
+                        <div className="footer-align">
+                            <div className="footer-icon">
+                                <UpCircleOutlined
+                                    className="icon-btn"
+                                    style={{
+                                        color: color.trim(),
+                                    }}
+                                />
+                            </div>
+                        </div>
+                    </Link>
                 </div>
             </div>
         </div>
