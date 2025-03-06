@@ -15,14 +15,14 @@ export const allPortfolio = [
     {
         id: 2,
         category: 'Mobile App',
-        title: 'LearnLink App',
-        img: './imge/ApplicationLearnLink.png',
+        title: 'JobNest Mobile App',
+        img: './imge/jobNest.png',
         i18n: {
             desc1: 'card.desc8',
             desc2: 'card.desc9',
         },
-        link: 'https://www.figma.com/proto/52WybZk9I6biGjYWPKzhnU/LearnLink(cn)?node-id=41-6&t=br9ZgOCk4iCTJnRB-1&scaling=scale-down&content-scaling=fixed&page-id=0%3A1&starting-point-node-id=35%3A23',
-        source: 'https://www.behance.net/gallery/182271813/Application-LearnLink',
+        link: 'https://www.figma.com/design/WjrvOGGUzhJCQ6JToXaFNu/web-tuyen-dung?node-id=1340-16610&p=f&t=VhDe5eMX70snVDql-0',
+        source: 'https://www.behance.net/gallery/220716561/JobNest-Mobile-App',
     },
     {
         id: 3,
@@ -131,14 +131,14 @@ export const uiDesignerPortfolio = [
     {
         id: 2,
         category: 'Mobile App',
-        title: 'LearnLink App',
-        img: './imge/ApplicationLearnLink.png',
+        title: 'JobNest Mobile App',
+        img: './imge/jobNest.png',
         i18n: {
             desc1: 'card.desc8',
             desc2: 'card.desc9',
         },
-        link: 'https://www.behance.net/gallery/182271813/Application-LearnLink',
-        source: 'https://www.behance.net/anhlamot55',
+        link: 'https://www.behance.net/gallery/220716561/JobNest-Mobile-App',
+        source: 'https://www.figma.com/design/WjrvOGGUzhJCQ6JToXaFNu/web-tuyen-dung?node-id=1340-16610&t=VhDe5eMX70snVDql-1',
     },
     {
         id: 4,
