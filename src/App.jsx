@@ -30,29 +30,37 @@ const App = () => {
     useEffect(() => {
         const applyDarkModeScrollBar = () => {
             if (darkMode) {
-                document.querySelector('body').classList.add('dark');
+                document.body.classList.add('dark');
             } else {
-                document.querySelector('body').classList.remove('dark');
+                document.body.classList.remove('dark');
             }
         };
 
         applyDarkModeScrollBar();
 
-        // Initialize Lenis scroll
-        lenisRef.current = new Lenis({
+        // Clean up instance trước khi tạo mới
+        if (lenisRef.current) {
+            lenisRef.current.destroy();
+        }
+
+        const lenis = new Lenis({
             smooth: true,
             lerp: 0.08,
         });
 
+        lenisRef.current = lenis;
+
+        let animationFrame;
         const raf = (time) => {
-            lenisRef.current.raf(time);
-            requestAnimationFrame(raf);
+            lenis.raf(time);
+            animationFrame = requestAnimationFrame(raf);
         };
 
-        requestAnimationFrame(raf);
+        animationFrame = requestAnimationFrame(raf);
 
         return () => {
-            lenisRef.current.destroy();
+            cancelAnimationFrame(animationFrame);
+            lenis.destroy();
         };
     }, [darkMode]);
 
@@ -70,9 +78,7 @@ const App = () => {
     const backgroundColor = darkMode
         ? root.getPropertyValue('--backgroundDark')
         : root.getPropertyValue('--backgroundLight');
-    const color = darkMode
-        ? root.getPropertyValue('--textColorDark')
-        : root.getPropertyValue('--textColorlight');
+    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
     // 👇 Điều kiện hiển thị
     if (isLoading) {
@@ -87,9 +93,7 @@ const App = () => {
                 color: color.trim(),
             }}
         >
-            {!isMobileDevice && (
-                <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
-            )}
+            {!isMobileDevice && <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />}
             <Header />
             <Intro />
             <Portfolio />
