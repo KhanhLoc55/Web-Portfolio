@@ -11,6 +11,10 @@
 
 html,
 body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    // ❌ Không đặt overflow: hidden ở đây
     font-weight: var(--fontWeightRegular);
     background-color: var(--white-200);
     font-size: var(--fontSize16);

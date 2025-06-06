@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
+// import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
