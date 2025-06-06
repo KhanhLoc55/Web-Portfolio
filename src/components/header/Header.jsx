@@ -5,134 +5,81 @@ import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
 import Language from '../languages/Language';
 import Toggle from '../toggle/Toggle';
 import { Link } from 'react-scroll';
-import { useTranslation } from 'react-i18next'; // Ngôn ngữ
+import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../utils/context';
 
 const Header = () => {
-    // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
     const { t } = useTranslation();
+    const {
+        state: { darkMode },
+    } = useContext(ThemeContext);
 
-    // Lấy trạng thái chủ đề (tối hoặc sáng) từ context
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
-
-    // Ảnh logo hiện tại, phụ thuộc vào chủ đề
-    const [currentLogo, setCurrentLogo] = useState(darkMode ? LogoImgWhite : LogoImg);
-
-    // Hiển thị box shadow của header khi cuộn trang
+    const [scrollProgress, setScrollProgress] = useState(0);
     const [showBoxShadow, setShowBoxShadow] = useState(false);
 
-    // Xử lý sự kiện cuộn trang để hiển thị box shadow
-    const handleScroll = () => {
-        const header = document.getElementById('header');
-        if (header) {
-            const headerRect = header.getBoundingClientRect();
-            const shouldShowBoxShadow = window.scrollY > headerRect.bottom;
-            setShowBoxShadow(shouldShowBoxShadow);
-        }
-    };
-
-    // Thêm listener cho sự kiện cuộn trang khi component được mount
     useEffect(() => {
+        const handleScroll = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            setScrollProgress(docHeight > 0 ? scrollTop / docHeight : 0);
+            setShowBoxShadow(scrollTop > 50); // đơn giản hơn, không cần lấy `headerRect.bottom`
+        };
+
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Cập nhật ảnh logo khi chủ đề thay đổi
-    useEffect(() => {
-        setCurrentLogo(darkMode ? LogoImgWhite : LogoImg);
-    }, [darkMode]);
-
-    // Lấy các thuộc tính CSS đã tính toán của phần tử root (thường là thẻ <html>)
-    const root = getComputedStyle(document.documentElement);
-    // Lấy màu nền dựa trên chế độ darkMode
+    const rootStyle = getComputedStyle(document.documentElement);
     const backgroundColor = darkMode
-        ? root.getPropertyValue('--backgroundDark')
-        : root.getPropertyValue('--backgroundLight');
-    // Lấy màu chữ dựa trên chế độ darkMode
-    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+        ? rootStyle.getPropertyValue('--backgroundDark')
+        : rootStyle.getPropertyValue('--backgroundLight');
+    const textColor = darkMode
+        ? rootStyle.getPropertyValue('--textColorDark')
+        : rootStyle.getPropertyValue('--textColorlight');
+
+    const headerStyle = {
+        backgroundColor: backgroundColor.trim(),
+        color: textColor.trim(),
+        boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
+        transition: 'box-shadow 0.3s ease-in-out',
+    };
+
+    const currentLogo = darkMode ? LogoImgWhite : LogoImg;
+
+    const navLinks = [
+        { id: 'portfolio', label: t('header.headerProject') },
+        { id: 'skill', label: t('header.headerSkill') },
+        { id: 'resume', label: t('header.headerResume') },
+        { id: 'contact', label: t('header.headerContact') },
+    ];
 
     return (
         <header className="header" id="header">
-            <div
-                className="container"
-                style={{
-                    backgroundColor: backgroundColor.trim(),
-                    color: color.trim(),
-                    // Hiển thị hoặc ẩn box shadow dựa vào trạng thái showBoxShadow
-                    boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
-                    transition: 'box-shadow 0.3s ease-in-out', // thêm transition để làm mượt việc thay đổi shadow
-                }}
-            >
-                <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>
+            <div className="container" style={headerStyle}>
+                <Link to="header" activeClass="active" spy smooth offset={50} duration={500}>
                     <img className="header__logo-img" alt="logo" src={currentLogo} />
                 </Link>
 
                 <div className="header__wrapper">
-                    {/* Phần bên trái của header */}
                     <div className="header-left">
-                        <div className="header-list">
-                            <ul className="header-item">
-                                {/* Sử dụng react-i18next để dễ dàng dịch các mục */}
-                                <li className="header-text textSubTitle">
-                                    <Link
-                                        to="portfolio"
-                                        activeClass="active"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-135}
-                                        duration={500}
-                                    >
-                                        {t('header.headerProject')}
+                        <ul className="header-item">
+                            {navLinks.map(({ id, label }) => (
+                                <li className="header-text textSubTitle" key={id}>
+                                    <Link to={id} activeClass="active" spy smooth offset={-135} duration={500}>
+                                        {label}
                                     </Link>
                                 </li>
-                                <li className="header-text textSubTitle">
-                                    <Link
-                                        to="skill"
-                                        activeClass="active"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-135}
-                                        duration={500}
-                                    >
-                                        {t('header.headerSkill')}
-                                    </Link>
-                                </li>
-                                <li className="header-text textSubTitle">
-                                    <Link
-                                        to="resume"
-                                        activeClass="active"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-135}
-                                        duration={500}
-                                    >
-                                        {t('header.headerResume')}
-                                    </Link>
-                                </li>
-
-                                <li className="header-text textSubTitle">
-                                    <Link
-                                        to="contact"
-                                        activeClass="active"
-                                        spy={true}
-                                        smooth={true}
-                                        offset={-135}
-                                        duration={500}
-                                    >
-                                        {t('header.headerContact')}
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
+                            ))}
+                        </ul>
                     </div>
 
-                    {/* Phần bên phải của header */}
                     <div className="header-right">
                         <Toggle />
                         <Language />
                     </div>
                 </div>
+
+                <div className="scroll-progress-bar" style={{ transform: `scaleX(${scrollProgress})` }} />
             </div>
         </header>
     );

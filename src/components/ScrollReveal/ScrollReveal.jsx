@@ -5,7 +5,22 @@ import { useMediaQuery } from '@uidotdev/usehooks';
 const ScrollReveal = (props) => {
     const { position, children } = props;
     const isMobileDevice = useMediaQuery('(max-width : 1024px)');
-    const divRef = useRef(null);
+    const divRef = useRef(null);useEffect(() => {
+        if (divRef.current) {
+            const sr = scrollReveal();
+            sr.clean(divRef.current); // Xoá animation cũ trước khi áp dụng lại
+    
+            sr.reveal(divRef.current, {
+                delay: 100,
+                origin: position,
+                duration: 2000,
+                easing: 'ease-in-out',
+                distance: isMobileDevice ? '20px' : '80px',
+                reset: isMobileDevice ? false : true,
+            });
+        }
+    }, [isMobileDevice, position]);
+    
     useEffect(() => {
         if (divRef.current) {
             scrollReveal().reveal(divRef.current, {

@@ -1,6 +1,6 @@
-import React, { useContext, useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
-import 'locomotive-scroll/dist/locomotive-scroll.css'; // Đảm bảo bạn đã thêm style này
+import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
@@ -16,13 +16,16 @@ import './app.scss';
 import './components/portfolio/portfolio.scss';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import Lenis from '@studio-freight/lenis';
+import Loading from './components/loading/loading';
 
 const App = () => {
-    //dark mode
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
     const isMobileDevice = useMediaQuery('(max-width : 426px)');
     const lenisRef = useRef(null);
+
+    // 👇 Thêm state loading
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const applyDarkModeScrollBar = () => {
@@ -38,7 +41,7 @@ const App = () => {
         // Initialize Lenis scroll
         lenisRef.current = new Lenis({
             smooth: true,
-            lerp: 0.08, // Adjust for smoother scroll
+            lerp: 0.08,
         });
 
         const raf = (time) => {
@@ -49,17 +52,32 @@ const App = () => {
         requestAnimationFrame(raf);
 
         return () => {
-            // Clean up Lenis instance on unmount
             lenisRef.current.destroy();
         };
     }, [darkMode]);
 
-    // Truy cập vào root đổi màu color
+    // 👇 Hiệu ứng loading 5s
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 5000); // 5s
+
+        return () => clearTimeout(timer);
+    }, []);
+
+    // Lấy màu nền theo theme
     const root = getComputedStyle(document.documentElement);
     const backgroundColor = darkMode
         ? root.getPropertyValue('--backgroundDark')
         : root.getPropertyValue('--backgroundLight');
-    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+    const color = darkMode
+        ? root.getPropertyValue('--textColorDark')
+        : root.getPropertyValue('--textColorlight');
+
+    // 👇 Điều kiện hiển thị
+    if (isLoading) {
+        return <Loading />;
+    }
 
     return (
         <div
@@ -69,7 +87,9 @@ const App = () => {
                 color: color.trim(),
             }}
         >
-            {!isMobileDevice && <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />}
+            {!isMobileDevice && (
+                <AnimatedCursor color={darkMode ? '194, 232, 248' : '14, 112, 186'} innerSize={16} />
+            )}
             <Header />
             <Intro />
             <Portfolio />

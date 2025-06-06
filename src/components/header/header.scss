@@ -1,145 +1,130 @@
 .header {
     height: 140px;
 
+    .scroll-progress-bar {
+        height: 4px;
+        background: linear-gradient(90deg, #00bcd4, #2196f3);
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.2s ease-out;
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+    }
+
     .container {
-        padding: 20px 80px 30px 80px;
+        padding: 20px 80px 30px;
         position: fixed;
         z-index: 4;
         top: 0;
         left: 0;
         max-width: 100%;
-    }
 
-    // Ảnh logo trong header
-    .header__logo-img {
-        cursor: pointer;
-        width: 160px;
-    }
-
-    // Phần wrapper bên trong header chứa phần left và right
-    .header__wrapper {
-        display: flex;
-        align-items: center;
-
-        // Phần bên trái của header
-        .header-left {
-
-            // Kiểu danh sách các mục
-            .header-item {
-                display: flex;
-                gap: 28px;
-                padding-left: 0;
-                margin-bottom: 0;
-
-                // Phần văn bản trong mục menu
-                .header-text {
-                    list-style-type: none;
-                    font-style: normal;
-
-                    // Hiển thị màu đỏ và thay đổi con trỏ khi hover
-                    &:hover {
-                        color: var(--primary-500);
-                        cursor: pointer;
-                    }
-                }
-            }
-        }
-
-        // Phần bên phải của header
-        .header-right {
-            flex: 1;
-            align-items: center;
-            justify-content: flex-end;
+        .header__wrapper {
             display: flex;
-            gap: 12px;
+            align-items: center;
 
-            // Phần chọn ngôn ngữ
-            .language {
-                text-transform: uppercase;
-                padding: 8px 16px;
-                display: inline-block;
-                font-weight: var(--fontWeightMedium);
-                transition: var(--transition);
-                font-size: var(--fontSize18);
-                border: 1px solid var(--primary-500);
-                cursor: pointer;
-                border-radius: 4px;
+            .header-left {
+                .header-item {
+                    display: flex;
+                    gap: 28px;
+                    padding-left: 0;
+                    margin-bottom: 0;
 
-                .dropdown-toggle::after {
-                    display: none !important;
-                }
-
-                // Điều chỉnh vị trí của dropdown menu
-                .dropdown-menu {
-                    background-color: transparent;
-                    border: 1px solid var(--primary-500);
-                    transform: translate3d(-80px, 140px, 0) !important;
-
-                    .dropdown-item {
-                        text-align: center;
+                    .header-text {
+                        list-style-type: none;
+                        font-style: normal;
 
                         &:hover {
-                            background-color: transparent;
+                            color: var(--primary-500);
+                            cursor: pointer;
                         }
+                    }
+                }
+            }
 
-                        .btn {
-                            font-weight: var(--fontWeightMedium);
+            .header-right {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 12px;
+
+                .language {
+                    text-transform: uppercase;
+                    padding: 8px 16px;
+                    display: inline-block;
+                    font-weight: var(--fontWeightMedium);
+                    font-size: var(--fontSize18);
+                    border: 1px solid var(--primary-500);
+                    cursor: pointer;
+                    border-radius: 4px;
+                    transition: var(--transition);
+
+                    .dropdown-toggle::after {
+                        display: none !important;
+                    }
+
+                    .dropdown-menu {
+                        background-color: transparent;
+                        border: 1px solid var(--primary-500);
+                        transform: translate3d(-80px, 140px, 0) !important;
+
+                        .dropdown-item {
+                            text-align: center;
+
+                            &:hover {
+                                background-color: transparent;
+                            }
+
+                            .btn {
+                                font-weight: var(--fontWeightMedium);
+                            }
                         }
                     }
                 }
             }
         }
-    }
-}
 
-//Tablet
-@media screen and (max-width: 1024px) {
-    .header {
+        .header__logo-img {
+            cursor: pointer;
+            width: 160px;
+        }
+    }
+
+    // Responsive styles
+    @media screen and (max-width: 1024px) {
         .container {
-            padding: 20px 60px 30px 60px;
+            padding: 20px 60px 30px;
 
             .header__wrapper {
-                .header-right {
-                    .language {
-                        .dropdown-menu {
-                            transform: translate3d(-60px, 130px, 0) !important;
-                        }
-                    }
+                .header-right .language .dropdown-menu {
+                    transform: translate3d(-60px, 130px, 0) !important;
                 }
             }
         }
     }
-}
 
-
-@media screen and (max-width: 768px) {
-    .header {
+    @media screen and (max-width: 768px) {
         .container {
-            .header__wrapper {
-                .header-left {
-                    .header-item {
-                        gap: 20px;
-                    }
-                }
+            .header__wrapper .header-left .header-item {
+                gap: 20px;
             }
         }
     }
-}
 
-//Mobile
-@media screen and (max-width: 431px) {
-    .header {
+    @media screen and (max-width: 431px) {
         .container {
-            padding: 12px 8px 24px 8px;
+            padding: 12px 8px 24px;
 
             .header__wrapper {
-                .header-left {
-                    .header-item {
-                        gap: 16px;
+                .header-left .header-item {
+                    gap: 16px;
 
-                        .header-text {
-                            font-size: var(--fontSize16);
-                        }
+                    .header-text {
+                        font-size: var(--fontSize16);
                     }
                 }
 
@@ -158,72 +143,52 @@
             }
         }
     }
-}
 
+    @media screen and (max-width: 376px) {
+        .container .header__wrapper {
+            .header-left .header-item {
+                gap: 12px;
+            }
 
-@media screen and (max-width: 376px) {
-    .header {
-        .container {
-            .header__wrapper {
-                .header-left {
-                    .header-item {
-                        gap: 12px;
+            .header-right {
+                gap: 4px;
+
+                .dropdown-menu {
+                    min-width: 0;
+
+                    .dropdown-item .btn {
+                        line-height: 1;
                     }
-                }
-
-                .header-right {
-                    gap: 4px;
-
-                    .dropdown-menu {
-                        min-width: 0;
-
-                        .dropdown-item {
-                            .btn {
-                                line-height: 1;
-                            }
-                        }
-                    }
-
-                    .language {}
                 }
             }
         }
     }
-}
 
+    @media screen and (max-width: 321px) {
+        .container .header__wrapper {
+            .header-left .header-item {
+                gap: 12px;
 
-@media screen and (max-width: 321px) {
-    .header {
-        .container {
-            .header__wrapper {
-                .header-left {
-                    .header-item {
-                        gap: 12px;
+                .header-text {
+                    font-size: var(--fontSize13);
+                    line-height: var(--lineHeight22);
+                }
+            }
 
-                        .header-text {
-                            font-size: var(--fontSize13);
-                            line-height: var(--lineHeight22);
-                        }
-                    }
+            .header-right {
+                gap: 4px;
+
+                .language {
+                    font-size: var(--fontSize13);
+                    padding: 6px 6px;
                 }
 
-                .header-right {
-                    gap: 4px;
+                .dropdown-menu {
+                    min-width: 0;
 
-                    .dropdown-menu {
-                        min-width: 0;
-
-                        .dropdown-item {
-                            .btn {
-                                font-size: var(--fontSize13);
-                                line-height: 1;
-                            }
-                        }
-                    }
-
-                    .language {
+                    .dropdown-item .btn {
                         font-size: var(--fontSize13);
-                        padding: 6px 6px;
+                        line-height: 1;
                     }
                 }
             }
