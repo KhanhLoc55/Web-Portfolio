@@ -44,7 +44,7 @@ const App = () => {
         }
 
         const lenis = new Lenis({
-            smooth: true,
+            // smooth: true,
             lerp: 0.08,
         });
 
