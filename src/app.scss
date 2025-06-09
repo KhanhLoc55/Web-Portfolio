@@ -179,8 +179,9 @@ a:hover {
 
 /* Scrollbar styles */
 ::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
     background-color: #ffffff;
+
 }
 
 ::-webkit-scrollbar-thumb {
@@ -190,7 +191,7 @@ a:hover {
 }
 
 body.dark::-webkit-scrollbar {
-    width: 12px;
+    width: 6px;
     background-color: #11151c;
 }
 

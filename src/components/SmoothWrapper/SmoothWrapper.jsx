@@ -6,13 +6,17 @@ const SmoothWrapper = ({ children }) => {
 
     useEffect(() => {
         if (!scrollRef.current) return;
+
         const options = {
-            damping: 0.08, // càng thấp thì càng chặt (0.05–0.1)
-            renderByPixels: true, // pixel-perfect scroll
+            damping: 0.08,
+            renderByPixels: true,
             alwaysShowTracks: false,
         };
 
         const scrollbar = Scrollbar.init(scrollRef.current, options);
+
+        // Lưu vào global để dùng ở nơi khác
+        window.scrollbar = scrollbar;
 
         return () => {
             scrollbar.destroy();

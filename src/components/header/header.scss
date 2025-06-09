@@ -1,12 +1,17 @@
 .header {
-    height: 140px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9; // đảm bảo nằm trên cùng
+    background-color: inherit;
 
     .scroll-progress-bar {
         height: 4px;
         background: linear-gradient(90deg, #00bcd4, #2196f3);
         transform-origin: left;
         transform: scaleX(0);
-        transition: transform 0.2s ease-out;
+        transition: transform 0.9s ease-out;
         width: 100%;
         position: absolute;
         bottom: 0;
@@ -16,10 +21,8 @@
 
     .container {
         padding: 20px 80px 30px;
-        position: fixed;
-        z-index: 4;
-        top: 0;
-        left: 0;
+        width: 100%;
+
         max-width: 100%;
 
         .header__wrapper {
