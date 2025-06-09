@@ -14,8 +14,8 @@ import { ThemeContext } from './utils/context';
 
 import './app.scss';
 import './components/portfolio/portfolio.scss';
-import Loading from './components/loading/loading';
-import SmoothWrapper from './components/SmoothWrapper/SmoothWrapper';
+// import Loading from './components/loading/loading';
+// import SmoothWrapper from './components/SmoothWrapper/SmoothWrapper';
 
 const App = () => {
     const theme = useContext(ThemeContext);
