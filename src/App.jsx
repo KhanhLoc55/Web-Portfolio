@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
 // import 'locomotive-scroll/dist/locomotive-scroll.css';
 
@@ -28,16 +28,16 @@ const App = () => {
         }
     }, [darkMode]);
     // 👇 Thêm state loading
-    const [isLoading, setIsLoading] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
 
     // 👇 Hiệu ứng loading 5s
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 5000); // 5s
+    // useEffect(() => {
+    //     const timer = setTimeout(() => {
+    //         setIsLoading(false);
+    //     }, 5000); // 5s
 
-        return () => clearTimeout(timer);
-    }, []);
+    //     return () => clearTimeout(timer);
+    // }, []);
 
     // Lấy màu nền theo theme
     const root = getComputedStyle(document.documentElement);
