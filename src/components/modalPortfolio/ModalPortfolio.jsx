@@ -106,60 +106,66 @@ export default function ModalPortfolio(props) {
                                     </p>
                                 </div>
                                 <div className="modal__button ">
-                                    <button
-                                        className="modal__button-content btn"
-                                        style={{
-                                            border: darkMode
-                                                ? '1px solid var(--primary-500)'
-                                                : '1px solid var(--second-600)',
-                                        }}
-                                    >
-                                        <div className="modal__button-link">
-                                            <a
-                                                href={source}
-                                                target="__blank"
-                                                style={{
-                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                }}
-                                            >
-                                                Source code
-                                            </a>
-                                            <LinkOutlined
-                                                alt="Source code"
-                                                style={{
-                                                    fontSize: '16px',
-                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                }}
-                                            />
-                                        </div>
-                                    </button>
-                                    <button
-                                        className="modal__button-content btn"
-                                        style={{
-                                            border: darkMode
-                                                ? '1px solid var(--primary-500)'
-                                                : '1px solid var(--second-600)',
-                                        }}
-                                    >
-                                        <div className="modal__button-link">
-                                            <a
-                                                href={link}
-                                                target="__blank"
-                                                style={{
-                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                }}
-                                            >
-                                                View project
-                                            </a>
-                                            <LinkOutlined
-                                                alt="Source code"
-                                                style={{
-                                                    fontSize: '16px',
-                                                    color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                }}
-                                            />
-                                        </div>
-                                    </button>
+                                    <a href={source} target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            className="modal__button-content btn"
+                                            style={{
+                                                border: darkMode
+                                                    ? '1px solid var(--primary-500)'
+                                                    : '1px solid var(--second-600)',
+                                            }}
+                                        >
+                                            <div className="modal__button-link">
+                                                <a
+                                                    href={source}
+                                                    target="_blank"
+                                                    rel="noopener noreferrer"
+                                                    style={{
+                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                                    }}
+                                                >
+                                                    Source code
+                                                </a>
+                                                <LinkOutlined
+                                                    alt="Source code"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                                    }}
+                                                />
+                                            </div>
+                                        </button>
+                                    </a>
+
+                                    <a href={link} target="_blank" rel="noopener noreferrer">
+                                        <button
+                                            className="modal__button-content btn"
+                                            style={{
+                                                border: darkMode
+                                                    ? '1px solid var(--primary-500)'
+                                                    : '1px solid var(--second-600)',
+                                            }}
+                                        >
+                                            <div className="modal__button-link">
+                                                <a
+                                                    href={link}
+                                                    target="__blank"
+                                                    style={{
+                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                                    }}
+                                                >
+                                                    View project
+                                                </a>
+                                                <LinkOutlined
+                                                    alt="Source code"
+                                                    style={{
+                                                        fontSize: '16px',
+                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
+                                                    }}
+                                                />
+                                            </div>
+                                        </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>

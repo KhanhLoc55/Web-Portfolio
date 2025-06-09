@@ -1,43 +1,45 @@
 import { useContext, useEffect, useState } from 'react';
 import PortfolioList from '../portfolioList/PortfolioList';
 import './portfolio.scss';
-
 import { allPortfolio, frontEndPortfolio, brandDesignerPortfolio, uiDesignerPortfolio } from './data.js';
 import Card from './Card';
 import ModalPortfolio from '../modalPortfolio/ModalPortfolio.jsx';
 import { ModalContext } from '../../context/modalCtx/index.jsx';
 import { useTranslation } from 'react-i18next';
 
+// 🆕 Framer Motion
+import { motion, AnimatePresence } from 'framer-motion';
 
 export default function Portfolio() {
-    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
-    const [selected, setSelected] = useState('featured');
+    // ‼️ đổi mặc định thành “All” để khớp mảng list
+    const [selected, setSelected] = useState('All');
     const [dataPortfolio, setDataPortfolio] = useState([]);
     const [isSelectPortfolio, setIsSelectedPortfolio] = useState({});
+    const [direction, setDirection] = useState(0); // 🆕 lưu hướng (-1 | 1)
     const modalCtx = useContext(ModalContext);
-    // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
     const { t } = useTranslation();
 
-    // filter portfolio list
+    // Thứ tự các tab
     const list = [
-        {
-            id: 'All',
-            title: 'All',
-        },
-        {
-            id: 'Web App',
-            title: 'Web App',
-        },
-        {
-            id: 'Mobile App',
-            title: 'Mobile App',
-        },
-        {
-            id: 'Brand Design',
-            title: 'Brand Design',
-        },
+        { id: 'All', title: 'All' },
+        { id: 'Web App', title: 'Web App' },
+        { id: 'Mobile App', title: 'Mobile App' },
+        { id: 'Brand Design', title: 'Brand Design' },
     ];
 
+    // 🆕 hàm chọn tab có tính toán hướng
+    const handleSelect = (id) => {
+        const prevIdx = list.findIndex((item) => item.id === selected);
+        const newIdx = list.findIndex((item) => item.id === id);
+        if (newIdx === prevIdx) return; // không đổi
+
+        // newIdx > prevIdx  → tiến tới tab bên phải → slide từ trái qua (direction = 1)
+        // newIdx < prevIdx  → lùi lại tab bên trái → slide từ phải qua (direction = -1)
+        setDirection(newIdx > prevIdx ? 1 : -1);
+        setSelected(id);
+    };
+
+    // lọc data theo tab
     useEffect(() => {
         switch (selected) {
             case 'All':
@@ -57,37 +59,45 @@ export default function Portfolio() {
         }
     }, [selected]);
 
-    // open modal
-    const toggleModal = () => {
-        modalCtx.toggleModal();
+    const toggleModal = () => modalCtx.toggleModal();
+
+    const selectedPortfolio = (id) => {
+        const found = dataPortfolio.find((item) => item.id === id);
+        setIsSelectedPortfolio(found);
     };
 
-    // selected portfolio
-    const selectedPortfolio = (id) => {
-        const selectedPortfolio = dataPortfolio.find((item) => item.id === id);
-        setIsSelectedPortfolio(selectedPortfolio);
-    };
+    // 🆕 tính offset dựa trên direction
+    const enterX = direction === 0 ? 0 : direction === 1 ? -50 : 50;
+    const exitX = direction === 0 ? 0 : direction === 1 ? 50 : -50;
 
     return (
         <section className="portfolio" id="portfolio">
             <div className="container">
                 <h2 className="portfolio-heading textHeading">Portfolio</h2>
 
-                <ul className="portfolio-list ">
+                <ul className="portfolio-list">
                     {list.map((item) => (
                         <PortfolioList
                             key={item.id}
+                            id={item.id}
                             title={item.title}
                             active={selected === item.id}
-                            setSelected={setSelected}
-                            id={item.id}
+                            setSelected={handleSelect}
                         />
                     ))}
                 </ul>
 
-                <div className="portfolio-box">
-                    {dataPortfolio.map((value) => {
-                        return (
+                {/* ⭐ Slide trái/phải theo hướng */}
+                <AnimatePresence mode="wait">
+                    <motion.div
+                        key={selected}
+                        className="portfolio-box"
+                        initial={{ opacity: 0, x: enterX }}
+                        animate={{ opacity: 1, x: 0 }}
+                        exit={{ opacity: 0, x: exitX }}
+                        transition={{ duration: 0.4 }}
+                    >
+                        {dataPortfolio.map((value) => (
                             <Card
                                 key={value.id}
                                 id={value.id}
@@ -105,11 +115,12 @@ export default function Portfolio() {
                                 toggleModal={toggleModal}
                                 selectedPortfolio={() => selectedPortfolio(value.id)}
                             />
-                        );
-                    })}
-                </div>
+                        ))}
+                    </motion.div>
+                </AnimatePresence>
             </div>
-            {/* Popup*/}
+
+            {/* Popup */}
             {modalCtx.isToggleModal && (
                 <ModalPortfolio
                     toggleModal={toggleModal}
