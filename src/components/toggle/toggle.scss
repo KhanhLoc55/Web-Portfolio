@@ -1,8 +1,8 @@
-/* -------------- BUTTON -------------- */
-
 .toggle {
+    animation: fadeSlideIn 0.6s ease forwards;
+
     .btn {
-        background: url('../../assets/backgroundLight.png') no-repeat center center;
+        background: var(--toggle-bg-light);
         background-size: cover;
         min-width: 80px;
         height: 36px;
@@ -11,136 +11,80 @@
         display: flex;
         align-items: center;
         cursor: pointer;
-        transition: background 0.5s ease-in-out, min-width 0.5s ease-in-out, height 0.5s ease-in-out, border 0.5s ease-in-out;
+        transition: background 0.4s ease-in-out, border 0.4s ease;
 
-        /* Vòng tròn di chuyển thể hiện trạng thái bật/tắt */
         .toggle-circle {
             background-color: var(--white);
-            min-width: 36px;
+            width: 36px;
             height: 36px;
             border-radius: 50%;
-            box-shadow: -2px -2px 3px 0px rgba(0, 0, 0, 0.5) inset;
+            box-shadow: var(--toggle-light-shadow);
             transform: translateX(-13px);
-            transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+            transition: transform 0.4s ease, background-color 0.4s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-            /* Căn chỉnh icon */
             .toggle__btn-icon {
-                min-height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                /* Màu sắc của icon */
-
                 .toggle-icon {
-                    color: red;
+                    color: var(--toggle-icon-light);
+                    font-size: 16px;
+                    transition: color 0.3s ease;
                 }
             }
         }
 
-
-        /* Hiệu ứng dark mode */
         &.darkmode {
-            background: url('../../assets/backgroundDark.png') no-repeat;
+            background: url('../../assets/backgroundDark.png') no-repeat center center;
             background-size: cover;
 
-            /* Hiệu ứng di chuyển vòng tròn */
             .toggle-circle {
                 transform: translateX(30px);
-                background-color: #000;
-                box-shadow: 2px 2px 3px 0px rgba(255, 255, 255, 0.5) inset;
-                transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+                background-color: var(--black);
+                box-shadow: var(--toggle-dark-shadow);
 
-                .toggle__btn-icon {
-
-                    /* Đổi màu icon khi ở chế độ dark mode */
-                    .toggle-icon {
-                        color: var(--white);
-                        transition: color 0.7s ease ease-in-out;
-
-                    }
+                .toggle-icon {
+                    color: var(--toggle-icon-dark);
                 }
             }
-
-
         }
-
-
     }
 
-
-
-
-
-
-}
-
-//mobie
-@media screen and (max-width: 431px) {
-    .toggle {
+    // Responsive
+    @media screen and (max-width: 431px) {
         .btn {
-            padding: 4px 4px;
+            padding: 4px;
             background: none;
             border: none;
             min-width: auto;
             height: auto;
-            transition: padding 0.5s ease-in-out, background 0.5s ease-in-out, border 0.5s ease-in-out, min-width 0.5s ease-in-out, height 0.5s ease-in-out;
-
 
             .toggle-circle {
-                transform: none;
-                min-width: 32px;
+                width: 32px;
                 height: 32px;
-                transition: transform 0.5s ease-in-out, min-width 0.5s ease-in-out, height 0.5s ease-in-out;
+                transform: none;
 
-                .toggle__btn-icon {
-                    .toggle-icon {
-                        width: 16px;
-                        height: 16px;
-                        transition: width 0.5s ease-in-out, height 0.5s ease-in-out;
-
-                    }
+                .toggle-icon {
+                    font-size: 14px;
                 }
             }
 
-            &.darkmode {
-                background: none;
-                border: none;
-                min-width: auto;
-                height: auto;
-
-                .toggle-circle {
-                    transform: none;
-                    min-width: 32px;
-                    height: 32px;
-                }
+            &.darkmode .toggle-circle {
+                transform: none;
             }
         }
-
     }
-}
 
-@media screen and (max-width: 376px) {
-    .toggle {
+    @media screen and (max-width: 376px) {
         .btn {
             .toggle-circle {
-                min-width: 28px;
+                width: 28px;
                 height: 28px;
 
-                .toggle__btn-icon {
-                    .toggle-icon {
-                        width: 14px;
-                        height: 14px;
-                    }
-                }
-            }
-
-            &.darkmode {
-                .toggle-circle {
-                    min-width: 28px;
-                    height: 28px;
+                .toggle-icon {
+                    font-size: 12px;
                 }
             }
         }
-
     }
 }

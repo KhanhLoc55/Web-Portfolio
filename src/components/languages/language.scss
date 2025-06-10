@@ -1,0 +1,64 @@
+.language {
+    position: relative;
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    display: inline-block;
+    font-weight: var(--fontWeightMedium);
+    font-size: var(--fontSize18);
+    border: 1px solid var(--primary-500);
+    border-radius: 4px;
+    transition: var(--transition);
+    background-color: transparent; // đảm bảo cùng tone với nền
+
+    .dropdown-toggle::after {
+        display: none !important;
+    }
+
+    .languageSpan {
+        width: auto;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 110%; // bạn có thể chỉnh `top` thành `100%` nếu muốn sát hơn
+        right: 0;
+        background-color: inherit;
+        border: 1px solid var(--primary-500);
+        z-index: 99;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        padding: 4px 0;
+        border-radius: 4px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+        // 👇 tăng min-width (vì từ VIỆT NAM dài hơn EN)
+        min-width: 180px;
+
+        .dropdown-item {
+            padding: 6px 12px;
+            text-align: center;
+            background-color: transparent;
+            border-radius: 0;
+            transition: background-color 0.2s;
+
+            &:hover {
+                background-color: var(--primary-100); // hoặc dùng transparent nếu bạn muốn giữ nguyên
+            }
+
+            .language-btn {
+                all: unset;
+                display: block;
+                width: 100%;
+                font-weight: var(--fontWeightMedium);
+                font-size: var(--fontSize18);
+                cursor: pointer;
+                text-align: center;
+                padding: 4px 0;
+
+                // 👇 giữ chữ trên 1 dòng
+                white-space: nowrap;
+            }
+        }
+    }
+}

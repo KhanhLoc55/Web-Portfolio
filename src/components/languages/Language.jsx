@@ -1,60 +1,64 @@
-import React, { useContext } from 'react';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import React, { useContext, useState, useRef, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../utils/context';
+import './language.scss';
 
 const Language = () => {
-    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
-
     const { i18n } = useTranslation();
-    const dropdownStyles = {
-        position: 'static',
+
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef();
+
+    const toggleDropdown = () => setIsOpen(!isOpen);
+
+    const handleClickOutside = (e) => {
+        if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+            setIsOpen(false);
+        }
     };
-    const handleChangeLanguage = (language) => {
-        i18n.changeLanguage(language);
+
+    useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => document.removeEventListener('mousedown', handleClickOutside);
+    }, []);
+
+    const handleChangeLanguage = (lang) => {
+        i18n.changeLanguage(lang);
+        setIsOpen(false);
     };
 
     const root = getComputedStyle(document.documentElement);
-
     const backgroundColor = darkMode
         ? root.getPropertyValue('--backgroundDark')
         : root.getPropertyValue('--backgroundLight');
     const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
 
     return (
-        <>
-            <NavDropdown
-                title={i18n.language === 'vi' ? 'Vi' : 'En'}
-                id="collasible-nav-dropdown"
-                style={dropdownStyles}
-                className="language"
-            >
-                <NavDropdown.Item onClick={() => handleChangeLanguage('en')}>
-                    <div
-                        className="btn"
-                        style={{
-                            backgroundColor: backgroundColor.trim(),
-                            color: color.trim(),
-                        }}
-                    >
-                        English
+        <div className="language" onClick={toggleDropdown} ref={dropdownRef}>
+            <span className="languageSpan">{i18n.language === 'vi' ? 'VI' : 'EN'}</span>
+            {isOpen && (
+                <div className="dropdown-menu show">
+                    <div className="dropdown-item" onClick={() => handleChangeLanguage('en')}>
+                        <div
+                            className="language-btn"
+                            style={{ backgroundColor: backgroundColor.trim(), color: color.trim() }}
+                        >
+                            English
+                        </div>
                     </div>
-                </NavDropdown.Item>
-                <NavDropdown.Item onClick={() => handleChangeLanguage('vi')}>
-                    <div
-                        className="btn"
-                        style={{
-                            backgroundColor: backgroundColor.trim(),
-                            color: color.trim(),
-                        }}
-                    >
-                        Việt nam
+                    <div className="dropdown-item" onClick={() => handleChangeLanguage('vi')}>
+                        <div
+                            className="language-btn"
+                            style={{ backgroundColor: backgroundColor.trim(), color: color.trim() }}
+                        >
+                            Việt Nam
+                        </div>
                     </div>
-                </NavDropdown.Item>
-            </NavDropdown>
-        </>
+                </div>
+            )}
+        </div>
     );
 };
 

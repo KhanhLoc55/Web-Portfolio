@@ -3,79 +3,69 @@ import { useTranslation } from 'react-i18next';
 import './contact.scss';
 import { ThemeContext } from '../../utils/context';
 import emailjs from '@emailjs/browser';
-
 import { PhoneOutlined, MessageOutlined, EnvironmentOutlined } from '@ant-design/icons';
+
 const Contact = () => {
-    const messageMaxLength = 1000;
-    const [name, setName] = useState('');
-    const [email, setEmail] = useState('');
-    const [subject, setSubject] = useState('');
-    const [message, setMessage] = useState('');
-    const [charCount, setCharCount] = useState(1000);
-
-    // Sử dụng hook useTranslation để lấy các hàm và biến liên quan đến việc dịch ngôn ngữ
     const { t } = useTranslation();
-
-    // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
+    const messageMaxLength = 1000;
 
-    // Truy cập vào root đổi màu color
+    const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
+    const [charCount, setCharCount] = useState(messageMaxLength);
+
     const root = getComputedStyle(document.documentElement);
     const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
 
-    function encode(data) {
-        return Object.keys(data)
+    useEffect(() => {
+        setCharCount(messageMaxLength - formData.message.length);
+    }, [formData.message]);
+
+    const handleChange = (e) => {
+        const { name, value } = e.target;
+        setFormData((prev) => ({ ...prev, [name]: value }));
+    };
+
+    const encode = (data) =>
+        Object.keys(data)
             .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
             .join('&');
-    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        const { name, email, message, subject } = formData;
+
+        if (!name || !email || !message) return;
 
         const serviceId = 'service_lezjbyt';
         const templateId = 'template_olxpyad';
         const publicKey = 'xw0B6BEku4_Ej3Gxy';
 
-        const templateParams = { from_name: name, from_email: email, to_name: 'Web Wizard', message: message };
-
         emailjs
-            .send(serviceId, templateId, templateParams, publicKey)
-            .then((response) => {
-                console.log('Email sent successfully!', response);
-                setName('');
-                setEmail('');
-                setMessage('');
-                setSubject('');
-            })
-            .catch((error) => {
-                console.error('Error sending email:', error);
-            });
-
-        if (name.length === 0 && email.length === 0 && message.length === 0) {
-            return;
-        }
+            .send(
+                serviceId,
+                templateId,
+                {
+                    from_name: name,
+                    from_email: email,
+                    to_name: 'Web Wizard',
+                    message,
+                },
+                publicKey,
+            )
+            .then(() => setFormData({ name: '', email: '', subject: '', message: '' }))
+            .catch((error) => console.error('EmailJS error:', error));
 
         fetch('/', {
             method: 'POST',
             headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: encode({ 'form-name': 'contact', name, email, message, subject }),
+            body: encode({ 'form-name': 'contact', ...formData }),
         })
-            .then(() => {
-                // Sử dụng template literals để nhúng kết quả của hàm t vào chuỗi
-                alert(t('contact.contactAlert'));
-            })
+            .then(() => alert(t('contact.contactAlert')))
             .catch((error) => alert(error));
     };
 
-    useEffect(() => {
-        function handleMessageCount() {
-            const messageLength = message.length;
-            const charLeft = messageMaxLength - messageLength;
-            setCharCount(charLeft);
-        }
-        handleMessageCount();
-    }, [message]);
+    const { name, email, subject, message } = formData;
 
     return (
         <section className="contact" id="contact">
@@ -83,67 +73,28 @@ const Contact = () => {
                 <h2 className="contact-heading textHeading">Contact</h2>
                 <div className="contact-content">
                     <div className="contact-left">
-                        <h3 className="textHeading"> {t('contact.text1')}</h3>
-                        <p
-                            style={{
-                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                            }}
-                        >
-                            {' '}
-                            {t('contact.text2')}
-                        </p>
+                        <h3 className="textHeading">{t('contact.text1')}</h3>
+                        <p style={{ color: darkMode ? 'var(--gray-60)' : 'var(--black-60)' }}>{t('contact.text2')}</p>
                         <p className="contact-info">
-                            <PhoneOutlined
-                                style={{
-                                    paddingRight: '8px',
-                                    fontSize: 'var(--fontSize16)',
-                                }}
-                            />{' '}
-                            <span
-                                className="contact-info-text"
-                                style={{
-                                    color: color.trim(),
-                                }}
-                            >
-                                {' '}
+                            <PhoneOutlined style={{ paddingRight: 8, fontSize: 'var(--fontSize16)' }} />
+                            <span className="contact-info-text" style={{ color: color.trim() }}>
                                 0839 851 729
                             </span>
                         </p>
                         <p className="contact-info">
-                            <MessageOutlined
-                                style={{
-                                    paddingRight: '8px',
-                                    fontSize: 'var(--fontSize16)',
-                                }}
-                            />
-                            <span
-                                className="contact-info-text"
-                                style={{
-                                    color: color.trim(),
-                                }}
-                            >
-                                {' '}
+                            <MessageOutlined style={{ paddingRight: 8, fontSize: 'var(--fontSize16)' }} />
+                            <span className="contact-info-text" style={{ color: color.trim() }}>
                                 anhlamot55@gmail.com
                             </span>
                         </p>
                         <p className="contact-info">
-                            <EnvironmentOutlined
-                                style={{
-                                    paddingRight: '8px',
-                                    fontSize: 'var(--fontSize16)',
-                                }}
-                            />
-                            <span
-                                className="contact-info-text"
-                                style={{
-                                    color: color.trim(),
-                                }}
-                            >
-                                {' '}
+                            <EnvironmentOutlined style={{ paddingRight: 8, fontSize: 'var(--fontSize16)' }} />
+                            <span className="contact-info-text" style={{ color: color.trim() }}>
                                 {t('contact.text3')}
                             </span>
                         </p>
                     </div>
+
                     <div
                         className="contact-right"
                         style={{
@@ -161,90 +112,58 @@ const Contact = () => {
                             onSubmit={handleSubmit}
                         >
                             <input type="hidden" name="form-name" value="contact" />
-                            <div className="contact-box">
-                                <div className={`input-container ${name.length >= 1 ? 'focused' : ''}`}>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        name="name"
-                                        required
-                                        className="form-input"
-                                        value={name}
-                                        onChange={(e) => setName(e.target.value)}
-                                        style={{
-                                            // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                            border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
-                                        }}
-                                    />
-                                    <label
-                                        htmlFor="name"
-                                        style={{
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                        }}
-                                    >
-                                        Name: <br />
-                                    </label>
-                                </div>
-                                <div className={`input-container ${email.length >= 1 ? 'focused' : ''}`}>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        name="email"
-                                        required
-                                        className="form-input"
-                                        value={email}
-                                        onChange={(e) => setEmail(e.target.value)}
-                                        style={{
-                                            // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                            border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
-                                        }}
-                                    />
-                                    <label
-                                        htmlFor="email"
-                                        style={{
-                                            color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
-                                        }}
-                                    >
-                                        Email: <br />
-                                    </label>
-                                </div>
+                            <div className="form-row">
+                                <InputField
+                                    id="name"
+                                    label={t('contact.nameLabel')}
+                                    placeholder={t('contact.namePlaceholder')}
+                                    value={name}
+                                    onChange={handleChange}
+                                    darkMode={darkMode}
+                                />
+                                <InputField
+                                    id="email"
+                                    label={t('contact.emailLabel')}
+                                    placeholder={t('contact.emailPlaceholder')}
+                                    type="email"
+                                    value={email}
+                                    onChange={handleChange}
+                                    darkMode={darkMode}
+                                />
                             </div>
-                            <div className={`input-container ${message.length >= 1 ? 'focused' : ''}`}>
+                            <InputField
+                                id="subject"
+                                label={t('contact.subjectLabel')}
+                                placeholder={t('contact.subjectPlaceholder')}
+                                value={subject}
+                                onChange={handleChange}
+                                darkMode={darkMode}
+                            />
+                            <div className={`input-container ${message ? 'focused' : ''}`}>
                                 <textarea
                                     required
                                     id="message"
                                     name="message"
                                     className="form-input"
                                     value={message}
-                                    onChange={(e) => setMessage(e.target.value)}
+                                    onChange={handleChange}
                                     maxLength={messageMaxLength}
+                                    placeholder={t('contact.messagePlaceholder')}
                                     style={{
-                                        // background: darkMode ? 'var(--textColorlight)' : 'var(--textColorDark)',
                                         color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
                                         border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
                                     }}
-                                ></textarea>
+                                />
                                 <label
                                     htmlFor="message"
                                     style={{
                                         color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
                                     }}
                                 >
-                                    Message:
-                                    <br />{' '}
+                                    {t('contact.messageLabel')}
                                 </label>
-                                <small
-                                    className="contact-charaters"
-                                    style={{
-                                        color: color.trim(),
-                                    }}
-                                >
-                                    <span id="message-count">
-                                        {charCount >= 0 ? charCount : 'Thank you for your message'}
-                                    </span>{' '}
-                                    characters
+                                <small className="contact-characters" style={{ color: color.trim() }}>
+                                    <span>{charCount >= 0 ? charCount : 'Thank you for your message'}</span> characters
                                 </small>
                             </div>
                             <button
@@ -264,4 +183,32 @@ const Contact = () => {
         </section>
     );
 };
+
+const InputField = ({ id, label, placeholder, value, onChange, darkMode, type = 'text' }) => (
+    <div className={`input-container ${value ? 'focused' : ''}`}>
+        <input
+            type={type}
+            id={id}
+            name={id}
+            required={id !== 'subject'} // Subject là optional
+            className="form-input"
+            value={value}
+            onChange={onChange}
+            placeholder={placeholder}
+            style={{
+                color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
+                border: darkMode ? '1px solid var(--gray-30)' : '1px solid var(--black-30)',
+            }}
+        />
+        <label
+            htmlFor={id}
+            style={{
+                color: darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)',
+            }}
+        >
+            {label}
+        </label>
+    </div>
+);
+
 export default Contact;

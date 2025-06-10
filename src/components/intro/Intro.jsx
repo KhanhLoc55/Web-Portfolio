@@ -1,27 +1,47 @@
 import './intro.scss';
-import React, { useCallback, useEffect, useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ThemeContext } from '../../utils/context';
 
-// Image imports
 import Avatar from '../../assets/avatarB.png';
 import WavingHand from '../../assets/wavingHand.svg';
 import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
 import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
-// Icon import
 import { DownloadOutlined } from '@ant-design/icons';
 import ScrollReveal from '../ScrollReveal/ScrollReveal';
 
 const Intro = () => {
-    const { t, i18n } = useTranslation(); // Hook for translation
-
+    const { t, i18n } = useTranslation();
     const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode; // Get the current theme mode
+    const darkMode = theme.state.darkMode;
 
-    // Use the useTypewriter hook to create typewriter effect
+    const [revealText, setRevealText] = useState(false);
+    const [cv, setCv] = useState(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
+
+    // Scroll reveal logic
+    useEffect(() => {
+        const handleScroll = () => {
+            const target = document.getElementById('intro');
+            if (!target) return;
+            const rect = target.getBoundingClientRect();
+            if (rect.top < window.innerHeight * 0.75) {
+                setRevealText(true);
+                window.removeEventListener('scroll', handleScroll);
+            }
+        };
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Update CV when language changes
+    useEffect(() => {
+        setCv(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
+    }, [i18n.resolvedLanguage]);
+
+    // Typewriter effect
     const [text] = useTypewriter({
         words: ['Brand Designer.', 'Web Designer.', 'UI Designer.'],
         loop: true,
@@ -29,17 +49,6 @@ const Intro = () => {
         deleteSpeed: 10,
         delaySpeed: 2000,
     });
-
-    const [cv, setCv] = useState(cvEn); // Initial CV state set to English CV
-
-    // Update CV link based on selected language
-    const handleChangeCvLanguage = useCallback(() => {
-        setCv(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
-    }, [i18n.resolvedLanguage]);
-
-    useEffect(() => {
-        handleChangeCvLanguage();
-    }, [handleChangeCvLanguage]);
 
     return (
         <div className="intro" id="intro">
@@ -59,12 +68,17 @@ const Intro = () => {
                     </ScrollReveal>
 
                     <p
-                        className="i-heading4 textbody"
-                        style={{
-                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                        }}
+                        className={`i-heading4 textbody scroll-text ${darkMode ? 'dark' : ''} ${
+                            revealText ? 'revealed animated' : ''
+                        }`}
                     >
-                        {t('intro.IntroTextContent')}
+                        {t('intro.IntroTextContent')
+                            .split('')
+                            .map((char, i) => (
+                                <span key={i} style={{ '--char-index': i }}>
+                                    {char}
+                                </span>
+                            ))}
                     </p>
 
                     <ScrollReveal position="left">
@@ -78,13 +92,7 @@ const Intro = () => {
                                 <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
                                     Download CV
                                 </a>
-                                <DownloadOutlined
-                                    style={{
-                                        fontSize: '18px',
-                                        color: 'var(--white)',
-                                        marginLeft: '8px',
-                                    }}
-                                />
+                                <DownloadOutlined style={{ fontSize: 18, color: 'var(--white)', marginLeft: 8 }} />
                             </button>
                         </div>
                     </ScrollReveal>

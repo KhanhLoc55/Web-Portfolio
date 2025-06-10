@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import './header.scss';
 import LogoImg from '../../assets/KL-textLogo.svg';
 import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
@@ -21,7 +21,8 @@ const Header = () => {
         const handleScroll = () => {
             const scrollTop = window.scrollY;
             const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            setScrollProgress(docHeight > 0 ? scrollTop / docHeight : 0);
+            const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+            setScrollProgress(progress);
             setShowBoxShadow(scrollTop > 50);
         };
 
@@ -32,19 +33,23 @@ const Header = () => {
         };
     }, []);
 
-    const rootStyle = getComputedStyle(document.documentElement);
-    const backgroundColor = darkMode
-        ? rootStyle.getPropertyValue('--backgroundDark')
-        : rootStyle.getPropertyValue('--backgroundLight');
-    const textColor = darkMode
-        ? rootStyle.getPropertyValue('--textColorDark')
-        : rootStyle.getPropertyValue('--textColorlight');
-
+    const { backgroundColor, textColor } = useMemo(() => {
+        const style = getComputedStyle(document.documentElement);
+        return {
+            backgroundColor: darkMode
+                ? style.getPropertyValue('--backgroundDark')
+                : style.getPropertyValue('--backgroundLight'),
+            textColor: darkMode
+                ? style.getPropertyValue('--textColorDark')
+                : style.getPropertyValue('--textColorlight'),
+        };
+    }, [darkMode]);
     const headerStyle = {
         backgroundColor: backgroundColor.trim(),
         color: textColor.trim(),
         boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
         transition: 'box-shadow 0.3s ease-in-out',
+        '--activeColor': darkMode ? '#0E70BA' : '#24B6F2', // ✅ Add this line
     };
 
     const currentLogo = darkMode ? LogoImgWhite : LogoImg;

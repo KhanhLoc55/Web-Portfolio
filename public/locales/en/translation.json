@@ -45,13 +45,21 @@
         "textEducation3": "- Attained computer and English certifications."
     },
     "contact": {
-        "text1": "Do you have an idea?",
-        "text2": "Don't let it just exist in your thoughts! Take action now to turn that idea into reality. Success is waiting for you!",
-        "text3": "Go Vap District, Ho Chi Minh City, Vietnam.",
-        "textIphone": "Iphone:",
+        "text1": "Got an idea in mind?",
+        "text2": "Don't let it stay in your head forever. Start turning it into reality today—your success begins with action.",
+        "text3": "Go Vap District, Ho Chi Minh City, Vietnam",
+        "textIphone": "Phone:",
         "textMessage": "Send Message",
         "textAddress": "Address",
-        "contactAlert": "I have received your message. I will respond as soon as possible. Have a wonderful day!"
+        "contactAlert": "Thanks for reaching out! I’ve received your message and will get back to you shortly. Wishing you a fantastic day!",
+        "nameLabel": "Your Name",
+        "namePlaceholder": "e.g. Jane Doe",
+        "emailLabel": "Your Email Address",
+        "emailPlaceholder": "e.g. jane.doe@example.com",
+        "subjectLabel": "(Optional) Subject of Your Message",
+        "subjectPlaceholder": "e.g. I’d like to discuss a project...",
+        "messageLabel": "Your Message",
+        "messagePlaceholder": "What would you like to say?"
     },
     "footer": {
         "footerText": "© 2024 - Copyright belongs to KL<webdesign/>"

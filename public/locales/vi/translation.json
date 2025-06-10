@@ -45,13 +45,21 @@
         "textEducation3": "- Đạt được chứng chỉ tin học + tiếng anh."
     },
     "contact": {
-        "text1": "Bạn đã có ý tưởng?",
-        "text2": " Đừng để nó chỉ tồn tại trong suy nghĩ! Hãy bắt tay vào hành động ngay bây giờ để biến ý tưởng đó thành hiện thực. Thành công đang chờ đợi bạn!",
-        "text3": "Quận Gò Vấp, Hồ Chí Minh, Việt Nam.",
-        "textIphone": "Điện Thoại:",
+        "text1": "Bạn đang ấp ủ một ý tưởng?",
+        "text2": "Đừng để nó mãi chỉ nằm trong suy nghĩ! Hãy hành động ngay hôm nay để biến ý tưởng ấy thành hiện thực. Thành công đang chờ bạn phía trước.",
+        "text3": "Quận Gò Vấp, TP. Hồ Chí Minh, Việt Nam",
+        "textIphone": "Điện thoại:",
         "textMessage": "Gửi tin nhắn",
         "textAddress": "Địa chỉ",
-        "contactAlert": "Tôi đã nhận được tin nhắn của bạn. Tôi sẽ phản hồi sớm nhất có thể. Chúc bạn có một ngày thật tuyệt vời!"
+        "contactAlert": "Cảm ơn bạn đã gửi tin nhắn! Mình sẽ phản hồi trong thời gian sớm nhất. Chúc bạn một ngày thật tuyệt vời!",
+        "nameLabel": "Tên của bạn",
+        "namePlaceholder": "VD: Nguyễn Văn A",
+        "emailLabel": "Địa chỉ email",
+        "emailPlaceholder": "VD: example@email.com",
+        "subjectLabel": "(Không bắt buộc) Chủ đề tin nhắn",
+        "subjectPlaceholder": "VD: Tôi muốn trao đổi ý tưởng...",
+        "messageLabel": "Nội dung tin nhắn",
+        "messagePlaceholder": "Bạn muốn nói gì?..."
     },
     "footer": {
         "footerText": "© 2024 - Bản quyền thuộc về KL<webdesign/>"

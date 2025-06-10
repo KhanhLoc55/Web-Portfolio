@@ -5,28 +5,33 @@ import { faSun, faMoon } from '@fortawesome/free-solid-svg-icons';
 import { ThemeContext } from '../../utils/context';
 
 const DarkModeButton = () => {
-    // Đặt giá trị mặc định của isDarkMode là true
-    const [isDarkMode, setIsDarkMode] = useState(true);
-    const theme = useContext(ThemeContext);
+    const { state, dispatch } = useContext(ThemeContext);
 
+    // Khởi tạo isDarkMode theo context state hoặc localStorage
+    const [isDarkMode, setIsDarkMode] = useState(() => {
+        const saved = localStorage.getItem('darkmode');
+        if (saved !== null) return saved === 'true';
+        return state.darkMode ?? true; // fallback true nếu chưa có state
+    });
+
+    // Đồng bộ khi state trong context thay đổi (ví dụ toggle từ chỗ khác)
     useEffect(() => {
-        // Hook useEffect để xử lý một số logic khi component mount
-        const darkMode = localStorage.getItem('darkmode');
-        if (darkMode === 'true') {
-            setIsDarkMode(true);
+        if (state.darkMode !== isDarkMode) {
+            setIsDarkMode(state.darkMode);
+            localStorage.setItem('darkmode', state.darkMode.toString());
         }
-    }, []);
+    }, [state.darkMode]);
 
-    const handleDarkModeToggle = () => {
-        // Xử lý khi người dùng bật/tắt chế độ dark mode
-        theme.dispatch({ type: 'TOGGLE' });
-        setIsDarkMode(!isDarkMode);
-        localStorage.setItem('darkmode', !isDarkMode);
+    const handleToggle = () => {
+        const newMode = !isDarkMode;
+        setIsDarkMode(newMode);
+        localStorage.setItem('darkmode', newMode.toString());
+        dispatch({ type: 'TOGGLE' });
     };
 
     return (
         <div className="toggle">
-            <div className={`btn${isDarkMode ? ' darkmode' : ''} `} onClick={handleDarkModeToggle}>
+            <div className={`btn${isDarkMode ? ' darkmode' : ''}`} onClick={handleToggle}>
                 <div className="toggle-circle">
                     <div className="toggle__btn-icon">
                         <FontAwesomeIcon icon={isDarkMode ? faMoon : faSun} className="toggle-icon" />

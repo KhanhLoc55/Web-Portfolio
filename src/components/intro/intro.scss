@@ -10,6 +10,29 @@
     }
 
     .i-left {
+
+        .reveal-char.active {
+            opacity: 1;
+            animation-name: revealColor;
+        }
+
+        @keyframes revealColor {
+            0% {
+                color: transparent;
+                opacity: 0;
+            }
+
+            100% {
+                color: white;
+                opacity: 1;
+            }
+        }
+
+        .reveal-text.active {
+            background-position: 0 0;
+            color: transparent;
+        }
+
         .textContentLeft {
             .wavingHand {
                 padding: 0 6px; // Khoảng cách giữa text và icon
@@ -80,9 +103,58 @@
             max-width: 55%;
             border-radius: 50%;
             position: absolute;
+            transition: transform 0.3s ease;
+
+
         }
     }
 }
+
+.scroll-text {
+    display: inline-block;
+    white-space: pre-wrap;
+    word-break: break-word;
+
+    span {
+        color: var(--black-60);
+        transition: color 0.3s ease;
+    }
+
+    &.dark span {
+        color: var(--gray-60);
+    }
+
+    &.revealed span {
+        color: black;
+    }
+
+    &.dark.revealed span {
+        color: white;
+    }
+
+    &.animated span {
+        transition-delay: calc(var(--char-index) * 5ms);
+    }
+}
+
+
+.scroll-text.dark span {
+    color: var(--gray-60); // Dark mode mặc định
+}
+
+.scroll-text.revealed span {
+    color: black; // Light mode khi đã hiện
+}
+
+.scroll-text.dark.revealed span {
+    color: white; // Dark mode khi đã hiện
+}
+
+.scroll-text.animated span {
+    transition-delay: calc(var(--char-index) * 5ms);
+}
+
+
 
 // Tablet 
 @media screen and (max-width: 1024px) {

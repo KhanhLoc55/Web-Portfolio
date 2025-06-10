@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
+
 
 
 * {
@@ -6,15 +7,23 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: var(--Montserrat);
+    font-family: var(--fontPrimary);
+}
+
+*:focus-visible {
+    outline: 2px solid var(--primary-500);
+    outline-offset: 2px;
 }
 
 html,
 body {
+    transition: background-color 0.3s ease, color 0.3s ease;
+
     height: 100%;
     margin: 0;
     padding: 0;
-    // ❌ Không đặt overflow: hidden ở đây
+    line-height: 1.5; // mặc định tốt cho đọc văn bản
+
     font-weight: var(--fontWeightRegular);
     background-color: var(--white-200);
     font-size: var(--fontSize16);
@@ -51,6 +60,7 @@ body {
     font-size: var(--fontSize16);
     line-height: var(--lineHeight24);
     font-weight: var(--fontWeightMedium);
+    font-family: var(--Montserrat);
 }
 
 .textsmall {
@@ -103,6 +113,7 @@ a:hover {
     //White-theme
     --white: #ffffff;
 
+    --black: #000;
 
 
     --backgroundDark: #11151c;
@@ -119,7 +130,7 @@ a:hover {
     --gradient: linear-gradient(90deg, var(--second-600) 0%, var(--primary-500) 100%);
 
     //font
-    --Montserrat: "Montserrat", sans-serif;
+    --fontPrimary: 'Montserrat', sans-serif;
     --fontSize36: 36px;
     --lineHeight44: 44px;
 
@@ -147,14 +158,38 @@ a:hover {
     --fontWeightRegular: 400;
 
     //animation
-    --transition: all 0.3s linear;
-    --transition04: transform 0.4s ease;
+    --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // giống Material UI
+    --transition-color: color 0.3s ease;
+    --transition-bg: background-color 0.3s ease;
+    --transition-transform: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition01: all 0.3s ease-in-out;
+
+    --spacing-xxs: 4px;
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 48px;
+
+    //toggle
+    --toggle-bg-light: url('/assets/backgroundLight.png') no-repeat center center;
+    --toggle-icon-light: #ffb400;
+    --toggle-light-shadow: -2px -2px 3px rgba(0, 0, 0, 0.5) inset;
+
+    --toggle-icon-dark: #ffffff;
+    --toggle-dark-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5) inset;
+}
+
+//toggle
+:root[data-theme='dark'] {
+    --toggle-bg-dark: url('/assets/backgroundDark.png') no-repeat center center;
+
 }
 
 /* Button styles */
 .btn {
     padding: 8px 12px;
-    // display: inline-block;
     font-weight: var(--fontWeightMedium);
     transition: var(--transition);
     font-size: var(--fontSize18);
@@ -180,7 +215,7 @@ a:hover {
 /* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: #ffffff;
+    background-color: var(--white-200);
 
 }
 
