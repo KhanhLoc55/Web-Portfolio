@@ -33,7 +33,7 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const { name, email, message, subject } = formData;
+        const { name, email, message } = formData;
 
         if (!name || !email || !message) return;
 

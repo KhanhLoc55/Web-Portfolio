@@ -20,7 +20,7 @@ const DarkModeButton = () => {
             setIsDarkMode(state.darkMode);
             localStorage.setItem('darkmode', state.darkMode.toString());
         }
-    }, [state.darkMode]);
+    }, [state.darkMode, isDarkMode]);
 
     const handleToggle = () => {
         const newMode = !isDarkMode;
