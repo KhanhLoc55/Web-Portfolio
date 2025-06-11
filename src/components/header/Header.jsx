@@ -18,22 +18,27 @@ const Header = () => {
     const [showBoxShadow, setShowBoxShadow] = useState(false);
 
     useEffect(() => {
+        let ticking = false;
+
         const handleScroll = () => {
-            const scrollTop = window.scrollY;
-            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-            const progress = docHeight > 0 ? scrollTop / docHeight : 0;
-            setScrollProgress(progress);
-            setShowBoxShadow(scrollTop > 50);
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const scrollTop = window.scrollY;
+                    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+                    setScrollProgress(progress);
+                    setShowBoxShadow(scrollTop > 50);
+                    ticking = false;
+                });
+                ticking = true;
+            }
         };
 
         window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const { backgroundColor, textColor } = useMemo(() => {
+    const { backgroundColor, textColor, activeColor } = useMemo(() => {
         const style = getComputedStyle(document.documentElement);
         return {
             backgroundColor: darkMode
@@ -42,14 +47,16 @@ const Header = () => {
             textColor: darkMode
                 ? style.getPropertyValue('--textColorDark')
                 : style.getPropertyValue('--textColorlight'),
+            activeColor: darkMode ? style.getPropertyValue('--primary-500') : style.getPropertyValue('--second-600'),
         };
     }, [darkMode]);
+
     const headerStyle = {
         backgroundColor: backgroundColor.trim(),
         color: textColor.trim(),
         boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
         transition: 'box-shadow 0.3s ease-in-out',
-        '--activeColor': darkMode ? '#0E70BA' : '#24B6F2', // ✅ Add this line
+        '--activeColor': activeColor.trim(),
     };
 
     const currentLogo = darkMode ? LogoImgWhite : LogoImg;
@@ -64,9 +71,12 @@ const Header = () => {
     return (
         <header className="header" id="header">
             <div className="container" style={headerStyle}>
-                <Link to="header" activeClass="active" spy smooth offset={50} duration={500}>
-                    <img className="header__logo-img" alt="logo" src={currentLogo} />
-                </Link>
+                <img
+                    className="header__logo-img"
+                    alt="logo"
+                    src={currentLogo}
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                />
 
                 <div className="header__wrapper">
                     <div className="header-left">

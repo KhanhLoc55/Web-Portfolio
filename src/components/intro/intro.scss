@@ -2,7 +2,7 @@
     overflow-x: hidden; // Ẩn thanh cuộn ngang
 
     .container {
-        padding: 80px 80px;
+        padding: 80px 48px;
         display: grid;
         grid-template-columns: 1fr 1fr; // Tạo lưới với 2 cột
         align-items: center;
@@ -10,7 +10,6 @@
     }
 
     .i-left {
-
         .reveal-char.active {
             opacity: 1;
             animation-name: revealColor;
@@ -34,14 +33,16 @@
         }
 
         .textContentLeft {
+            margin-bottom: var(--padding4);
+
             .wavingHand {
-                padding: 0 6px; // Khoảng cách giữa text và icon
+                transform: translateY(7px);
+                width: 30px;
             }
         }
 
         .i-heading1 {
-            margin-top: 8px;
-            margin-bottom: 12px;
+            margin-bottom: var(--padding8);
             background: linear-gradient(to right, var(--primary-300) 30%, var(--primary-500) 60%, var(--second-600) 90%);
             background-clip: text;
             -webkit-background-clip: text;
@@ -62,7 +63,7 @@
 
         .i-heading3 {
             font-style: normal;
-            margin-bottom: 12px;
+            margin-bottom: var(--padding12);
 
             .i-text-smail {
                 background: linear-gradient(90deg, var(--primary-500) 0%, var(--second-600) 100%);
@@ -74,7 +75,7 @@
         }
 
         .i-heading4 {
-            margin-bottom: 16px;
+            margin-bottom: var(--padding12);
             line-height: var(--lineHeight26);
         }
 

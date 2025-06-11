@@ -164,13 +164,13 @@ a:hover {
     --transition-transform: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition01: all 0.3s ease-in-out;
 
-    --spacing-xxs: 4px;
-    --spacing-xs: 8px;
-    --spacing-sm: 12px;
-    --spacing-md: 16px;
-    --spacing-lg: 24px;
-    --spacing-xl: 32px;
-    --spacing-xxl: 48px;
+    --padding4: 4px;
+    --padding8: 8px;
+    --padding12: 12px;
+    --padding16: 16px;
+    --padding24: 24px;
+    --padding32: 32px;
+    --padding48: 48px;
 
     //toggle
     --toggle-bg-light: url('/assets/backgroundLight.png') no-repeat center center;

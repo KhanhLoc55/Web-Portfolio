@@ -4,8 +4,8 @@
     .btn {
         background: var(--toggle-bg-light);
         background-size: cover;
-        min-width: 80px;
-        height: 36px;
+        min-width: 88px;
+        height: 44px;
         border-radius: 36px;
         border: 2px solid var(--primary-500);
         display: flex;
@@ -15,11 +15,11 @@
 
         .toggle-circle {
             background-color: var(--white);
-            width: 36px;
-            height: 36px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             box-shadow: var(--toggle-light-shadow);
-            transform: translateX(-13px);
+            transform: translateX(-16px);
             transition: transform 0.4s ease, background-color 0.4s ease;
             display: flex;
             justify-content: center;

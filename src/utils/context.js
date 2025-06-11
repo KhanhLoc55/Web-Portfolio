@@ -1,36 +1,24 @@
-import React, { createContext, useReducer, useEffect } from 'react';
+import React, { createContext, useReducer } from 'react';
 
+// Tạo context để chia sẻ theme giữa các component
 export const ThemeContext = createContext();
 
-const getInitialTheme = () => {
-    // Kiểm tra localStorage chỉ khi chạy client (tránh lỗi SSR)
-    if (typeof window !== 'undefined') {
-        const stored = localStorage.getItem('darkmode');
-        if (stored === 'true') return { darkMode: true };
-        if (stored === 'false') return { darkMode: false };
-    }
-    return { darkMode: true }; // Mặc định là dark mode nếu chưa lưu gì hoặc không có localStorage
-};
+// Giá trị khởi tạo: luôn bật dark mode mặc định
+const initialTheme = { darkMode: true };
 
+// Reducer xử lý hành động thay đổi theme
 const themeReducer = (state, action) => {
     switch (action.type) {
         case 'TOGGLE':
-            return { ...state, darkMode: !state.darkMode };
+            return { ...state, darkMode: !state.darkMode }; // Đảo trạng thái darkMode
         default:
             return state;
     }
 };
 
+// Provider bao bọc app, cung cấp theme context cho toàn bộ ứng dụng
 export const ThemeProvider = ({ children }) => {
-    // Khởi tạo state động với hàm lazy init (tránh gọi localStorage nhiều lần)
-    const [state, dispatch] = useReducer(themeReducer, undefined, getInitialTheme);
-
-    // Đồng bộ localStorage khi darkMode thay đổi
-    useEffect(() => {
-        if (typeof window !== 'undefined') {
-            localStorage.setItem('darkmode', state.darkMode.toString());
-        }
-    }, [state.darkMode]);
+    const [state, dispatch] = useReducer(themeReducer, initialTheme);
 
     return <ThemeContext.Provider value={{ state, dispatch }}>{children}</ThemeContext.Provider>;
 };
