@@ -82,7 +82,7 @@ const Header = () => {
                     <div className="header-left">
                         <ul className="header-item">
                             {navLinks.map(({ id, label }) => (
-                                <li className="header-text textSubTitle" key={id}>
+                                <li className="header-text" key={id}>
                                     <Link to={id} activeClass="active" spy smooth offset={-135} duration={500}>
                                         {label}
                                     </Link>

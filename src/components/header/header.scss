@@ -19,12 +19,78 @@
         left: 0;
         z-index: 10;
         will-change: transform;
+
+        @media screen and (min-width: 1921px) {
+            height: 8px;
+        }
+    }
+
+    // ---------- Responsive ----------
+    // ⬆️ Desktop 2K – 4K (1921px – 2560px+)
+    @media screen and (min-width: 1921px) {
+        .container {
+            max-width: 100%;
+            padding: var(--padding48) var(--padding120);
+
+            .header__logo-img {
+                width: 180px;
+            }
+
+            .header__wrapper {
+                display: flex;
+                align-items: center;
+
+                .header-left {
+                    .header-item {
+                        display: flex;
+                        gap: var(--padding24);
+                        padding-left: 0;
+                        margin-bottom: 0;
+
+                        .header-text {
+                            list-style-type: none;
+                            font-size: var(--fontSize20);
+                            line-height: var(--lineHeight28);
+                            font-weight: var(--fontWeightMedium);
+
+                            a.active {
+                                color: var(--activeColor); // sử dụng biến JS inject từ Header.jsx
+                                border-bottom: 2px solid var(--activeColor);
+                                transition: var(--transition);
+                            }
+
+                            &:hover {
+                                color: var(--activeColor);
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+
+                .header-right {
+                    flex: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: flex-end;
+                    gap: var(--padding16);
+
+                    .language {
+                        .dropdown-menu {
+                            // transform: translate3d(-60px, 130px, 0) !important;
+                        }
+                    }
+                }
+            }
+        }
+
+
     }
 
     .container {
-        padding: var(--padding16) var(--padding48);
-        width: 100%;
-        max-width: 100%;
+        // padding: var(--padding16) var(--padding48);
+        margin: 0 auto;
+
+
 
         .header__logo-img {
             cursor: pointer;
@@ -71,14 +137,13 @@
 
                 .language {
                     .dropdown-menu {
-                        transform: translate3d(-60px, 130px, 0) !important;
+                        // transform: translate3d(-60px, 130px, 0) !important;
                     }
                 }
             }
         }
     }
 
-    // ---------- Responsive ----------
     @media screen and (max-width: 1024px) {
         .container {
             padding: 20px 60px 30px;
