@@ -70,15 +70,25 @@ const Intro = () => {
                     </p>
 
                     <div className="intro-icon">
-                        <a href="https://www.behance.net/anhlamot55" className="i-link" target="__blank">
+                        <a
+                            href="https://www.behance.net/anhlamot55"
+                            className="i-link"
+                            target="__blank"
+                            rel="noreferrer"
+                        >
                             <Icon name="behance" className="icon-btn" style={iconStyle} />
                         </a>
 
-                        <a href="https://zalo.me/0839851729" target="_blank" className="i-link">
+                        <a href="https://zalo.me/0839851729" target="_blank" className="i-link" rel="noreferrer">
                             <Icon name="zalo" className="icon-btn" style={iconStyle} />
                         </a>
 
-                        <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
+                        <a
+                            href="https://www.facebook.com/NhiLove.kha.14473"
+                            target="__blank"
+                            rel="noreferrer"
+                            className="i-link"
+                        >
                             <Icon name="facebook" className="icon-btn" style={iconStyle} />{' '}
                         </a>
                     </div>
