@@ -18,6 +18,7 @@ i18n
     .init({
         debug: true,
         fallbackLng: 'en',
+        lng: 'vi', // ✅ luôn load tiếng Việt đầu tiên
         interpolation: {
             escapeValue: false, // not needed for react as it escapes by default
         },

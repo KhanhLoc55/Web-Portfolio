@@ -4,58 +4,79 @@ import { ThemeContext } from '../../utils/context';
 import './language.scss';
 
 const Language = () => {
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    // Lấy darkMode từ context global
+    const {
+        state: { darkMode },
+    } = useContext(ThemeContext);
+
+    // Hook dịch i18n
     const { i18n } = useTranslation();
 
+    // Trạng thái hiển thị dropdown
     const [isOpen, setIsOpen] = useState(false);
-    const dropdownRef = useRef();
 
-    const toggleDropdown = () => setIsOpen(!isOpen);
+    // Tham chiếu vùng chứa dropdown để xử lý click ngoài
+    const dropdownRef = useRef(null);
 
-    const handleClickOutside = (e) => {
-        if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-            setIsOpen(false);
-        }
-    };
-
+    // Đóng dropdown khi click ra ngoài
     useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+                setIsOpen(false);
+            }
+        };
         document.addEventListener('mousedown', handleClickOutside);
         return () => document.removeEventListener('mousedown', handleClickOutside);
     }, []);
 
+    // Xử lý đổi ngôn ngữ
     const handleChangeLanguage = (lang) => {
         i18n.changeLanguage(lang);
-        setIsOpen(false);
+        setIsOpen(false); // đóng dropdown sau khi chọn
     };
 
-    const root = getComputedStyle(document.documentElement);
-    const backgroundColor = darkMode
-        ? root.getPropertyValue('--backgroundDark')
-        : root.getPropertyValue('--backgroundLight');
-    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
+    // Lấy màu theo theme (dùng useMemo để tránh tính lại không cần thiết)
+    const backgroundColor = darkMode ? 'var(--backgroundDark)' : 'var(--backgroundLight)';
+    const textColor = darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)';
+    const borderColor = darkMode ? 'var(--primary500)' : 'var(--second600)';
+    const hoverBgColor = darkMode ? 'var(--second300)' : 'var(--primary300)';
 
     return (
-        <div className="language" onClick={toggleDropdown} ref={dropdownRef}>
-            <span className="languageSpan">{i18n.language === 'vi' ? 'VI' : 'EN'}</span>
+        <div
+            className="language"
+            ref={dropdownRef}
+            onClick={() => setIsOpen(true)} // ✅ Chỉ mở khi click vào container
+            style={{ border: `1px solid ${borderColor}` }}
+        >
+            {/* Hiển thị ngôn ngữ hiện tại: VI hoặc EN */}
+            <span className="language__label">{i18n.language === 'vi' ? 'VI' : 'EN'}</span>
+
+            {/* Menu chọn ngôn ngữ */}
             {isOpen && (
-                <div className="dropdown-menu show">
-                    <div className="dropdown-item" onClick={() => handleChangeLanguage('en')}>
+                <div
+                    className="language__dropdown"
+                    style={{
+                        backgroundColor,
+                        color: textColor,
+                        border: `1px solid ${borderColor}`,
+                    }}
+                >
+                    {[
+                        { code: 'en', label: 'English' },
+                        { code: 'vi', label: 'Việt Nam' },
+                    ].map(({ code, label }) => (
                         <div
-                            className="language-btn"
-                            style={{ backgroundColor: backgroundColor.trim(), color: color.trim() }}
+                            key={code}
+                            className="language__option"
+                            style={{ '--hoverBg': hoverBgColor }}
+                            onClick={(e) => {
+                                e.stopPropagation(); // ⛔ Ngăn sự kiện click nổi lên container
+                                handleChangeLanguage(code); // đổi ngôn ngữ + đóng menu
+                            }}
                         >
-                            English
+                            {label}
                         </div>
-                    </div>
-                    <div className="dropdown-item" onClick={() => handleChangeLanguage('vi')}>
-                        <div
-                            className="language-btn"
-                            style={{ backgroundColor: backgroundColor.trim(), color: color.trim() }}
-                        >
-                            Việt Nam
-                        </div>
-                    </div>
+                    ))}
                 </div>
             )}
         </div>

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useMemo, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import './header.scss';
 import LogoImg from '../../assets/KL-textLogo.svg';
 import LogoImgWhite from '../../assets/KL-textLogowhite.svg';
@@ -10,13 +10,17 @@ import { ThemeContext } from '../../utils/context';
 
 const Header = () => {
     const { t } = useTranslation();
+
+    // ⬇️ Lấy trạng thái darkMode từ context
     const {
         state: { darkMode },
     } = useContext(ThemeContext);
 
+    // ⬇️ Trạng thái scroll dùng để tạo hiệu ứng progress + shadow
     const [scrollProgress, setScrollProgress] = useState(0);
-    const [showBoxShadow, setShowBoxShadow] = useState(false);
+    const [showShadow, setShowShadow] = useState(false);
 
+    // ⬇️ Lắng nghe scroll và cập nhật progress + shadow (mượt bằng requestAnimationFrame)
     useEffect(() => {
         let ticking = false;
 
@@ -26,8 +30,9 @@ const Header = () => {
                     const scrollTop = window.scrollY;
                     const docHeight = document.documentElement.scrollHeight - window.innerHeight;
                     const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+
                     setScrollProgress(progress);
-                    setShowBoxShadow(scrollTop > 50);
+                    setShowShadow(scrollTop > 50); // hiện shadow khi scroll > 50px
                     ticking = false;
                 });
                 ticking = true;
@@ -38,66 +43,65 @@ const Header = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const { backgroundColor, textColor, activeColor } = useMemo(() => {
-        const style = getComputedStyle(document.documentElement);
-        return {
-            backgroundColor: darkMode
-                ? style.getPropertyValue('--backgroundDark')
-                : style.getPropertyValue('--backgroundLight'),
-            textColor: darkMode
-                ? style.getPropertyValue('--textColorDark')
-                : style.getPropertyValue('--textColorlight'),
-            activeColor: darkMode ? style.getPropertyValue('--primary-500') : style.getPropertyValue('--second-600'),
-        };
-    }, [darkMode]);
+    // ⬇️ Lấy style động theo darkMode từ CSS variable
+    // Lấy màu theo theme (dùng useMemo để tránh tính lại không cần thiết)
+    const backgroundColor = darkMode ? 'var(--backgroundDark)' : 'var(--backgroundLight)';
+    const textColor = darkMode ? 'var(--textColorDark)' : 'var(--textColorlight)';
+    const activeColor = darkMode ? 'var(--primary500)' : 'var(--second600)';
 
+    // ⬇️ Tạo style object áp dụng cho header container
     const headerStyle = {
         backgroundColor: backgroundColor.trim(),
         color: textColor.trim(),
-        boxShadow: showBoxShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
+        boxShadow: showShadow ? '0 5px 15px rgba(0,0,0,.1)' : 'none',
         transition: 'box-shadow 0.3s ease-in-out',
-        '--activeColor': activeColor.trim(),
+        '--activeColor': activeColor.trim(), // dùng cho link đang active
     };
 
-    const currentLogo = darkMode ? LogoImgWhite : LogoImg;
+    // ⬇️ Logo đổi theo darkMode
+    const logoSrc = darkMode ? LogoImgWhite : LogoImg;
 
+    // ⬇️ Danh sách navigation dùng scroll-to-id
     const navLinks = [
         { id: 'portfolio', label: t('header.headerProject') },
         { id: 'skill', label: t('header.headerSkill') },
-        { id: 'resume', label: t('header.headerResume') },
+        // { id: 'resume', label: t('header.headerResume') },
         { id: 'contact', label: t('header.headerContact') },
     ];
 
     return (
         <header className="header" id="header">
-            <div className="container" style={headerStyle}>
+            <div className="header__container" style={headerStyle}>
+                {/* ⬇️ Logo bấm về đầu trang */}
                 <img
-                    className="header__logo-img"
+                    className="header__logo"
+                    src={logoSrc}
                     alt="logo"
-                    src={currentLogo}
                     onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                 />
 
+                {/* ⬇️ Khối wrapper chứa nav và actions */}
                 <div className="header__wrapper">
-                    <div className="header-left">
-                        <ul className="header-item">
-                            {navLinks.map(({ id, label }) => (
-                                <li className="header-text" key={id}>
-                                    <Link to={id} activeClass="active" spy smooth offset={-135} duration={500}>
-                                        {label}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
+                    {/* ⬇️ Navigation links */}
+                    <ul className="header__nav">
+                        {navLinks.map(({ id, label }) => (
+                            <li className="header__nav-item" key={id}>
+                                <Link to={id} activeClass="active" spy smooth offset={-135} duration={500}>
+                                    {label}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
 
-                    <div className="header-right">
+                    {/* ⬇️ Khu vực actions: toggle + language */}
+                    <div className="header__actions">
                         <Toggle />
                         <Language />
                     </div>
                 </div>
 
-                <div className="scroll-progress-bar" style={{ transform: `scaleX(${scrollProgress})` }} />
+                {/* ⬇️ Thanh progress scroll hiển thị theo % */}
+                <div className="header__progress" style={{ transform: `scaleX(${scrollProgress})` }} />
             </div>
         </header>
     );

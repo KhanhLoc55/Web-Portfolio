@@ -5,10 +5,10 @@ import AnimatedCursor from 'react-animated-cursor';
 import Header from './components/header/Header';
 import Intro from './components/intro/Intro';
 import Skill from './components/skill/Skill';
-import Resume from './components/resume/Resume';
+// import Resume from './components/resume/Resume';
 import Portfolio from './components/portfolio/Portfolio';
 import Contact from './components/contact/Contact';
-import Footer from './components/footer/Footer';
+// import Footer from './components/footer/Footer';
 
 import { ThemeContext } from './utils/context';
 
@@ -66,9 +66,9 @@ const App = () => {
                 <Intro />
                 <Portfolio />
                 <Skill />
-                <Resume />
+                {/* <Resume /> */}
                 <Contact />
-                <Footer />
+                {/* <Footer /> */}
             </div>
         </>
     );

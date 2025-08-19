@@ -9,13 +9,18 @@
         "textHey": "Xin chào",
         "texMyNameIs": "Tôi tên là",
         "textImAWeb": "Tôi là một ",
-        "IntroTextContent": "Với 2 năm kinh nghiệm thiết kế đồ họa cho ấn phẩm, logo, banner, tờ rơi, băng rôn, standee, mạng xã hội và biển quảng cáo, và 6 tháng kinh nghiệm UI/UX thiết kế giao diện web, landing page, icon, button và ứng dụng di động, tôi luôn coi trọng chất lượng và chuyên nghiệp. Sẵn sàng học hỏi và nhận thách thức mới, tôi tin rằng mình có thể mang đến sản phẩm chất lượng và giá trị cho công ty."
+        "IntroTextContent": "Với 1 năm kinh nghiệm UI/UX (web, landing page, mobile app, design system) và 1 năm thiết kế đồ họa (logo, banner, ấn phẩm truyền thông), tôi chú trọng cả tính trực quan lẫn trải nghiệm người dùng. Luôn sẵn sàng học hỏi và đón nhận thử thách mới, tôi tin rằng mình có thể mang đến giải pháp thiết kế sáng tạo, hiệu quả và giá trị cho công ty."
+    },
+    "project": {
+        "portfolioheading": "Dự án"
     },
     "skill": {
+        "skills": "kỹ năng",
+        "ViewCV": "Xem CV",
         "textTool": "Công cụ",
         "textSkill": "Kỹ năng",
-        "textSkillMe": "Thành quả thiết kế",
-        "textSkillTitle": "Xem đầy đủ những kỹ năng tôi có và thực hiện, để phát triển dự án cho bạn!"
+        "textSkillMe": "Tôi sử dụng những gì?",
+        "textSkillTitle": "Sẵn sàng áp dụng kỹ năng và công cụ để tạo ra sản phẩm tối ưu."
     },
     "resume": {
         "textSumary": "Tóm tắt",
@@ -45,8 +50,9 @@
         "textEducation3": "- Đạt được chứng chỉ tin học + tiếng anh."
     },
     "contact": {
-        "text1": "Bạn đang ấp ủ một ý tưởng?",
-        "text2": "Đừng để nó mãi chỉ nằm trong suy nghĩ! Hãy hành động ngay hôm nay để biến ý tưởng ấy thành hiện thực. Thành công đang chờ bạn phía trước.",
+        "contacts": "Liên hệ",
+        "text1": "Ý tưởng của bạn?",
+        "text2": "Đừng để ý tưởng chỉ nằm trên giấy. Hãy hành động ngay hôm nay!",
         "text3": "Quận Gò Vấp, TP. Hồ Chí Minh, Việt Nam",
         "textIphone": "Điện thoại:",
         "textMessage": "Gửi tin nhắn",
@@ -59,11 +65,17 @@
         "subjectLabel": "(Không bắt buộc) Chủ đề tin nhắn",
         "subjectPlaceholder": "VD: Tôi muốn trao đổi ý tưởng...",
         "messageLabel": "Nội dung tin nhắn",
-        "messagePlaceholder": "Bạn muốn nói gì?..."
+        "messagePlaceholder": "Bạn muốn nói gì?...",
+        "characters": "ký tự"
     },
     "footer": {
         "footerText": "© 2024 - Bản quyền thuộc về KL<webdesign/>"
     },
+    "ModalPortfolio": {
+        "ModalPortfolioBtn1": "Bản thiết kế",
+        "ModalPortfolioBtn2": "Xem demo"
+    },
+
     "card": {
         "desc1": "- Dự án portfolio website với sự kết hợp hài hòa giữa lập trình và thiết kế. Phần UI Designer sử dụng Figma, Photoshop và Illustrator để thiết kế giao diện cho cả desktop và mobile, bao gồm chế độ Dark Mode. Thiết kế gồm icon, màu sắc, font chữ, Grid System, Button, Fields, Typography và toggle đều được tinh chỉnh tỉ mỉ.",
         "desc2": "- Về phần lập trình, sử dụng Visual Studio Code cùng thư viện React để phát triển giao diện. Tích hợp i18next hỗ trợ đa ngôn ngữ, React Router giúp điều hướng trang mượt mà, createContext để chuyển đổi giữa màu sáng và tối. Tự tạo toggle button và hiệu ứng typewriter sống động. Cùng với đó là hiệu ứng màu gradient tươi sáng, mang đến trải nghiệm thị giác thú vị.",
@@ -83,6 +95,9 @@
         "desc20": "- Dashboard cung cấp biểu đồ và chart UI giúp nhà tuyển dụng quản lý ứng viên và tin tuyển dụng một cách trực quan. Với người tìm việc, giao diện tối giản nhưng hiệu quả, tích hợp thanh tiến trình và Toast UI, giúp trải nghiệm liền mạch. Trang cá nhân hiển thị rõ ràng thông tin trình độ, kỹ năng, và dự án, cho phép ứng viên dễ dàng cập nhật hồ sơ.",
         "desc17": "- Logo của tessel.ai kết hợp hai yếu tố chính: tessellation (tessell.ai) và Vision Tessellation thường gắn liền với sự sáng tạo và tư duy hình học, tượng trưng cho các mạng lưới và kết nối. Ngược lại, Vision được thể hiện qua chữ T với thiết kế mượt mà, sạch sẽ và đơn giản.",
         "desc18": "- Bằng cách kết hợp cả hai yếu tố này, logo không chỉ truyền tải sự sáng tạo và khả năng kết nối mà còn thể hiện sự chính xác và hiệu quả trong thiết kế.",
-        "desc19": "- Tôi cũng làm việc chặt chẽ với khách hàng và thực hiện thiết kế trên phần mềm Illustrator, đảm bảo rằng mọi chi tiết đều được tối ưu hóa để đạt hiệu quả tốt nhất."
+        "desc19": "- Tôi cũng làm việc chặt chẽ với khách hàng và thực hiện thiết kế trên phần mềm Illustrator, đảm bảo rằng mọi chi tiết đều được tối ưu hóa để đạt hiệu quả tốt nhất.",
+        "desc20": "- Dự án thiết kế giao diện cho nền tảng học trực tuyến, tập trung vào trải nghiệm giảng viên. Hệ thống tích hợp AI để tự động hóa việc tạo khóa học và quản lý học viên.",
+        "desc21": "- Giao diện tối giản, trực quan và hiện đại, tối ưu quy trình, rút ngắn thao tác quản lý và mang lại trải nghiệm liền mạch.",
+        "desc22": "- Trong vai trò UI/UX Designer, tôi phân tích nhu cầu người dùng, xây dựng luồng tương tác và thiết kế giao diện trên Figma, kết hợp Photoshop để xử lý hình ảnh và ChatGPT để hỗ trợ ý tưởng."
     }
 }

@@ -9,14 +9,19 @@
         "textHey": "Hello",
         "texMyNameIs": "My name is",
         "textImAWeb": "I’m a ",
-        "IntroTextContent": "With 2 years of experience in graphic design for print materials, logos, banners, flyers, posters, standees, social media, and billboards, along with 6 months of UI/UX design experience for web interfaces, landing pages, icons, buttons, and mobile applications, I always prioritize quality and professionalism. I am eager to learn and take on new challenges, believing that I can deliver high-quality and valuable products for the company."
+        "IntroTextContent": "With 1 year of experience in UI/UX design (web, landing pages, mobile apps, design systems) and 1 year in graphic design (logos, banners, marketing materials), I focus on both visual clarity and user experience. Always eager to learn and embrace new challenges, I am confident in my ability to deliver creative, effective, and valuable design solutions for the company.."
     },
 
+    "project": {
+        "portfolioheading": "Projects"
+    },
     "skill": {
+        "skills": "Skill",
+        "ViewCV": "View CV",
         "textTool": "Tool",
         "textSkill": "Skill",
-        "textSkillMe": "Design achievements",
-        "textSkillTitle": "See all the skills I have and use them to develop your project!"
+        "textSkillMe": "What I Use",
+        "textSkillTitle": "Ready to apply my skills and tools to deliver the best outcomes."
     },
     "resume": {
         "textSumary": "Summary",
@@ -45,8 +50,9 @@
         "textEducation3": "- Attained computer and English certifications."
     },
     "contact": {
-        "text1": "Got an idea in mind?",
-        "text2": "Don't let it stay in your head forever. Start turning it into reality today—your success begins with action.",
+        "contacts": "Contact",
+        "text1": "Got an Idea?",
+        "text2": "Don’t let it remain just a thought. Start today!",
         "text3": "Go Vap District, Ho Chi Minh City, Vietnam",
         "textIphone": "Phone:",
         "textMessage": "Send Message",
@@ -59,10 +65,15 @@
         "subjectLabel": "(Optional) Subject of Your Message",
         "subjectPlaceholder": "e.g. I’d like to discuss a project...",
         "messageLabel": "Your Message",
-        "messagePlaceholder": "What would you like to say?"
+        "messagePlaceholder": "What would you like to say?",
+        "characters": "characters"
     },
     "footer": {
         "footerText": "© 2024 - Copyright belongs to KL<webdesign/>"
+    },
+    "ModalPortfolio": {
+        "ModalPortfolioBtn1": "Design File",
+        "ModalPortfolioBtn2": "View Project"
     },
     "card": {
         "desc1": "- Completed a portfolio website project, harmoniously combining design and development. The UI design utilized Figma, Photoshop, and Illustrator to create responsive interfaces for both desktop and mobile, including Dark Mode. The design meticulously features icons, colors, fonts, a grid system, buttons, fields, typography, and toggles.",
@@ -84,6 +95,9 @@
 
         "desc17": "- The logo of tessel.ai combines two key elements: tessellation (tessell.ai) and Vision. Tessellation is often associated with creativity and geometric thinking, symbolizing networks and connections. In contrast, Vision is represented by the letter T, with a sleek, clean, and simple design.",
         "desc18": "- By combining both factors, the logo not only communicates creativity and connectivity but also demonstrates precision and effectiveness in design.",
-        "desc19": "- I also work closely with clients and execute designs using Illustrator software, ensuring that every detail is optimized for maximum effectiveness."
+        "desc19": "- I also work closely with clients and execute designs using Illustrator software, ensuring that every detail is optimized for maximum effectiveness.",
+        "desc20": "- UI design project for an online learning platform, focusing on the instructor experience. The system integrates AI to automate course creation and learner management.",
+        "desc21": "- A minimalist, intuitive, and modern interface that streamlines processes, reduces management steps, and ensures a seamless experience.",
+        "desc22": "- As a UI/UX Designer, I analyzed user needs, built interaction flows, and designed the interface in Figma, using Photoshop for visuals and ChatGPT for ideation support."
     }
 }

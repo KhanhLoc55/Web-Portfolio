@@ -6,14 +6,6 @@ import { useTranslation } from 'react-i18next';
 
 import { Link } from 'react-scroll';
 
-import {
-    BehanceOutlined,
-    FacebookOutlined,
-    LinkedinOutlined,
-    DribbbleOutlined,
-    GithubOutlined,
-    UpCircleOutlined,
-} from '@ant-design/icons';
 const Footer = () => {
     // Sử dụng react-i18next để dễ dàng dịch nội dung
     const { t } = useTranslation();
@@ -39,88 +31,10 @@ const Footer = () => {
                     >
                         anhlamot55@gmail.com
                     </h3>
-                    <div className="footer-align">
-                        <div className="footer-icon">
-                            <a href="https://www.behance.net/anhlamot55" target="_blank" rel="noopener noreferrer">
-                                <BehanceOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
-                                <LinkedinOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/loc-nguyenkhanh-927b0822a/"
-                                target="__blank"
-                                className="i-link"
-                            >
-                                <DribbbleOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
-                                <FacebookOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
-                                <GithubOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                        </div>
-                        <h3
-                            className="footer__text textSubTitle"
-                            style={{
-                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                            }}
-                        >
-                            {t('footer.footerText')}
-                        </h3>
-                    </div>
 
                     <Link to="header" activeClass="active" spy={true} smooth={true} offset={50} duration={500}>
                         <div className="footer-align">
-                            <div className="footer-icon">
-                                <UpCircleOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                    }}
-                                />
-                            </div>
+                            <div className="footer-icon"></div>
                         </div>
                     </Link>
                 </div>

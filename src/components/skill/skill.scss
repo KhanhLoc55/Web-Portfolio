@@ -1,15 +1,18 @@
 .skills {
     overflow-x: hidden;
 
-    .container {
-        padding: 140px 80px;
+    .skills__container {
+        padding: 150px 80px;
         max-width: 100%;
+        text-align: center;
 
-        .skills-heading {
+        .skills__heading {
+            position: relative;
+            display: inline-block;
             background-image: var(--gradient);
             background-clip: text;
             -webkit-background-clip: text;
-            margin-bottom: 36px;
+            margin-bottom: 56px;
             color: transparent;
             text-align: center;
             font-style: normal;
@@ -17,62 +20,73 @@
             &::after {
                 content: '';
                 position: absolute;
-                display: block;
-                min-width: 100px;
-                height: 3px;
-                background: var(--gradient);
+                bottom: -6px;
+                width: 100%; // bằng đúng chữ
                 left: 50%;
                 transform: translateX(-50%);
+                height: 3px;
+                background: var(--gradient);
             }
         }
 
-        .skills-content {
+        .skills__content {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            text-align: left; // đảm bảo text bên trong không bị center
 
-            .skills-left {
+            .skills__left {
+                h2 {
+                    font-weight: var(--fontWeightExBold);
+                    margin-bottom: 4px;
+                }
 
                 p {
                     font-weight: var(--fontWeightRegular);
-                    margin-bottom: 18px;
-                    width: 80%;
+                    margin-bottom: 12px;
 
                 }
 
-                .skills-icon {
-                    display: flex;
-                    gap: 12px;
+                .skills__cv {
+                    display: inline-block; // ⬅️ gọn lại, không full width
+                    padding: 5.8px 12px;
+                    border-radius: 4px;
+                    cursor: pointer;
+                    transition: var(--transition);
 
-                    .icon-btn {
-                        font-size: var(--fontSize24);
-                        padding: 8px 8px;
-                        border: 1px solid var(--primary-500);
-                        border-radius: 4px;
-
-                        &:hover {
-                            background-color: var(--backgroundLight);
-                        }
+                    .skills__btn-text {
+                        display: inline-flex; // text + icon chung container
+                        align-items: center; // canh giữa dọc
+                        justify-content: center;
+                        gap: 6px; // khoảng cách text ↔ icon
+                        text-decoration: none;
+                        color: inherit; // ăn màu từ btnStyle
                     }
+
+                    &:hover {
+                        background: var(--hoverBg);
+                        color: var(--hoverColor) !important;
+                    }
+
                 }
             }
 
-            .skills-right {
+            .skills__right {
                 display: flex;
                 gap: 56px;
 
-                .skills-category {
+                .skills__category {
                     h3 {
                         margin-bottom: 36px;
                         font-style: italic;
 
                     }
 
-                    .skills-list {
+                    .skills__list {
                         display: flex;
                         gap: 56px;
 
-                        .skills-items {
+                        .skills__items {
                             list-style-type: none;
                             margin: 0;
                             padding: 0;
@@ -88,75 +102,124 @@
     }
 }
 
-//laptop
-@media screen and (max-width: 1440px) {
+// ⬆️ Desktop 2K – 4K (1921px – 2560px+)
+@media screen and (min-width: 1921px) {
     .skills {
-        .container {
-            .skills-content {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 56px;
+        .skills__container {
+            padding: 120px 180px;
+        }
+    }
+}
 
-                .skills-left {
-                    width: 100%;
-                    text-align: center;
+/* Extra large devices (Laptops, 1025px – 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .skills {
 
-                    p {
-                        margin-bottom: 24px;
-                        width: 100%;
-                    }
+        .skills__container {
+            padding: 80px 40px;
 
-                    .skills-icon {
-                        justify-content: center;
-                        display: flex;
-                        gap: 12px;
+            .skills__heading {
+                font-size: var(--fontSize32);
+                line-height: var(--lineHeight40);
+                margin-bottom: 36px;
+            }
 
-                    }
+            .skills__content {
+                display: block; // trở lại mặc định
+                text-align: center;
+
+                .skills__left {
+                    margin-bottom: 36px;
                 }
 
-                .skills-right {
+                .skills__right {
+                    gap: 100px;
+                    display: flex;
+                    text-align: left;
                     justify-content: center;
-                    gap: 80px;
-
-                    .skills-category {
-                        .skills-list {
-                            gap: 100px;
-                        }
-                    }
                 }
             }
         }
     }
 }
 
-//tablet
-@media screen and (max-width: 1024px) {
+/* Large devices (Tablets, 769px – 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
     .skills {
-        .container {
-            padding: 24px 60px;
 
-            .skills-content {
-                gap: 40px;
+        .skills__container {
+            padding: 80px 20px;
 
-                .skills-left {
-                    p {
-                        margin-bottom: 18px;
-                    }
+            .skills__heading {
+                font-size: var(--fontSize32);
+                line-height: var(--lineHeight40);
+                margin-bottom: 36px;
+            }
 
-                    .skills-icon {
-                        .icon-btn {
-                            font-size: var(--fontSize24);
-                            padding: 8px 8px;
-                            border-radius: 4px;
-                        }
-                    }
+            .skills__content {
+                display: block; // trở lại mặc định
+                text-align: center;
+
+                .skills__left {
+                    margin-bottom: 36px;
                 }
 
-                .skills-right {
+                .skills__right {
+                    gap: 100px;
+                    display: flex;
+                    text-align: left;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+}
+
+/* Medium devices (Phones, 577px – 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .skills {
+
+        .skills__container {
+            padding: 80px 12px;
+
+            .skills__heading {
+                font-size: var(--fontSize32);
+                line-height: var(--lineHeight40);
+                margin-bottom: 36px;
+            }
+
+            .skills__content {
+                display: block; // trở lại mặc định
+                text-align: center;
+
+                .skills__left {
+                    margin-bottom: 36px;
+                }
+
+                .skills__right {
+                    display: flex;
+                    text-align: left;
                     justify-content: space-between;
+                    gap: 16px;
 
-                    .skills-category {
-                        .skills-list {}
+                    .skills__category {
+                        h3 {
+                            margin-bottom: 36px;
+                            font-style: italic;
+
+                        }
+
+                        .skills__list {
+                            gap: 36px;
+
+                            .skills__items {
+
+                                li {
+                                    margin-bottom: 24px;
+                                    font-size: var(--fontSize14);
+                                }
+                            }
+                        }
                     }
                 }
             }
@@ -164,145 +227,48 @@
     }
 }
 
-@media screen and (max-width: 768px) {
+/* Small devices (Phones, 361px – 576px) */
+@media screen and (min-width: 361px) and (max-width: 576px) {
     .skills {
-        .container {
-            .skills-heading {
+        .skills__container {
+            padding: 24px 8px;
+
+            .skills__heading {
+                font-size: var(--fontSize24);
+                line-height: var(--lineHeight32);
                 margin-bottom: 24px;
             }
 
-            .skills-content {
+            .skills__content {
+                display: block; // trở lại mặc định
+                text-align: center;
 
-                .skills-left {
-                    width: 100%;
-                    text-align: center;
-
-                    p {
-                        padding: 0 40px;
-                    }
-                }
-
-                .skills-right {
-                    .skills-category {
-                        .skills-list {
-                            gap: 20px;
-                        }
-                    }
+                .skills__right {
+                    display: none;
                 }
             }
         }
     }
 }
 
-//mobile
-@media screen and (max-width: 431px) {
+/* Extra small devices (Super small phones, 0px – 360px) */
+@media screen and (max-width: 360px) {
     .skills {
-        .container {
+        .skills__container {
             padding: 24px 8px;
 
-            .skills-heading {
-                font-size: var(--fontSize32);
-                line-height: var(--lineHeight40);
-                margin-bottom: 20px;
-
-                &::after {
-                    min-width: 90px;
-
-                }
+            .skills__heading {
+                font-size: var(--fontSize24);
+                line-height: var(--lineHeight32);
+                margin-bottom: 24px;
             }
 
-            .skills-content {
+            .skills__content {
+                display: block; // trở lại mặc định
+                text-align: center;
 
-                .skills-left {
-                    width: 100%;
-                    text-align: center;
-
-                    h2 {
-                        margin-bottom: 12px;
-                    }
-
-                    p {
-                        padding: 0 20px;
-                    }
-                }
-
-                .skills-right {
-                    display: grid;
-                    grid-template-columns: 1fr;
-                    gap: 20px;
-
-                    .skills-category {
-                        h3 {
-                            margin-bottom: 24px;
-                            font-style: italic;
-
-                        }
-
-                        .skills-list {
-                            gap: 100px;
-                        }
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 376px) {
-    .skills {
-        .container {
-            .skills-content {
-                .skills-left {
-
-                    p {
-                        padding: 0;
-                    }
-                }
-
-                .skills-right {
-                    .skills-category {
-                        h3 {
-                            margin-bottom: 24px;
-                            font-style: italic;
-                        }
-
-                        .skills-list {
-                            gap: 80px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 361px) {
-    .skills {
-        .container {
-            .skills-content {
-                .skills-right {
-                    .skills-category {
-                        .skills-list {
-                            gap: 30px;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 321px) {
-    .skills {
-        .container {
-            .skills-content {
-                .skills-right {
-                    .skills-category {
-                        .skills-list {
-                            gap: 25px;
-                        }
-                    }
+                .skills__right {
+                    display: none;
                 }
             }
         }

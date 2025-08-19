@@ -1,112 +1,113 @@
 import './intro.scss';
-import React, { useEffect, useState, useContext } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { useTypewriter } from 'react-simple-typewriter';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { ThemeContext } from '../../utils/context';
-
 import Avatar from '../../assets/avatarB.png';
-import WavingHand from '../../assets/wavingHand.svg';
-import cvEn from '../../assets/Resume - KHANH LOC(en).pdf';
-import cvVi from '../../assets/Resume - KHANH LOC(vi).pdf';
 
-import { DownloadOutlined } from '@ant-design/icons';
 import ScrollReveal from '../ScrollReveal/ScrollReveal';
+import Icon from '../../components/icon/icon';
 
 const Intro = () => {
-    const { t, i18n } = useTranslation();
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    // Hook dịch i18n
+    const { t } = useTranslation();
 
-    const [revealText, setRevealText] = useState(false);
-    const [cv, setCv] = useState(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
+    // Lấy darkMode từ context global
+    const {
+        state: { darkMode },
+    } = useContext(ThemeContext);
 
-    // Scroll reveal logic
-    useEffect(() => {
-        const handleScroll = () => {
-            const target = document.getElementById('intro');
-            if (!target) return;
-            const rect = target.getBoundingClientRect();
-            if (rect.top < window.innerHeight * 0.75) {
-                setRevealText(true);
-                window.removeEventListener('scroll', handleScroll);
-            }
-        };
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
-
-    // Update CV when language changes
-    useEffect(() => {
-        setCv(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
-    }, [i18n.resolvedLanguage]);
-
-    // Typewriter effect
+    // ⬇️ Gõ hiệu ứng typing
     const [text] = useTypewriter({
-        words: ['Brand Designer.', 'Web Designer.', 'UI Designer.'],
+        words: ['Brand Designer.', 'Web Designer.', 'UI/UX Designer.'],
         loop: true,
         typeSpeed: 20,
         deleteSpeed: 10,
         delaySpeed: 2000,
     });
 
+    // Màu stroke của vòng tròn SVG
+    // const strokeColor = color;
+
+    // Style chung cho tất cả icon mạng xã hội
+    const iconStyle = useMemo(
+        () => ({
+            color: darkMode ? 'var(--primary500)' : 'var(--second600)',
+            border: darkMode ? '1px solid var(--primary500)' : '1px solid var(--second600)',
+            '--hoverIconBg': darkMode ? 'var(--second300)' : 'var(--primary300)',
+            '--hoverIconColor': darkMode ? 'var(--white100)' : 'var(--black85)',
+        }),
+        [darkMode],
+    );
+
     return (
         <div className="intro" id="intro">
-            <div className="container">
-                <div className="i-left">
+            <div className="intro__container">
+                <div className="intro__left">
                     <ScrollReveal position="left">
-                        <div className="textContentLeft noScroll">
-                            <span className="texTitle">{t('intro.textHey')}!</span>
-                            <img src={WavingHand} alt="WavingHand" className="wavingHand" />
-                            <span className="texTitle">{t('intro.texMyNameIs')}</span>
+                        <div className="intro__intro-text-group noScroll">
+                            <span className="intro__intro-text">{t('intro.textHey')}!</span>
+                            <Icon name="wavingHand" className="intro__waving-hand" style={{ color: 'var(--amberr)' }} />
+                            <span className="intro__intro-text">{t('intro.texMyNameIs')}</span>
                         </div>
-                        <h1 className="i-heading1 textHeading">NGUYỄN KHÁNH LỘC</h1>
-                        <h3 className="i-heading3 textSubHeading">
+
+                        <h1 className="intro__heading--xl">NGUYỄN KHÁNH LỘC</h1>
+
+                        <h3 className="intro__heading--md">
                             {t('intro.textImAWeb')}
-                            <span className="i-text-smail textSubHeading">{text}</span>
+                            <span className="intro__typewriter">{text}</span>
                         </h3>
                     </ScrollReveal>
 
                     <p
-                        className={`i-heading4 textbody scroll-text ${darkMode ? 'dark' : ''} ${
-                            revealText ? 'revealed animated' : ''
-                        }`}
+                        className="intro__heading--desc"
+                        style={{
+                            color: darkMode ? 'var(--white70)' : 'var(--black70)',
+                        }}
                     >
-                        {t('intro.IntroTextContent')
-                            .split('')
-                            .map((char, i) => (
-                                <span key={i} style={{ '--char-index': i }}>
-                                    {char}
-                                </span>
-                            ))}
+                        {t('intro.IntroTextContent')}
                     </p>
 
-                    <ScrollReveal position="left">
-                        <div className="cv">
-                            <button
-                                className="btn"
-                                style={{
-                                    border: darkMode ? '1px solid var(--primary-500)' : '1px solid var(--second-600)',
-                                }}
-                            >
-                                <a download="Resume-KHANH LOC.pdf" href={cv} className="btn-text">
-                                    Download CV
-                                </a>
-                                <DownloadOutlined style={{ fontSize: 18, color: 'var(--white)', marginLeft: 8 }} />
-                            </button>
-                        </div>
-                    </ScrollReveal>
+                    <div className="intro-icon">
+                        <a href="https://www.behance.net/anhlamot55" className="i-link" target="__blank">
+                            <Icon name="behance" className="icon-btn" style={iconStyle} />
+                        </a>
+
+                        <a href="https://zalo.me/0839851729" target="_blank" className="i-link">
+                            <Icon name="zalo" className="icon-btn" style={iconStyle} />
+                        </a>
+
+                        <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
+                            <Icon name="facebook" className="icon-btn" style={iconStyle} />{' '}
+                        </a>
+                    </div>
                 </div>
 
                 <ScrollReveal position="right">
-                    <div className="i-right">
-                        <img src={Avatar} alt="imgAvatar" className="imgAvatar" />
-                        <svg fill="transparent" viewBox="0 0 506 506" width="60%" height="60%" className="circleImage">
+                    <div className="intro__right">
+                        <img src={Avatar} alt="imgAvatar" className="intro__avatar" />
+
+                        <svg
+                            fill="transparent"
+                            viewBox="0 0 506 506"
+                            width="60%"
+                            height="60%"
+                            className="intro__avatar-circle"
+                        >
+                            <defs>
+                                <linearGradient id="avatarCircleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="30%" stopColor="var(--primary300)" />
+                                    <stop offset="60%" stopColor="var(--primary500)" />
+                                    <stop offset="90%" stopColor="var(--second300)" />
+                                </linearGradient>
+                            </defs>
                             <motion.circle
                                 cx="253"
                                 cy="253"
                                 r="250"
-                                stroke="#24B6F2"
+                                stroke="url(#avatarCircleGradient)" // 🎯 dùng gradient
+                                // stroke={strokeColor} // <-- dùng biến động theo theme
                                 strokeWidth="4"
                                 strokeLinecap="round"
                                 strokeLinejoin="round"

@@ -34,31 +34,7 @@
                 width: 160px;
             }
 
-            .footer-align {
-                text-align: center;
 
-                .footer-icon {
-                    display: flex;
-                    gap: 12px;
-                    justify-content: center;
-                    margin-bottom: 12px;
-
-                    .icon-btn {
-                        font-size: var(--fontSize24);
-                        padding: 8px 8px;
-                        // border: 1px solid var(--primary-500);
-                        border-radius: 4px;
-
-                        &:hover {
-                            background-color: var(--backgroundLight);
-                        }
-                    }
-                }
-
-                .footer__text {
-                    margin: 0;
-                }
-            }
 
         }
     }

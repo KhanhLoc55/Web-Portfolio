@@ -22,7 +22,7 @@ export default function Portfolio() {
     // Thứ tự các tab
     const list = [
         { id: 'All', title: 'All' },
-        { id: 'Web App', title: 'Web App' },
+        { id: 'Website', title: 'Website' },
         { id: 'Mobile App', title: 'Mobile App' },
         { id: 'Brand Design', title: 'Brand Design' },
     ];
@@ -45,7 +45,7 @@ export default function Portfolio() {
             case 'All':
                 setDataPortfolio(allPortfolio);
                 break;
-            case 'Web App':
+            case 'Website':
                 setDataPortfolio(frontEndPortfolio);
                 break;
             case 'Mobile App':
@@ -72,10 +72,10 @@ export default function Portfolio() {
 
     return (
         <section className="portfolio" id="portfolio">
-            <div className="container">
-                <h2 className="portfolio-heading textHeading">Portfolio</h2>
+            <div className="portfolio__container">
+                <h2 className="portfolio__heading textHeading"> {t('project.portfolioheading')}</h2>
 
-                <ul className="portfolio-list">
+                <ul className="portfolio__list">
                     {list.map((item) => (
                         <PortfolioList
                             key={item.id}
@@ -91,7 +91,7 @@ export default function Portfolio() {
                 <AnimatePresence mode="wait">
                     <motion.div
                         key={selected}
-                        className="portfolio-box"
+                        className="portfolio__box"
                         initial={{ opacity: 0, x: enterX }}
                         animate={{ opacity: 1, x: 0 }}
                         exit={{ opacity: 0, x: exitX }}

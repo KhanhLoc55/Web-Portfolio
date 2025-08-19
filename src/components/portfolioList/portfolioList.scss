@@ -3,44 +3,28 @@
     font-size: var(--fontSize18);
     line-height: var(--lineHeight26);
     font-weight: var(--fontWeightMedium);
-    border-radius: 6px;
+    border-radius: var(--border8);
+}
 
-    &.active {
-        border: 1px solid var(--primary-500);
+
+/* Small devices (Phones, 361px – 576px) */
+@media screen and (min-width: 361px) and (max-width: 576px) {
+    .portfolioList {
+        padding: 4px;
+        font-size: var(--fontSize14);
+        line-height: var(--lineHeight20);
+        border-radius: 2px;
+
     }
 }
 
-//mobile 
-@media screen and (max-width: 431px) {
+
+/* Extra small devices (Super small phones, 0px – 360px) */
+@media screen and (max-width: 360px) {
     .portfolioList {
-        padding: 8px 6px;
-        font-size: var(--fontSize16);
-        line-height: var(--lineHeight24);
-        font-weight: var(--fontWeightMedium);
-        border-radius: 4px;
-
-        &.active {
-            border: 1px solid var(--primary-500);
-        }
-    }
-}
-
-@media screen and (max-width: 391px) {
-    .portfolioList {
-        padding: 8px 6px;
-        font-size: var(--fontSize13);
-        line-height: var(--lineHeight22);
-        font-weight: var(--fontWeightMedium);
-        border-radius: 4px;
-
-        &.active {
-            border: 1px solid var(--primary-500);
-        }
-    }
-}
-
-@media screen and (max-width: 321px) {
-    .portfolioList {
-        padding: 4px 4px;
+        padding: 4px;
+        font-size: var(--fontSize12);
+        line-height: var(--lineHeight16);
+        border-radius: 2px;
     }
 }

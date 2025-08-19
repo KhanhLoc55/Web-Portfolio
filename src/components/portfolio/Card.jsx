@@ -1,9 +1,6 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../../utils/context';
 
-//icon
-import { PlusCircleOutlined } from '@ant-design/icons';
-
 const Card = (props) => {
     const { toggleModal, category, title, img, id, selectedPortfolio } = props;
 
@@ -13,7 +10,7 @@ const Card = (props) => {
 
     // Truy cập vào root đổi màu color
     const root = getComputedStyle(document.documentElement);
-    const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
+    const color = darkMode ? root.getPropertyValue('--primary500') : root.getPropertyValue('--second600');
 
     const handleSelectedPortfolio = () => {
         selectedPortfolio(id);
@@ -23,32 +20,24 @@ const Card = (props) => {
     return (
         <React.Fragment>
             <div
-                className="modal-box"
+                className="modal__box"
                 onClick={handleSelectedPortfolio}
-                style={{ border: darkMode ? '1px solid var(--primary-500)' : '1px solid var(--second-600)' }}
+                style={{ border: darkMode ? '1px solid var(--primary500)' : '1px solid var(--second600)' }}
             >
-                <div className="modal-img">
+                <div className="modal__img">
                     <img src={img} alt={title} />
                 </div>
-                <div className="modal-category">
+                <div className="modal__category">
                     <span
-                        className="modal-titleText"
+                        className="modal__titleText textsmall"
                         style={{
                             color: color.trim(),
                         }}
                     >
                         {category}
                     </span>
-                    <a href="#popup" className="modal-arrow" onClick={toggleModal}>
-                        <PlusCircleOutlined
-                            style={{
-                                fontSize: '20px',
-                                color: color.trim(),
-                            }}
-                        />{' '}
-                    </a>
                 </div>
-                <div className="modal-heading2 textSubTitle">{title}</div>
+                <div className="modal__heading2 textSubTitle">{title}</div>
             </div>
         </React.Fragment>
     );

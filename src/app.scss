@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap');
 
-
-
 * {
     margin: 0;
     padding: 0;
@@ -11,32 +9,28 @@
 }
 
 *:focus-visible {
-    outline: 2px solid var(--primary-500);
+    outline: 2px solid var(--primary500);
     outline-offset: 2px;
 }
 
 html,
 body {
     transition: background-color 0.3s ease, color 0.3s ease;
-
     height: 100%;
     margin: 0;
     padding: 0;
     line-height: 1.5; // mặc định tốt cho đọc văn bản
-
     font-weight: var(--fontWeightRegular);
-    background-color: var(--white-200);
+    background-color: var(--white200);
     font-size: var(--fontSize16);
 }
 
-
+/* ------------ TEXT UTILITIES ------------ */
 .textHeading {
     font-size: var(--fontSize36);
     line-height: var(--lineHeight44);
     font-weight: var(--fontWeightBold);
 }
-
-
 
 .textSubHeading {
     font-size: var(--fontSize24);
@@ -58,19 +52,18 @@ body {
 
 .textbody {
     font-size: var(--fontSize16);
-    line-height: var(--lineHeight24);
-    font-weight: var(--fontWeightMedium);
+    line-height: var(--lineHeight26);
+    font-weight: var(--fontWeightRegular);
     font-family: var(--Montserrat);
 }
 
 .textsmall {
-    font-size: var(--fontSize13);
-    line-height: var(--lineHeight22);
-    font-weight: var(--fontWeightMedium);
+    font-size: var(--fontSize12);
+    line-height: var(--lineHeight16);
+    font-weight: var(--fontWeightExBold);
 }
 
-
-
+/* Reset common elements */
 h1,
 h2,
 h3,
@@ -92,34 +85,32 @@ a:hover {
     text-decoration: none;
 }
 
-
-
 /* ------------ VARIABLES ------------ */
-//color
+/* ===== Colors ===== */
 :root {
-    //primary
-    --primary-300: #7ccdf0;
-    --primary-500: #24B6F2;
-    //second
-    --second-600: #0E70BA;
+    --primary300: #7ccdf0;
+    --primary500: #24B6F2;
+    --second300: #1B89B6;
+    --second600: #13607C;
+    --amber: #e76000;
+    --amberr: #ffb300;
+    --purple: #ffff;
 
-    //Black-theme
-    --black-60: rgba(0, 0, 0, 0.60);
-    --gray-60: rgba(255, 255, 255, 0.60);
+    --black85: rgba(0, 0, 0, 0.85);
+    --black70: rgba(0, 0, 0, 0.70);
+    --black40: rgba(0, 0, 0, 0.4);
+    --black12: rgba(0, 0, 0, 0.2);
 
-    --black-30: rgba(0, 0, 0, 0.3);
-    --gray-30: rgba(255, 255, 255, 0.3);
-
-    //White-theme
-    --white: #ffffff;
-
-    --black: #000;
+    --white100: rgb(255, 255, 255);
+    --white70: rgb(255, 255, 255, 0.70);
+    --white40: rgba(255, 255, 255, 0.4);
+    --white12: rgba(255, 255, 255, 0.2);
 
 
     --backgroundDark: #11151c;
-    --backgroundLight: #f9f9f9;
-    --textColorDark: #FFFFFF;
-    --textColorlight: #000000;
+    --backgroundLight: var(--white100);
+    --textColorDark: var(--white100);
+    --textColorlight: var(--black85);
 
     --colorStart: rgba(17, 21, 28, 1);
     --colorEnd: rgba(13, 50, 65, 0.3);
@@ -127,10 +118,14 @@ a:hover {
     --colorLightStart: rgba(252, 252, 252, 1);
     --colorLightEnd: rgba(243, 250, 255, 1);
 
-    --gradient: linear-gradient(90deg, var(--second-600) 0%, var(--primary-500) 100%);
+    /* Gradient */
+    --gradient: linear-gradient(90deg, var(--primary500) 0%, var(--second300) 100%);
 
-    //font
+    /* ===== Font ===== */
     --fontPrimary: 'Montserrat', sans-serif;
+    --fontSize48: 48px;
+    --lineHeight56: 56px;
+
     --fontSize36: 36px;
     --lineHeight44: 44px;
 
@@ -149,54 +144,72 @@ a:hover {
     --fontSize16: 16px;
     --lineHeight24: 24px;
 
-    --fontSize13: 13px;
-    --lineHeight22: 22px;
+    --fontSize14: 14px;
+    --lineHeight20: 20px;
+
+    --fontSize12: 12px;
+    --lineHeight16: 16px;
 
     --fontWeightBold: 700;
     --fontWeightExBold: 600;
     --fontWeightMedium: 500;
     --fontWeightRegular: 400;
 
-    //animation
+    /* ===== Animation ===== */
     --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); // giống Material UI
     --transition-color: color 0.3s ease;
     --transition-bg: background-color 0.3s ease;
     --transition-transform: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     --transition01: all 0.3s ease-in-out;
 
+    /* ===== Spacing ===== */
     --padding4: 4px;
     --padding8: 8px;
+    --padding10: 10px;
     --padding12: 12px;
     --padding16: 16px;
     --padding24: 24px;
     --padding32: 32px;
     --padding48: 48px;
+    --padding64: 64px;
+    --padding80: 80px;
+    --padding96: 96px;
     --padding120: 120px;
+    --padding180: 180px;
 
-    //toggle
+    --margin4: 4px;
+    --margin8: 8px;
+    --margin12: 12px;
+    --margin16: 16px;
+    --margin24: 24px;
+
+    /* ===== Borders ===== */
+    --border8: 8px;
+    --border12: 12px;
+    --border16: 16px;
+
+    /* ===== Toggle ===== */
     --toggle-bg-light: url('/assets/backgroundLight.png') no-repeat center center;
-    --toggle-icon-light: #ffb400;
-    --toggle-light-shadow: -2px -2px 3px rgba(0, 0, 0, 0.5) inset;
+    --toggle-icon-light: var(--amber);
+    --toggle-light-shadow: -2px -2px 3px var(--black40) inset;
+    --toggle-icon-dark: var(--purple);
+    --toggle-dark-shadow: 2px 2px 3px var(--white40) inset;
 
-    --toggle-icon-dark: #ffffff;
-    --toggle-dark-shadow: 2px 2px 3px rgba(255, 255, 255, 0.5) inset;
 }
 
-//toggle
 :root[data-theme='dark'] {
     --toggle-bg-dark: url('/assets/backgroundDark.png') no-repeat center center;
-
 }
 
 /* Button styles */
 .btn {
-    padding: 8px 12px;
+    padding: var(--padding8) var(--padding12);
     font-weight: var(--fontWeightMedium);
     transition: var(--transition);
     font-size: var(--fontSize18);
     cursor: pointer;
-    border-radius: 4px;
-    border: 1px solid var(--primary-500);
+    border-radius: var(--border8);
+    border: 1px solid var(--primary500);
 
     &:hover {
         transform: scale(1.05);
@@ -216,23 +229,23 @@ a:hover {
 /* Scrollbar styles */
 ::-webkit-scrollbar {
     width: 6px;
-    background-color: var(--white-200);
+    background-color: var(--white200);
 
 }
 
 ::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: var(--border8);
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: var(--second-600);
+    background-color: var(--second600);
 }
 
 body.dark::-webkit-scrollbar {
     width: 6px;
-    background-color: #11151c;
+    background-color: var(--backgroundDark);
 }
 
 body.dark::-webkit-scrollbar-thumb {
-    border-radius: 10px;
+    border-radius: var(--border8);
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
-    background-color: var(--primary-500);
+    background-color: var(--primary500);
 }

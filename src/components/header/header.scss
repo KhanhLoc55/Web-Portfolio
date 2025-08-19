@@ -7,235 +7,77 @@
     background-color: inherit;
     animation: headerFadeIn 0.4s ease-in-out;
 
-    .scroll-progress-bar {
+    // 📦 Container chính
+    .header__container {
+        max-width: 100%;
+        padding: 16px 80px;
+        margin: 0 auto;
+    }
+
+    // 🖼️ Logo
+    .header__logo {
+        cursor: pointer;
+        width: 160px;
+    }
+
+    // 📐 Bọc nội dung trái phải
+    .header__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    // 🌐 Menu điều hướng
+    .header__nav {
+        display: flex;
+        gap: 16px;
+        padding-left: 0;
+        margin: 0;
+
+        .header__nav-item {
+            list-style: none;
+            font-size: var(--fontSize18);
+            line-height: var(--lineHeight26);
+            font-weight: var(--fontWeightMedium);
+
+            a.active {
+                color: var(--activeColor);
+                border-bottom: 2px solid var(--activeColor);
+                transition: var(--transition);
+            }
+
+            &:hover {
+                color: var(--activeColor);
+                cursor: pointer;
+            }
+        }
+    }
+
+    // 🎯 Nút hành động (language, theme...)
+    .header__actions {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 16px;
+    }
+
+    // 📊 Progress bar cuộn trang
+    .header__progress {
         height: 4px;
+        width: 100%;
         background: var(--gradient);
         transform-origin: left;
         transform: scaleX(0);
         transition: var(--transition01);
-        width: 100%;
         position: absolute;
         bottom: 0;
         left: 0;
         z-index: 10;
         will-change: transform;
-
-        @media screen and (min-width: 1921px) {
-            height: 8px;
-        }
-    }
-
-    // ---------- Responsive ----------
-    // ⬆️ Desktop 2K – 4K (1921px – 2560px+)
-    @media screen and (min-width: 1921px) {
-        .container {
-            max-width: 100%;
-            padding: var(--padding48) var(--padding120);
-
-            .header__logo-img {
-                width: 180px;
-            }
-
-            .header__wrapper {
-                display: flex;
-                align-items: center;
-
-                .header-left {
-                    .header-item {
-                        display: flex;
-                        gap: var(--padding24);
-                        padding-left: 0;
-                        margin-bottom: 0;
-
-                        .header-text {
-                            list-style-type: none;
-                            font-size: var(--fontSize20);
-                            line-height: var(--lineHeight28);
-                            font-weight: var(--fontWeightMedium);
-
-                            a.active {
-                                color: var(--activeColor); // sử dụng biến JS inject từ Header.jsx
-                                border-bottom: 2px solid var(--activeColor);
-                                transition: var(--transition);
-                            }
-
-                            &:hover {
-                                color: var(--activeColor);
-                                cursor: pointer;
-                            }
-                        }
-                    }
-                }
-
-                .header-right {
-                    flex: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: flex-end;
-                    gap: var(--padding16);
-
-                    .language {
-                        .dropdown-menu {
-                            // transform: translate3d(-60px, 130px, 0) !important;
-                        }
-                    }
-                }
-            }
-        }
-
-
-    }
-
-    .container {
-        // padding: var(--padding16) var(--padding48);
-        margin: 0 auto;
-
-
-
-        .header__logo-img {
-            cursor: pointer;
-            width: 160px;
-        }
-
-        .header__wrapper {
-            display: flex;
-            align-items: center;
-
-            .header-left {
-                .header-item {
-                    display: flex;
-                    gap: var(--padding16);
-                    padding-left: 0;
-                    margin-bottom: 0;
-
-                    .header-text {
-                        list-style-type: none;
-                        font-size: var(--fontSize18);
-                        line-height: var(--lineHeight26);
-                        font-weight: var(--fontWeightMedium);
-
-                        a.active {
-                            color: var(--activeColor); // sử dụng biến JS inject từ Header.jsx
-                            border-bottom: 2px solid var(--activeColor);
-                            transition: var(--transition);
-                        }
-
-                        &:hover {
-                            color: var(--activeColor);
-                            cursor: pointer;
-                        }
-                    }
-                }
-            }
-
-            .header-right {
-                flex: 1;
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-                gap: var(--padding16);
-
-                .language {
-                    .dropdown-menu {
-                        // transform: translate3d(-60px, 130px, 0) !important;
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 1024px) {
-        .container {
-            padding: 20px 60px 30px;
-
-            .header__wrapper .header-right .language .dropdown-menu {
-                transform: translate3d(-60px, 130px, 0) !important;
-            }
-        }
-    }
-
-    @media screen and (max-width: 768px) {
-        .header-left .header-item {
-            gap: 20px;
-        }
-    }
-
-    @media screen and (max-width: 431px) {
-        .container {
-            padding: 12px 8px 24px;
-
-            .header-left .header-item {
-                gap: 16px;
-
-                .header-text {
-                    font-size: var(--fontSize16);
-                }
-            }
-
-            .header-right {
-                gap: 4px;
-
-                .language {
-                    padding: 6px 12px;
-                    font-size: var(--fontSize16);
-
-                    .dropdown-menu {
-                        transform: translate3d(-10px, 120px, 0) !important;
-                    }
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 376px) {
-        .header-left .header-item {
-            gap: 12px;
-        }
-
-        .header-right {
-            gap: 4px;
-
-            .dropdown-menu {
-                min-width: 0;
-
-                .dropdown-item .btn {
-                    line-height: 1;
-                }
-            }
-        }
-    }
-
-    @media screen and (max-width: 321px) {
-        .header-left .header-item {
-            gap: 12px;
-
-            .header-text {
-                font-size: var(--fontSize13);
-                line-height: var(--lineHeight22);
-                font-family: var(--fontPrimary);
-            }
-        }
-
-        .header-right {
-            gap: 4px;
-
-            .language {
-                font-size: var(--fontSize13);
-                padding: 6px;
-
-                .dropdown-menu {
-                    min-width: 0;
-
-                    .dropdown-item .btn {
-                        font-size: var(--fontSize13);
-                        line-height: 1;
-                    }
-                }
-            }
-        }
     }
 }
 
+//animation
 @keyframes headerFadeIn {
     0% {
         opacity: 0;
@@ -245,5 +87,97 @@
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+// ⬆️ Desktop 2K – 4K (1921px – 2560px+)
+@media screen and (min-width: 1921px) {
+    .header {
+        .header__container {
+            padding: 25px 180px;
+        }
+    }
+}
+
+/* Extra large devices (Laptops, 1025px – 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .header {
+        .header__container {
+            padding: 20px 40px;
+        }
+    }
+}
+
+/* Large devices (Tablets, 769px – 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .header {
+        .header__container {
+            padding: 20px 20px;
+        }
+    }
+}
+
+/* Medium devices (Phones, 577px – 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .header {
+        .header__container {
+            padding: 20px 12px;
+        }
+    }
+}
+
+/* Small devices (Phones, 361px – 576px) */
+@media screen and (min-width: 361px) and (max-width: 576px) {
+    .header {
+        .header__container {
+            padding: 20px 8px;
+        }
+
+        // 🖼️ Logo
+        .header__logo {
+            width: 126.7px;
+        }
+
+        // 🎯 Nút hành động (language, theme...)
+        .header__actions {
+            gap: 12px;
+        }
+
+        // 🌐 Menu điều hướng
+        .header__nav {
+
+            .header__nav-item {
+                font-size: var(--fontSize16);
+                line-height: var(--lineHeight24);
+            }
+        }
+    }
+}
+
+/* Extra small devices (Super small phones, 0px – 360px) */
+@media screen and (max-width: 360px) {
+    .header {
+        .header__container {
+            padding: 20px 8px;
+        }
+
+        // 🖼️ Logo
+        .header__logo {
+            width: 110px;
+        }
+
+        // 🎯 Nút hành động (language, theme...)
+        .header__actions {
+            gap: 12px;
+        }
+
+        // 🌐 Menu điều hướng
+        .header__nav {
+
+            .header__nav-item {
+                font-size: var(--fontSize14);
+                line-height: var(--lineHeight20);
+            }
+        }
     }
 }

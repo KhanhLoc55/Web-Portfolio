@@ -1,29 +1,45 @@
 import './skill.scss';
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 
 //icon
-import {
-    BehanceOutlined,
-    FacebookOutlined,
-    LinkedinOutlined,
-    DribbbleOutlined,
-    GithubOutlined,
-} from '@ant-design/icons';
-
 import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../utils/context';
 
+// ⬅️ import file CV (bạn tự thay đúng path cho file pdf)
+import cvVi from '../../assets/resume/GoogleUxDesign.pdf';
+
+import cvEn from '../../assets/resume/MetaFrontEnd.pdf';
+import Icon from '../icon/icon';
+
 const Skill = () => {
     // Sử dụng react-i18next để dễ dàng dịch nội dung
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
 
     // Trạng thái chủ đề của ứng dụng (tối hoặc sáng)
     const theme = useContext(ThemeContext);
     const darkMode = theme.state.darkMode;
 
+    const btnStyle = useMemo(
+        () => ({
+            border: darkMode ? '1px solid var(--primary500)' : '1px solid var(--second600)',
+            color: darkMode ? 'var(--primary500)' : 'var(--second600)',
+            '--hoverBg': darkMode ? 'var(--second300)' : 'var(--primary300)',
+            '--hoverColor': darkMode ? 'var(--white100)' : 'var(--black85)',
+        }),
+        [darkMode],
+    );
+
     // Truy cập vào root đổi màu color
     const root = getComputedStyle(document.documentElement);
-    const color = darkMode ? root.getPropertyValue('--primary-500') : root.getPropertyValue('--second-600');
+    const color = darkMode ? root.getPropertyValue('--primary500') : root.getPropertyValue('--second600');
+
+    // // ⬅️ CV hiện tại theo ngôn ngữ
+    const [cv, setCv] = useState(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
+
+    // ⬇️ Cập nhật file CV khi thay đổi ngôn ngữ
+    useEffect(() => {
+        setCv(i18n.resolvedLanguage === 'vi' ? cvVi : cvEn);
+    }, [i18n.resolvedLanguage]);
 
     // Sử dụng useEffect để cập nhật thanh tiến độ khi cuộn trang
     useEffect(() => {
@@ -49,87 +65,31 @@ const Skill = () => {
 
     return (
         <section id="skill" className="skills">
-            <div className="container">
-                <h2 className="skills-heading textHeading">Skills</h2>
-                <div className="skills-content">
-                    <div className="skills-left">
-                        <h2 className="textHeading">{t('skill.textSkillMe')}</h2>
+            <div className="skills__container">
+                <h2 className="skills__heading textHeading">{t('skill.skills')}</h2>
+                <div className="skills__content">
+                    <div className="skills__left">
+                        <h2 className="textSubHeading">{t('skill.textSkillMe')}</h2>
                         <p
-                            className="textSubTitle top-header"
+                            className="textbody"
                             style={{
-                                color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
+                                color: darkMode ? 'var(--white70)' : 'var(--black70)',
                             }}
                         >
                             {t('skill.textSkillTitle')}
                         </p>
-                        <div className="skills-icon">
-                            <a href="https://www.behance.net/anhlamot55" target="_blank" rel="noopener noreferrer">
-                                <BehanceOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://dribbble.com/KhanhLoc" target="__blank" className="i-link">
-                                <LinkedinOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a
-                                href="https://www.linkedin.com/in/loc-nguyenkhanh-927b0822a/"
-                                target="__blank"
-                                className="i-link"
-                            >
-                                <DribbbleOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://www.facebook.com/NhiLove.kha.14473" target="__blank" className="i-link">
-                                <FacebookOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
-                            </a>
-                            <a href="https://github.com/KhanhLoc55" className="i-link" target="__blank">
-                                <GithubOutlined
-                                    className="icon-btn"
-                                    style={{
-                                        color: color.trim(),
-                                        border: darkMode
-                                            ? '1px solid var(--primary-500)'
-                                            : '1px solid var(--second-600)',
-                                    }}
-                                />
+                        <div className="skills__cv" style={btnStyle}>
+                            <a download="Resume-KHANH LOC.pdf" href={cv} className="skills__btn-text textSubTitle">
+                                {t('skill.ViewCV')}
+                                <Icon name="upload" className="skills__btn-icon" />
                             </a>
                         </div>
                     </div>
-                    <div className="skills-right">
-                        <div className="skills-category">
-                            <h3 className="textSubHeading">{t('skill.textSkill')}</h3>
-                            <div className="skills-list">
+                    <div className="skills__right">
+                        <div className="skills__category">
+                            <div className="skills__list">
                                 {' '}
-                                <ul className="skills-items">
+                                <ul className="skills__items">
                                     <li>
                                         <span
                                             style={{
@@ -176,7 +136,7 @@ const Skill = () => {
                                         User Interface
                                     </li>
                                 </ul>
-                                <ul className="skills-items">
+                                <ul className="skills__items">
                                     <li>
                                         <span
                                             style={{
@@ -224,10 +184,9 @@ const Skill = () => {
                                 </ul>
                             </div>
                         </div>
-                        <div className="skills-category">
-                            <h3 className="textSubHeading">{t('skill.textTool')}</h3>
-                            <div className="skills-list">
-                                <ul className="skills-items">
+                        <div className="skills__category">
+                            <div className="skills__list">
+                                <ul className="skills__items">
                                     <li>
                                         {' '}
                                         <span
@@ -274,7 +233,7 @@ const Skill = () => {
                                         Photoshop
                                     </li>
                                 </ul>
-                                <ul className="skills-items">
+                                <ul className="skills__items">
                                     <li>
                                         <span
                                             style={{

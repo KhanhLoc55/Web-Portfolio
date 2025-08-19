@@ -1,180 +1,115 @@
-import React, { useCallback, useContext, useEffect } from 'react';
+import React, { useContext, useMemo } from 'react';
 import { createPortal } from 'react-dom';
 import './modalPortfolio.scss';
 import { useMediaQuery } from '@uidotdev/usehooks';
 import { ThemeContext } from '../../utils/context';
-
-//icon
-import { CloseCircleOutlined, LinkOutlined } from '@ant-design/icons';
+import Icon from '../../components/icon/icon';
+import { useTranslation } from 'react-i18next';
 
 export default function ModalPortfolio(props) {
     const { toggleModal, img, title, category, desc1, desc2, desc3, link, source } = props;
     const isMobileDevice = useMediaQuery('(max-width : 426px)');
+    const { t } = useTranslation();
 
-    // đổi màu darkMode
-    const theme = useContext(ThemeContext);
-    const darkMode = theme.state.darkMode;
+    const {
+        state: { darkMode },
+    } = useContext(ThemeContext);
 
-    const darkModeSrollBar = useCallback(() => {
-        console.log('darkmode', darkMode);
-        if (darkMode) {
-            document.querySelector('body').classList.add('dark');
-        } else {
-            document.querySelector('body').classList.remove('dark');
-        }
+    const themeColors = useMemo(() => {
+        const root = getComputedStyle(document.documentElement);
+        return {
+            background: darkMode
+                ? root.getPropertyValue('--backgroundDark').trim()
+                : root.getPropertyValue('--backgroundLight').trim(),
+            text: darkMode
+                ? root.getPropertyValue('--textColorDark').trim()
+                : root.getPropertyValue('--textColorlight').trim(),
+            category: darkMode ? 'var(--primary500)' : 'var(--second600)',
+            desc: darkMode ? 'var(--white70)' : 'var(--black70)',
+            border: darkMode ? '1px solid var(--primary500)' : '1px solid var(--second600)',
+            icon: darkMode ? 'var(--primary500)' : 'var(--second600)',
+        };
     }, [darkMode]);
 
-    useEffect(() => {
-        darkModeSrollBar();
-    }, [darkModeSrollBar]);
-
-    // Truy cập vào root đổi màu color
-    const root = getComputedStyle(document.documentElement);
-    const backgroundColor = darkMode
-        ? root.getPropertyValue('--backgroundDark')
-        : root.getPropertyValue('--backgroundLight');
-    const color = darkMode ? root.getPropertyValue('--textColorDark') : root.getPropertyValue('--textColorlight');
-
     return createPortal(
-        <React.Fragment>
-            <div
-                className="modal-portfolio"
-                style={{
-                    background: backgroundColor.trim(),
-                }}
-            >
-                <div className="modal-container">
-                    <div className="modal-content">
-                        <div className="modal-content-box">
-                            {!isMobileDevice && (
-                                <div className="modal-img">
-                                    <img src={img} alt={title} />
-                                </div>
-                            )}
-                            <div className="modal-text">
-                                <div className="modalCloseOutlined">
-                                    <CloseCircleOutlined
-                                        onClick={toggleModal}
-                                        alt="modalClose"
-                                        className="modalClose-icon"
-                                        style={{
-                                            fontSize: '24px',
-                                            color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                        }}
-                                    />
-                                </div>
+        <>
+            <div className="ModalPortfolio" style={{ background: themeColors.background }}>
+                <div className="ModalPortfolio__container">
+                    {!isMobileDevice && (
+                        <div className="ModalPortfolio__img">
+                            <img src={img} alt={title} />
+                        </div>
+                    )}
 
-                                <div className="modal-heading">
-                                    <span
-                                        style={{
-                                            color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                        }}
-                                    >
-                                        {category}
-                                    </span>
-                                    <h1
-                                        className="modal-heading-title textSubHeading"
-                                        style={{
-                                            color: color.trim(),
-                                        }}
-                                    >
-                                        {title}
-                                    </h1>
-                                </div>
+                    <div className="ModalPortfolio__text">
+                        <div className="ModalPortfolio__close">
+                            <Icon
+                                name="close"
+                                onClick={toggleModal}
+                                className="ModalPortfolio__close-icon"
+                                style={{ fontSize: '24px', color: themeColors.icon }}
+                            />{' '}
+                        </div>
 
-                                <div className="modal-desc">
-                                    <p
-                                        style={{
-                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                                        }}
-                                    >
-                                        {desc1}
-                                    </p>
-                                    <p
-                                        style={{
-                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                                        }}
-                                    >
-                                        {desc2}
-                                    </p>
-                                    <p
-                                        style={{
-                                            color: darkMode ? 'var(--gray-60)' : 'var(--black-60)',
-                                        }}
-                                    >
-                                        {desc3}
-                                    </p>
-                                </div>
-                                <div className="modal__button ">
-                                    <a href={source} target="_blank" rel="noopener noreferrer">
-                                        <button
-                                            className="modal__button-content btn"
-                                            style={{
-                                                border: darkMode
-                                                    ? '1px solid var(--primary-500)'
-                                                    : '1px solid var(--second-600)',
-                                            }}
-                                        >
-                                            <div className="modal__button-link">
-                                                <a
-                                                    href={source}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    style={{
-                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                    }}
-                                                >
-                                                    Source code
-                                                </a>
-                                                <LinkOutlined
-                                                    alt="Source code"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                    }}
-                                                />
-                                            </div>
-                                        </button>
-                                    </a>
-
-                                    <a href={link} target="_blank" rel="noopener noreferrer">
-                                        <button
-                                            className="modal__button-content btn"
-                                            style={{
-                                                border: darkMode
-                                                    ? '1px solid var(--primary-500)'
-                                                    : '1px solid var(--second-600)',
-                                            }}
-                                        >
-                                            <div className="modal__button-link">
-                                                <a
-                                                    href={link}
-                                                    target="__blank"
-                                                    style={{
-                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                    }}
-                                                >
-                                                    View project
-                                                </a>
-                                                <LinkOutlined
-                                                    alt="Source code"
-                                                    style={{
-                                                        fontSize: '16px',
-                                                        color: darkMode ? 'var( --primary-500)' : 'var( --second-600)',
-                                                    }}
-                                                />
-                                            </div>
-                                        </button>
-                                    </a>
-                                </div>
+                        <div className="ModalPortfolio__content">
+                            <span className="textsmall" style={{ color: themeColors.category }}>
+                                {category}
+                            </span>
+                            <h1
+                                className="ModalPortfolio__heading-title textSubHeading"
+                                style={{ color: themeColors.text }}
+                            >
+                                {title}
+                            </h1>
+                            <div
+                                className="ModalPortfolio__desc textbody"
+                                style={{
+                                    scrollbarColor: `${themeColors.icon} transparent`, // Firefox
+                                }}
+                            >
+                                <p style={{ color: themeColors.desc}}>{desc1}</p>
+                                <p style={{ color: themeColors.desc }}>{desc2}</p>
+                                <p style={{ color: themeColors.desc }}>{desc3}</p>
                             </div>
+                        </div>
+
+                        <div className="ModalPortfolio__button">
+                            <a
+                                href={source}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ModalPortfolio__button-content btn"
+                                style={{
+                                    color: themeColors.icon,
+                                    border: themeColors.border,
+                                    '--hoverBtnBg': darkMode ? 'var(--second300)' : 'var(--primary300)',
+                                    '--hoverBtnColor': darkMode ? 'var(--white100)' : 'var(--black85)',
+                                }}
+                            >
+                                <span>{t('ModalPortfolio.ModalPortfolioBtn1')}</span>
+                            </a>
+
+                            <a
+                                href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="ModalPortfolio__button-content btn"
+                                style={{
+                                    border: themeColors.border,
+                                    color: themeColors.icon,
+                                    '--hoverBtnBg': darkMode ? 'var(--second300)' : 'var(--primary300)',
+                                    '--hoverBtnColor': darkMode ? 'var(--white100)' : 'var(--black85)',
+                                }}
+                            >
+                                <span>{t('ModalPortfolio.ModalPortfolioBtn2')}</span>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-            <div onClick={toggleModal} className="modal-overlay"></div>
-        </React.Fragment>,
+
+            <div onClick={toggleModal} className="ModalPortfolio__overlay"></div>
+        </>,
         document.getElementById('modal-portfolio'),
-        // this will let react-dom know that we want to render this modal outside the current React tree
     );
 }

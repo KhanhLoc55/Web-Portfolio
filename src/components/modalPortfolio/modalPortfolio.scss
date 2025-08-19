@@ -1,294 +1,435 @@
-/*------------popup--------*/
-.modal-overlay {
+/*============ Modal Portfolio ============*/
+.ModalPortfolio {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 51;
+    width: 70%;
+    padding: var(--padding16);
+    border-radius: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    /* Nội dung chính */
+    .ModalPortfolio__container {
+        display: flex;
+        gap: 24px;
+        justify-content: space-between;
+
+        /* Ảnh */
+        .ModalPortfolio__img {
+            display: flex;
+            height: 100%;
+            margin-top: 0;
+            flex: 1;
+
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 12px;
+                transition: var(--transition);
+                object-fit: cover;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        /* Text */
+        .ModalPortfolio__text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 50%;
+
+            /* Nút đóng */
+            .ModalPortfolio__close {
+                display: flex;
+                justify-content: flex-end;
+                cursor: pointer;
+
+                .ModalPortfolio__close-icon {
+                    padding: 8px;
+                    width: 36px;
+                    height: 36px;
+                }
+            }
+
+            /* Tiêu đề */
+            .ModalPortfolio__content {
+
+                span {
+                    letter-spacing: 2px;
+                    text-transform: uppercase;
+                }
+
+                .ModalPortfolio__heading-title {
+                    font-weight: var(--fontWeightExBold);
+                    margin-top: 8px;
+                    margin-bottom: 28px;
+                }
+
+                /* Mô tả */
+                .ModalPortfolio__desc {
+                    overflow-y: auto;
+                    max-height: 300px;
+
+                    scrollbar-width: thin;
+                    /* mỏng hơn mặc định (~6-8px) */
+
+                    p {
+                        line-height: var(--lineHeight26);
+                        margin-bottom: 8px;
+                        margin-right: 20px;
+                    }
+                }
+            }
+
+
+
+            /* Button */
+            .ModalPortfolio__button {
+                margin-bottom: 12px;
+                display: flex;
+                gap: 16px;
+                cursor: pointer;
+
+                .ModalPortfolio__button-content {
+                    padding: 10px 12px;
+                    border-radius: var(--border8);
+                }
+
+                :hover {
+                    transition: var(--transition);
+                    color: var(--hoverBtnColor) !important;
+                    background-color: var(--hoverBtnBg) !important;
+
+                }
+            }
+        }
+
+    }
+}
+
+/* Overlay */
+.ModalPortfolio__overlay {
+    position: fixed;
     top: 0;
     left: 0;
+    z-index: 50;
     width: 100%;
     height: 100%;
-    position: fixed;
-    z-index: 50;
     background-color: rgba(0, 0, 0, 80%);
 }
 
-.modal-portfolio {
-    position: fixed;
-    z-index: 51;
-    overflow-y: auto;
-    overflow-x: hidden;
-    // animation: gradient 15s ease infinite;
-    padding: 24px;
-    transform: translate(-50%, -50%);
-    border-radius: 12px;
-    width: 70%;
-    top: 50%;
-    left: 50%;
+// ⬆️ Desktop 2K – 4K (1921px – 2560px+)
+@media screen and (min-width: 1921px) {
+    .ModalPortfolio {
+        width: 50%;
+    }
+}
 
-    .modal-container {
-        .modal-content {
-            height: 100%;
-            justify-content: center;
+/* Extra large devices (Laptops, 1025px – 1366px) */
+@media screen and (min-width: 1025px) and (max-width: 1366px) {
+    .ModalPortfolio {
+        width: 90%;
 
-            .modal-content-box {
+        .ModalPortfolio__container {
+
+
+            /* Text */
+            .ModalPortfolio__text {
+
+                /* Button */
+                .ModalPortfolio__button {
+
+                    .ModalPortfolio__button-content {
+                        padding: 7.05px 12px;
+                        border-radius: 4px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* Large devices (Tablets, 769px – 1024px) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .ModalPortfolio {
+        width: 80%;
+
+        .ModalPortfolio__container {
+
+            /* Ảnh */
+            .ModalPortfolio__img {
+                display: none;
+            }
+
+            /* Text */
+            .ModalPortfolio__text {
+                flex: 1;
                 display: flex;
-                gap: 20px;
-                flex-direction: row;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 50%;
 
-                .modal-img {
+                /* Nút đóng */
+                .ModalPortfolio__close {
                     display: flex;
-                    height: 100%;
-                    margin-top: 0;
+                    justify-content: flex-end;
+                    cursor: pointer;
 
+                    .ModalPortfolio__close-icon {
+                        padding: 8px;
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
 
+                /* Tiêu đề */
+                .ModalPortfolio__content {
 
-                    img {
-                        width: 100%;
-                        height: 100%;
-                        border: 1px solid var(--primary-500);
-                        transition: var(--transition);
-                        border-radius: 8px;
+                    .ModalPortfolio__heading-title {
+                        margin-bottom: 12px;
+                    }
 
-                        &:hover {
-                            transform: scale(1.05);
+                    /* Mô tả */
+                    .ModalPortfolio__desc {
+                        p {
+                            margin-bottom: 12px;
+                            margin-right: 12px;
                         }
                     }
                 }
 
-                .modal-text {
+
+
+                /* Button */
+                .ModalPortfolio__button {
+                    margin-top: 16px;
+                    justify-content: end;
+
+                    .ModalPortfolio__button-content {
+                        padding: 10px 12px;
+                        border-radius: var(--border8);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* Medium devices (Phones, 577px – 768px) */
+@media screen and (min-width: 577px) and (max-width: 768px) {
+    .ModalPortfolio {
+        width: 90%;
+
+        .ModalPortfolio__container {
+
+            /* Ảnh */
+            .ModalPortfolio__img {
+                display: none;
+            }
+
+            /* Text */
+            .ModalPortfolio__text {
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                width: 50%;
+
+                /* Nút đóng */
+                .ModalPortfolio__close {
                     display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                    width: 50%;
+                    justify-content: flex-end;
+                    cursor: pointer;
 
-                    .modalCloseOutlined {
-                        display: flex;
-                        justify-content: flex-end;
-                        cursor: pointer;
+                    .ModalPortfolio__close-icon {
+                        padding: 8px;
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
 
-                        .modalClose-icon {
-                            padding: 8px 8px;
-                            border-radius: 4px;
-                            border: 1px solid var(--primary-500);
+                /* Tiêu đề */
+                .ModalPortfolio__content {
 
-                            &:hover {
-                                transform: translateY(-10px);
-                            }
-                        }
+                    .ModalPortfolio__heading-title {
+                        margin-bottom: 12px;
                     }
 
-
-                    .modal-heading {
-                        span {
-                            font-size: var(--fontSize13);
-                            line-height: var(--lineHeight22);
-                            font-weight: var(--fontWeightExBold);
-                            letter-spacing: 2px;
-                            text-transform: uppercase;
-                        }
-
-                        .modal-heading-title {
-                            font-size: var(--fontSize32);
-                            font-weight: var(--fontWeightExBold);
-                            line-height: var(--lineHeight40);
-                            margin-top: 4px;
-                            margin-bottom: 0;
+                    /* Mô tả */
+                    .ModalPortfolio__desc {
+                        p {
+                            margin-bottom: 12px;
+                            margin-right: 12px;
                         }
                     }
+                }
 
-                    .modal-desc {
-                        overflow-y: auto;
-                        max-height: 250px;
+
+
+                /* Button */
+                .ModalPortfolio__button {
+                    margin-top: 16px;
+                    justify-content: end;
+
+                    .ModalPortfolio__button-content {
+                        padding: 10px 12px;
+                        border-radius: var(--border8);
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+/* Small devices (Phones, 361px – 576px) */
+@media screen and (min-width: 361px) and (max-width: 576px) {
+    .ModalPortfolio {
+        width: 100%;
+        height: 100%;
+
+        .ModalPortfolio__container {
+            flex-direction: column; // ⬅️ thêm dòng này
+            width: 100%;
+            height: 100%;
+
+            /* Ảnh */
+            .ModalPortfolio__img {
+                display: none;
+            }
+
+            /* Text */
+            .ModalPortfolio__text {
+                width: 100%;
+
+                /* Nút đóng */
+                .ModalPortfolio__close {
+                    display: flex;
+                    justify-content: flex-end;
+                    cursor: pointer;
+
+                    .ModalPortfolio__close-icon {
+                        padding: 8px;
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+
+                /* Tiêu đề */
+                .ModalPortfolio__content {
+
+                    .ModalPortfolio__heading-title {
+                        margin-bottom: 12px;
+                    }
+
+                    /* Mô tả */
+                    .ModalPortfolio__desc {
+                        max-height: 400px;
 
                         p {
                             margin-bottom: 12px;
                             margin-right: 12px;
-
-                            line-height: var(--lineHeight26);
-                        }
-                    }
-
-                    .modal__button {
-                        margin-top: 30px;
-                        display: flex;
-                        cursor: pointer;
-                        gap: 12px;
-
-                        .modal__button-content {
-                            padding: 12px 16px;
-                            transition: 0.3s all ease;
-                            border-radius: 12px;
-
-
-
-                            .modal__button-link {
-                                a {
-                                    text-decoration: none;
-                                    padding-right: 8px;
-
-                                }
-
-
-                            }
-
-                            &:hover {
-                                transform: translateY(-10px);
-                            }
-                        }
-
-                    }
-
-
-                }
-            }
-        }
-    }
-}
-
-//laptop
-@media screen and (max-width: 1440px) {
-    .modal-portfolio {
-        width: 80%;
-
-        .modal-container {
-            .modal-content {
-                .modal-content-box {
-                    justify-content: space-between;
-                }
-
-            }
-        }
-    }
-}
-
-//tablet
-@media screen and (max-width: 1024px) {
-    .modal-portfolio {
-
-        .modal-container {
-            .modal-content {
-                .modal-content-box {
-                    .modal-text {
-                        .modal-heading {
-                            .modal-heading-title {
-                                margin-bottom: 16px;
-                            }
                         }
                     }
                 }
 
+
+
+                /* Button */
+                .ModalPortfolio__button {
+                    margin-top: 16px;
+                    justify-content: end;
+
+                    .ModalPortfolio__button-content {
+                        padding: 10px 12px;
+                        border-radius: var(--border8);
+                    }
+                }
             }
+
         }
     }
 }
 
-@media screen and (max-width: 768px) {
-    .modal-portfolio {
+/* Extra small devices (Super small phones, 0px – 360px) */
+@media screen and (max-width: 360px) {
+    .ModalPortfolio {
         width: 100%;
-        overflow-y: auto;
-        overflow-x: hidden;
         height: 100%;
-        right: 0;
-        padding: 36px;
-        border-radius: 0;
 
-        .modal-container {
-            .modal-content {
-                .modal-content-box {
-                    flex-direction: column;
-                    gap: 40px;
+        .ModalPortfolio__container {
+            flex-direction: column; // ⬅️ thêm dòng này
+            width: 100%;
+            height: 100%;
 
-                    .modal-img {
-                        order: 2;
+            /* Ảnh */
+            .ModalPortfolio__img {
+                display: none;
+            }
 
-                        img {}
+            /* Text */
+            .ModalPortfolio__text {
+                width: 100%;
+
+                /* Nút đóng */
+                .ModalPortfolio__close {
+                    display: flex;
+                    justify-content: flex-end;
+                    cursor: pointer;
+
+                    .ModalPortfolio__close-icon {
+                        padding: 8px;
+                        width: 36px;
+                        height: 36px;
+                    }
+                }
+
+                /* Tiêu đề */
+                .ModalPortfolio__content {
+
+                    .ModalPortfolio__heading-title {
+                        margin-bottom: 12px;
+                        font-size: var(--fontSize20);
+                        line-height: var(--lineHeight28);
                     }
 
-                    .modal-text {
-                        order: 1;
-                        width: 100%;
+                    /* Mô tả */
+                    .ModalPortfolio__desc {
+                        max-height: 400px;
 
-                        .modalCloseOutlined {
-                            font-size: var(--fontSize32);
-
-                            .modalClose-icon {
-                                padding: 8px 10px;
-                                border-radius: 6px;
-                            }
-                        }
-
-
-                        .modal-heading {
-                            margin-top: 16px;
-
-
-                            .modal-heading-title {
-                                margin-bottom: 12px;
-                            }
-                        }
-
-                        .modal-desc {
-                            overflow-y: hidden;
-                            max-height: 100%;
+                        p {
+                            margin-bottom: 12px;
+                            margin-right: 12px;
+                            font-size: var(--fontSize14);
                         }
                     }
                 }
-            }
-        }
-    }
-}
 
-//mobile
-@media screen and (max-width: 431px) {
-    .modal-portfolio {
-        padding: 12px;
 
-        .modal-container {
-            .modal-content {
-                .modal-content-box {
-                    .modal-text {
-                        .modal-heading {
-                            .modal-heading-title {
-                                font-size: var(--fontSize24);
-                                line-height: var(--lineHeight32);
-                            }
-                        }
+
+                /* Button */
+                .ModalPortfolio__button {
+                    margin-top: 16px;
+                    justify-content: end;
+
+                    .ModalPortfolio__button-content {
+                        padding: 7.6px 12px;
+                        border-radius: var(--border8);
+                        font-size: var(--fontSize16);
+
                     }
                 }
             }
-        }
-    }
-}
 
-@media screen and (max-width: 361px) {
-    .modal-portfolio {
-        .modal-container {
-            .modal-content {
-                .modal-content-box {
-                    .modal-text {
-                        .modal-heading {
-                            .modal-heading-title {
-                                font-size: var(--fontSize20);
-                                line-height: var(--lineHeight26);
-                            }
-                        }
-
-                        .modal-desc {
-
-                            p {
-                                margin-right: 4px;
-                                line-height: var(--lineHeight24);
-                            }
-                        }
-
-                        .modal__button {
-                            gap: 8px;
-
-                            .modal__button-content {
-                                padding: 8px 6px;
-                                border-radius: 6px;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 }
