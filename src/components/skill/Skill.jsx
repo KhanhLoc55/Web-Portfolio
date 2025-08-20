@@ -6,9 +6,9 @@ import { useTranslation } from 'react-i18next';
 import { ThemeContext } from '../../utils/context';
 
 // ⬅️ import file CV (bạn tự thay đúng path cho file pdf)
-import cvVi from '../../assets/resume/GoogleUxDesign.pdf';
+import cvVi from '../../assets/resume/Resume - KHANH LOC(vi).pdf';
 
-import cvEn from '../../assets/resume/MetaFrontEnd.pdf';
+import cvEn from '../../assets/resume/Resume - KHANH LOC(EN).pdf';
 import Icon from '../icon/icon';
 
 const Skill = () => {
